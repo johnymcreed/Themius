@@ -1,0 +1,271 @@
+/** Color Templates */
+:root	
+{
+	/* Rainbow Transition length */
+	--ng-ease-fit: 30s;
+	--ng-animation-fit: 50s;
+	
+	/* Transparent Colors */
+	--ng-ts-red: #ff24006e;
+	--ng-ts-yred: #e81d1d52;
+	--ng-ts-yellow: #e8b71d59;
+	--ng-ts-ygreen: #e3e81d5c;
+	--ng-ts-green: #1de8404f;
+	--ng-ts-gblue: #1ddde866;
+	--ng-ts-purple: #2b1de857;
+	--ng-ts-ppink: #dd00f354;
+	--ng-ts-pink: #dd00f378;
+	
+	/* Nontransparent Colors */
+	--ng-red: #ff2400;
+	--ng-yred: #e81d1d;
+	--ng-yellow: #e8b71d;
+	--ng-ygreen: #e3e81d;
+	--ng-green: #1de840;
+	--ng-gblue: #1ddde8;
+	--ng-purple: #2b1de8;
+	--ng-ppink: #dd00f3;
+	--ng-pink: #dd00f3;
+	
+	/* Normal Color Pallate */
+	--ng-white: #fff;
+	--ng-grey: #808080;
+	--ng-bg-grey: #424242;
+	--ng-liniar-grey: #5c5c5c;
+}
+
+/* Text Color */
+p,
+b,
+span
+{
+	color: var(--ng-white) !important;
+	font-weight: normal !important;
+}
+
+/* HREF Text */
+a 
+{
+	color: var(--ng-grey) !important;
+	text-decoration: none !important;
+}
+
+/* App Logo Conversion */
+.app-loading
+{
+	background: var(--ng-bg-grey) !important;
+	
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+}
+.app-loading circle 
+{
+	display: none !important;
+}
+
+/* Mat-Background */
+.ng-star-inserted .mat-drawer-backdrop 
+{
+    height: 100%;
+    width: 100%;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+	
+	background: linear-gradient(
+		124deg, 
+		var(--ng-ts-red), 
+		var(--ng-ts-yred), 
+		var(--ng-ts-yellow), 
+		var(--ng-ts-ygreen), 
+		var(--ng-ts-green), 
+		var(--ng-ts-gblue), 
+		var(--ng-ts-purple), 
+		var(--ng-ts-ppink), 
+		var(--ng-ts-pink)
+	);
+	background-size: 1800% 1800%;
+
+	-webkit-animation: rainbow var(--ng-ease-fit) ease infinite;
+	-z-animation: rainbow var(--ng-ease-fit) ease infinite;
+	-o-animation: rainbow var(--ng-ease-fit) ease infinite;
+  	animation: rainbow var(--ng-animation-fit) ease infinite;
+}
+
+/* Agenda Form */
+.ng-star-inserted .fr-view *
+{
+	background: var(--ng-bg-grey) !important;
+	padding-left: 5px;
+	list-style: none !important;
+}
+
+/* Customizes the courses page */
+.ng-star-inserted .home-ct
+{
+    height: 100%;
+    width: 100%;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+	overflow: scroll !important;
+}
+.ng-star-inserted .home-ct .grid-ct .course-card
+{
+	height: auto;
+	padding: 20px;
+}
+.ng-star-inserted .home-ct .grid-ct .course-card
+{
+	position: absolute; /* default */
+	
+	display: grid !important;
+	grid-template-columns: repeat(1, 3fr) !important;
+  	gap: 10px !important;
+  	grid-auto-rows: minmax(100px, auto) !important;
+	
+	width: 16rem;
+	
+	align-self: center;
+	align-content: center;
+	align-items: center;
+}
+
+/* Card Header Length */
+.mat-drawer-content .card-ct .mat-card 
+{
+	width: 100% !important;
+}
+
+/* Login Page */
+.ng-star-inserted .buzz-login-background 
+{
+    height: 100%;
+    width: 100%;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+	
+	background: linear-gradient(
+		124deg,
+		var(--ng-red),
+		var(--ng-yred),
+		var(--ng-yellow),
+		var(--ng-ygreen),
+		var(--ng-green),
+		var(--ng-gblue),
+		var(--ng-purple),
+		var(--ng-ppink),
+		var(--ng-pink)
+	);
+	background-size: 1800% 1800%;
+
+	-webkit-animation: rainbow var(--ng-ease-fit) ease infinite;
+	-z-animation: rainbow var(--ng-ease-fit) ease infinite;
+	-o-animation: rainbow var(--ng-ease-fit) ease infinite;
+  	animation: rainbow var(--ng-animation-fit) ease infinite;
+}
+
+/* Login Logos Removal */
+.buzz-login-logo 
+{
+	display: none !important;
+}
+.app-logo 
+{
+	display: none !important;
+}
+.side-menu-logo
+{
+	display: none !important;
+}
+
+/* Course progress removal */
+.course-progress 
+{
+	display: none;
+}
+
+/* Color band change */
+.color-band {
+	background: var(--ng-liniar-grey) !important;
+}
+
+/* Badge Content */
+.mat-badge-content {
+	background: var(--ng-liniar-grey) !important;
+}
+
+/* Annoucments removal */
+.home-ct .header-buttons {
+	display: none !important;
+}
+
+/* App Background Color */
+.app-background
+{
+    height: 100%;
+    width: 100%;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+	
+	background: linear-gradient(
+		124deg,
+		var(--ng-red),
+		var(--ng-yred),
+		var(--ng-yellow),
+		var(--ng-ygreen),
+		var(--ng-green),
+		var(--ng-gblue),
+		var(--ng-purple),
+		var(--ng-ppink),
+		var(--ng-pink)
+	);
+	background-size: 1800% 1800%;
+
+	-webkit-animation: rainbow var(--ng-ease-fit) ease infinite;
+	-z-animation: rainbow var(--ng-ease-fit) ease infinite;
+	-o-animation: rainbow var(--ng-ease-fit) ease infinite;
+  	animation: rainbow var(--ng-animation-fit) ease infinite;
+}
+
+/* NG-APP BACKGROUND RAINBOW AFFECT */
+@-webkit-keyframes rainbow 
+{
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow 
+{
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow 
+{
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow 
+{ 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+/* NG-APP BACKGROUND RAINBOW AFFECT */
