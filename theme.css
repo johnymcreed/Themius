@@ -1,5 +1,10 @@
-/** Color Templates */
-:root	
+/*** 
+ ** Echo Rebranded Theme By JohnyMcreed.
+ * Domain: https://rogershs.echo-ntn.org/
+**/
+
+/** Color Palatte */
+:root 
 {
 	/* Rainbow Transition length */
 	--ng-ease-fit: 30s;
@@ -17,15 +22,15 @@
 	--ng-ts-pink: #dd00f378;
 	
 	/* Nontransparent Colors */
-	--ng-red: #ff2400;
-	--ng-yred: #e81d1d;
-	--ng-yellow: #e8b71d;
-	--ng-ygreen: #e3e81d;
-	--ng-green: #1de840;
-	--ng-gblue: #1ddde8;
+	--ng-red: #c91c00;
+	--ng-yred: #c02d2d;
+	--ng-yellow: #c59b17;
+	--ng-ygreen: #b8bc0e;
+	--ng-green: #1c9a31;
+	--ng-gblue: #269298;
 	--ng-purple: #2b1de8;
-	--ng-ppink: #dd00f3;
-	--ng-pink: #dd00f3;
+	--ng-ppink: #a518b4;
+	--ng-pink: #90199c;
 	
 	/* Normal Color Pallate */
 	--ng-white: #fff;
@@ -34,42 +39,112 @@
 	--ng-liniar-grey: #5c5c5c;
 }
 
-/* Text Color */
+/** Primary Elements */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
 p,
-b,
-span
+span,
+i,
+b 
 {
 	color: var(--ng-white) !important;
 	font-weight: normal !important;
+	font-language-override: normal !important;
+	font-family: Arial, Helvetica, sans-serif !important;
 }
 
-/* HREF Text */
-a 
+/** Keyframe Rainbow Effect */
+@-webkit-keyframes rainbow 
 {
-	color: var(--ng-grey) !important;
-	text-decoration: none !important;
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow 
+{
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow 
+{
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow 
+{ 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
 }
 
-/* App Logo Conversion */
-.app-loading
-{
-	background: var(--ng-bg-grey) !important;
-	
-	position: absolute;
-	left: 0px;
-	right: 0px;
-	top: 0px;
-	bottom: 0px;
-	width: 100%;
-	height: 100%;
-}
-.app-loading circle 
+/** Login Page */
+.ng-star-inserted .logo-ct 
 {
 	display: none !important;
 }
+.ng-star-inserted .buzz-login-logo
+{
+	display: none !important;
+}
+.ng-star-inserted .buzz-login-background /* Login Buzz Background */
+{
+    height: 100%;
+    width: 100%;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+	
+	background: linear-gradient(
+		124deg,
+		var(--ng-red),
+		var(--ng-yred),
+		var(--ng-yellow),
+		var(--ng-ygreen),
+		var(--ng-green),
+		var(--ng-gblue),
+		var(--ng-purple),
+		var(--ng-ppink),
+		var(--ng-pink)
+	);
+	background-size: 1800% 1800%;
 
-/* Mat-Background */
-.ng-star-inserted .mat-drawer-backdrop 
+	-webkit-animation: rainbow var(--ng-ease-fit) ease infinite;
+	-z-animation: rainbow var(--ng-ease-fit) ease infinite;
+	-o-animation: rainbow var(--ng-ease-fit) ease infinite;
+  	animation: rainbow var(--ng-animation-fit) ease infinite;
+}
+.ng-star-inserted .main-toolbar 
+{
+	background: transparent !important;
+	box-shadow: none !important;
+}
+.ng-star-inserted .main-toolbar .mat-form-field .mat-input-element
+{
+	box-shadow: none !important;
+	background: transparent !important;
+}
+.ng-star-inserted .buzz-login-content .buzz-login-content-title
+{
+	width: 100% !important;
+	height: 100% !important;
+	align-self: center !important;
+	font-weight: normal !important;
+	font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/** Sidebar */
+.ng-star-inserted .mat-drawer-backdrop /* Sidebar Background */
 {
     height: 100%;
     width: 100%;
@@ -98,123 +173,27 @@ a
 	-o-animation: rainbow var(--ng-ease-fit) ease infinite;
   	animation: rainbow var(--ng-animation-fit) ease infinite;
 }
-
-/* Agenda Form */
-.ng-star-inserted .fr-view *
-{
-	background: var(--ng-bg-grey) !important;
-	padding-left: 5px;
-	list-style: none !important;
-}
-
-/* Customizes the courses page */
-.ng-star-inserted .home-ct
-{
-    height: 100%;
-    width: 100%;
-    left:0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    position: absolute;
-	overflow: scroll !important;
-}
-.ng-star-inserted .home-ct .grid-ct .course-card
-{
-	height: auto;
-	padding: 20px;
-}
-.ng-star-inserted .home-ct .grid-ct .course-card
-{
-	position: absolute; /* default */
-	
-	display: grid !important;
-	grid-template-columns: repeat(1, 3fr) !important;
-  	gap: 10px !important;
-  	grid-auto-rows: minmax(100px, auto) !important;
-	
-	width: 16rem;
-	
-	align-self: center;
-	align-content: center;
-	align-items: center;
-}
-
-/* Card Header Length */
-.mat-drawer-content .card-ct .mat-card 
-{
-	width: 100% !important;
-}
-
-/* Login Page */
-.ng-star-inserted .buzz-login-background 
-{
-    height: 100%;
-    width: 100%;
-    left:0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    position: absolute;
-	
-	background: linear-gradient(
-		124deg,
-		var(--ng-red),
-		var(--ng-yred),
-		var(--ng-yellow),
-		var(--ng-ygreen),
-		var(--ng-green),
-		var(--ng-gblue),
-		var(--ng-purple),
-		var(--ng-ppink),
-		var(--ng-pink)
-	);
-	background-size: 1800% 1800%;
-
-	-webkit-animation: rainbow var(--ng-ease-fit) ease infinite;
-	-z-animation: rainbow var(--ng-ease-fit) ease infinite;
-	-o-animation: rainbow var(--ng-ease-fit) ease infinite;
-  	animation: rainbow var(--ng-animation-fit) ease infinite;
-}
-
-/* Login Logos Removal */
-.buzz-login-logo 
-{
-	display: none !important;
-}
-.app-logo 
-{
-	display: none !important;
-}
 .side-menu-logo
 {
 	display: none !important;
 }
 
-/* Course progress removal */
-.course-progress 
+/** Tab Header */
+.ng-star-inserted .mat-tab-group .mat-tab-header /* Header Background */
 {
-	display: none;
+	background: transparent !important;
 }
-
-/* Color band change */
-.color-band {
+.mat-badge-content 
+{
 	background: var(--ng-liniar-grey) !important;
 }
 
-/* Badge Content */
-.mat-badge-content {
-	background: var(--ng-liniar-grey) !important;
-}
-
-/* Annoucments removal */
-.home-ct .header-buttons {
-	display: none !important;
-}
-
-/* App Background Color */
-.app-background
+/** Course Page (Courses Only) */
+.ng-star-inserted .home-ct /* Course Background */
 {
+	width: 100% !important;
+	height: auto !important;
+	
     height: 100%;
     width: 100%;
     left:0;
@@ -223,6 +202,42 @@ a
     bottom: 0;
     position: absolute;
 	
+	overflow: scroll !important;
+}
+.ng-star-inserted .course-card /* Course Cards */
+{
+	margin: 10px !important;
+	height: auto !important;
+	width: 15rem;
+}
+.ng-star-inserted .header-buttons /* Announccment Button */
+{
+	display: none !important;
+}
+
+/** Inside Course Page */
+.ng-star-inserted .color-band /* Color band */
+{
+	background: rgb(170,74,74);
+	background: linear-gradient(
+		33deg, 
+		rgba(170,74,74,1) 0%, 
+		rgba(125,125,255,1) 52%,
+		rgba(77,225,255,1) 100%
+	);
+}
+.ng-star-inserted .color-band .course-dates
+{
+	display: none !important;
+}
+.ng-star-inserted .fr-view a,
+.ng-star-inserted .fr-view a *
+{
+	color: grey !important;
+	text-decoration: none !important;
+}
+.ng-star-inserted .app-background /* Course Background */
+{	
 	background: linear-gradient(
 		124deg,
 		var(--ng-red),
@@ -242,30 +257,24 @@ a
 	-o-animation: rainbow var(--ng-ease-fit) ease infinite;
   	animation: rainbow var(--ng-animation-fit) ease infinite;
 }
+.ng-star-inserted .course-progress 
+{
+	display: none !important;
+}
+.ng-star-inserted .projects,
+#cur-proj-id
+{
+	display: none !important;
+}
+.ng-star-inserted .fr-view * /* Agend Form View */
+{
+	background: var(--ng-bg-grey) !important;
+	list-style: none !important;
+	padding-left: 5px;
+}
 
-/* NG-APP BACKGROUND RAINBOW AFFECT */
-@-webkit-keyframes rainbow 
+/** Translation Popups */
+.translation 
 {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+	display: none !important;
 }
-@-moz-keyframes rainbow 
-{
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@-o-keyframes rainbow 
-{
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@keyframes rainbow 
-{ 
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-/* NG-APP BACKGROUND RAINBOW AFFECT */
