@@ -257,9 +257,11 @@ b
 	margin: 10px !important;
 	height: auto !important;
 	width: 15rem !important;
-	
-	padding-top: 6px !important;
 	border-radius: 0px !important;
+}
+.ng-star-inserted .mat-card-title-group
+{
+	padding-top: 10px !important;
 }
 .ng-star-inserted .detail-ct 
 {
