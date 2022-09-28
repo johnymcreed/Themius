@@ -60,6 +60,32 @@ b
 	font-family: Arial, Helvetica, sans-serif !important;
 }
 
+/** Webkit Scrollbar Element */
+::-webkit-scrollbar 
+{
+    width: 4px;
+    height: auto;
+}
+::-webkit-scrollbar-track /* Background Bar */
+{
+	background: transparent;
+}
+::-webkit-scrollbar-thumb /* Background */
+{
+	background: rgb(170,74,74);
+	background: linear-gradient(
+		33deg, 
+		rgba(170,74,74,1) 0%, 
+		rgba(125,125,255,1) 52%,
+		rgba(77,225,255,1) 100%
+	);
+}
+::-webkit-scrollbar-thumb:hover 
+{
+    background:#666;
+}
+
+
 /** Keyframe Rainbow Effect */
 @-webkit-keyframes rainbow 
 {
@@ -183,6 +209,14 @@ b
 {
 	background: transparent !important;
 }
+.ng-star-inserted .app-title,
+.ng-star-inserted .app-title-ct,
+.ng-star-inserted .app-focus-overlay
+{
+	display: none !important;
+	background: rgba(0, 0, 0, 0) !important;
+	opacity: 0 !important;
+}
 .mat-badge-content 
 {
 	background: var(--ng-liniar-grey) !important;
@@ -195,14 +229,13 @@ b
 	height: auto !important;
 	
     height: 100%;
-    width: 100%;
     left:0;
     right: 0;
     top: 0;
     bottom: 0;
     position: absolute;
 	
-	overflow: scroll !important;
+	overflow: auto !important;
 }
 .ng-star-inserted .course-card /* Course Cards */
 {
