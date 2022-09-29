@@ -490,6 +490,12 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 	color: var(--ng-white) !important;
 }
 
+/** Form Field */
+.ng-star-inserted .search-bar
+{
+	margin: 0px !important;
+}
+
 /** Translation Popups */
 .translation 
 {
