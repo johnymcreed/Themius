@@ -60,10 +60,15 @@ span,
 i,
 b 
 {
-	color: var(--ng-white) !important;
-	font-weight: normal !important;
+	color: var(--foreground-text) !important;
+	font-weight: lighter !important;
 	font-language-override: normal !important;
 	font-family: Arial, Helvetica, sans-serif !important;
+}
+.ng-star-inserted .fab
+{
+	font-family: "Font Awesome 5 Brands" !important;
+    font-weight: 400 !important;
 }
 
 /** Webkit Scrollbar Element */
@@ -220,9 +225,11 @@ b
 	-o-animation: rainbow var(--ng-ease-fit) ease infinite;
   	animation: rainbow var(--ng-animation-fit) ease infinite;
 }
-.mat-divider-horizontal /* Divider Bar Background */
+.mat-divider-horizontal, /* Divider Bar Background */
+mat-divider
 {
 	background: var(--ng-grey) !important;
+	height: 0px !important;
 }
 .side-menu-logo,
 .side-menu-logo-ct /* Padding Backboard */
@@ -270,7 +277,7 @@ b
 }
 .ng-star-inserted .toolbar
 {
-	background: transparent !important;
+	background: var(--card-background) !important;
 }
 .ng-star-inserted .mat-toolbar,
 .ng-star-inserted .main-toolbar
@@ -308,10 +315,6 @@ b
 {
 	display: none !important;
 }
-.ng-star-inserted .mat-card-actions 
-{
-	display: none !important;
-}
 .ng-star-inserted .header-buttons /* Announccment Button */
 {
 	display: none !important;
@@ -337,6 +340,13 @@ b
 .ng-star-inserted app-student-stream
 {
 	padding: 24px 16px 0px;
+}
+
+/** Theme Page */
+.ng-star-inserted app-choose-theme div .mat-card
+{
+	max-width: 100% !important;
+	height: auto !important;
 }
 
 /** Inside Course Page */
@@ -392,7 +402,7 @@ b
 }
 .ng-star-inserted .fr-view * /* Agend Form View */
 {
-	background: var(--ng-bg-grey) !important;
+	background: var(--card-background) !important;
 	list-style: none !important;
 	padding-left: 5px;
 }
@@ -404,14 +414,14 @@ b
 .ng-star-inserted .fr-view table tbody tr,
 .ng-star-inserted .fr-view table tbody td
 {
-	border: 2px solid var(--ng-white) !important;
+	border: 2px solid var(--foreground-text) !important;
 }
 .ng-star-inserted .fr-view table /* Table Size Correction */
 {
 	margin-left: auto;
     margin-right: auto;
 	
-	width: 100%;
+	width: 100% !important;
 }
 .no-agenda /* No-Agenda Popup Change */
 {
@@ -431,6 +441,12 @@ b
 {
 	color: var(--ng-bg-grey) !important;
 	background: var(--ng-white) !important;
+}
+.ng-star-inserted .card-ct .submission
+{
+	max-width: 100% !important;
+	width: 100% !important;
+	height: auto !important;
 }
 
 /** Grading Toolbar */
