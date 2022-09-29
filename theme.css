@@ -39,6 +39,12 @@
 	--ng-liniar-grey: #5c5c5c;
 }
 
+/** App Elements */
+html
+{
+	background: var(--ng-bg-grey) !important;
+}
+
 /** Primary Elements */
 html,
 body,
@@ -95,6 +101,11 @@ b
 	background: var(--ng-liniar-grey) !important;
 }
 
+/** App Loader Circles */
+.app-loading circle
+{
+	fill: var(--ng-grey);
+}
 
 /** Keyframe Rainbow Effect */
 @-webkit-keyframes rainbow 
