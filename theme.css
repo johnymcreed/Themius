@@ -268,7 +268,15 @@ b
 {
 	display: none !important;
 }
-
+.ng-star-inserted .toolbar
+{
+	background: transparent !important;
+}
+.ng-star-inserted .mat-toolbar,
+.ng-star-inserted .main-toolbar
+{
+	background: transparent !important;
+}
 
 /** Course Page (Courses Only) */
 .ng-star-inserted .home-ct /* Course Background */
@@ -398,12 +406,32 @@ b
 {
 	border: 2px solid var(--ng-white) !important;
 }
+.ng-star-inserted .fr-view table /* Table Size Correction */
+{
+	margin-left: auto;
+    margin-right: auto;
+	
+	width: 100%;
+}
+.no-agenda /* No-Agenda Popup Change */
+{
+	background: linear-gradient(
+		33deg, 
+		rgba(170,74,74,1) 0%, 
+		rgba(125,125,255,1) 52%,
+		rgba(77,225,255,1) 100%
+	);
+	
+	font-size: 20px;
+	font-style: normal !important;
+	text-align: center !important;
+	padding: 10px;
+}
 .ng-star-inserted .comments-ct .fr-element * /* Form Field Fix */
 {
 	color: var(--ng-bg-grey) !important;
 	background: var(--ng-white) !important;
 }
-
 
 /** Grading Toolbar */
 .ng-star-inserted .links-ct .links .intro
@@ -448,6 +476,12 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 
 /** Translation Popups */
 .translation 
+{
+	display: none !important;
+}
+
+/** Skip Nav Popup */
+.skip-nav
 {
 	display: none !important;
 }
