@@ -236,6 +236,28 @@ b
 {
 	background: var(--ng-liniar-grey) !important;
 }
+.ng-star-inserted .user-menu-button .user-name /* Name Flex Field Fix */
+{
+	flex-direction: row !important;
+	column-gap: 5px !important;
+}
+.ng-star-inserted .user-menu-button lib-profile-picture /* Name Avatar */
+{
+	margin: -10px;
+	max-width: 2rem;
+	height: auto;
+}
+.ng-star-inserted .user-menu-button lib-profile-picture img
+{
+	border-radius: 100px;
+	max-width: 2rem;
+	height: auto;
+}
+.ng-star-inserted .user-menu-button mat-icon /* Drop Down Icon */
+{
+	display: none !important;
+}
+
 
 /** Course Page (Courses Only) */
 .ng-star-inserted .home-ct /* Course Background */
@@ -274,6 +296,28 @@ b
 .ng-star-inserted .header-buttons /* Announccment Button */
 {
 	display: none !important;
+}
+
+/** TO-DO Page */
+.ng-star-inserted app-student-to-do .mat-card
+{
+	width: 100% !important;
+	height: auto !important;
+}
+.ng-star-inserted app-student-to-do 
+{
+	padding: 24px 16px 0px;
+}
+
+/** Activity Stream */
+.ng-star-inserted app-student-stream .mat-card
+{
+	max-width: 100% !important;
+	height: auto !important;
+}
+.ng-star-inserted app-student-stream
+{
+	padding: 24px 16px 0px;
 }
 
 /** Inside Course Page */
@@ -349,6 +393,7 @@ b
 	background: var(--ng-white) !important;
 }
 
+
 /** Grading Toolbar */
 .ng-star-inserted .links-ct .links .intro
 {
@@ -380,6 +425,15 @@ b
 	background: #455A64 !important;
 }
 
+/** Anounncement Page */
+app-announcement-detail.ng-star-inserted /* NG-App Announcements */
+{
+	background: var(--ng-bg-grey) !important;
+}
+app-announcement-detail.ng-star-inserted lib-managed-html *
+{
+	color: var(--ng-white) !important;
+}
 
 /** Translation Popups */
 .translation 
