@@ -433,7 +433,7 @@ mat-divider
 	width: 100% !important;
 	height: auto !important;
 }
-.ng-star-inserted lib-html-editor .fr-element #isPasted:before
+.ng-star-inserted lib-html-editor .fr-element #isPasted:before /* Inserts a text to warn the user that ECHO detected this paste */
 {
 	content:"This wlll be detected by Teachers for Plagiarism/Copying :: ";
 	color: #af3737 !important;
@@ -445,6 +445,10 @@ mat-divider
 	background: #e2d02852 !important;
 	padding: 1px !important;
 }
+.ng-star-inserted .activity-html lib-managed-html .content *
+{
+	font-size: 18px !important;
+}
 
 /** Grading Toolbar */
 .ng-star-inserted .links-ct .links .intro
@@ -452,9 +456,10 @@ mat-divider
 	display: none !important;
 }
 .ng-star-inserted .toolbar-grade .sbg-color *, /* Global Grade Background Color */
-.ng-star-inserted .toolbar-grade .sbg-color .letter /* Grade Background/Color */
+.ng-star-inserted .toolbar-grade .sbg-color .letter, /* Grade Background/Color */
+.ng-star-inserted .sbg-color *
 {
-	color: var(--ng-grey) !important;
+	color: var(--ng-bg-grey) !important;
 }
 .ng-star-inserted .toolbar-grade .s-status-feedback /* Feedback icon */
 {
