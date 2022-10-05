@@ -437,7 +437,8 @@ mat-divider
 	text-align: center !important;
 	padding: 10px;
 }
-.ng-star-inserted .comments-ct .fr-element * /* Form Field Fix */
+.ng-star-inserted .comments-ct .fr-element *, /* Form Field Fix */
+.ng-star-inserted .fr-element *
 {
 	color: var(--ng-bg-grey) !important;
 	background: var(--ng-white) !important;
