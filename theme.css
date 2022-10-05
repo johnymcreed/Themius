@@ -96,16 +96,6 @@ b
     background:#666;
 }
 
-/** Webkit/Gecko Highlighting */
-::selection 
-{
-	background: var(--ng-liniar-grey) !important;
-}
-::-moz-selection 
-{
-	background: var(--ng-liniar-grey) !important;
-}
-
 /** App Loader Circles */
 .app-loading circle
 {
@@ -364,12 +354,6 @@ mat-divider
 {
 	display: none !important;
 }
-.ng-star-inserted .fr-view a,
-.ng-star-inserted .fr-view a *
-{
-	color: grey !important;
-	text-decoration: none !important;
-}
 .ng-star-inserted .app-background /* Course Background */
 {	
 	background: linear-gradient(
@@ -404,7 +388,7 @@ mat-divider
 {
 	background: var(--card-background) !important;
 	list-style: none !important;
-	padding-left: 5px;
+	/*padding-left: 5px;*/
 }
 .ng-star-inserted .fr-view table,
 .ng-star-inserted .fr-view table thead,
@@ -448,6 +432,18 @@ mat-divider
 	max-width: 100% !important;
 	width: 100% !important;
 	height: auto !important;
+}
+.ng-star-inserted lib-html-editor .fr-element #isPasted:before
+{
+	content:"This wlll be detected by Teachers for Plagiarism/Copying :: ";
+	color: #af3737 !important;
+	font-size: 10px;
+	font-style: italic;
+} 
+.ng-star-inserted lib-html-editor .fr-element #isPasted /* Detects if what you type is pasted (helps stop teachers from detecting this) */
+{
+	background: #e2d02852 !important;
+	padding: 1px !important;
 }
 
 /** Grading Toolbar */
