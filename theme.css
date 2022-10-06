@@ -501,7 +501,7 @@ mat-tree mat-tree-node[aria-expanded="true"] a div /* Hint to a open folder */
 }
 mat-tree mat-tree-node[aria-expanded="false"] a div /* If not expanded follow color rule */
 {
-	color: var(--foreground-text) !important;
+	color: var(--foreground-text);
 }
 
 
