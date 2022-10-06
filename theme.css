@@ -6,11 +6,11 @@
 /** Color Palatte */
 :root 
 {
-	/* Rainbow Transition length */
+	/* RGB Transition length */
 	--ng-ease-fit: 30s;
 	--ng-animation-fit: 50s;
 	
-	/* Transparent Colors */
+	/* Transparent Colors RGB */
 	--ng-ts-red: #ff24006e;
 	--ng-ts-yred: #e81d1d52;
 	--ng-ts-yellow: #e8b71d59;
@@ -21,7 +21,7 @@
 	--ng-ts-ppink: #dd00f354;
 	--ng-ts-pink: #dd00f378;
 	
-	/* Nontransparent Colors */
+	/* Nontransparent Colors RGB */
 	--ng-red: #c91c00;
 	--ng-yred: #c02d2d;
 	--ng-yellow: #c59b17;
@@ -32,7 +32,7 @@
 	--ng-ppink: #a518b4;
 	--ng-pink: #90199c;
 	
-	/* Normal Color Pallate */
+	/* Color Pallate */
 	--ng-white: #fff;
 	--ng-grey: #808080;
 	--ng-bg-grey: #424242;
@@ -50,8 +50,6 @@
 }
 
 
-
-
 /** App Elements */
 html
 {
@@ -59,22 +57,10 @@ html
 }
 
 
-
-
 /** Primary Elements */
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
-p,
-span,
-i,
-b 
+html, body, h1, h2, h3,
+h4, h5, h6, a, p, span,
+i, b 
 {
 	color: var(--foreground-text) !important;
 	font-weight: lighter !important;
@@ -93,8 +79,6 @@ b
 }
 
 
-
-
 /** Webkit Scrollbar Element */
 ::-webkit-scrollbar 
 {
@@ -107,7 +91,6 @@ b
 }
 ::-webkit-scrollbar-thumb /* Background */
 {
-	background: rgb(170,74,74);
 	background: linear-gradient(
 		33deg, 
 		rgba(170,74,74,1) 0%, 
@@ -117,10 +100,8 @@ b
 }
 ::-webkit-scrollbar-thumb:hover 
 {
-    background:#666;
+    background: var(--ng-grey);
 }
-
-
 
 
 /** App Loader Circles */
@@ -128,8 +109,6 @@ b
 {
 	fill: var(--ng-grey);
 }
-
-
 
 
 /** Keyframe Rainbow Effect */
@@ -159,13 +138,8 @@ b
 }
 
 
-
-
 /** Login Page */
-.ng-star-inserted .logo-ct 
-{
-	display: none !important;
-}
+.ng-star-inserted .logo-ct,
 .ng-star-inserted .buzz-login-logo
 {
 	display: none !important;
@@ -215,10 +189,8 @@ b
 	height: 100% !important;
 	align-self: center !important;
 	font-weight: normal !important;
-	font-family: Arial, Helvetica, sans-serif !important;
+	font-family: var(--default-font) !important;
 }
-
-
 
 
 /** Sidebar */
@@ -257,8 +229,8 @@ mat-divider
 	background: var(--ng-grey) !important;
 	height: 0px !important;
 }
-.side-menu-logo,
-.side-menu-logo-ct /* Padding Backboard */
+.side-menu-logo, /* Padding Backboard */
+.side-menu-logo-ct
 {
 	display: none !important;
 }
@@ -276,7 +248,7 @@ mat-divider
 .ng-star-inserted .app-focus-overlay
 {
 	display: none !important;
-	background: rgba(0, 0, 0, 0) !important;
+	background: transparent !important;
 	opacity: 0 !important;
 }
 .mat-badge-content 
@@ -315,8 +287,6 @@ mat-divider
 }
 
 
-
-
 /** Course Page (Courses Only) */
 .ng-star-inserted .home-ct /* Course Background */
 {
@@ -343,16 +313,11 @@ mat-divider
 {
 	padding-top: 10px !important;
 }
+.ng-star-inserted .header-buttons, /* Announccment Button */
 .ng-star-inserted .detail-ct 
 {
 	display: none !important;
 }
-.ng-star-inserted .header-buttons /* Announccment Button */
-{
-	display: none !important;
-}
-
-
 
 
 /** TO-DO Page */
@@ -367,8 +332,6 @@ mat-divider
 }
 
 
-
-
 /** Activity Stream */
 .ng-star-inserted app-student-stream .mat-card
 {
@@ -381,8 +344,6 @@ mat-divider
 }
 
 
-
-
 /** Theme Page */
 .ng-star-inserted app-choose-theme div .mat-card
 {
@@ -391,22 +352,15 @@ mat-divider
 }
 
 
-
-
 /** Inside Course Page */
 .ng-star-inserted .color-band /* Color band */
 {
-	background: rgb(170,74,74);
 	background: linear-gradient(
 		33deg, 
 		rgba(170,74,74,1) 0%, 
 		rgba(125,125,255,1) 52%,
 		rgba(77,225,255,1) 100%
 	);
-}
-.ng-star-inserted .color-band .course-dates
-{
-	display: none !important;
 }
 .ng-star-inserted .app-background /* Course Background */
 {	
@@ -429,10 +383,8 @@ mat-divider
 	-o-animation: rainbow var(--ng-ease-fit) ease infinite;
   	animation: rainbow var(--ng-animation-fit) ease infinite;
 }
-.ng-star-inserted .course-progress 
-{
-	display: none !important;
-}
+.ng-star-inserted .course-progress,
+.ng-star-inserted .color-band .course-dates,
 .ng-star-inserted .projects,
 #cur-proj-id
 {
@@ -493,7 +445,7 @@ mat-divider
 .ng-star-inserted .comments-ct .fr-element *, /* Form Field Fix */
 .ng-star-inserted .fr-element *
 {
-	color: var(--ng-bg-grey);
+	color: var(--ng-bg-grey) !important;
 	background: var(--ng-white) !important;
 }
 .ng-star-inserted .comments-ct .fr-element a,
@@ -519,10 +471,9 @@ mat-divider
 }
 
 
-
-
 /** Grading Toolbar */
-.ng-star-inserted .links-ct .links .intro
+.ng-star-inserted .links-ct .links .intro,
+.ng-star-inserted .toolbar-grade .sbg-icon
 {
 	display: none !important;
 }
@@ -535,10 +486,6 @@ mat-divider
 .ng-star-inserted .toolbar-grade .s-status-feedback /* Feedback icon */
 {
 	padding: 10px !important;
-}
-.ng-star-inserted .toolbar-grade .sbg-icon
-{
-	display: none !important;
 }
 mat-tree mat-tree-node[aria-expanded="true"] a div /* Hint to a open folder */
 {
@@ -553,17 +500,13 @@ mat-tree mat-tree-node[aria-expanded="false"] a div /* If not expanded follow co
 }
 
 
-
-
 /** Paste Detection System */
 .ng-star-inserted lib-html-editor .fr-element #isPasted:before /* Inserts a text to warn the user that ECHO detected this paste */
 {
 	content:"★ ";
-	color: #b31515d9 !important;
-	
-	font-weight: 700;
+	color: var(--warn-700) !important;
+	font-weight: 400;
 	text-decoration: none !important;
-	
 	padding: 4px;
 } 
 .ng-star-inserted lib-html-editor .fr-element #isPasted:hover:before
@@ -573,9 +516,10 @@ mat-tree mat-tree-node[aria-expanded="false"] a div /* If not expanded follow co
 }
 .ng-star-inserted lib-html-editor .fr-element #isPasted /* Detects if what you type is pasted (helps stop teachers from detecting this) */
 {
-	background: #d09e1952 !important;
-	padding: 4px !important;
-	font-size: 12px !important;
+	background: var(--accent-lighter) !important;
+
+	padding: 3.5px !important;
+	font-size: 14px !important;
 	text-decoration: none !important;
 	cursor: pointer;
 }
@@ -585,8 +529,6 @@ mat-tree mat-tree-node[aria-expanded="false"] a div /* If not expanded follow co
 {
 	background: none !important;
 }
-
-
 
 
 /** Grading Page */
