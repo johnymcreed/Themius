@@ -70,6 +70,11 @@ b
 	font-family: "Font Awesome 5 Brands" !important;
     font-weight: 400 !important;
 }
+.ng-star-inserted .far
+{
+    font-family: "Font Awesome 5 Pro" !important;
+    font-weight: 400 !important;
+}
 
 /** Webkit Scrollbar Element */
 ::-webkit-scrollbar 
@@ -433,29 +438,6 @@ mat-divider
 	width: 100% !important;
 	height: auto !important;
 }
-.ng-star-inserted lib-html-editor .fr-element #isPasted:hover:before /* Inserts a text to warn the user that ECHO detected this paste */
-{
-	content:"Paste is Detected → ";
-	color: #646464d9 !important;
-	
-	text-decoration: none !important;
-		
-	font-weight: 400px;
-	white-space: pre !important;
-} 
-.ng-star-inserted lib-html-editor .fr-element #isPasted /* Detects if what you type is pasted (helps stop teachers from detecting this) */
-{
-	background: #fdbf1652 !important;
-	padding: 3px !important;
-	font-size: 13px !important;
-	text-decoration: none !important;
-}
-.ng-star-inserted lib-html-editor .fr-element #isPasted span, /* Pain */
-.ng-star-inserted lib-html-editor .fr-element #isPasted a,
-.ng-star-inserted lib-html-editor .fr-element #isPasted p
-{
-	background: none !important;
-}
 .ng-star-inserted .activity-html lib-managed-html .content *
 {
 	font-size: 18px !important;
@@ -485,6 +467,37 @@ mat-tree mat-tree-node[aria-expanded="true"] a div /* Hint to a open folder */
 	font-weight: bolder;
 	background: #72727291;
 	border-radius: 4px;
+}
+
+/** Paste Dedection System */
+.ng-star-inserted lib-html-editor .fr-element #isPasted:before /* Inserts a text to warn the user that ECHO detected this paste */
+{
+	content:"★ ";
+	color: #b31515d9 !important;
+	
+	font-weight: 700;
+	text-decoration: none !important;
+	
+	padding: 4px;
+} 
+.ng-star-inserted lib-html-editor .fr-element #isPasted:hover:before
+{
+	content:"Paste is detected ";
+	white-space: pre;
+}
+.ng-star-inserted lib-html-editor .fr-element #isPasted /* Detects if what you type is pasted (helps stop teachers from detecting this) */
+{
+	background: #d09e1952 !important;
+	padding: 4px !important;
+	font-size: 12px !important;
+	text-decoration: none !important;
+	cursor: pointer;
+}
+.ng-star-inserted lib-html-editor .fr-element #isPasted span, /* Pain */
+.ng-star-inserted lib-html-editor .fr-element #isPasted a,
+.ng-star-inserted lib-html-editor .fr-element #isPasted p
+{
+	background: none !important;
 }
 
 /** Grading Page */
