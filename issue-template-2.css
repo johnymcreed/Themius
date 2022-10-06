@@ -1,0 +1,40 @@
+/** 
+** This is a very large redesign project by me only, which takes a lot of effort to do
+** and requires a lot of redos in the theme. "This is the 3rd redo btw"
+** so please enjoy the changes and use them in anyway you want as i made sure you could change
+** practically everything within the code from the :root part
+** JohnyMcreed | github.com/johnymcreed/stylus-theme
+**/
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+:root
+{
+	/* Background Elements */
+	--ng-background: var(--background); 
+	--ng-card-background: var(--card-background);
+	
+	/* Font Color */
+	--ng-link-color: var(--link-color);
+	
+	/* Fonts */
+	--ng-default-font: 'Source Sans Pro', sans-serif; /* Overrides Default ECHO Font */
+	--ng-fab-font: "Font Awesome 5 Brands";
+	--ng-far-font: "Font Awesome 5 Pro";
+}
+
+/** Primary Elements */
+html, body
+{
+	background: var(--ng-background) !important;
+}
+
+/* Font Layout Change */
+body, div, span
+{	
+	/* Font Layout */
+	font-weight: lighter !important;
+	font-language-override: "ENG" !important;
+	font-feature-settings: normal !important;
+	font-family: var(--ng-default-font) !important;
+}
