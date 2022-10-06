@@ -435,15 +435,22 @@ mat-divider
 }
 .ng-star-inserted lib-html-editor .fr-element #isPasted:before /* Inserts a text to warn the user that ECHO detected this paste */
 {
-	content:"This wlll be detected by Teachers for Plagiarism/Copying :: ";
-	color: #af3737 !important;
+	content:"This wlll be detected by Teachers for Plagiarism/Copying \a";
+	color: #bf2626 !important;
+	
 	font-size: 10px;
+	text-decoration: none !important;
 	font-style: italic;
+	padding-bottom: 4px;
+	
+	font-weight: 400px;
+	white-space: pre !important;
 } 
+
 .ng-star-inserted lib-html-editor .fr-element #isPasted /* Detects if what you type is pasted (helps stop teachers from detecting this) */
 {
-	background: #e2d02852 !important;
-	padding: 1px !important;
+	background: #fdbf1652 !important;
+	padding: 2px !important;
 }
 .ng-star-inserted .activity-html lib-managed-html .content *
 {
