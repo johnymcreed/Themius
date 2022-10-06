@@ -433,24 +433,28 @@ mat-divider
 	width: 100% !important;
 	height: auto !important;
 }
-.ng-star-inserted lib-html-editor .fr-element #isPasted:before /* Inserts a text to warn the user that ECHO detected this paste */
+.ng-star-inserted lib-html-editor .fr-element #isPasted:hover:before /* Inserts a text to warn the user that ECHO detected this paste */
 {
-	content:"This wlll be detected by Teachers for Plagiarism/Copying \a";
-	color: #bf2626 !important;
+	content:"Paste is Detected → ";
+	color: #646464d9 !important;
 	
-	font-size: 10px;
 	text-decoration: none !important;
-	font-style: italic;
-	padding-bottom: 4px;
-	
+		
 	font-weight: 400px;
 	white-space: pre !important;
 } 
-
 .ng-star-inserted lib-html-editor .fr-element #isPasted /* Detects if what you type is pasted (helps stop teachers from detecting this) */
 {
 	background: #fdbf1652 !important;
-	padding: 2px !important;
+	padding: 3px !important;
+	font-size: 13px !important;
+	text-decoration: none !important;
+}
+.ng-star-inserted lib-html-editor .fr-element #isPasted span, /* Pain */
+.ng-star-inserted lib-html-editor .fr-element #isPasted a,
+.ng-star-inserted lib-html-editor .fr-element #isPasted p
+{
+	background: none !important;
 }
 .ng-star-inserted .activity-html lib-managed-html .content *
 {
