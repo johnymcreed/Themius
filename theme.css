@@ -497,6 +497,11 @@ mat-tree mat-tree-node[aria-expanded="true"] a div /* Hint to a open folder */
 	font-weight: bolder;
 	background: #72727291;
 	border-radius: 4px;
+	color: var(--ng-white) !important;
+}
+mat-tree mat-tree-node[aria-expanded="false"] a div /* If not expanded follow color rule */
+{
+	color: var(--foreground-text) !important;
 }
 
 /** Paste Detection System */
