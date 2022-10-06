@@ -469,7 +469,7 @@ mat-tree mat-tree-node[aria-expanded="true"] a div /* Hint to a open folder */
 	border-radius: 4px;
 }
 
-/** Paste Dedection System */
+/** Paste Detection System */
 .ng-star-inserted lib-html-editor .fr-element #isPasted:before /* Inserts a text to warn the user that ECHO detected this paste */
 {
 	content:"★ ";
