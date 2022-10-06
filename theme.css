@@ -37,6 +37,10 @@
 	--ng-grey: #808080;
 	--ng-bg-grey: #424242;
 	--ng-liniar-grey: #5c5c5c;
+	
+	/* Links */
+	--ng-link-color: #336fff;
+	--ng-link-color-hover: #588aff;
 }
 
 /** App Elements */
@@ -417,7 +421,7 @@ mat-divider
 .ng-star-inserted .fr-view a *,
 .ng-star-inserted a
 {
-	color: #9b9b9b !important;
+	color: var(--ng-link-color) !important;
 	text-decoration: none !important;
 }
 .ng-star-inserted .fr-view table a:hover *,
@@ -425,7 +429,7 @@ mat-divider
 .ng-star-inserted .fr-view a:hover *,
 .ng-star-inserted a:hover
 {
-	color: var(--ng-white) !important;
+	color: var(--ng-link-color-hover) !important;
 }
 .no-agenda /* No-Agenda Popup Change */
 {
@@ -444,8 +448,19 @@ mat-divider
 .ng-star-inserted .comments-ct .fr-element *, /* Form Field Fix */
 .ng-star-inserted .fr-element *
 {
-	color: var(--ng-bg-grey) !important;
+	color: var(--ng-bg-grey);
 	background: var(--ng-white) !important;
+}
+.ng-star-inserted .comments-ct .fr-element a,
+.ng-star-inserted .fr-element a
+{
+	color: var(--ng-link-color) !important;
+}
+.ng-star-inserted .comments-ct .fr-element a:hover,
+.ng-star-inserted .fr-element a:hover
+{
+	color: var(--ng-link-color-hover) !important;
+	cursor: pointer;
 }
 .ng-star-inserted .card-ct .submission
 {
