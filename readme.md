@@ -1,8 +1,4 @@
 ### Installing this stylus theme for <b> ECHO </b>
-<br>
-MAKE SURE YOU HAVE YOUR THEME SET TO DARK MODE AND COLOR PALETTE SET TO GREY!!!!
-
-....
 To install this theme please search stylus in the Google web store like below <br>
 <img src="/images/search.png" width="200vh">
 <br>
