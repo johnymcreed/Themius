@@ -414,6 +414,7 @@ mat-divider
 }
 .ng-star-inserted .fr-view table a *,
 .ng-star-inserted .fr-view table a,
+.ng-star-inserted .fr-view a *,
 .ng-star-inserted a
 {
 	color: #9b9b9b !important;
@@ -421,6 +422,7 @@ mat-divider
 }
 .ng-star-inserted .fr-view table a:hover *,
 .ng-star-inserted .fr-view table a:hover,
+.ng-star-inserted .fr-view a:hover *,
 .ng-star-inserted a:hover
 {
 	color: var(--ng-white) !important;
