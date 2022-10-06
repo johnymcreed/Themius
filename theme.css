@@ -53,7 +53,7 @@
 /** App Elements */
 html
 {
-	background: var(--ng-bg-grey) !important;
+	background: var(--background) !important;
 }
 
 
@@ -396,6 +396,11 @@ mat-divider
 	list-style: none !important;
 	padding-left: 5px;
 }
+.ng-star-inserted lib-rubric-details .fr-view *,
+.ng-star-inserted lib-rubric-grader .fr-view *
+{
+	background: transparent !important;
+}
 .ng-star-inserted .fr-view table,
 .ng-star-inserted .fr-view table thead,
 .ng-star-inserted .fr-view table thead tr,
@@ -544,8 +549,6 @@ mat-tree mat-tree-node[aria-expanded="false"] a div /* If not expanded follow co
 }
 
 
-
-
 /** Anounncement Page */
 app-announcement-detail.ng-star-inserted /* NG-App Announcements */
 {
@@ -557,8 +560,6 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 }
 
 
-
-
 /** Form Field */
 .ng-star-inserted .search-bar
 {
@@ -566,14 +567,11 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 }
 
 
-
-
 /** Translation Popups */
 .translation 
 {
 	display: none !important;
 }
-
 
 
 /** Skip Nav Popup */
