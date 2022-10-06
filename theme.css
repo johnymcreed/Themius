@@ -37,17 +37,29 @@
 	--ng-grey: #808080;
 	--ng-bg-grey: #424242;
 	--ng-liniar-grey: #5c5c5c;
+	--ng-tree-node-bg: #72727291;
 	
 	/* Links */
 	--ng-link-color: #336fff;
 	--ng-link-color-hover: #588aff;
+	
+	/* Fonts */
+	--default-font: Arial, Helvetica, sans-serif;
+	--fab-font: "Font Awesome 5 Brands";
+	--far-font: "Font Awesome 5 Pro";
 }
+
+
+
 
 /** App Elements */
 html
 {
 	background: var(--ng-bg-grey) !important;
 }
+
+
+
 
 /** Primary Elements */
 html,
@@ -67,18 +79,21 @@ b
 	color: var(--foreground-text) !important;
 	font-weight: lighter !important;
 	font-language-override: normal !important;
-	font-family: Arial, Helvetica, sans-serif !important;
+	font-family: var(--default-font) !important;
 }
 .ng-star-inserted .fab
 {
-	font-family: "Font Awesome 5 Brands" !important;
+	font-family: var(--fab-font) !important;
     font-weight: 400 !important;
 }
 .ng-star-inserted .far
 {
-    font-family: "Font Awesome 5 Pro" !important;
+    font-family: var(--far-font) !important;
     font-weight: 400 !important;
 }
+
+
+
 
 /** Webkit Scrollbar Element */
 ::-webkit-scrollbar 
@@ -105,11 +120,17 @@ b
     background:#666;
 }
 
+
+
+
 /** App Loader Circles */
 .app-loading circle
 {
 	fill: var(--ng-grey);
 }
+
+
+
 
 /** Keyframe Rainbow Effect */
 @-webkit-keyframes rainbow 
@@ -136,6 +157,9 @@ b
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
 }
+
+
+
 
 /** Login Page */
 .ng-star-inserted .logo-ct 
@@ -194,6 +218,9 @@ b
 	font-family: Arial, Helvetica, sans-serif !important;
 }
 
+
+
+
 /** Sidebar */
 .ng-star-inserted .mat-drawer-backdrop /* Sidebar Background */
 {
@@ -235,6 +262,9 @@ mat-divider
 {
 	display: none !important;
 }
+
+
+
 
 /** Tab Header */
 .ng-star-inserted .mat-tab-group .mat-tab-header /* Header Background */
@@ -284,6 +314,9 @@ mat-divider
 	background: transparent !important;
 }
 
+
+
+
 /** Course Page (Courses Only) */
 .ng-star-inserted .home-ct /* Course Background */
 {
@@ -319,6 +352,9 @@ mat-divider
 	display: none !important;
 }
 
+
+
+
 /** TO-DO Page */
 .ng-star-inserted app-student-to-do .mat-card
 {
@@ -329,6 +365,9 @@ mat-divider
 {
 	padding: 24px 16px 0px;
 }
+
+
+
 
 /** Activity Stream */
 .ng-star-inserted app-student-stream .mat-card
@@ -341,12 +380,18 @@ mat-divider
 	padding: 24px 16px 0px;
 }
 
+
+
+
 /** Theme Page */
 .ng-star-inserted app-choose-theme div .mat-card
 {
 	max-width: 100% !important;
 	height: auto !important;
 }
+
+
+
 
 /** Inside Course Page */
 .ng-star-inserted .color-band /* Color band */
@@ -473,6 +518,9 @@ mat-divider
 	font-size: 18px !important;
 }
 
+
+
+
 /** Grading Toolbar */
 .ng-star-inserted .links-ct .links .intro
 {
@@ -495,7 +543,7 @@ mat-divider
 mat-tree mat-tree-node[aria-expanded="true"] a div /* Hint to a open folder */
 {
 	font-weight: bolder;
-	background: #72727291;
+	background: var(--ng-tree-node-bg);
 	border-radius: 4px;
 	color: var(--ng-white) !important;
 }
@@ -503,6 +551,9 @@ mat-tree mat-tree-node[aria-expanded="false"] a div /* If not expanded follow co
 {
 	color: var(--foreground-text) !important;
 }
+
+
+
 
 /** Paste Detection System */
 .ng-star-inserted lib-html-editor .fr-element #isPasted:before /* Inserts a text to warn the user that ECHO detected this paste */
@@ -535,18 +586,23 @@ mat-tree mat-tree-node[aria-expanded="false"] a div /* If not expanded follow co
 	background: none !important;
 }
 
+
+
+
 /** Grading Page */
 .ng-star-inserted .data-row .data-cell .rubric-row .table .rubric-header * /* Global Rubric Header */
 {
 	color: var(--ng-grey) !important;
 }
-
 .ng-star-inserted .data-row .data-cell .rubric-row .table .selected .rubric-rule-description * /* Global Selected Row */
 {
 	width: 100%;
 	height: 100%;
 	background: #455A64 !important;
 }
+
+
+
 
 /** Anounncement Page */
 app-announcement-detail.ng-star-inserted /* NG-App Announcements */
@@ -558,17 +614,25 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 	color: var(--ng-white) !important;
 }
 
+
+
+
 /** Form Field */
 .ng-star-inserted .search-bar
 {
 	margin: 0px !important;
 }
 
+
+
+
 /** Translation Popups */
 .translation 
 {
 	display: none !important;
 }
+
+
 
 /** Skip Nav Popup */
 .skip-nav
