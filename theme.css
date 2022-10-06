@@ -568,9 +568,12 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 
 
 /** Translation Popups */
-.translation 
+.translation,
+snack-bar-container,
+.ng-star-inserted .mat-snack-bar-container
 {
 	display: none !important;
+	background: transparent !important;
 }
 
 
