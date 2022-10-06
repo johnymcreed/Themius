@@ -389,11 +389,11 @@ mat-divider
 {
 	display: none !important;
 }
-.ng-star-inserted .fr-view * /* Agend Form View */
+.ng-star-inserted .fr-view * /* Agenda Form View */
 {
 	background: var(--card-background) !important;
 	list-style: none !important;
-	/*padding-left: 5px;*/
+	padding-left: 5px;
 }
 .ng-star-inserted .fr-view table,
 .ng-star-inserted .fr-view table thead,
@@ -411,6 +411,19 @@ mat-divider
     margin-right: auto;
 	
 	width: 100% !important;
+}
+.ng-star-inserted .fr-view table a *,
+.ng-star-inserted .fr-view table a,
+.ng-star-inserted a
+{
+	color: #9b9b9b !important;
+	text-decoration: none !important;
+}
+.ng-star-inserted .fr-view table a:hover *,
+.ng-star-inserted .fr-view table a:hover,
+.ng-star-inserted a:hover
+{
+	color: var(--ng-white) !important;
 }
 .no-agenda /* No-Agenda Popup Change */
 {
