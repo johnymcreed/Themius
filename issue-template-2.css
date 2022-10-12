@@ -23,7 +23,7 @@
 	--ng-far-font: "Font Awesome 5 Pro";
 	
 	/* Non-Overrided Colors */
-	--ng-linear-gradient: #235a7c 0%, #7d7dff 52%, #4de1ff 100%;
+	--ng-linear-gradient: #235a7c 0%, #5c5ca3 52%, #367683 100%;
 	--ng-white: white;
 	--ng-black: black;
 	
@@ -82,7 +82,10 @@ body, div, span
 .ng-star-inserted .side-menu-logo-ct,
 .ng-star-inserted .mat-divider-horizontal,
 .ng-star-inserted mat-divider,
-.ng-star-inserted .user-menu-button mat-icon
+.ng-star-inserted .user-menu-button mat-icon,
+.ng-star-inserted .header-buttons,
+.ng-star-inserted .detail-ct,
+.ng-star-inserted .toolbar .user-menu-button
 {
 	display: var(--ng-visually-removed) !important;
 }
@@ -98,6 +101,10 @@ body, div, span
 .ng-star-inserted .main-toolbar .mat-form-field .mat-input-element
 {
 	box-shadow: none !important;
+	background: transparent !important;
+}
+.ng-star-inserted .toolbar
+{
 	background: transparent !important;
 }
 
