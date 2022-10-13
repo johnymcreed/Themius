@@ -194,6 +194,13 @@ snack-bar-container,
   	animation: RGB--TRANSITION var(--ng-rgb-fit) ease infinite;
 }
 
+/** Page (Theme) */
+.ng-star-inserted app-choose-theme div .mat-card
+{
+	max-width: 100% !important;
+	height: auto !important;
+}
+
 /** Page (Courses) */
 .ng-star-inserted .home-ct /* Coruse Selection Grid */
 {
