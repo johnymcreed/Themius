@@ -79,6 +79,13 @@ body, div, span
 	fill: var(--ng-grey);
 }
 
+/* Selection/Highlighting */
+::selection 
+{
+	background: var(--background) !important;
+	color: var(--foreground-text) !important;
+}
+
 /* Webkit Userintegrated Scrollbar */
 ::-webkit-scrollbar{width: 4px;height: auto;}
 ::-webkit-scrollbar-track{background: transparent;}
@@ -121,6 +128,7 @@ snack-bar-container,
 {
 	background: transparent !important;
 	box-shadow: none !important;
+	color: var(--foreground-text) !important;
 }
 .ng-star-inserted .main-toolbar .mat-form-field .mat-input-element
 {
@@ -254,7 +262,6 @@ app-announcement-detail.ng-star-inserted /* NG-App Announcements */
 }
 app-announcement-detail.ng-star-inserted lib-managed-html *
 {
-	color: var(--ng-white) !important;
 	background: transparent !important;
 }
 
@@ -274,7 +281,7 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 	list-style: none !important;
 	margin: auto !important;
 	width: 100% !important;
-	color: var(--ng-white) !important;
+	color: var(--foreground-text) !important;
 }
 .ng-star-inserted lib-rubric-details .fr-view *,
 .ng-star-inserted lib-rubric-grader .fr-view *
@@ -305,6 +312,10 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 }
 
 /** Activity Grading Bar */
+.ng-star-inserted .links
+{
+	background: var(--background) !important;
+}
 .ng-star-inserted .toolbar-grade .s-status-feedback /* Feedback icon */
 {
 	padding: 10px !important;
@@ -324,7 +335,7 @@ mat-tree mat-tree-node[aria-expanded="false"] a div /* If not expanded follow co
 /** Grading Page */
 .ng-star-inserted .data-row .data-cell .rubric-row .table .rubric-header * /* Global Rubric Header */
 {
-	color: var(--ng-grey) !important;
+	color: var(--foreground-text) !important;
 }
 .ng-star-inserted .data-row .data-cell .rubric-row .table .selected .rubric-rule-description * /* Global Selected Row */
 {
