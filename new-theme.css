@@ -118,7 +118,9 @@ body, div, span
 snack-bar-container,
 .ng-star-inserted .mat-snack-bar-container,
 .skip-nav,
-.ng-star-inserted .home-ct .course-card .mat-card-image
+.ng-star-inserted .home-ct .course-card .mat-card-image,
+.ng-star-inserted .student-objective-summary,
+.ng-star-inserted .course-objectives-info 
 {
 	display: var(--ng-visually-removed) !important;
 }
