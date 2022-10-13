@@ -255,6 +255,12 @@ snack-bar-container,
 	padding: 24px 16px 0px;
 }
 
+/** Page (Calendar) */
+.ng-star-inserted app-calendar
+{
+	background: var(--background) !important;
+}
+
 /** Anounncement Page */
 app-announcement-detail.ng-star-inserted /* NG-App Announcements */
 {
