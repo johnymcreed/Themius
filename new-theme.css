@@ -73,6 +73,12 @@ body, div, span
   	animation: RGB--TRANSITION var(--ng-rgb-fit) ease infinite;
 }
 
+/* App Loaderv */
+.app-loading circle
+{
+	fill: var(--ng-grey);
+}
+
 /* Webkit Userintegrated Scrollbar */
 ::-webkit-scrollbar{width: 4px;height: auto;}
 ::-webkit-scrollbar-track{background: transparent;}
@@ -104,7 +110,8 @@ body, div, span
 .translation,
 snack-bar-container,
 .ng-star-inserted .mat-snack-bar-container,
-.skip-nav
+.skip-nav,
+.ng-star-inserted .home-ct .course-card .mat-card-image
 {
 	display: var(--ng-visually-removed) !important;
 }
@@ -208,8 +215,7 @@ snack-bar-container,
 	height: auto !important;	
 	overflow: auto !important;
 }
-.ng-star-inserted .home-ct .course-card,
-.ng-star-inserted .home-ct .course-card .mat-card-image
+.ng-star-inserted .home-ct .course-card
 {
 	border-radius: 0px !important;
 	height: auto !important;
@@ -244,11 +250,12 @@ snack-bar-container,
 /** Anounncement Page */
 app-announcement-detail.ng-star-inserted /* NG-App Announcements */
 {
-	background: var(--ng-bg-grey) !important;
+	background: var(--background) !important;
 }
 app-announcement-detail.ng-star-inserted lib-managed-html *
 {
 	color: var(--ng-white) !important;
+	background: transparent !important;
 }
 
 /** Activity Course Box */
