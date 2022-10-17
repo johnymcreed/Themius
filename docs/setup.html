@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+        <title> Themius </title>
+    
+        <link rel="icon" href="img/logo.png">
+
+        <link rel="stylesheet" href="css/extra.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="js/extra.js"></script>
+
+        <nav class="navbar navbar-expand-lg bg-primary-alt">
+            <div class="container-fluid more-centered">
+                <button class="navbar-toggler navbar-tog-alt" type="button" data-bs-toggle="collapse" data-bs-target="#Expanded">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <span class="navbar-brand">
+                    <img src="img/logo.png" width="26" height="26" class="d-inline-block" style="border-radius: 3px;">
+                    &ensp; <span class="more-bold"> Themius Docs </span>
+                    &ensp; <span class="more-bold" aria-hidden="v1.7">v1.7</span>
+                </span>
+
+                <div class="more-right collapse navbar-collapse">                        
+                    <div>
+                        <i class="fa-solid fa-circle-half-stroke text-white" title="Switch to dark or light mode" style="font-size: 35px; cursor: pointer;" onclick="dtl()"></i>
+                    </div>
+                    
+                    <div style="width: 2vh;"></div>
+                    
+                    <div>   
+                        <a class="nav-link" href="https://github.com/johnymcreed/Themius" title="View this repository">
+                            <i class="fa-brands fa-github text-white" style="font-size: 35px;"></i> 
+                            <div style="margin-top: -1rem !important; display: inline-block !important; vertical-align: middle;">
+                                <span class="text-white"> Github </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!----->
+                <div style="height: 2vh;"></div>
+                <!----->    
+
+                <div class="collapse navbar-collapse" id="Expanded">
+                    <div class="navbar-nav" style="font-size: 16px !important;">
+                        <a class="nav-link text-white" style="padding-left: 0px !important;" href="index.html">About</a>
+                        <b><a class="nav-link text-white" href="setup.html">Setup</a></b>
+                        <a class="nav-link text-white" href="customizing.html">Customization</a>
+                        <a class="nav-link text-white" href="backends.html">Backends</a>
+                    </div>
+                </div>  
+            </div>
+        </nav>
+    </head>
+
+    <body class="bg-dark-alt" onload="Yeartime(); Apply()">
+        <main class="grid-layout grid-start">
+            <div style="width: 16rem; position: sticky;">
+                Contents <br>
+                <ul>
+                    <li><a href="#installing-extension">Installing Extension</a></li>
+                    <li><a href="#preparing-stylus">Preparing Stylus</a></li>
+                    <li><a href="#adding-themius">Adding Themius</a></li>
+                </ul>
+            </div>
+
+            <!----->
+            <div style="width: 2.5rem;"></div>
+            <!----->
+
+            <div style="width: 70rem;">
+                <h1 id="installing-extension" style="color: grey; padding-bottom: 2rem;">
+                    Installing Extension
+                    <a class="header-link" href="#installing-extension" title="share to others">#</a>
+                </h1>
+                <p>
+                    <b>Stylus</b> is a common Google extension created to edit website pages live without much hassle, it is a predecesor of <b>Stylish</b>
+                    without the premium requirement of stylish.
+                </p>
+                <p>
+                    To install Stylus you must head to the <a href="https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne">Google Store</a> and
+                    install it with the permissions required, if you do not trust this extension please do not continue this installmentation of it.                
+                </p>
+                <p>
+                    <img class="allow-zoom" src="img/examples/extension.page.png" width="60%">
+                </p>
+                <p>
+                    Click <b>Add to Chrome</b> or whatever browser you are using and allow it to install. Once it is done it will be ready to add code to any website
+                    your heart desires it to.
+                </p>
+
+                <h1 id="preparing-stylus" style="color: grey; padding-bottom: 2rem; padding-top: 2rem;">
+                    Preparing Stylus
+                    <a class="header-link" href="#frequently-asked-questions" title="share to others">#</a>
+                </h1>
+                <p>
+                    Getting Stylus to work with ECHO is so simple, this is the shortest part of this entire docs page but basically go to
+                    the extension via the extension page or icon of your browser like shown here
+                    <img class="allow-zoom" src="img/examples/extensions.page.png" width="15px"> 
+                    then go to <b>Stylus</b> and click <b>Manage</b>
+                </p>
+
+                <h1 id="adding-themius" style="color: grey; padding-bottom: 2rem; padding-top: 2rem;">
+                    Adding Themius
+                    <a class="header-link" href="#adding-themius" title="share to others">#</a>
+                </h1>
+                <p>
+                    To apply Themius to Stylus go to (Assuming you followed the above steps) <b>Write a new Style</b>, then 
+                    enter a new name something like <b>My Echo redesign</b> and save using <b>ctrl + s</b>. 
+                </p>
+                <p> 
+                    Then go down to the bottom where it says <b>Everything +</b> like shown 
+                    <img class="allow-zoom" src="img/examples/everything.page.png">
+                    then click the plus icon to add a new domain, and then use the dropdown to click <b>URLS Starting With</b> 
+                    and add the Echo App link then save.
+                </p>
+                <p>
+                    Then finally add the code below to the <b>Code 1</b> box and save.
+                </p>
+                <p>
+                    <textarea id="log" rows="4" cols="50"></textarea> <br>
+                    <a class="btn bg-dark-alt default-btn" role="button" onclick="copyText()">Copy All</a>
+                </p>
+            </div>
+        </main>
+    </body>
+
+    <footer class="bg-dark" style="position: static; left: 0px; right: 0px; bottom: 0px;">
+        <div class="grid-layout grid-start" style="color: #dadada;">
+            <div style="width: 80rem; position: sticky; margin-top: 1rem;">
+                <p>Copyright &copy; 2019-<span id="year"></span> Themius</p>
+                <p>
+                    Themius is not sponsored, endorsed, licensed by, or affiliated with New Tech Network, Inc <br>
+                    Website Design based off <a href="https://docs.mastercomfig.com/latest/">Master comfig</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <a id="back-to-top" class="btn bg-dark-alt back-to-top" role="button">Back to top</a>
+</html>
