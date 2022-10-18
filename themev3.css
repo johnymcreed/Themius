@@ -37,6 +37,7 @@
 	--ng-grey: #3e3e3e;
 	--ng-tree-node-bg: #727272b0;
 	--ng-paste-color: #6c6c6d;
+	--ng-fr-view-bg: transparent; /* Unless givin the !important role this will not override the colors for agenda */
 	
 	/* Visuals */
 	--ng-visually-removed: none;
@@ -325,7 +326,7 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 }
 .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a) /* Agenda Form View */
 {
-	background: transparent !important;
+	background: var(--ng-fr-view-bg);
 	list-style: none !important;
 	margin: auto !important;
 	width: 100% !important;
