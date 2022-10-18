@@ -35,9 +35,8 @@
 	--ng-white: white;
 	--ng-black: black;
 	--ng-grey: #3e3e3e;
-	--ng-tree-node-bg: #727272b0;
+	--ng-tree-node-bg: #505050b0;
 	--ng-paste-color: #6c6c6d;
-	--ng-fr-view-bg: transparent; /* Unless givin the !important role this will not override the colors for agenda */
 	
 	/* Visuals */
 	--ng-visually-removed: none;
@@ -97,6 +96,14 @@ body, div, span
 	/* why do you make this a different color to the theme bruh */
 	background: var(--primary-default) !important;
 	color: var(--ng-white) !important; 
+	border-radius: 20px !important;
+	padding: 0px !important;
+}
+
+/* Ink Bar under Tabs */
+.ng-star-inserted .mat-ink-bar
+{ 
+	display: none !important;
 }
 
 /* App Loaderv */
@@ -166,6 +173,7 @@ snack-bar-container,
 .ng-star-inserted .toolbar
 {
 	background: transparent !important;
+	background-color: transparent !important;
 }
 
 /** Tabbar Header */
@@ -262,13 +270,11 @@ snack-bar-container,
 }
 .ng-star-inserted .mat-tab-label-content
 {
-	width: 100% !important;
 	height: auto;
 	font-weight: bolder !important;
-	color: var(--ng-white) !important; /*background won't apply to color*/
-	background: var(--ng-tree-node-bg) !important;
-	border-radius: 5px !important;
-	padding: 5px;
+	color: var(--foreground-text) !important; /*background won't apply to color*/
+	border-radius: 2px !important;
+	padding: 6px;
 }
 
 /** Page (TODO) */
@@ -326,16 +332,21 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 }
 .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a) /* Agenda Form View */
 {
-	background: var(--ng-fr-view-bg);
-	list-style: none !important;
 	margin: auto !important;
-	color: var(--foreground-text) !important;
+	color: var(--foreground-text);
+	list-style: none !important;
+}
+.ng-star-inserted .mat-card lib-managed-html .fr-view a *
+{
+	text-decoration: none !important;
 }
 .ng-star-inserted .fr-view table
 {
 	width: 100% !important;
 }
-.ng-star-inserted .fr-view ol /* how is this even possible? */
+.ng-star-inserted .fr-view ol,
+.ng-star-inserted .fr-view ul,
+.ng-star-inserted .fr-view li
 {
 	padding: 0px;
 }
@@ -390,7 +401,7 @@ mat-tree mat-tree-node[aria-expanded="true"] a div /* Hint to a open folder */
 {
 	font-weight: bolder;
 	background: var(--ng-tree-node-bg);
-	border-radius: 4px;
+	border-radius: 2px;
 	color: var(--ng-white) !important; /*background won't apply to color*/
 }
 mat-tree mat-tree-node[aria-expanded="false"] a div /* If not expanded follow color rule */
