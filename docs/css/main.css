@@ -402,14 +402,16 @@ footer
 }
 
 /* Media Min Content */
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 560px) 
+{
     nav li .nav-link 
     {
         font-size: 12px;
     }
 }
 
-@media screen and (max-width: 1130px) {
+@media screen and (max-width: 1130px) 
+{
     sidebar
     {
         display: none;
@@ -422,5 +424,23 @@ footer
         right: 9.8%;
         bottom: 32%;
         top: 2%;
+    }
+}
+
+@media (max-height: 1080px) 
+{
+    content
+    {
+        position: absolute;
+        bottom: 38%;
+    }
+}
+
+@media (max-height: 740px) 
+{
+    content
+    {
+        position: absolute;
+        bottom: 45%;
     }
 }
