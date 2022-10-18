@@ -331,6 +331,10 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 	margin: auto !important;
 	color: var(--foreground-text) !important;
 }
+.ng-star-inserted .fr-view table
+{
+	width: 100% !important;
+}
 .ng-star-inserted lib-rubric-details .fr-view *,
 .ng-star-inserted lib-rubric-grader .fr-view *
 {
