@@ -329,7 +329,6 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 	background: var(--ng-fr-view-bg);
 	list-style: none !important;
 	margin: auto !important;
-	width: 100% !important;
 	color: var(--foreground-text) !important;
 }
 .ng-star-inserted lib-rubric-details .fr-view *,
