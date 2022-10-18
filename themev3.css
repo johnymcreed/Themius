@@ -335,6 +335,10 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 {
 	width: 100% !important;
 }
+.ng-star-inserted .fr-view ol /* how is this even possible? */
+{
+	padding: 0px;
+}
 .ng-star-inserted lib-rubric-details .fr-view *,
 .ng-star-inserted lib-rubric-grader .fr-view *
 {
