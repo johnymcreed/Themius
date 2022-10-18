@@ -1,14 +1,3 @@
-// Determine if someone is zooming past 100%
-function IsUserZooming()
-{
-    window.addEventListener('resize', () => {
-        const browserZoomLevel = Math.round(window.devicePixelRatio * 100);
-        
-        if (browserZoomLevel > 200 || browserZoomLevel < 200)
-            return true;
-    });
-}
-
 // Get the current year
 function Currentyear()
 {
@@ -50,7 +39,8 @@ $(document).ready(function()
 });
 
 // function for dark or light mode
-const setTheme = () => {
+const setTheme = () => 
+{
   const currentTheme = localStorage.getItem('theme');
   
   // Default to light theme
@@ -107,27 +97,31 @@ $(document).ready(function() {
 });
 
 // Get code and add it to text box
-var storedText;
-fetch('https://raw.githubusercontent.com/johnymcreed/Themius/Default/themev3.css')
-  .then(function(response) 
-  {
-    response.text().then(function(text) {
-      storedText = text;
-      Apply();
+function SendRawContent()
+{
+  var storedText;
+  fetch('https://raw.githubusercontent.com/johnymcreed/Themius/Default/themius.v3.css')
+    .then(function(response) 
+    {
+      response.text().then(function(text) {
+        storedText = text;
+        Apply();
+      });
     });
-  });
 
-function Apply() 
-{
-  document.getElementById('log').textContent = storedText;
-}
+  function Apply() 
+  {
+    document.getElementById('log').textContent = storedText;
+  }
 
-function copyText() 
-{
-  var copyText = document.getElementById("log");
-  
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
-  
-  document.execCommand("copy");
+  // Function to copy text from an id box
+  function copyText() 
+  {
+    var copyText = document.getElementById("log");
+    
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    
+    document.execCommand("copy");
+  }
 }
