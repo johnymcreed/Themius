@@ -369,7 +369,7 @@ function fXMLReadData (file, Element, Direct)
 
     if (Element == '[feed="about"]')
         Res = 'about.txt';
-    else if (Element == '["setup"]')
+    else if (Element == '[feed="setup"]')
         Res = 'setup.txt';
     else if (Element == '[feed="custom"]')
         Res = 'custom.txt'
