@@ -321,7 +321,7 @@ function fSnowBoard()
         this.excludeMobile = !0;
         this.flakeBottom = null;
         this.followMouse = 0;
-        this.snowColor = "#b8b8b8"; // automatic
+        this.snowColor = ""; // automatic
         this.snowCharacter = "&bull;";
         this.snowStick = !0;
         this.targetElement = null;
