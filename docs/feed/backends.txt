@@ -55,8 +55,8 @@
 </p>
 <p>&ensp;</p>
 
-<header type="45">IsPasted</header>
+<header type="45">isPasted</header>
 <p>
-    <code>IsPasted</code> is a paste detection system created within <code>comments-ct</code> and <code>fr-element</code> that gives a div element an id
+    <code>isPasted</code> is a paste detection system created within <code>comments-ct</code> and <code>fr-element</code> that gives a div element an id
     <code>#IsPasted</code> that teachers can see when submitted even if edited after being pasted.
 </p>
