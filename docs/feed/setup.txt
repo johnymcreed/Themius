@@ -1,0 +1,45 @@
+<header type="45">Installing Extension</header>
+<p>
+    <b>Stylus</b> is a common Google extension created to edit website pages live without much hassle, it is a predecesor of <b>Stylish</b>
+    without the premium requirement of stylish.
+</p>
+<p>
+    To install Stylus you must head to the <a href="https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne">Google Store</a> and
+    install it with the permissions required, if you do not trust this extension please do not continue this installmentation of it.
+</p>
+<p>
+    <img class="allow-zoom" src="img/examples/extension.page.png" width="97.5%" height="700rem">
+</p>
+<p>
+    Click <b>Add to Chrome</b> or whatever browser you are using and allow it to install. Once it is done it will be ready to add code to any website
+    your heart desires it to.
+</p>
+<p>&ensp;</p>
+
+<header type="45">Preparing Stylus</header>
+<p>
+    Getting Stylus to work with ECHO is so simple, this is the shortest part of this entire docs page but basically go to
+    the extension via the extension page or icon of your browser
+    then go to <b>Stylus</b> and click <b>Manage</b>
+</p>
+<p>&ensp;</p>
+
+<header type="45">Adding Themius</header>
+<p>
+    To apply Themius to Stylus go to (Assuming you followed the above steps) <b>Write a new Style</b>, then
+    enter a new name something like <b>My Echo redesign</b> and save using <b>ctrl + s</b>.
+</p>
+<p>
+    Then go down to the bottom where it says <b>Everything +</b>
+    then click the plus icon to add a new domain, and then use the dropdown to click <b>URLS Starting With</b>
+    and add the Echo App link then save.
+</p>
+<p>
+    Then finally add the code below to the <b>Code 1</b> box and save.
+</p>
+<p>
+    <textarea id="log" rows="4" cols="50"></textarea>
+<p>
+</p>
+    <a id="copyall" class="content-default-btn" role="button">Copy All</a>
+</p>
