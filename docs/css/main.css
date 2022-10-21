@@ -39,6 +39,7 @@ body
     cursor: url('../img/cursor.cur'), auto;
 
     z-index: 0;
+    transition: 0.2s;
 }
 
 /* Scrollbar */
@@ -178,6 +179,7 @@ nav
     
     z-index: 4;
     position: relative;
+    transition: 0.2s;
 }
 nav .to-right
 {
@@ -200,19 +202,13 @@ nav .to-right a
 }
 nav .to-left
 {
-    position:relative;
-    float: left;
-
     border: var(--border-color);
-
     vertical-align: middle;
-
     font-size: 30px;
-
     user-select: none;
     -moz-user-select: none;
-
-    visibility: hidden;
+    height: 10px;
+    display: none;
 }
 nav .to-left a
 {
@@ -285,9 +281,9 @@ nav .drawer
 nav .drawer .close
 {
     position: absolute;
-    top: 0;
-    right: 10px;
-    font-size: 30px;
+    top: 10px;
+    right: 15px;
+    font-size: 35px;
     margin-left: 50px;
     color: white;
 }
@@ -309,6 +305,40 @@ nav .drawer .drawer-list a
 {
     color: white;
 }
+nav .drawer .side-logo
+{
+    position: absolute;
+    left: 5%;
+    top: 1%;
+
+    font-size: 30px;
+    font-weight: bolder;
+}
+nav .drawer .side-elements
+{
+    position: absolute;
+    left: 53%;
+    top: 1.4%;
+
+    font-size: 30px;
+}
+nav .drawer .side-elements a
+{
+    color: white;
+}
+nav #outer-bounds
+{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    transition: 0.3s;
+    background: rgba(61, 61, 61, 0.575);
+    opacity: .20;
+    display: none;
+}
 
 /* <main> Grid Format */
 main 
@@ -324,6 +354,7 @@ main
 
     min-height: 100%;
     position: relative;
+    transition: 0.2s;
 }
 
 /* <sidebar> Grid Format */
@@ -370,7 +401,6 @@ content
     max-height: 100%;
     
     white-space: no-wrap;
-    
     z-index: 2;
 }
 
@@ -390,6 +420,7 @@ footer
     left: 0;
     right: 0;
     bottom: -5px; 
+    transition: 0.2s;
 }
 
 /* Tool Tip */
@@ -402,7 +433,8 @@ footer
 
     text-align: left;
 
-    max-width: 10%;
+    max-width: fit-content;
+
     vertical-align: middle;
     align-content: center;
     text-align: center;
@@ -419,6 +451,7 @@ footer
     transition:
         opacity 0.5s,
         visiblity 0s;
+    transition: 0.2s;
 }
 [tip]:hover .tooltip 
 {
@@ -494,7 +527,7 @@ ol.linenums
     }
     nav .to-left
     {
-        visibility: visible;
+        display: block;
     }
 }
 @media screen and (max-width: 1130px) 

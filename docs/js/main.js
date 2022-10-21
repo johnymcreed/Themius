@@ -49,21 +49,34 @@ function fPrintConsole (Dialog, Color, Text)
     Color = "white"; // Default
 
   console.log("%c" + Dialog + "", "color: " + Color + "; font-family: Arial; font-size: 11px; padding: 3px; background: black; border: 1px solid black; border-radius: 4px;", Text);
-    }
+}
 
 // Forces navbar to turn into a sidebar
 function fNavbarSidebar()
 { 
     const open = document.querySelector('#open-drawer')
     const close = document.querySelector('#close-drawer')
+    const outsideclose = document.querySelector('#outer-bounds')
 
+    // Open sidebar
     open.addEventListener('click', () => 
     { 
         document.getElementById("sidedrawer").style.width = "250px";
+        document.getElementById("outer-bounds").style.display = "block"
     });
 
-    close.addEventListener('click', () => {
+    // Close sidebar
+    close.addEventListener('click', () => 
+    {
         document.getElementById("sidedrawer").style.width = "0px";
+        document.getElementById("outer-bounds").style.display = "none"
+    });
+
+    // Acts like a outer bounds to close the menu if clicked outside the space
+    outsideclose.addEventListener('click', () => 
+    {
+        document.getElementById("sidedrawer").style.width = "0px";
+        document.getElementById("outer-bounds").style.display = "none"
     });
 }
 
@@ -97,7 +110,13 @@ function fApplyElement (Type, Element, Content)
 function fContentReaderHeight ()
 {
     $(window).resize(function() {
-        $('content').height($(window).height() - 340);
+        
+        if ($(window).width() < 739) 
+            $('content').height($(window).height() - $('footer').height() * 1.9);
+        else if ($(window).width() < 690)
+            $('content').height($(window).height() - $('footer').height() * 2);
+        else
+            $('content').height($(window).height() - $('footer').height() * 2.5); // Op?
     });
     
     $(window).trigger('resize');
@@ -109,6 +128,7 @@ function AppTheme ()
 {
     const currentTheme = localStorage.getItem('theme');
     const Toggle = document.querySelector('#theme-toggle');
+    const Toggle_alt = document.querySelector('#theme-toggle-side');
 
     // Theme Change
     var apptheme = document.querySelector(':root');
@@ -167,6 +187,44 @@ function AppTheme ()
         1000)
     });
 
+    // Omg javascript
+    Toggle_alt.addEventListener('click', () => 
+    {  
+        const { theme } = document.body.dataset;
+        const themeTo = theme === 'light' ? 'dark' : 'light';
+    
+        document.body.dataset.theme = themeTo; // Applys theme (data-theme="")
+        localStorage.setItem('theme', themeTo);
+        
+        if (document.body.dataset.theme == 'light')
+        {
+            apptheme.style.setProperty('--app-background', 'white');
+            apptheme.style.setProperty('--app-background-darker', 'rgba(238, 238, 238, 0.918)');
+            apptheme.style.setProperty('--foreground-text', 'black');
+            
+            $("#theme-toggle-side .tooltip").html("Switch to dark mode");
+            $('#theme-toggle-side').css('color', 'white');
+        }
+        
+        if (document.body.dataset.theme == 'dark')
+        {
+            apptheme.style.setProperty('--app-background', 'rgb(67, 60, 70)');
+            apptheme.style.setProperty('--app-background-darker', 'rgb(60, 50, 65)');
+            apptheme.style.setProperty('--foreground-text', 'white');
+            
+            $("#theme-toggle-side .tooltip").html("Switch to light mode");
+            $('#theme-toggle-side').css('color', 'rgb(67, 60, 70)');
+        }
+
+        // Transition between changes
+        document.body.classList.add('transition');
+        setTimeout(() => 
+        {
+            document.body.classList.remove('transition');
+        }, 
+        1000)
+    });
+
     // Listen for change after the theme as been used
     if (document.body.dataset.theme == 'light' || !currentTheme)
     {
@@ -179,6 +237,7 @@ function AppTheme ()
 
         // Set Icon Color
         $('#theme-toggle').css('color', 'white');
+        $('#theme-toggle-side').css('color', 'white');
     }
 
     if (document.body.dataset.theme == 'dark')
@@ -192,6 +251,7 @@ function AppTheme ()
         
         // Set Icon Color
         $('#theme-toggle').css('color', 'rgb(77, 77, 77)');
+        $('#theme-toggle-side').css('color', 'rgb(77, 77, 77)');
     }
 }
 
@@ -218,6 +278,8 @@ function fToolTip ()
             tip.style.left = e.clientX + 'px'
             tip.style.top = e.clientY + 'px';
         };
+
+        $('.tooltip').width($(window).width());
     });
 }
 
