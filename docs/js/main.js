@@ -9,6 +9,8 @@ function init ()
     {
         AppTheme();
 
+
+
         // Support for different content on updates
         fXMLReadData('feed/about.txt', '[feed="about"]', 'about');
         fXMLReadData('feed/setup.txt', '[feed="setup"]', 'setup');
@@ -36,6 +38,7 @@ function init ()
         setTimeout(() => {  
             fRetrieveData('log', 'https://raw.githubusercontent.com/johnymcreed/Themius/Default/themius.v3.css');
             fCopyallData('#copyall', 'log');
+            fAddFeedList();
         }, 100);
     });
 
@@ -49,6 +52,19 @@ function fPrintConsole (Dialog, Color, Text)
     Color = "white"; // Default
 
   console.log("%c" + Dialog + "", "color: " + Color + "; font-family: Arial; font-size: 11px; padding: 3px; background: black; border: 1px solid black; border-radius: 4px;", Text);
+}
+
+// Adds <header> with type=45 to the feed-list area
+function fAddFeedList()
+{
+    let el = document.querySelector('content').querySelector('article').querySelectorAll('header')
+    el.forEach(list)
+
+    function list(name)
+    {
+        if (name.getAttribute('type') == 45) // Primary Headers
+            $('#feed-list').append('<li><span>' + name.innerHTML + "</span></li>")
+    }
 }
 
 // Forces navbar to turn into a sidebar
