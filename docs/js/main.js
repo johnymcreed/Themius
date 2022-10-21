@@ -137,6 +137,7 @@ function AppTheme ()
 
     // tooltip
     var tool = document.getElementById("theme-toggle")
+    var tool_alt = document.getElementById("theme-goggle-side") // Alt
     
     document.body.dataset.theme = currentTheme;
 
@@ -236,6 +237,7 @@ function AppTheme ()
 
         // Tooltip Change
         tool.setAttribute("tip", "Switch to dark mode")
+        tool_alt.setAttribute("tip", "Switch to dark mode")
 
         // Set Icon Color
         $('#theme-toggle').css('color', 'white');
@@ -250,6 +252,7 @@ function AppTheme ()
 
         // Tooltip change
         tool.setAttribute("tip", "Switch to light mode")
+        tool_alt.setAttribute("tip", "Switch to light mode")
         
         // Set Icon Color
         $('#theme-toggle').css('color', 'rgb(77, 77, 77)');
