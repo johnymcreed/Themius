@@ -22,6 +22,10 @@ function init ()
             fToolTip();
             fBacktoTop();
             fContentHider();
+
+            // Phones are very long so scrolled content doesn't need
+            // a back to top btn
+            $('#to-top').css('display', 'none');
         }
 
         fNavbarSidebar();
@@ -111,8 +115,10 @@ function fContentReaderHeight ()
 {
     $(window).resize(function() {
         
-        if ($(window).width() < 739) 
-            $('content').height($(window).height() - $('footer').height() * 1.9);
+        if ($(window).width() > 740) 
+            $('content').height($(window).height() - $('footer').height() * 2.5);
+        else if ($(window).width() < 700)
+            $('content').height($(window).height() - $('footer').height() * 2);
         else if ($(window).width() < 690)
             $('content').height($(window).height() - $('footer').height() * 2);
         else
