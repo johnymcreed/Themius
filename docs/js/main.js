@@ -137,7 +137,7 @@ function AppTheme ()
 
     // tooltip
     var tool = document.getElementById("theme-toggle")
-    var tool_alt = document.getElementById("theme-goggle-side") // Alt
+    var tool_alt = document.getElementById("theme-toggle-side") // Alt
     
     document.body.dataset.theme = currentTheme;
 
