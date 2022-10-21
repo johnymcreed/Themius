@@ -20,14 +20,10 @@ function init ()
         if (!fIsPhone()) // If Phone don't do these
         {
             fToolTip();
-            fBacktoTop();
             fContentHider();
-
-            // Phones are very long so scrolled content doesn't need
-            // a back to top btn
-            $('#to-top').css('display', 'none');
         }
 
+        fBacktoTop();
         fNavbarSidebar();
         fContentReaderHeight();
         fSnowBoard();
