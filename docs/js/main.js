@@ -10,6 +10,14 @@ function init ()
         AppTheme();
         fApplyElement('ID', 'year', new Date().getFullYear());
 
+        var script = document.createElement("script");
+        script.src = 'js/code.js';
+        var scriptr = document.createElement("script");
+        scriptr.src = 'js/markdown.js'
+        scriptr.type = "module"
+        document.head.appendChild(script);
+        document.head.appendChild(scriptr);
+        
         // Support for different content on updates
         fXMLReadData('feed/about.md', '[feed="about"]', 'about');
         fXMLReadData('feed/setup.md', '[feed="setup"]', 'setup');
@@ -27,14 +35,6 @@ function init ()
         fNavbarSidebar();
         fContentReaderHeight();
         fSnowBoard();
-
-        var script = document.createElement("script");
-        script.src = 'js/code.js';
-        var scriptr = document.createElement("script");
-        scriptr.src = 'js/markdown.js'
-        scriptr.type = "module"
-        document.head.appendChild(script);
-        document.head.appendChild(scriptr);
 
         // Content loads too fast for this to register
         setTimeout(() => {   
