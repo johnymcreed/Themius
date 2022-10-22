@@ -4,20 +4,20 @@
 // Load all required to load functions
 function init ()
 {
+    var script = document.createElement("script");
+    script.src = 'js/code.js';
+    var scriptr = document.createElement("script");
+    scriptr.src = 'js/markdown.js'
+    scriptr.type = "module"
+    document.head.appendChild(script);
+    document.head.appendChild(scriptr);
+    
     // Await the DOM loading
     document.addEventListener("DOMContentLoaded", function(event) 
     {
         AppTheme();
         fApplyElement('ID', 'year', new Date().getFullYear());
 
-        var script = document.createElement("script");
-        script.src = 'js/code.js';
-        var scriptr = document.createElement("script");
-        scriptr.src = 'js/markdown.js'
-        scriptr.type = "module"
-        document.head.appendChild(script);
-        document.head.appendChild(scriptr);
-        
         // Support for different content on updates
         fXMLReadData('feed/about.md', '[feed="about"]', 'about');
         fXMLReadData('feed/setup.md', '[feed="setup"]', 'setup');
