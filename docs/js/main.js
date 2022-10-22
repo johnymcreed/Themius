@@ -9,7 +9,13 @@ function init ()
     {
         AppTheme();
         fApplyElement('ID', 'year', new Date().getFullYear());
-     
+
+        // Support for different content on updates
+        fXMLReadData('feed/about.md', '[feed="about"]', 'about');
+        fXMLReadData('feed/setup.md', '[feed="setup"]', 'setup');
+        fXMLReadData('feed/custom.md', '[feed="custom"]', 'custom');
+        fXMLReadData('feed/backends.md', '[feed="backends"]', 'backends');
+        
         if (!fIsPhone()) // If Phone don't do these
         {
             fToolTip();
@@ -31,13 +37,7 @@ function init ()
         document.head.appendChild(scriptr);
 
         // Content loads too fast for this to register
-        setTimeout(() => {  
-            // Support for different content on updates
-            fXMLReadData('feed/about.md', '[feed="about"]', 'about');
-            fXMLReadData('feed/setup.md', '[feed="setup"]', 'setup');
-            fXMLReadData('feed/custom.md', '[feed="custom"]', 'custom');
-            fXMLReadData('feed/backends.md', '[feed="backends"]', 'backends');
-            
+        setTimeout(() => {   
             fRetrieveData('log', 'https://raw.githubusercontent.com/johnymcreed/Themius/Default/themius.v3.css');
             fCopyallData('#copyall', 'log');
             fAddFeedList();
