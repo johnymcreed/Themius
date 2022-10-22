@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Themius Docs - About </title>
+        <link rel="icon" href="img/logo.png">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+
+        <meta property="og:title" content="Themius Docs - About" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="johnymcreed.github.io/Themius/" />
+        <meta property="og:description" content="A stylus theme with the goal to make a website better than it already is">
+        <meta property="og:site_name" content="themius">
+
+        <nav>
+            <div id="outer-bounds"></div>
+            <div id="sidedrawer" class="drawer">
+                <a class="close" id="close-drawer"><i class="fa-solid fa-xmark"></i></a>
+                <ul class="drawer-list">
+                    <li><a class="" href="index">About</a></li>
+                    <li><a class="" href="setup">Setup</a></li>
+                    <li><a class="" href="custom">Customization</a></li>
+                    <li><a class="" href="backends">Backends</a></li>
+                </ul>
+                <div class="side-logo">
+                    Themius
+                </div>
+                <div class="side-elements">
+                    <a id="theme-toggle-side" tip="" role="checkbox"><i class="fa-solid fa-circle-half-stroke"></i></a>
+                    <a tip="Visit the github repository of this project" href="https://github.com/johnymcreed/Themius" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="container">
+                <div class="to-left">
+                    <a id="open-drawer"><i class="fa-solid fa-bars"></i></a>
+                </div>
+                <div class="logo"> 
+                    <img src="img/logo.png" width="21">
+                    <span class="title">Themius Docs</span>
+                    <span>v3</span>
+                </div>
+                <div class="to-right"> 
+                    <a tip="Visit the github repository of this project" href="https://github.com/johnymcreed/Themius" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                </div>
+                &ensp;
+                <div class="to-right"> 
+                    <a id="theme-toggle" tip="" role="checkbox"><i class="fa-solid fa-circle-half-stroke"></i></a>
+                </div>
+                <ul>
+                    <li><a class="nav-link active" href="index">About</a></li>
+                    <li><a class="nav-link" href="setup">Setup</a></li>
+                    <li><a class="nav-link" href="custom">Customization</a></li>
+                    <li><a class="nav-link" href="backends">Backends</a></li>
+                </ul>
+            </div>
+        </nav>
+    </head>
+    <body>
+        <main>
+            <sidebar>
+                <h3>Content of page</h3>
+                <ul id="feed-list">
+                </ul>
+            </sidebar>
+            <content>
+                <a id="edit-page" tip="Edit this page on github" class="content-edit-page-btn" role="button" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-pencil"></i></a>
+                <article>
+                    <md-ssc feed="about">
+                    </md-ssc>
+                </article>
+                <a id="to-top" class="content-to-top-btn" role="button"><i class="fa-solid fa-angle-up"></i></a>
+            </content>
+        </main>
+        <footer>
+            <div class="container">
+                <p>Copyright &copy; 2019-<span id="year"></span> Themius</p>
+                <p>
+                    Themius is not sponsored, endorsed, licensed by or affiliated with New Tech Network, Inc <br>
+                    Website Design based off <a href="https://docs.mastercomfig.com/latest/" target="_blank" rel="noopener noreferrer">Master comfig</a>
+                </p>
+            </div>
+        </footer>
+        <ul class="copy-menu">
+            <li class="copy">Copy <reason>CTRL + C</reason></li>
+            <li class="reload">Reload <reason>CTRL + R</reason></li>
+            <li class="foward">Foward</li>
+            <li class="back">Back</li>
+            <hr class="seperator">
+            <li class="fullscreen">Fullscreen <reason>F11</reason></li>
+            <hr class="seperator"> 
+            <li tip="Reveals the grid layout of the website" class="gridlayout">Reveal Grid</li>
+            <li tip="Removes the revealed grid layout" class="gridoff">Remove Grid</li>
+            <span class="footer">
+                Context Menu by <b>Themius</b>
+            </span>
+        </ul>
+    </body>
+
+    <noscript>
+        <modal>
+            <div class="centered">
+                Please enable javascript. <br>
+                <hr style="opacity: .10;padding: 0px;height: 0px;align-self: center;width: 99%;">
+                This website completely runs off of javascript to run several parts of elements like our navbar, markdown reader,
+                app-theme, and much more.
+            </div>
+        </div>
+        <style>
+            nav, footer, sidebar, main, ul
+            { 
+                display: none !important;
+            }
+        </style>
+    </noscript>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+</html>
