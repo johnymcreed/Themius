@@ -18,11 +18,13 @@ function init ()
         AppTheme();
         fApplyElement('ID', 'year', new Date().getFullYear());
 
-        // Support for different content on updates
-        fXMLReadData('feed/about.md', '[feed="about"]', 'about');
-        fXMLReadData('feed/setup.md', '[feed="setup"]', 'setup');
-        fXMLReadData('feed/custom.md', '[feed="custom"]', 'custom');
-        fXMLReadData('feed/backends.md', '[feed="backends"]', 'backends');
+        setTimeout(() => {
+            // Support for different content on updates
+            fXMLReadData('feed/about.md', '[feed="about"]', 'about');
+            fXMLReadData('feed/setup.md', '[feed="setup"]', 'setup');
+            fXMLReadData('feed/custom.md', '[feed="custom"]', 'custom');
+            fXMLReadData('feed/backends.md', '[feed="backends"]', 'backends');
+        }, 10);
         
         if (!fIsPhone()) // If Phone don't do these
         {
