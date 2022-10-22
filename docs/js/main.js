@@ -4,28 +4,16 @@
 // Load all required to load functions
 function init ()
 {
-    var script = document.createElement("script");
-    script.src = 'js/code.js';
-    var scriptr = document.createElement("script");
-    scriptr.src = 'js/markdown.js'
-    scriptr.type = "module"
-    document.head.appendChild(script);
-    document.head.appendChild(scriptr);
-    
     // Await the DOM loading
     document.addEventListener("DOMContentLoaded", function(event) 
     {
         AppTheme();
-        fApplyElement('ID', 'year', new Date().getFullYear());
 
-        setTimeout(() => {
-            // Support for different content on updates
-            fXMLReadData('feed/about.md', '[feed="about"]', 'about');
-            fXMLReadData('feed/setup.md', '[feed="setup"]', 'setup');
-            fXMLReadData('feed/custom.md', '[feed="custom"]', 'custom');
-            fXMLReadData('feed/backends.md', '[feed="backends"]', 'backends');
-        }, 10);
-        
+        // Support for different content on updates
+        fXMLReadData());
+
+        fApplyElement('ID', 'year', new Date().getFullYear());
+     
         if (!fIsPhone()) // If Phone don't do these
         {
             fToolTip();
@@ -38,8 +26,16 @@ function init ()
         fContentReaderHeight();
         fSnowBoard();
 
+        var script = document.createElement("script");
+        script.src = 'js/code.js';
+        var scriptr = document.createElement("script");
+        scriptr.src = 'js/markdown.js'
+        scriptr.type = "module"
+        document.head.appendChild(script);
+        document.head.appendChild(scriptr);
+
         // Content loads too fast for this to register
-        setTimeout(() => {   
+        setTimeout(() => {  
             fRetrieveData('log', 'https://raw.githubusercontent.com/johnymcreed/Themius/Default/themius.v3.css');
             fCopyallData('#copyall', 'log');
             fAddFeedList();
@@ -435,44 +431,52 @@ function fContentHider ()
 
 // New Property Function that outputs data from a file
 // So a folder can be made for all the documentation
-function fXMLReadData (file, Element, Direct)
+function fXMLReadData (file)
 {
-    var Res = '';
+    let el = document.querySelector('article').querySelector('md-ssc')
+    var result = null;
+    var result_raw = null;
 
-    let link = document.querySelector('article').querySelector('md-ssc');
-    if (link) 
+    if (el.getAttribute('feed') == 'about')
     {
-        let target = link.getAttribute('feed');
-        if (target != Direct)
-        {
-            fPrintConsole('Error', 'red', 'The feed element "' + Direct + '" does not exist on this page')
-            return;
-        }
+        result = 'about.md';
+        result_raw = 'about'
     }
+    
+    if (el.getAttribute('feed') == 'setup')
+    {
+        result = 'setup.md';
+        result_raw = 'setup'
+    }
+    
+    if (el.getAttribute('feed') == 'custom')
+    {
+        result = 'custom.md'
+        result_raw = 'custom'
+    
+    }
+    
+    if (el.getAttribute('feed') == 'backends')
+    {
+        result = 'backends.md'
+        result_raw = 'backends'
+    }
+
+    if (el.getAttribute('feed') != result_raw)
+        return;
 
     fetch(file)
     .then(response => response.text())
-    .then(text => $(Element).html(text))
-
-    if (Element == '[feed="about"]')
-        Res = 'about.md';
-    else if (Element == '[feed="setup"]')
-        Res = 'setup.md';
-    else if (Element == '[feed="custom"]')
-        Res = 'custom.md'
-    else if (Element == '[feed="backends"]')
-        Res = 'backends.md'
-    else
-        Res = null;
+    .then(text => $('[feed="' + result_raw + '"]').html(text))
 
     // Then use xml data to edit this stuff via github
     var a = document.getElementById('edit-page');
-    a.href = "https://github.com/johnymcreed/Themius/edit/Default/docs/feed/" + Res;
+    a.href = "https://github.com/johnymcreed/Themius/edit/Default/docs/feed/" + result;
 
     if (a.href != null)
         fPrintConsole('Success', 'green', 'Successfully added the href link to the edit page button');
 
-    fPrintConsole('Success', 'green', 'Successfully added content from "' + Element + '" to the article page');
+    fPrintConsole('Success', "green", "Successfully added content to the feed " + el.getAttribute('feed') + " from " + file)
 }
 
 function fSnowBoard ()
