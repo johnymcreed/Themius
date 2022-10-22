@@ -454,13 +454,13 @@ function fXMLReadData (file, Element, Direct)
     .then(text => $(Element).html(text))
 
     if (Element == '[feed="about"]')
-        Res = 'about.txt';
+        Res = 'about.md';
     else if (Element == '[feed="setup"]')
-        Res = 'setup.txt';
+        Res = 'setup.md';
     else if (Element == '[feed="custom"]')
-        Res = 'custom.txt'
+        Res = 'custom.md'
     else if (Element == '[feed="backends"]')
-        Res = 'backends.txt'
+        Res = 'backends.md'
     else
         Res = null;
 
