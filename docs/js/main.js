@@ -4,16 +4,21 @@
 // Load all required to load functions
 function init ()
 {
+    var script = document.createElement("script");
+    script.src = 'js/code.js';
+    var scriptr = document.createElement("script");
+    scriptr.src = 'js/markdown.js'
+    scriptr.type = 'module'
+
     // Await the DOM loading
     document.addEventListener("DOMContentLoaded", function(event) 
     {
         AppTheme();
-
-        // Support for different content on updates
-        fXMLReadData());
-
         fApplyElement('ID', 'year', new Date().getFullYear());
      
+        document.head.appendChild(script);
+        document.head.appendChild(scriptr);
+
         if (!fIsPhone()) // If Phone don't do these
         {
             fToolTip();
@@ -26,13 +31,7 @@ function init ()
         fContentReaderHeight();
         fSnowBoard();
 
-        var script = document.createElement("script");
-        script.src = 'js/code.js';
-        var scriptr = document.createElement("script");
-        scriptr.src = 'js/markdown.js'
-        scriptr.type = "module"
-        document.head.appendChild(script);
-        document.head.appendChild(scriptr);
+        fXMLReadData();
 
         // Content loads too fast for this to register
         setTimeout(() => {  
@@ -431,33 +430,37 @@ function fContentHider ()
 
 // New Property Function that outputs data from a file
 // So a folder can be made for all the documentation
-function fXMLReadData (file)
+function fXMLReadData ()
 {
     let el = document.querySelector('article').querySelector('md-ssc')
     var result = null;
     var result_raw = null;
+    var link = null;
 
     if (el.getAttribute('feed') == 'about')
     {
+        link = 'feed/about.md'
         result = 'about.md';
         result_raw = 'about'
     }
     
     if (el.getAttribute('feed') == 'setup')
     {
+        link = 'feed/setup.md'
         result = 'setup.md';
         result_raw = 'setup'
     }
     
     if (el.getAttribute('feed') == 'custom')
     {
+        link = 'feed/custom.md'
         result = 'custom.md'
         result_raw = 'custom'
-    
     }
     
     if (el.getAttribute('feed') == 'backends')
     {
+        link = 'feed/backends.md'
         result = 'backends.md'
         result_raw = 'backends'
     }
@@ -465,7 +468,7 @@ function fXMLReadData (file)
     if (el.getAttribute('feed') != result_raw)
         return;
 
-    fetch(file)
+    fetch(link)
     .then(response => response.text())
     .then(text => $('[feed="' + result_raw + '"]').html(text))
 
@@ -476,7 +479,7 @@ function fXMLReadData (file)
     if (a.href != null)
         fPrintConsole('Success', 'green', 'Successfully added the href link to the edit page button');
 
-    fPrintConsole('Success', "green", "Successfully added content to the feed " + el.getAttribute('feed') + " from " + file)
+    fPrintConsole('Success', "green", "Successfully added content to the feed " + el.getAttribute('feed') + " from " + link)
 }
 
 function fSnowBoard ()
