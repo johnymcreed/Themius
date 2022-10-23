@@ -4,20 +4,15 @@
 // Load all required to load functions
 function init ()
 {
-    var script = document.createElement("script");
-    script.src = 'js/code.js';
-    var scriptr = document.createElement("script");
-    scriptr.src = 'js/markdown.js'
-    scriptr.type = 'module'
-
     // Await the DOM loading
     document.addEventListener("DOMContentLoaded", function(event) 
     {
         AppTheme();
         fApplyElement('ID', 'year', new Date().getFullYear());
-     
+
+        var script = document.createElement("script");
+        script.src = 'js/code.js';
         document.head.appendChild(script);
-        document.head.appendChild(scriptr);
 
         if (!fIsPhone()) // If Phone don't do these
         {
@@ -30,7 +25,6 @@ function init ()
         fNavbarSidebar();
         fContentReaderHeight();
         fSnowBoard();
-
         fXMLReadData();
 
         // Content loads too fast for this to register
@@ -57,9 +51,8 @@ function fPrintConsole (Dialog, Color, Text)
 // f this ^ we are using markdown babya!!!
 function fAddFeedList()
 {
-    let el = document.querySelector('content').querySelector('article').querySelector('md-ssc').querySelectorAll('h1')
+    let el = document.body.querySelector('content').querySelector('article').querySelectorAll('h1')
     el.forEach(list)
-
     function list(name)
     {
         $('#feed-list').append('<li><span>' + name.innerHTML + "</span></li>")
@@ -432,10 +425,12 @@ function fContentHider ()
 // So a folder can be made for all the documentation
 function fXMLReadData ()
 {
-    let el = document.querySelector('article').querySelector('md-ssc')
+    let el = document.querySelector('article')
     var result = null;
     var result_raw = null;
     var link = null;
+
+    var converter = new showdown.Converter();
 
     if (el.getAttribute('feed') == 'about')
     {
@@ -470,7 +465,7 @@ function fXMLReadData ()
 
     fetch(link)
     .then(response => response.text())
-    .then(text => $('[feed="' + result_raw + '"]').html(text))
+    .then(text => $('[feed="' + result_raw + '"]').html(converter.makeHtml(text)))
 
     // Then use xml data to edit this stuff via github
     var a = document.getElementById('edit-page');
