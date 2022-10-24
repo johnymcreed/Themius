@@ -32,7 +32,7 @@ function init ()
             fRetrieveData('log', 'https://raw.githubusercontent.com/johnymcreed/Themius/Default/themius.v3.css');
             fCopyallData('#copyall', 'log');
             fAddFeedList();
-        }, 100);
+        }, 120);
     });
 
     fPrintConsole('Success', 'green', 'All functions loaded')
