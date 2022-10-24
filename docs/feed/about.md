@@ -10,7 +10,6 @@ We make sure Themius is always updated with Echo and are always at it with new a
 do work on, on a day to day basis.
 
 <br>
-<br>
 
 # Frequently Asked Questions
 This sections goal is to answer most of the questions we receive about Themius most asked questions.
