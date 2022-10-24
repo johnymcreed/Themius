@@ -438,22 +438,19 @@ function fXMLReadData ()
         result = 'about.md';
         result_raw = 'about'
     }
-    
-    if (el.getAttribute('feed') == 'setup')
+    else if (el.getAttribute('feed') == 'setup')
     {
         link = 'feed/setup.md'
         result = 'setup.md';
         result_raw = 'setup'
     }
-    
-    if (el.getAttribute('feed') == 'custom')
+    else if (el.getAttribute('feed') == 'custom')
     {
         link = 'feed/custom.md'
         result = 'custom.md'
         result_raw = 'custom'
     }
-    
-    if (el.getAttribute('feed') == 'backends')
+    else if (el.getAttribute('feed') == 'backends')
     {
         link = 'feed/backends.md'
         result = 'backends.md'
