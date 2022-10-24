@@ -18,7 +18,6 @@ the extension via the extension page or icon of your browser
 then go to **Stylus** and click **Manage**
 
 <br>
-<br>
 
 # Adding Themius
 To apply Themius to Stylus go to (Assuming you followed the above steps) **Write a new Style**, then
