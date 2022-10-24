@@ -8,11 +8,11 @@
     --app-background-darker: rgb(60, 50, 65);
     --foreground-text: white;
 
+    /* Colors */
     --bg-dark: rgb(67, 60, 70);
     --bg-light: rgba(238, 238, 238, 0.808);
     --bg-dark-alt: rgb(53, 53, 53);
     --bg-purple: rgb(131, 76, 132);
-
     --color-grey: rgb(122, 122, 122);
     --color-pink: rgb(217, 95, 228);
     --color-pink-darker: rgb(163, 74, 171);
@@ -85,6 +85,7 @@ body
 }
 .content-to-top-btn 
 {
+    border: var(--border-color);
     border-radius: 0px !important;
     
     padding: 10px;
@@ -100,6 +101,7 @@ body
 }
 .content-edit-page-btn
 {
+    border: var(--border-color);
     border-radius: 0px !important;
     background: transparent !important;
     
@@ -507,6 +509,8 @@ footer
 /* Tool Tip */
 [tip] .tooltip 
 {
+    border: var(--border-color);
+    
     position: fixed;
     font-size: 12px;
     line-height: 20px;
