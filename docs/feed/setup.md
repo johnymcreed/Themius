@@ -32,4 +32,5 @@ Then finally add the code below to the **Code 1** box and save.
 
 <!-- External Use -->
 <textarea id="log" rows="4" cols="50"></textarea>
+<br>
 <a id="copyall" class="content-default-btn" role="button">Copy All</a>
