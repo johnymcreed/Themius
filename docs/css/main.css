@@ -172,13 +172,6 @@ body
     border: var(--border-color);
     padding: 6px;
     font-size: 10px;
-
-    text-align: center;
-
-    left: 0%;
-    right: 0%;
-
-    position: absolute;
 }
 
 /* Ids */
