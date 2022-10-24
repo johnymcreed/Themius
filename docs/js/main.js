@@ -821,22 +821,36 @@ function fCustomContext()
     let reload = document.querySelector('.reload');
     let foward = document.querySelector('.foward');
     let back = document.querySelector('.back');
-    
     let fullscreen = document.querySelector('.fullscreen');
-
     let gridding = document.querySelector('.gridlayout');
     let offgrid = document.querySelector('.gridoff');
     
     var apptheme = document.querySelector(':root');
     var copyText;
     
+    var gridtheme = localStorage.getItem('grid')
+
+    if (!gridtheme)
+    {
+        localStorage.setItem('grid', 'off');
+        location.reload();
+        return;
+    }
+
     gridding.addEventListener('click', () => {
+        localStorage.setItem('grid', 'on')
         apptheme.style.setProperty('--border-color', '1px solid var(--foreground-text)')
     });
 
     offgrid.addEventListener("click", () => {
+        localStorage.setItem('grid', 'off')
         apptheme.style.setProperty('--border-color', '1px solid transparent')
     });
+
+    if (localStorage.getItem('grid') == 'on')
+        apptheme.style.setProperty('--border-color', '1px solid var(--foreground-text)')
+    else
+        apptheme.style.setProperty('--border-color', '1px solid transparent')
 
     fullscreen.addEventListener('click', () => {
         var el = document.body;
@@ -873,7 +887,7 @@ function fCustomContext()
     {
         copyText = window.getSelection().toString();
     })
-    
+
     window.oncontextmenu = (e) => 
     {
         e.preventDefault();
