@@ -6,13 +6,11 @@ Unless you understand `CSS`, `HTML`, or `PHP` I would recommend not using this p
 give you any benifents.
 
 <br>
-<br>
 
 # root
 Not used for a lot other than Global css variables for the website mainly to give everything an automation with changing through themes like
 `dark-mode` or `light-mode` which both have custom variables in `:root`.
 
-<br>
 <br>
 
 # ng-star-inserted
@@ -20,13 +18,11 @@ Not used for a lot other than Global css variables for the website mainly to giv
 div elements or text elements.
 
 <br>
-<br>
 
 # app-root
 Based off `:root` but is a tag element that presents any elements in it with global effects from several classes like `app-theme`
 and `body` with there specific classings respectfully.
 
-<br>
 <br>
 
 # router-outlet
@@ -35,13 +31,11 @@ Router outlet is literally its name, it presents the outlet of the websites rout
 but i know its something like that.
 
 <br>
-<br>
 
 # app-login
 Used before the case that you are not logged in to ECHO which then provides the interface with a login screen. This is the same for any Account until they
 have logged into the website.
 
-<br>
 <br>
 
 # app-after-login
@@ -51,7 +45,6 @@ these can be the following: <br>
 &ensp; `Teacher` - Advanced access (Allows creation of work, editing, kicking of students, grading, ect) <br>
 &ensp; `Administrator` - Complete access (Allows everything)
 
-<br>
 <br>
 
 # isPasted
