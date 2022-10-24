@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+   
+    "name": "Themius Modifier",
+    "version": "1.0.0",
+    "description": "Allows full control over everything happening in echo by adding elements and changing styles to make it the best learning experience ever.",
+
+    "icons": 
+    {
+        "16": "content/logo.png",
+        "48": "content/logo.png",
+        "128": "content/logo.png"
+    },
+
+    "permissions": ["activeTab"],
+
+    "action":
+    {
+        "default_popup": "index.html",
+        "default_title": "Extension"
+    },
+
+    "content_scripts": 
+    [{
+      "css": ["main.css"],
+      "js": ["thirdparty/jquery.js", "script.js"],
+      "matches": ["https://rogershs.echo-ntn.org/*"]
+    }]
+}
