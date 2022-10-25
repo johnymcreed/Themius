@@ -12,8 +12,7 @@ function init ()
 
         var script = document.createElement("script");
         script.src = 'js/code.js';
-        document.head.appendChild(script);
-
+    
         if (!fIsPhone()) // If Phone don't do these
         {
             fToolTip();
@@ -29,8 +28,7 @@ function init ()
 
         // Content loads too fast for this to register
         setTimeout(() => {  
-            fRetrieveData('log', 'https://raw.githubusercontent.com/johnymcreed/Themius/Default/themius.v3.css');
-            fCopyallData('#copyall', 'log');
+            document.head.appendChild(script);
             fAddFeedList();
         }, 120);
     });
@@ -342,54 +340,6 @@ function fBacktoTop ()
                 return false;
             }
         );
-    });
-}
-
-// Gets the data of a website or a file
-function fRetrieveData (Element, Link)
-{
-    var stored;
-
-    fetch(Link).then(function(response) 
-    {
-        response.text().then(function(text) 
-        {
-          stored = text;
-          
-          if (document.getElementById(Element) == null)
-          {
-            fPrintConsole('Error', 'red', 'The element "' + Element + '" does not exist on this page')
-            return;
-          }
-
-          document.getElementById(Element).textContent = stored;          
-          fPrintConsole('Success', 'green', 'Retrieved "' + Link + '" and feteched all data from it')
-        });
-    });
-}
-
-// Copy all data from an element
-function fCopyallData (Button, Element)
-{
-    const btn = document.querySelector(Button);
-
-    if (btn == null)
-    {
-        fPrintConsole('Error', 'red', 'The button "' + Button + '" does not exist on this page')
-        return;
-    }
-
-    // Button Pressed Listener
-    btn.addEventListener('click', () => 
-    {  
-        var vrText = document.getElementById(Element);
-
-        vrText.select();
-        vrText.setSelectionRange(0, 99999);
-        
-        document.execCommand("copy");
-
-        fPrintConsole('Success', 'green', 'Copied text from CopyAllData(func ...)')
     });
 }
 
