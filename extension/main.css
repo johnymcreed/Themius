@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
 
-html { width: 300px; height: 435px; margin: 0px; padding: 0px; }
+html { width: 300px; height: 435px; margin: 0px; padding: 0px; border-radius: 20px;}
 
 ::selection
 {
@@ -28,6 +28,37 @@ body
     z-index:0;
     transition:0.2s;
 }
+
+#applytheme
+{
+    float: right;
+    margin-right: 3px;
+    margin-top: -1px;
+}
+
+#applytitle
+{
+    float: right;
+    font-size: 11px;
+    margin-right: 3.3rem;
+    padding: 0px;
+    width: 0px;
+    margin-top: -4px;
+}
+
+input[type="checkbox"]
+{
+  position: relative;
+  display: block;
+  padding: 0px;
+  width: 9px;
+  height: 9px;
+}
+
+input[type="checkbox"]:hover 
+{
+    cursor: url('content/hand.cur'),auto;
+}   
 
 a
 {
@@ -90,6 +121,8 @@ header .sub-title
 {
     text-align: left;
     margin-left: 5px;
+    margin-top: -1rem;
+    float: left;
 }
 
 .app    

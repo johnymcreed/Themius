@@ -2,19 +2,17 @@
 <html lang="en">
     <head>
         <title>Extension</title>
-        <link rel="icon" href="content/logo.png">
+        <link rel="icon" href="content/logos/default.png">
         <link rel="stylesheet" href="main.css">
-
-        <!-- Party -->
-        <script src="thirdparty/jquery.js"></script>
-        <script src="script.js"></script>
-
-        <!-- External -->
         <link rel="stylesheet" 
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
 
         <header>
             <span class="title">Themius Extension v1</span>
+            <div>
+                <span id="applytitle"> Enable </span>
+                <input title="Enables/Disables the themius extension for echo" type="checkbox" id="applytheme"/>
+            </div>
             <br>
             <small class="sub-title">By Johny Mcreed</small>
         </header>
@@ -40,4 +38,7 @@
             Themius is not sponsored, endorsed, licensed by or affiliated with New Tech Network, Inc.
         </footer>
     </body>
+
+    <script src="thirdparty/jquery.js"></script>
+    <script defer src="script.js"></script>
 </html>

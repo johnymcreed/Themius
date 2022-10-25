@@ -7,23 +7,23 @@
 
     "icons": 
     {
-        "16": "content/logo.png",
-        "48": "content/logo.png",
-        "128": "content/logo.png"
+        "16": "content/logos/16.png",
+        "48": "content/logos/48.png",
+        "128": "content/logos/128.png"
     },
 
-    "permissions": ["activeTab"],
+    "permissions": ["activeTab", "storage"],
 
     "action":
     {
         "default_popup": "index.html",
-        "default_title": "Extension"
+        "default_title": "Themius Modifier"
     },
 
     "content_scripts": 
     [{
-      "css": ["main.css"],
-      "js": ["thirdparty/jquery.js", "script.js"],
-      "matches": ["https://rogershs.echo-ntn.org/*"]
+        "css": ["main.css"],
+        "js": ["thirdparty/jquery.js", "script.js"],
+        "matches": ["https://rogershs.echo-ntn.org/*"]
     }]
 }
