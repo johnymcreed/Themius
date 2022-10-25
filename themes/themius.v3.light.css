@@ -1,21 +1,28 @@
-/** 
-** This is a very large redesign project by me only, which takes a lot of effort to do
-** and requires a lot of redos in the theme. "This is the 3rd redo btw"
-** so please enjoy the changes and use them in anyway you want as i made sure you could change
-** practically everything within the code from the :root part
-** JohnyMcreed | github.com/johnymcreed/stylus-theme
-**/
+/* REQUIRES LIGHT */
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
 :root
-{
+{    
 	/* Background Elements */
 	--ng-background: white; 
-	--ng-card-background: var(--card-background);
+	--ng-card-background: white;
 	
+    --foreground-text: rgba(0, 0, 0, .87);
+    --foreground-disabled-text: rgba(0, 0, 0, .38);
+    --secondary-text: rgba(0, 0, 0, .54);
+    --background: #fafafa;
+    --background-hover: #f5f5f5;
+    --background-dialog: white;
+    --divider-color: rgba(0, 0, 0, .12);
+    --card-background: white;
+    --card-layout-background: #EDEDED;
+    --pass-color: green;
+    --fail-color: #b30000;
+    --warn-color: #b30000;
+    
 	/* Link Color */
 	--ng-link-color: var(--link-color);
 	
@@ -57,7 +64,8 @@
 
 html, body
 {
-	background: var(--ng-background) !important;
+	background: white !important;
+    color: black;
 }
 
 /* Rainbow Keyframe */
@@ -109,13 +117,6 @@ body, div, span
 .app-loading circle
 {
 	fill: var(--ng-grey);
-}
-
-/* Selection/Highlighting */
-::selection 
-{
-	background: var(--background) !important;
-	color: var(--foreground-text) !important;
 }
 
 /* Webkit Userintegrated Scrollbar */
@@ -331,8 +332,6 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 }
 .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a) /* Agenda Form View */
 {
-	background: transparent !important;
-	list-style: none !important;
 	margin: auto !important;
 	color: var(--foreground-text) !important;
 }
@@ -348,12 +347,6 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 .ng-star-inserted .mat-card lib-managed-html .fr-view a *
 {
 	text-decoration: none !important;
-}
-.ng-star-inserted .fr-view ol,
-.ng-star-inserted .fr-view ul,
-.ng-star-inserted .fr-view li
-{
-	padding: 0px;
 }
 .ng-star-inserted .fr-view table,
 .ng-star-inserted .fr-view table thead,
