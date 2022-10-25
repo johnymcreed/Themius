@@ -13,7 +13,7 @@
 :root
 {
 	/* Background Elements */
-	--ng-background: var(--background); 
+	--ng-background: white; 
 	--ng-card-background: var(--card-background);
 	
 	/* Link Color */
