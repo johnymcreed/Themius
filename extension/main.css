@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+html { width: 300px; height: 450px; margin: 0px; padding: 0px; border-radius: 20px;}
+
+::selection
+{
+    background:rgb(53, 53, 53);
+    color:white;
+    font-weight:700;
+}
+
+/* Global */
+html,
+body
+{
+    scroll-behavior:smooth;
+    font-family:'Source Sans Pro',sans-serif;
+    overflow:hidden;
+
+    padding:0px;
+    margin:0;
+    min-height: 0px;
+
+    background:rgb(67, 60, 70) !important;
+    color:white !important;
+
+    cursor:url('content/cursor.cur'),auto;
+ 
+    z-index:0;
+    transition:0.2s;
+}
+
+#applytheme
+{
+    float:right;
+    margin-right:3px;
+    margin-top:.5px;
+}
+
+#themeby
+{
+    float:right;
+    font-size:9px;
+    border:0px;
+    width:6.8rem;
+    margin-top:1px;
+    margin-right:11px;
+}
+
+#themeby:focus
+{
+    border:none;
+    border-radius:0px;
+    outline:none;
+    box-shadow:none;
+}
+
+#themeby:hover
+{
+    cursor:url('content/hand.cur'),auto;
+}
+
+input[type="checkbox"]
+{
+  position:relative;
+  display:block;
+  padding:0px;
+  width:13px;
+  height:13px;
+  
+  border-radius:0px;
+  box-shadow:none;
+  outline:none;
+}
+
+input[type="checkbox"]:hover 
+{
+    cursor:url('content/hand.cur'),auto;
+}   
+
+a
+{
+    color:rgb(217, 95, 228);
+    text-decoration:none;
+}
+
+a:hover
+{
+    color:rgb(233, 130, 242);
+    cursor:url('content/hand.cur'),auto;
+}
+
+p
+{
+    font-size:13px;
+    text-align:left;
+}
+
+br
+{
+    user-select:none;
+    -moz-user-select:none;
+}
+
+b /* md uses strong so no <b> */
+{
+    color:rgb(163, 74, 171);
+    font-weight:800;
+}
+
+code
+{
+    color:rgb(163, 74, 171);
+    font-weight:200;
+    font-stretch:semi-condensed;
+}
+
+header
+{
+    padding:10px;
+    white-space:no-warp;
+
+    color:white;
+    background:rgb(131, 76, 132);
+    text-align:center;
+
+    z-index:4;
+    position:relative;
+    transition:0.2s;
+}
+
+header .title
+{
+    font-size:30px;
+    font-weight:700;
+    text-align:center;
+}
+
+header .sub-title
+{
+    text-align:left;
+    margin-left:15px;
+    margin-top:-1rem;
+    font-size:12px;
+    float:left;
+}
+
+.app    
+{
+    position:relative;
+    transition:0.2s;
+    padding:10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align:center;
+    font-size:10px;
+}
+
+footer
+{
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    color:white;
+    background:rgb(53, 53, 53);
+    white-space:no-warp;
+    text-align:center;
+    font-size:13px;
+    z-index:4;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:-5px; 
+    transition:0.2s;
+}
+
+.github 
+{
+    font-size:40px;
+    float:left;
+    width:7.5rem;
+
+    background:rgb(53, 53, 53);
+    color:white;
+}
+
+.info
+{
+    font-size:40px;
+    float:right;
+    width:7.5rem;
+    
+    background:rgb(53, 53, 53);
+    color:white;
+}
+
+.github:hover,
+.info:hover
+{
+    background:rgb(64, 64, 64);
+    color:white;
+    cursor:url('content/hand.cur'),auto;
+}
