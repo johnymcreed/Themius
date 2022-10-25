@@ -1,36 +1,11 @@
-# Installing Extension
-**Stylus** is a common Google extension created to edit website pages live without much hassle, it is a predecesor of **Stylish**
-without the premium requirement of stylish.
-
-
-To install Stylus you must head to the [Google Store](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) and
-install it with the permissions required, if you do not trust this extension please do not continue this installmentation of it.
-
-<!-- Markdown cannot edit the size L -->
-<img src="img/examples/extension.page.png" width="97.5%" height="900rem">
-
-Click **Add to Chrome** or whatever browser you are using and allow it to install. Once it is done it will be ready to add code to any website
-your heart desires it to.
-
-# Preparing Stylus
-Getting Stylus to work with ECHO is so simple, this is the shortest part of this entire docs page but basically go to
-the extension via the extension page or icon of your browser
-then go to **Stylus** and click **Manage**
+# Introduction
+Thanks to my creativity with javscript I went out of my way to make a google extension **(Not avaliable on google)** that allows for automatic updates that does not require the user to ever need to manually update it or to need to update the extension as it is in its last build for life.
 
 <br>
 
-# Adding Themius
-To apply Themius to Stylus go to (Assuming you followed the above steps) **Write a new Style**, then
-enter a new name something like **My Echo redesign** and save using **ctrl + s**.
+# Installing
+Adding **Themius Extension** to your browser is incredibly easy due to how it is added to most common browsers like **Opera**, **Chrome**, **Firefox**, ect. Firstly click <a href="https://github.com/johnymcreed/Themius/raw/Default/extension.raw.zip" download>Here</a> to download the latest version of the extension which should be **v1** unless a new one is released and extract it to a place you feel it should be.
 
+Then go to you're extension page which should be like `opera://extensions` or `chrome://extensions` to open to the extension page. Then finally click **Load Unpacked** and go to the newly extracted `extension` folder where you extracted it and select it. 
 
-Then go down to the bottom where it says **Everything +**
-then click the plus icon to add a new domain, and then use the dropdown to click **URLS Starting With**
-and add the Echo App link then save.
-
-Then finally add the code below to the **Code 1** box and save.
-
-<!-- External Use -->
-<textarea id="log" rows="4" cols="50"></textarea>
-<br>
-<a id="copyall" class="content-default-btn" role="button">Copy All</a>
+There you go, you have Themius added which should start effecting ECHO as soon as it is enabled.
