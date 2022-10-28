@@ -161,7 +161,10 @@ snack-bar-container,
 /** Tabbar Header */
 .ng-star-inserted .mat-tab-group .mat-tab-header /* Background */
 {
-	background: transparent !important;
+	background: linear-gradient(124deg, var(--ng-rgb-colors));
+	background-size: 1800% 1800%;
+	-webkit-animation: RGB--TRANSITION var(--ng-rgb-ease-fit) ease infinite;
+  	animation: RGB--TRANSITION var(--ng-rgb-fit) ease infinite;
 }
 .ng-star-inserted .user-menu-button .user-name /* Name Flex Field Fix */
 {
