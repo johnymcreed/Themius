@@ -9,20 +9,7 @@
 	/* Background Elements */
 	--ng-background: white; 
 	--ng-card-background: white;
-	
-    --foreground-text: rgba(0, 0, 0, .87);
-    --foreground-disabled-text: rgba(0, 0, 0, .38);
-    --secondary-text: rgba(0, 0, 0, .54);
-    --background: #fafafa;
-    --background-hover: #f5f5f5;
-    --background-dialog: white;
-    --divider-color: rgba(0, 0, 0, .12);
-    --card-background: white;
-    --card-layout-background: #EDEDED;
-    --pass-color: green;
-    --fail-color: #b30000;
-    --warn-color: #b30000;
-    
+
 	/* Link Color */
 	--ng-link-color: var(--link-color);
 	
@@ -32,10 +19,6 @@
 		- 'Roboto Condensed', sans-serif
 		- 'Raleway', sans-serif
 	*/
-	
-	/* unused cuz i didn't break them this time */
-	/*--ng-fab-font: "Font Awesome 5 Brands";
-	--ng-far-font: "Font Awesome 5 Pro";*/
 	
 	/* Non-Overrided Colors */
 	--ng-linear-gradient: #235a7c 0%, #5c5ca3 52%, #367683 100%;
