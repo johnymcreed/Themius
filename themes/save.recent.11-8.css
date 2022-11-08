@@ -55,6 +55,14 @@ body, html, div, span, p
   	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
 }
 
+.ng-star-inserted .mat-badge-content
+{ 
+	background: var(--primary-default) !important;
+	color: var(--ng-white) !important; 
+	border-radius: 20px !important;
+	padding: 0px !important;
+}
+
 /* Global Element Removals */
 .ng-star-inserted .logo-ct,
 .ng-star-inserted .buzz-login-page-bottom,
@@ -98,13 +106,15 @@ body.app-light-theme .ng-star-inserted .mat-expansion-panel
 }
 body.app-dark-theme .ng-star-inserted mat-sidenav,
 body.app-dark-theme .ng-star-inserted mat-card .color-band,
-body.app-dark-theme .ng-star-inserted mat-dialog-container
+body.app-dark-theme .ng-star-inserted mat-dialog-container,
+body.app-dark-theme .ng-star-inserted .mat-select-panel
 {
     background: var(--black-A200) !important;
 }
 body.app-light-theme .ng-star-inserted mat-sidenav,
 body.app-light-theme .ng-star-inserted mat-card .color-band,
-body.app-light-theme .ng-star-inserted .cdk-overlay-container mat-dialog-container
+body.app-light-theme .ng-star-inserted .cdk-overlay-container mat-dialog-container,
+body.app-light-theme .ng-star-inserted .mat-select-panel
 {
     background: var(--white-A200) !important;
 }
@@ -306,7 +316,8 @@ app-student-to-do.ng-star-inserted
 }
 app-student-courses.ng-star-inserted>.home-ct,
 app-student-stream.ng-star-inserted mat-card,
-app-student-to-do.ng-star-inserted mat-card
+app-student-to-do.ng-star-inserted mat-card,
+app-choose-theme.ng-star-inserted mat-card
 {
     width: 100%;
     max-width: 100% !important;
@@ -376,15 +387,28 @@ app-course-home.ng-star-inserted mat-card
 /**
  * Agenda Inside Course Page 
  */
-.ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a) /* Agenda Form View */
+body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a) /* Agenda Form View */
 {
 	background: transparent !important;
 	margin: auto !important;
 	color: var(--foreground-text) !important;
 }
+body.app-light-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a) /* Agenda Form View */
+{
+    margin: auto !important;
+	color: var(--foreground-text) !important;
+}
 .ng-star-inserted .fr-view table
 {
 	width: 100% !important;
+}
+.ng-star-inserted .fr-view a, 
+.ng-star-inserted .fr-view a span,
+.ng-star-inserted .fr-view a div
+{
+    color: var(--primary-default) !important;
+    text-decoration: none !important;
+    font-weight: 100;
 }
 .ng-star-inserted lib-rubric-details .fr-view *,
 .ng-star-inserted lib-rubric-grader .fr-view *
