@@ -27,11 +27,11 @@
     
     /* For overlauys and panels with fixed colors */
     --black: black;
-    --black-A200: #00000096;
+    --black-A200: #000000d4;
     --black-A700: #000000ba;
     
     --white: white;
-    --white-A200: #ffffff96;
+    --white-A200: #ffffffe0;
     --white-A700: #ffffffba;
 }
 
@@ -39,14 +39,37 @@
 
 body, html
 {
-    font-family: var(--font) !important;
     cursor: url('https://johnymcreed.github.io/Themius/img/cursor.cur'), auto !important;
+}
+
+body, html, div, span, p
+{
+    font-family: var(--font) !important;
+}
+
+.ng-star-inserted .app-background
+{
+    background: linear-gradient(124deg, var(--rgb-colors));
+	background-size: 1800% 1800%;
+    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
+  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
 }
 
 /* Global Element Removals */
 .ng-star-inserted .logo-ct,
 .ng-star-inserted .buzz-login-page-bottom,
-app-student-courses.ng-star-inserted .color-band
+app-student-courses.ng-star-inserted .color-band,
+.ng-star-inserted .side-menu-logo-ct,
+.ng-star-inserted .app-title-ct,
+#cur-proj-id,
+.projects,
+.intro,
+.dropdown-icon,
+.ng-star-inserted .user-menu-button lib-profile-picture,
+.gauge,
+.gauge-progress,
+.course-objectives-info,
+.ng-star-inserted .toolbar .user-menu-button
 {
     display: var(--remove) !important;
 }
@@ -59,13 +82,61 @@ app-student-courses.ng-star-inserted .color-band
     border-radius: 0px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.67);
 }
-body.app-dark-theme .ng-star-inserted .mat-card
+.ng-star-inserted .mat-tree
+{
+    background: transparent;
+}
+body.app-dark-theme .ng-star-inserted .mat-card,
+body.app-dark-theme .ng-star-inserted .mat-expansion-panel
 {
     background: var(--black-A700) !important;
 }
-body.app-light-theme .ng-star-inserted .mat-card
+body.app-light-theme .ng-star-inserted .mat-card,
+body.app-light-theme .ng-star-inserted .mat-expansion-panel
 {
     background: var(--white-A700) !important;
+}
+body.app-dark-theme .ng-star-inserted mat-sidenav,
+body.app-dark-theme .ng-star-inserted mat-card .color-band,
+body.app-dark-theme .ng-star-inserted mat-dialog-container
+{
+    background: var(--black-A200) !important;
+}
+body.app-light-theme .ng-star-inserted mat-sidenav,
+body.app-light-theme .ng-star-inserted mat-card .color-band,
+body.app-light-theme .ng-star-inserted .cdk-overlay-container mat-dialog-container
+{
+    background: var(--white-A200) !important;
+}
+body.app-light-theme .ng-star-inserted .main-toolbar,
+body.app-light-theme .ng-star-inserted .mat-tab-labels,
+body.app-light-theme .ng-star-inserted .mat-tab-labels .mat-tab-label,
+body.app-light-theme .ng-star-inserted .toolbar,
+body.app-light-theme .ng-star-inserted .links-ct,
+body.app-light-theme .ng-star-inserted .objective-speedometer,
+::selection
+{
+    background: var(--white) !important;
+    color: black !important;
+}
+body.app-light-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:active
+{
+    background: transparent !important;
+}
+body.app-dark-theme .ng-star-inserted .main-toolbar,
+body.app-dark-theme .ng-star-inserted .mat-tab-labels,
+body.app-dark-theme .ng-star-inserted .mat-tab-labels .mat-tab-label,
+body.app-dark-theme .ng-star-inserted .toolbar,
+body.app-dark-theme .ng-star-inserted .links-ct,
+body.app-dark-theme .ng-star-inserted .objective-speedometer,
+::selection
+{
+    background: var(--black) !important;
+    color: white !important;
+}
+body.app-dark-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:active
+{
+    background: transparent !important;
 }
 
 /**
@@ -75,8 +146,47 @@ body.app-light-theme .ng-star-inserted .mat-card
 {
     color: white !important;
 }
-
-.mat-tooltip,
+.ng-star-inserted .mat-drawer-backdrop
+{
+    background: linear-gradient(124deg, var(--rgb-ts-colors));
+	background-size: 1800% 1800%;
+    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
+  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
+    transition: 0.5s;
+}
+.ng-star-inserted .mat-drawer-content
+{
+    background: linear-gradient(124deg, var(--rgb-colors));
+	background-size: 1800% 1800%;
+    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
+  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
+}
+.ng-star-inserted .main
+{
+    background: linear-gradient(124deg, var(--rgb-colors));
+	background-size: 1800% 1800%;
+    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
+  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
+}
+.mat-divider
+{
+    background: var(--foreground-text) !important;
+    border-top-width: 1px !important;
+}
+.ng-star-inserted mat-sidenav
+{
+    padding: 10px;
+}
+.mat-list-item:hover
+{
+    transition: 0.5s;
+}
+.mat-tooltip
+{
+    background: var(--foreground-text) !important;
+    color: var(--background) !important;
+    transition: 0.5s;
+}
 .cdk-overlay-container .cdk-overlay-pane .mat-menu-panel /* Panel is fixed color */
 {
     background: var(--black-A700) !important;
@@ -87,6 +197,16 @@ body.app-light-theme .ng-star-inserted .mat-card
 {
     background: #565656b5 !important;
     transition: 0.5s;
+}
+.ng-star-inserted .user-menu-button .user-name /* Name Flex Field Fix */
+{
+	margin: -10px;
+	flex-direction: row !important;
+	column-gap: 5px !important;
+}
+.ng-star-inserted .user-menu-button
+{
+    margin-right: -2rem;
 }
 
 /**
@@ -158,6 +278,7 @@ app-login input
  * Course Page 
      - TODO
      - STREAM
+     - Announcements
  */
 app-student-courses.ng-star-inserted
 {
@@ -184,14 +305,20 @@ app-student-to-do.ng-star-inserted
     padding: 10px;
 }
 app-student-courses.ng-star-inserted>.home-ct,
-app-student-stream.ng-star-inserted lib-activity-stream mat-card,
+app-student-stream.ng-star-inserted mat-card,
 app-student-to-do.ng-star-inserted mat-card
 {
     width: 100%;
+    max-width: 100% !important;
 }
 app-student-courses.ng-star-inserted mat-card-title-group
 {
     padding-top: 1rem;
+}
+app-student-courses.ng-star-inserted mat-card
+{
+    text-transform: uppercase;
+    transition: 0.5s;
 }
 .ng-star-inserted mat-card:has(.nav-card>.date-header)
 {
@@ -200,4 +327,104 @@ app-student-courses.ng-star-inserted mat-card-title-group
 .ng-star-inserted .mat-card-image
 {
     border-radius: 0px !important;
+}
+.ng-star-inserted app-filter-box mat-form-field
+{
+    padding: 0px;
+}
+app-announcement-detail.ng-star-inserted /* NG-App Announcements */
+{
+	background: var(--background) !important;
+}
+app-announcement-detail.ng-star-inserted .details .info
+{
+    width: max-content !important;
+    background: transparent !important;
+    text-align: left;
+}
+app-announcement-detail.ng-star-inserted lib-managed-html *
+{
+	background: transparent !important;
+	color: var(--foreground-text) !important;
+}
+.ng-star-inserted .announcement-list
+{
+	background: var(--background) !important;
+}
+
+/**
+ * Course Page
+ */
+.ng-star-inserted app-course-home .card-ct
+{
+    background: linear-gradient(124deg, var(--rgb-colors));
+	background-size: 1800% 1800%;
+    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
+  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
+    padding: 10px;
+}
+app-course-home.ng-star-inserted mat-card
+{
+    width: 100%;
+    max-width: 100% !important;
+}
+.ng-star-inserted .activity-html
+{
+    text-align: left;
+}
+
+/**
+ * Agenda Inside Course Page 
+ */
+.ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a) /* Agenda Form View */
+{
+	background: transparent !important;
+	margin: auto !important;
+	color: var(--foreground-text) !important;
+}
+.ng-star-inserted .fr-view table
+{
+	width: 100% !important;
+}
+.ng-star-inserted lib-rubric-details .fr-view *,
+.ng-star-inserted lib-rubric-grader .fr-view *
+{
+	background: transparent !important;
+}
+.ng-star-inserted .fr-view table,
+.ng-star-inserted .fr-view table thead,
+.ng-star-inserted .fr-view table thead tr,
+.ng-star-inserted .fr-view table thead th,
+.ng-star-inserted .fr-view table tbody,
+.ng-star-inserted .fr-view table tbody tr,
+.ng-star-inserted .fr-view table tbody td
+{
+	border: 1px solid var(--foreground-text) !important;
+}
+.no-agenda /* No-Agenda Popup Change */
+{
+	font-size: 20px;
+	font-style: normal !important;
+	text-align: center !important;
+	padding: 10px;
+	color: var(--ng-white) !important; /*background won't apply to color*/
+}
+
+/** 
+ * Paste Detection
+ */
+.ng-star-inserted lib-html-editor .fr-element #isPasted:hover:before /* Hover the star and this showsup */
+{
+	content:"Paste is detected - ";
+	white-space: pre;
+}
+.ng-star-inserted lib-html-editor .fr-element #isPasted
+{
+	text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: red;
+    
+	padding: 3.5px !important;
+	font-size: 14px !important;
+	cursor: pointer;
 }
