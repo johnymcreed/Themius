@@ -273,6 +273,7 @@ mat-ink-bar
     padding: 100px;
     transform: translate(-50%, -50%);
     white-space: nowrap;
+    transition: 0s !important;
 }
 .course-color
 {
@@ -285,8 +286,8 @@ mat-ink-bar
  */
 app-before-login app-login mat-toolbar.main-toolbar /* Remove Login top bar */
 {
-    height: 0px !important;
-    width: 0px !important;
+    height: 0px;
+    width: 0px;
     visibility: var(--hide);
 }
 app-before-login app-login mat-toolbar form button
@@ -329,12 +330,11 @@ app-login input
     
     background: var(--black-A200) !important;
     box-shadow: none !important;
-    
-    transition: 0.5s;
-    
+        
     padding: 100px;
     transform: translate(-50%, -50%);
     white-space: nowrap;
+    transition: 0.5s;
 }
 .ng-star-inserted form.ng-dirty:before /* Title */
 {
@@ -344,6 +344,7 @@ app-login input
     width: 100%;
     top: 15%;
     font-size: 30px;
+    transition: 1s;
 }
 .ng-star-inserted form.ng-dirty:after /* Copyright */
 {
@@ -352,6 +353,7 @@ app-login input
     bottom: 15%;
     left: 15%;
     font-size: 15px;
+    transition: 1s;
 }
 
 /**
