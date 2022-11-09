@@ -598,7 +598,7 @@ app-order-courses.ng-star-inserted mat-card
 {
     /*background-image: url('https://media.tenor.com/I_i86IVRiEQAAAAM/rugocica-kickingcat.gif') !important;
     background-size: 280px 30vh !important;*/
-    border-radius: 5px !important;
+    /*border-radius: 5px !important;*/
 }
 .ng-star-inserted mat-form-field,
 .ng-star-inserted app-filter-box
