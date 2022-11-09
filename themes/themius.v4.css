@@ -92,7 +92,8 @@ body.app-light-theme .ng-star-inserted .activity-html,
 body.app-light-theme .ng-star-inserted app-calendar .list-date,
 body.app-light-theme .ng-star-inserted app-calendar .calendar-ct,
 body.app-light-theme .ng-star-inserted app-announcement-detail,
-body.app-light-theme .ng-star-inserted .announcement-list
+body.app-light-theme .ng-star-inserted .announcement-list,
+body.app-light-theme .ng-star-inserted .mat-table
 {
     background: var(--white-A200) !important;
 }
@@ -137,7 +138,8 @@ body.app-dark-theme .ng-star-inserted .activity-html,
 body.app-dark-theme .ng-star-inserted app-calendar .list-date,
 body.app-dark-theme .ng-star-inserted app-calendar .calendar-ct,
 body.app-dark-theme .ng-star-inserted app-announcement-detail,
-body.app-dark-theme .ng-star-inserted .announcement-list
+body.app-dark-theme .ng-star-inserted .announcement-list,
+body.app-dark-theme .ng-star-inserted .mat-table
 {
     background: var(--black-A200) !important;
 }
