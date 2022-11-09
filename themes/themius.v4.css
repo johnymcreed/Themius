@@ -90,7 +90,9 @@ body.app-light-theme .mat-dialog-container,
 body.app-light-theme .ng-star-inserted .mat-select-panel,
 body.app-light-theme .ng-star-inserted .activity-html,
 body.app-light-theme .ng-star-inserted app-calendar .list-date,
-body.app-light-theme .ng-star-inserted app-calendar .calendar-ct
+body.app-light-theme .ng-star-inserted app-calendar .calendar-ct,
+body.app-light-theme .ng-star-inserted app-announcement-detail,
+body.app-light-theme .ng-star-inserted .announcement-list
 {
     background: var(--white-A200) !important;
 }
@@ -133,7 +135,9 @@ body.app-dark-theme .ng-star-inserted .mat-select-panel,
 body.app-dark-theme .mat-dialog-container,
 body.app-dark-theme .ng-star-inserted .activity-html,
 body.app-dark-theme .ng-star-inserted app-calendar .list-date,
-body.app-dark-theme .ng-star-inserted app-calendar .calendar-ct
+body.app-dark-theme .ng-star-inserted app-calendar .calendar-ct,
+body.app-dark-theme .ng-star-inserted app-announcement-detail,
+body.app-dark-theme .ng-star-inserted .announcement-list
 {
     background: var(--black-A200) !important;
 }
@@ -420,17 +424,26 @@ app-self-register.ng-star-inserted mat-card
     top: 50%;
     transform: translate(-50%, -50%); 
 }
+app-order-courses.ng-star-inserted mat-card
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: 0px !important;
+    transform: translate(-50%, -50%); 
+}
 .ng-star-inserted mat-card:has(.nav-card>.date-header) /* Will warn but works */
 {
     display: none !important;
 }
 .ng-star-inserted .mat-card-image
 {
-    background-image: url('https://media.tenor.com/I_i86IVRiEQAAAAM/rugocica-kickingcat.gif') !important;
-    background-size: 280px 30vh !important;
+    /*background-image: url('https://media.tenor.com/I_i86IVRiEQAAAAM/rugocica-kickingcat.gif') !important;
+    background-size: 280px 30vh !important;*/
     border-radius: 0px !important;
 }
-.ng-star-inserted mat-form-field
+.ng-star-inserted mat-form-field,
+.ng-star-inserted app-filter-box
 {
     padding: 0px !important;
 }
@@ -443,6 +456,15 @@ app-announcement-detail.ng-star-inserted .details .info
     width: max-content !important;
     background: transparent !important;
     text-align: left;
+}
+app-announcement-detail.ng-star-inserted
+{
+    font-weight: 100 !important;
+}
+app-inbox.ng-star-inserted .list-ct mat-nav-list .selected
+{
+    background: #565656b5 !important;
+    transition: 0.5s;
 }
 app-announcement-detail.ng-star-inserted lib-managed-html *
 {
@@ -490,13 +512,13 @@ app-course-home.ng-star-inserted mat-card
 /**
  * Agenda Inside Course Page 
  */
-body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a) /* Agenda Form View (DARK) */
+body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a, a span, a div) /* Agenda Form View (DARK) */
 {
 	background: transparent !important;
 	margin: auto !important;
 	color: var(--foreground-text) !important;
 }
-body.app-light-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a) /* Agenda Form View (LIGHT) */
+body.app-light-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a, a span, a div) /* Agenda Form View (LIGHT) */
 {
     margin: auto !important;
 	color: var(--foreground-text) !important;
@@ -511,7 +533,7 @@ body.app-light-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not
 {
     color: var(--primary-default) !important;
     text-decoration: none !important;
-    font-weight: 100;
+    font-weight: 100 !important;
 }
 .ng-star-inserted lib-rubric-details .fr-view *,
 .ng-star-inserted lib-rubric-grader .fr-view *
