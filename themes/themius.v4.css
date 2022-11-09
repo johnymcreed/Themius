@@ -268,16 +268,15 @@ mat-ink-bar
     left: 50%;
     top: 50%;
     border-radius: 10px;
-    
     box-shadow: none !important;
-    transition: 0.5s;
-    
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/220px-Juvenile_Ragdoll.jpg') !important;
     padding: 100px;
     transform: translate(-50%, -50%);
     white-space: nowrap;
 }
 .course-color
 {
+    background-image: url('https://americanpetsalive.org/uploads/blog/Healthy-Kittens.jpg') !important;
     background-size: 24px 24px; 
 }
 
@@ -416,6 +415,7 @@ app-self-register.ng-star-inserted mat-card
 }
 .ng-star-inserted .mat-card-image
 {
+    background-image: url('https://media.tenor.com/I_i86IVRiEQAAAAM/rugocica-kickingcat.gif') !important;
     background-size: 280px 30vh !important;
     border-radius: 0px !important;
 }
