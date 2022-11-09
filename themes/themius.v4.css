@@ -43,6 +43,11 @@ body, html, div, span, p
     transition: 0s;
 }
 
+body
+{
+    background: var(--black) !important;
+}
+
 html
 {
     background: var(--black) !important;
