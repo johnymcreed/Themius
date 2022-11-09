@@ -87,6 +87,7 @@ app-student-courses.ng-star-inserted .color-band,
 .skip-nav,
 .ng-star-inserted .translation,
 .ng-star-inserted button[aria-label='Help'],
+/*.ng-star-inserted mat-card:has(.nav-card>.date-header), /* Will warn but works */
 .course-thumbnail
 {
     display: var(--remove) !important;
@@ -185,7 +186,7 @@ body.app-dark-theme .ng-star-inserted lib-student-grade-details table div
 {
     background: transparent !important;
 }
-body.app-dark-theme .ng-star-inserted lib-student-grade-details table,
+body.app-dark-theme .ng-star-inserted lib-student-grade-details table
 {
     border: 1px solid white !important;
 }
@@ -480,10 +481,6 @@ app-order-courses.ng-star-inserted mat-card
     top: 50%;
     margin: 0px !important;
     transform: translate(-50%, -50%); 
-}
-.ng-star-inserted mat-card:has(.nav-card>.date-header) /* Will warn but works */
-{
-    display: none !important;
 }
 .ng-star-inserted .mat-card-image
 {
