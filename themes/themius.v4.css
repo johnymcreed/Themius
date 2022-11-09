@@ -185,15 +185,15 @@ body.app-dark-theme .activity-html li
 }
 .fail-color
 {
-    color: #f00 !important;
+    color: #d52525 !important;
 }
 .pass-color
 {
-    color: #36ff00 !important;
+    color: #4eb632 !important;
 }
 .warn-color
 {
-    color: #ffa500 !important;
+    color: #e1a81d !important;
 }
 .mat-divider
 {
