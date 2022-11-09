@@ -3,7 +3,7 @@
 :root
 {
     /* Defaults */
-    --ext-max-height: 590px;
+    --ext-max-height: 380px;
     --ext-max-width: 350px;
     --ext-default-font: 'Source Sans Pro', sans-serif;
     --cursor-default: url('content/cursor.cur'), auto;
@@ -76,6 +76,11 @@ nav
     border: 1px solid var(--border-color);
 }
 
+b
+{
+    color: var(--color-bold);
+}
+
 page
 {
     text-align: left;
@@ -98,25 +103,6 @@ settings div
     border: 1px solid var(--border-color);
 }
 
-status div
-{
-    background: var(--background-default-transparent);
-
-    font-family: consolas, menlo, courier, monospace;
-    font-weight: 100;
-
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-
-    left: 5px;
-    right: 5px;
-
-    z-index: var(--idx-0);
-    transition: 2s;
-}
-
 share div
 {
     padding-left: 1.5rem;
@@ -124,7 +110,6 @@ share div
 
     left: 5px;
     right: 5px;
-    margin-top: 1rem;
 
     z-index: var(--idx-0);
     transition: 2s;
@@ -179,6 +164,12 @@ h1 /* Nav Only */
     border: 1px solid var(--border-color);
 }
 
+.switch
+{
+    vertical-align: middle;
+    margin: auto;
+}
+
 .github 
 {
     font-size: 40px;
@@ -209,128 +200,4 @@ h1 /* Nav Only */
     background: rgb(64, 64, 64);
     color: white;
     cursor: url('content/hand.cur'), auto;
-}
-
-.switch 
-{
-  --inactive-bg: #cfd8dc;
-  --active-bg: #cd81c0;
-  --size: 18px;
-  appearance: none;
-  width: calc(var(--size) * 2.2);
-  height: var(--size);
-  display: inline-block;
-  border-radius: calc(var(--size) / 2);
-  cursor: pointer;
-  background-color: var(--inactive-bg);
-  background-repeat: no-repeat;
-  background-image: radial-gradient(
-      circle calc(var(--size) / 2.1),
-      #fff 100%,
-      #0000 0
-    ),
-    radial-gradient(circle calc(var(--size) / 1.5), #0003 0%, #0000 100%);
-  background-position: calc(var(--size) / -1.75) 0;
-  transition: background 0.2s ease-out;
-  margin-left: -0.1mm ;
-  cursor: url('content/hand.cur'), auto;
-}
-
-.switch:checked 
-{
-  background-color: var(--active-bg);
-  background-position: calc(var(--size) / 1.75) 0;
-}
-
-.box-selector
-{
-    box-shadow: none;
-    outline: none;
-    border: 0px;
-    border-radius: 0px;
-    padding: 2px;
-    cursor: url('content/hand.cur'), auto;
-}
-
-[tip] .tooltip 
-{
-    border: var(--border-color);
-    
-    position: fixed;
-    font-size: 12px;
-    line-height: 20px;
-    padding: 5px;
-
-    text-align: left;
-    color: white !important;
-
-    max-width: fit-content;
-
-    vertical-align: middle;
-    align-content: center;
-    text-align: center;
-
-    background: var(--app-background);
-    color: var(--foreground-text);
-
-    visibility: hidden;
-    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
-
-    z-index: 5;
-
-    opacity: 0;
-    transition:
-        opacity 0.5s,
-        visiblity 0s;
-        
-    transition: 0.2s;
-}
-
-[tip]:hover .tooltip 
-{
-    z-index: 5;
-    visibility: visible;
-    opacity: 1;
-}
-
-/* DOM Id Elements */
-#username
-{
-    color: var(--color-bold);
-}
-
-/* DOM Tag Elements */
-red
-{
-    color: rgb(238, 81, 81);
-}
-
-green
-{
-    color: rgb(67, 201, 81);
-}
-
-yellow
-{
-    color: rgb(255, 219, 87);
-}
-
-orange
-{
-    color: rgb(253, 185, 59);
-}
-
-blue
-{
-    color: rgb(72, 135, 253);
-}
-
-grey
-{
-    color: rgb(126, 126, 126);
-}
-
-name
-{ 
-    color: rgb(233, 191, 247);
 }
