@@ -50,6 +50,24 @@ html
     background: var(--black) !important;
 }
 
+/* Scrollbar */
+::-webkit-scrollbar 
+{
+  width: 5px;
+}
+::-webkit-scrollbar-track /*BG*/
+{
+  background: var(--white-A200) !important;
+}
+::-webkit-scrollbar-thumb /*Hdl*/
+{
+  background: var(--black-A200) !important;
+}
+::-webkit-scrollbar-thumb:hover 
+{
+  background: var(--black-A700) !important;
+}
+
 /* Global Element Removals */
 .ng-star-inserted .logo-ct,
 .ng-star-inserted .buzz-login-page-bottom,
@@ -74,6 +92,7 @@ app-student-courses.ng-star-inserted .color-band,
     display: var(--remove) !important;
 }
 
+
 /**
  * App Theme (This is very big cause it affects a lot of elements at the same time)
  * - Light
@@ -95,7 +114,8 @@ body.app-light-theme .ng-star-inserted app-calendar .list-date,
 body.app-light-theme .ng-star-inserted app-calendar .calendar-ct,
 body.app-light-theme .ng-star-inserted app-announcement-detail,
 body.app-light-theme .ng-star-inserted .announcement-list,
-body.app-light-theme .ng-star-inserted .mat-table
+body.app-light-theme .ng-star-inserted .mat-table,
+body.app-light-theme .ng-star-inserted .nav-footer
 {
     background: var(--white-A200) !important;
 }
@@ -105,6 +125,7 @@ body.app-light-theme .ng-star-inserted .mat-tab-labels .mat-tab-label,
 body.app-light-theme .ng-star-inserted .toolbar,
 body.app-light-theme .ng-star-inserted .links-ct,
 body.app-light-theme .ng-star-inserted .objective-speedometer,
+body.app-dark-theme .ng-star-inserted .card-ct mat-card .card-top,
 ::selection
 {
     background: var(--white) !important;
@@ -122,6 +143,7 @@ body.app-dark-theme .ng-star-inserted .toolbar,
 body.app-dark-theme .ng-star-inserted .mat-toolbar,
 body.app-dark-theme .ng-star-inserted .links-ct,
 body.app-dark-theme .ng-star-inserted .objective-speedometer,
+body.app-light-theme .ng-star-inserted .card-ct mat-card .card-top,
 ::selection
 {
     background: var(--black) !important;
@@ -141,7 +163,8 @@ body.app-dark-theme .ng-star-inserted app-calendar .list-date,
 body.app-dark-theme .ng-star-inserted app-calendar .calendar-ct,
 body.app-dark-theme .ng-star-inserted app-announcement-detail,
 body.app-dark-theme .ng-star-inserted .announcement-list,
-body.app-dark-theme .ng-star-inserted .mat-table
+body.app-dark-theme .ng-star-inserted .mat-table,
+body.app-dark-theme .ng-star-inserted .nav-footer
 {
     background: var(--black-A200) !important;
 }
@@ -157,6 +180,14 @@ body.app-dark-theme .activity-html span
 body.app-dark-theme .activity-html li
 {
     color: white !important;
+}
+body.app-dark-theme .ng-star-inserted lib-student-grade-details table div
+{
+    background: transparent !important;
+}
+body.app-dark-theme .ng-star-inserted lib-student-grade-details table,
+{
+    border: 1px solid white !important;
 }
 
 /**
@@ -234,6 +265,10 @@ body.app-dark-theme .activity-html li
     background: #565656b5 !important;
     transition: 0.5s;
 }
+lib-student-grade-details .selected
+{
+    background: #565656b5 !important;
+}
 .ng-star-inserted .user-menu-button .user-name /* Name Flex Field Fix */
 {
 	margin: -10px;
@@ -294,6 +329,7 @@ app-root>svg.app-loading
     white-space: nowrap;
     transition: 0s !important;
 }
+
 .course-color
 {
     background-image: url('https://americanpetsalive.org/uploads/blog/Healthy-Kittens.jpg') !important;
@@ -408,6 +444,15 @@ app-student-courses.ng-star-inserted>.home-ct,
 app-student-stream.ng-star-inserted mat-card,
 app-student-to-do.ng-star-inserted mat-card,
 app-choose-theme.ng-star-inserted mat-card
+{
+    width: 100%;
+    max-width: 100% !important;
+}
+lib-grade-details.ng-star-inserted
+{
+    padding: 0px;
+}
+lib-grade-details.ng-star-inserted .main .card-ct mat-card
 {
     width: 100%;
     max-width: 100% !important;
