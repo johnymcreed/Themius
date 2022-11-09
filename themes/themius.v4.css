@@ -189,7 +189,7 @@ body.app-dark-theme .activity-html li
 }
 .pass-color
 {
-    color: #4eb632 !important;
+    color: #32741f !important;
 }
 .warn-color
 {
@@ -286,9 +286,8 @@ mat-ink-bar
  */
 app-before-login app-login mat-toolbar.main-toolbar /* Remove Login top bar */
 {
-    height: 0px;
-    width: 0px;
-    visibility: var(--hide);
+    background: transparent !important;
+    height: 0px !important;
 }
 app-before-login app-login mat-toolbar form button
 {
@@ -321,9 +320,8 @@ app-login input
 {
     box-shadow: none !important;
 }
-.ng-star-inserted form.ng-dirty /* Center Loging to screen */
+.ng-star-inserted mat-toolbar form /* Center Loging to screen */
 {
-    visibility: visible;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -333,10 +331,10 @@ app-login input
         
     padding: 100px;
     transform: translate(-50%, -50%);
-    white-space: nowrap;
+    white-space: pre;
     transition: 0.5s;
 }
-.ng-star-inserted form.ng-dirty:before /* Title */
+.ng-star-inserted mat-toolbar form:before /* Title */
 {
     content: "Rogers New Technology Highschool";
     position: absolute;
@@ -344,16 +342,16 @@ app-login input
     width: 100%;
     top: 15%;
     font-size: 30px;
-    transition: 1s;
+    transition: 0.5s;
 }
-.ng-star-inserted form.ng-dirty:after /* Copyright */
+.ng-star-inserted mat-toolbar form:after /* Copyright */
 {
     content: "Redesign by Mcreed";
     position: absolute;
     bottom: 15%;
     left: 15%;
     font-size: 15px;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 /**
