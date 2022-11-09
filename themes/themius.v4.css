@@ -32,6 +32,8 @@
     --white: white;
     --white-A200: #ffffffe0;
     --white-A700: #ffffffba;
+    --grey-A200: #565656b5;
+    --grey-A700: #5656568c;
 }
 
 /* RGB Key Frames */
@@ -53,19 +55,11 @@ html
 /* Scrollbar */
 ::-webkit-scrollbar 
 {
-  width: 5px;
+  width: 3px;
 }
 ::-webkit-scrollbar-track /*BG*/
 {
-  background: var(--white-A200) !important;
-}
-::-webkit-scrollbar-thumb /*Hdl*/
-{
-  background: var(--black-A200) !important;
-}
-::-webkit-scrollbar-thumb:hover 
-{
-  background: var(--black-A700) !important;
+  background: rgba(0, 0, 0, .48) !important;
 }
 
 /* Global Element Removals */
@@ -101,9 +95,15 @@ app-student-courses.ng-star-inserted .color-band,
  */
 /* LIGHT */
 body.app-light-theme .ng-star-inserted .mat-card,
-body.app-light-theme .ng-star-inserted .mat-expansion-panel
+body.app-light-theme .ng-star-inserted .mat-expansion-panel,
+body.app-dark-theme ::-webkit-scrollbar-thumb:hover
 {
     background: var(--white-A700) !important;
+}
+body.app-light-theme app-inbox.ng-star-inserted .list-ct mat-nav-list .selected span,
+app-student-activity.ng-star-inserted
+{
+    color: white !important;
 }
 body.app-light-theme .ng-star-inserted mat-sidenav,
 body.app-light-theme .ng-star-inserted mat-card .color-band,
@@ -116,7 +116,8 @@ body.app-light-theme .ng-star-inserted app-calendar .calendar-ct,
 body.app-light-theme .ng-star-inserted app-announcement-detail,
 body.app-light-theme .ng-star-inserted .announcement-list,
 body.app-light-theme .ng-star-inserted .mat-table,
-body.app-light-theme .ng-star-inserted .nav-footer
+body.app-light-theme .ng-star-inserted .nav-footer,
+body.app-dark-theme ::-webkit-scrollbar-thumb
 {
     background: var(--white-A200) !important;
 }
@@ -165,12 +166,14 @@ body.app-dark-theme .ng-star-inserted app-calendar .calendar-ct,
 body.app-dark-theme .ng-star-inserted app-announcement-detail,
 body.app-dark-theme .ng-star-inserted .announcement-list,
 body.app-dark-theme .ng-star-inserted .mat-table,
-body.app-dark-theme .ng-star-inserted .nav-footer
+body.app-dark-theme .ng-star-inserted .nav-footer,
+body.app-light-theme ::-webkit-scrollbar-thumb
 {
     background: var(--black-A200) !important;
 }
 body.app-dark-theme .ng-star-inserted .mat-card,
-body.app-dark-theme .ng-star-inserted .mat-expansion-panel
+body.app-dark-theme .ng-star-inserted .mat-expansion-panel,
+body.app-light-theme ::-webkit-scrollbar-thumb:hover
 {
     background: var(--black-A700) !important;
 } 
@@ -241,6 +244,10 @@ body.app-dark-theme .ng-star-inserted lib-student-grade-details table
     background: var(--foreground-text) !important;
     border-top-width: 1px !important;
 }
+.ng-star-inserted .mat-expansion-panel-body
+{
+    padding: 0px !important;
+}
 .ng-star-inserted mat-sidenav::-webkit-scrollbar,
 .ng-star-inserted mat-sidenav .mat-drawer-inner-container::-webkit-scrollbar 
 {
@@ -270,12 +277,12 @@ body.app-dark-theme .ng-star-inserted lib-student-grade-details table
 }
 .cdk-overlay-container .cdk-overlay-pane .mat-menu-panel button:hover
 {
-    background: #565656b5 !important;
+    background: var(--grey-A200) !important;
     transition: 0.5s;
 }
 lib-student-grade-details .selected
 {
-    background: #565656b5 !important;
+    background: var(--grey-A200) !important;
 }
 .ng-star-inserted .user-menu-button .user-name /* Name Flex Field Fix */
 {
@@ -294,7 +301,8 @@ lib-student-grade-details .selected
     -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
   	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
 }
-.ng-star-inserted .mat-badge-content
+.ng-star-inserted .mat-badge-content,
+.ng-star-inserted .app-large-button-badge
 { 
 	background: var(--primary-default) !important;
 	color: var(--white) !important; 
@@ -456,6 +464,19 @@ app-choose-theme.ng-star-inserted mat-card
     width: 100%;
     max-width: 100% !important;
 }
+app-badges.ng-star-inserted
+{
+    background: linear-gradient(124deg, var(--rgb-colors));
+	background-size: 1800% 1800%;
+    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
+  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
+    padding: 10px;
+}
+app-badges.ng-star-inserted form mat-card
+{
+    width: 100% !important; 
+    max-width: 100% !important;
+} 
 lib-grade-details.ng-star-inserted
 {
     padding: 0px;
@@ -463,6 +484,19 @@ lib-grade-details.ng-star-inserted
 lib-grade-details.ng-star-inserted .main .card-ct mat-card
 {
     width: 100%;
+    max-width: 100% !important;
+}
+app-blackout-dates.ng-star-inserted .main .two-columns
+{
+    max-width: none !important;
+}
+app-blackout-dates.ng-star-inserted
+{
+    padding: 10px;
+}
+app-blackout-dates.ng-star-inserted .main .two-columns mat-card
+{
+    width: 100% !important;
     max-width: 100% !important;
 }
 app-student-courses.ng-star-inserted mat-card-title-group
@@ -488,6 +522,11 @@ app-order-courses.ng-star-inserted mat-card
     top: 50%;
     margin: 0px !important;
     transform: translate(-50%, -50%); 
+    width: 100%;
+}
+.cdk-drop-list .cdk-drag.cdk-drag-placeholder
+{
+    padding: 50px;
 }
 .ng-star-inserted mat-card .nav-card .date-header
 {
@@ -521,7 +560,7 @@ app-announcement-detail.ng-star-inserted
 }
 app-inbox.ng-star-inserted .list-ct mat-nav-list .selected
 {
-    background: #565656b5 !important;
+    background: var(--grey-A700) !important;
     transition: 0.5s;
 }
 app-announcement-detail.ng-star-inserted lib-managed-html *
