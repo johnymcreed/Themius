@@ -99,7 +99,7 @@ body.app-light-theme .ng-star-inserted .mat-expansion-panel,
 body.app-dark-theme ::-webkit-scrollbar-thumb:hover
 {
     background: var(--white-A700) !important;
-    border-radius: 5px;
+    border-radius: 5px !important;
 }
 body.app-light-theme app-inbox.ng-star-inserted .list-ct mat-nav-list .selected span, /* Set text */
 app-student-activity.ng-star-inserted
@@ -122,6 +122,7 @@ body.app-dark-theme ::-webkit-scrollbar-thumb
 {
     background: var(--white-A200) !important;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 5px !important;
 }
 body.app-light-theme .ng-star-inserted .main-toolbar, /* White */
 body.app-light-theme .ng-star-inserted .mat-tab-labels,
@@ -175,12 +176,14 @@ body.app-dark-theme .ng-star-inserted .nav-footer,
 body.app-light-theme ::-webkit-scrollbar-thumb
 {
     background: var(--black-A200) !important;
+    border-radius: 5px !important;
 }
 body.app-dark-theme .ng-star-inserted .mat-card, /* Black-A700 */
 body.app-dark-theme .ng-star-inserted .mat-expansion-panel,
 body.app-light-theme ::-webkit-scrollbar-thumb:hover
 {
     background: var(--black-A700) !important;
+    border-radius: 5px !important;
 } 
 body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a, a span, a div, .selected *, a u *, span a *) /* Agenda Form View (DARK) */
 {
@@ -267,6 +270,10 @@ body.app-dark-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:active
 .ng-star-inserted .mat-expansion-panel-body
 {
     padding: 0px !important;
+}
+.ng-star-inserted .mat-expansion-panel
+{
+    margin-bottom: 10px;
 }
 .ng-star-inserted mat-sidenav::-webkit-scrollbar,
 .ng-star-inserted mat-sidenav .mat-drawer-inner-container::-webkit-scrollbar 
@@ -578,11 +585,12 @@ app-order-courses.ng-star-inserted mat-card
     vertical-align: middle !important;
     margin: auto !important;
 }
-/*.ng-star-inserted .mat-card-image
+.ng-star-inserted .mat-card-image
 {
-    background-image: url('https://media.tenor.com/I_i86IVRiEQAAAAM/rugocica-kickingcat.gif') !important;
-    background-size: 280px 30vh !important;
-}*/
+    /*background-image: url('https://media.tenor.com/I_i86IVRiEQAAAAM/rugocica-kickingcat.gif') !important;
+    background-size: 280px 30vh !important;*/
+    border-radius: 5px !important;
+}
 .ng-star-inserted mat-form-field,
 .ng-star-inserted app-filter-box
 {
