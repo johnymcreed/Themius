@@ -32,11 +32,6 @@
     --white: white;
     --white-A200: #ffffffe0;
     --white-A700: #ffffffba;
-    
-    --image-1: none;
-    --image-2: none;
-    --image-3: none;
-    --show-image: none;
 }
 
 /* RGB Key Frames */
@@ -274,9 +269,7 @@ mat-ink-bar
     top: 50%;
     border-radius: 10px;
     
-    background: var(--image-1);
     box-shadow: none !important;
-    
     transition: 0.5s;
     
     padding: 100px;
@@ -285,7 +278,6 @@ mat-ink-bar
 }
 .course-color
 {
-    background: var(--image-2);
     background-size: 24px 24px; 
 }
 
@@ -424,10 +416,8 @@ app-self-register.ng-star-inserted mat-card
 }
 .ng-star-inserted .mat-card-image
 {
-    background: var(--image-3);
     background-size: 280px 30vh !important;
     border-radius: 0px !important;
-    display: var(--show-image);
 }
 .ng-star-inserted mat-form-field
 {
