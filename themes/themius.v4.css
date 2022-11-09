@@ -1,5 +1,5 @@
 /**
- * - Themius Build v4 (https://johnymcreed.github.io/Themius/)
+ * - Themius Build v3 (https://johnymcreed.github.io/Themius/)
  * This is Themius a usefull redesign for ECHO with powerful changes that make 
  * the users experience more fun than what ECHO provides.
  * 
@@ -32,6 +32,11 @@
     --white: white;
     --white-A200: #ffffffe0;
     --white-A700: #ffffffba;
+    
+    --image-1: none;
+    --image-2: none;
+    --image-3: none;
+    --show-image: inline-block;
 }
 
 /* RGB Key Frames */
@@ -269,7 +274,7 @@ mat-ink-bar
     top: 50%;
     border-radius: 10px;
     
-    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/220px-Juvenile_Ragdoll.jpg') !important;
+    background: var(--image-1);
     box-shadow: none !important;
     
     transition: 0.5s;
@@ -280,7 +285,7 @@ mat-ink-bar
 }
 .course-color
 {
-    background: url('https://americanpetsalive.org/uploads/blog/Healthy-Kittens.jpg');
+    background: var(--image-2);
     background-size: 24px 24px; 
 }
 
@@ -419,9 +424,10 @@ app-self-register.ng-star-inserted mat-card
 }
 .ng-star-inserted .mat-card-image
 {
-    background: url('https://media.tenor.com/I_i86IVRiEQAAAAM/rugocica-kickingcat.gif') !important;
+    background: var(--image-3);
     background-size: 280px 30vh !important;
     border-radius: 0px !important;
+    display: var(--show-image);
 }
 .ng-star-inserted mat-form-field
 {
