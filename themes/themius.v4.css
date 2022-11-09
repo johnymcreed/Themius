@@ -36,7 +36,7 @@
     --image-1: none;
     --image-2: none;
     --image-3: none;
-    --show-image: inline-block;
+    --show-image: none;
 }
 
 /* RGB Key Frames */
