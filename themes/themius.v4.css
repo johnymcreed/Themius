@@ -94,18 +94,19 @@ app-student-courses.ng-star-inserted .color-band,
  * - Dark
  */
 /* LIGHT */
-body.app-light-theme .ng-star-inserted .mat-card,
+body.app-light-theme .ng-star-inserted .mat-card, /* White-A700 */
 body.app-light-theme .ng-star-inserted .mat-expansion-panel,
 body.app-dark-theme ::-webkit-scrollbar-thumb:hover
 {
     background: var(--white-A700) !important;
+    border-radius: 5px;
 }
-body.app-light-theme app-inbox.ng-star-inserted .list-ct mat-nav-list .selected span,
+body.app-light-theme app-inbox.ng-star-inserted .list-ct mat-nav-list .selected span, /* Set text */
 app-student-activity.ng-star-inserted
 {
     color: white !important;
 }
-body.app-light-theme .ng-star-inserted mat-sidenav,
+body.app-light-theme .ng-star-inserted mat-sidenav, /* White-A200 */
 body.app-light-theme .ng-star-inserted mat-card .color-band,
 body.app-light-theme .ng-star-inserted .cdk-overlay-container mat-dialog-container,
 body.app-light-theme .mat-dialog-container,
@@ -120,8 +121,9 @@ body.app-light-theme .ng-star-inserted .nav-footer,
 body.app-dark-theme ::-webkit-scrollbar-thumb
 {
     background: var(--white-A200) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
-body.app-light-theme .ng-star-inserted .main-toolbar,
+body.app-light-theme .ng-star-inserted .main-toolbar, /* White */
 body.app-light-theme .ng-star-inserted .mat-tab-labels,
 body.app-light-theme .ng-star-inserted .mat-tab-labels .mat-tab-label,
 body.app-light-theme .ng-star-inserted .toolbar,
@@ -134,12 +136,17 @@ body.app-light-theme .ng-star-inserted .notification,
     background: var(--white) !important;
     color: black !important;
 }
-body.app-light-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:active
+body.app-light-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a, a span, a div, .selected *, a u *, span a *) /* Agenda Form View (LIGHT) */
 {
-    background: transparent !important;
+    margin: auto !important;
+	color: var(--foreground-text) !important;
 }
 /* DARK */
-body.app-dark-theme .ng-star-inserted .main-toolbar,
+body.app-light-theme lib-standards-rubric-details table td 
+{
+    border: 1px solid black !important;
+}
+body.app-dark-theme .ng-star-inserted .main-toolbar, /* Black */
 body.app-dark-theme .ng-star-inserted .mat-tab-labels,
 body.app-dark-theme .ng-star-inserted .mat-tab-labels .mat-tab-label,
 body.app-dark-theme .ng-star-inserted .toolbar,
@@ -153,11 +160,7 @@ body.app-dark-theme .ng-star-inserted .notification,
     background: var(--black) !important;
     color: white !important;
 }
-body.app-dark-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:active
-{
-    background: transparent !important;
-}
-body.app-dark-theme .ng-star-inserted mat-sidenav,
+body.app-dark-theme .ng-star-inserted mat-sidenav, /* Black-A200 */
 body.app-dark-theme .ng-star-inserted mat-card .color-band,
 body.app-dark-theme .ng-star-inserted mat-dialog-container,
 body.app-dark-theme .ng-star-inserted .mat-select-panel,
@@ -173,12 +176,18 @@ body.app-light-theme ::-webkit-scrollbar-thumb
 {
     background: var(--black-A200) !important;
 }
-body.app-dark-theme .ng-star-inserted .mat-card,
+body.app-dark-theme .ng-star-inserted .mat-card, /* Black-A700 */
 body.app-dark-theme .ng-star-inserted .mat-expansion-panel,
 body.app-light-theme ::-webkit-scrollbar-thumb:hover
 {
     background: var(--black-A700) !important;
 } 
+body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a, a span, a div, .selected *, a u *, span a *) /* Agenda Form View (DARK) */
+{
+	background: transparent !important;
+	margin: auto !important;
+	color: var(--foreground-text) !important;
+}
 body.app-dark-theme .activity-html span
 {
     color: white !important;
@@ -191,10 +200,18 @@ body.app-dark-theme .ng-star-inserted lib-student-grade-details table div
 {
     background: transparent !important;
 }
-body.app-dark-theme .ng-star-inserted lib-student-grade-details table
+body.app-dark-theme lib-standards-rubric-details table td 
 {
     border: 1px solid white !important;
+    background: transparent !important;
 }
+/*Both*/
+body.app-light-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:active,
+body.app-dark-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:active
+{
+    background: transparent !important;
+}
+
 
 /**
  * Toolbars/Tooltips/Menus/Ect
@@ -203,7 +220,7 @@ body.app-dark-theme .ng-star-inserted lib-student-grade-details table
 {
     color: white !important;
 }
-.ng-star-inserted .mat-drawer-backdrop
+.ng-star-inserted .mat-drawer-backdrop /* Sidebar Backdrop */
 {
     background: linear-gradient(124deg, var(--rgb-ts-colors));
 	background-size: 1800% 1800%;
@@ -226,7 +243,7 @@ body.app-dark-theme .ng-star-inserted lib-student-grade-details table
     -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
   	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
 }
-.xli-ada-color
+.xli-ada-color /*Loader Top-bar*/
 {
     background: var(--primary-default) !important;
 }
@@ -242,7 +259,7 @@ body.app-dark-theme .ng-star-inserted lib-student-grade-details table
 {
     color: #e1a81d !important;
 }
-.mat-divider
+.mat-divider /* Sidebar-divider */
 {
     background: var(--foreground-text) !important;
     border-top-width: 1px !important;
@@ -266,7 +283,7 @@ body.app-dark-theme .ng-star-inserted lib-student-grade-details table
 {
     transition: 0.5s;
 }
-.mat-tooltip
+.mat-tooltip /*tooltips */
 {
     background: var(--foreground-text) !important;
     color: var(--background) !important;
@@ -315,11 +332,18 @@ lib-student-grade-details .selected
 .ng-star-inserted .mat-card
 {
     border-radius: 0px;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.67);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
 }
 .ng-star-inserted .mat-tree
 {
     background: transparent;
+}
+.ng-star-inserted .title-text,
+.ng-star-inserted .focus-title-text
+{
+    background: transparent !important;
+    outline: none !important;
+    user-select: none !important;
 }
 mat-ink-bar
 {
@@ -335,7 +359,7 @@ app-root
     margin: 0px !important;
     background: var(--black) !important;
 }
-app-root>svg.app-loading 
+:root app-root>svg.app-loading /* F u agent style sheets */
 {
     position: absolute !important;
     left: 50%;
@@ -348,7 +372,6 @@ app-root>svg.app-loading
     white-space: nowrap;
     transition: 0s !important;
 }
-
 .course-color
 {
     background-image: url('https://americanpetsalive.org/uploads/blog/Healthy-Kittens.jpg') !important;
@@ -467,6 +490,21 @@ app-choose-theme.ng-star-inserted mat-card
     width: 100%;
     max-width: 100% !important;
 }
+.ng-star-inserted lib-standards-rubric-details .selected lib-managed-html
+{
+	background: var(--grey-A700) !important;
+    color: white !important;
+}
+lib-grade-details.ng-star-inserted .card-ct
+{
+    max-width: 100% !important;
+    padding: 10px !important;
+}
+lib-grade-details.ng-star-inserted mat-card
+{
+    width: 100%;
+    max-width: 100%;
+}
 app-badges.ng-star-inserted
 {
     background: linear-gradient(124deg, var(--rgb-colors));
@@ -480,6 +518,10 @@ app-badges.ng-star-inserted form mat-card
     width: 100% !important; 
     max-width: 100% !important;
 } 
+app-course-home .mat-tab-header .mat-tab-labels
+{
+    margin-top: 1rem  
+}
 lib-grade-details.ng-star-inserted
 {
     padding: 0px;
@@ -536,12 +578,11 @@ app-order-courses.ng-star-inserted mat-card
     vertical-align: middle !important;
     margin: auto !important;
 }
-.ng-star-inserted .mat-card-image
+/*.ng-star-inserted .mat-card-image
 {
-    /*background-image: url('https://media.tenor.com/I_i86IVRiEQAAAAM/rugocica-kickingcat.gif') !important;
-    background-size: 280px 30vh !important;*/
-    border-radius: 0px !important;
-}
+    background-image: url('https://media.tenor.com/I_i86IVRiEQAAAAM/rugocica-kickingcat.gif') !important;
+    background-size: 280px 30vh !important;
+}*/
 .ng-star-inserted mat-form-field,
 .ng-star-inserted app-filter-box
 {
@@ -612,24 +653,15 @@ app-course-home.ng-star-inserted mat-card
 /**
  * Agenda Inside Course Page 
  */
-body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a, a span, a div) /* Agenda Form View (DARK) */
-{
-	background: transparent !important;
-	margin: auto !important;
-	color: var(--foreground-text) !important;
-}
-body.app-light-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a, a span, a div) /* Agenda Form View (LIGHT) */
-{
-    margin: auto !important;
-	color: var(--foreground-text) !important;
-}
 .ng-star-inserted .fr-view table
 {
 	width: 100% !important;
 }
 .ng-star-inserted .fr-view a, 
 .ng-star-inserted .fr-view a span,
-.ng-star-inserted .fr-view a div
+.ng-star-inserted .fr-view a div,
+.ng-star-inserted .fr-view a u *,
+.ng-star-inserted .fr-view span a *
 {
     color: var(--primary-default) !important;
     text-decoration: none !important;
