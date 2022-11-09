@@ -241,9 +241,16 @@ body.app-dark-theme .ng-star-inserted lib-student-grade-details table
     background: var(--foreground-text) !important;
     border-top-width: 1px !important;
 }
-.ng-star-inserted mat-sidenav
+.ng-star-inserted mat-sidenav::-webkit-scrollbar,
+.ng-star-inserted mat-sidenav .mat-drawer-inner-container::-webkit-scrollbar 
 {
-    padding: 10px;
+  display: none;
+}
+.ng-star-inserted mat-sidenav,
+.ng-star-inserted mat-sidenav .mat-drawer-inner-container
+{
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
 }
 .mat-list-item:hover
 {
