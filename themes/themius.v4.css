@@ -482,6 +482,11 @@ app-order-courses.ng-star-inserted mat-card
     margin: 0px !important;
     transform: translate(-50%, -50%); 
 }
+.ng-star-inserted mat-card .nav-card .date-header
+{
+    vertical-align: middle !important;
+    margin: auto !important;
+}
 .ng-star-inserted .mat-card-image
 {
     /*background-image: url('https://media.tenor.com/I_i86IVRiEQAAAAM/rugocica-kickingcat.gif') !important;
