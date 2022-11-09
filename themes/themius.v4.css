@@ -106,7 +106,6 @@ app-student-activity.ng-star-inserted
 {
     color: white !important;
 }
-body.app-light-theme .ng-star-inserted mat-sidenav, /* White-A200 */
 body.app-light-theme .ng-star-inserted mat-card .color-band,
 body.app-light-theme .ng-star-inserted .cdk-overlay-container mat-dialog-container,
 body.app-light-theme .mat-dialog-container,
@@ -123,6 +122,12 @@ body.app-dark-theme ::-webkit-scrollbar-thumb
     background: var(--white-A200) !important;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border-radius: 5px !important;
+}
+body.app-light-theme .ng-star-inserted mat-sidenav /* White-A200 */
+{
+    background: var(--white-A200) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 0px !important;
 }
 body.app-light-theme .ng-star-inserted .main-toolbar, /* White */
 body.app-light-theme .ng-star-inserted .mat-tab-labels,
@@ -161,7 +166,6 @@ body.app-dark-theme .ng-star-inserted .notification,
     background: var(--black) !important;
     color: white !important;
 }
-body.app-dark-theme .ng-star-inserted mat-sidenav, /* Black-A200 */
 body.app-dark-theme .ng-star-inserted mat-card .color-band,
 body.app-dark-theme .ng-star-inserted mat-dialog-container,
 body.app-dark-theme .ng-star-inserted .mat-select-panel,
@@ -177,6 +181,11 @@ body.app-light-theme ::-webkit-scrollbar-thumb
 {
     background: var(--black-A200) !important;
     border-radius: 5px !important;
+}
+body.app-dark-theme .ng-star-inserted mat-sidenav /* Black-A200 */
+{
+    background: var(--black-A200) !important;
+    border-radius: 0px !important;
 }
 body.app-dark-theme .ng-star-inserted .mat-card, /* Black-A700 */
 body.app-dark-theme .ng-star-inserted .mat-expansion-panel,
