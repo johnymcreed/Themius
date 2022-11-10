@@ -11,10 +11,10 @@ document.getElementById('applytheme').addEventListener('click', save);
 function save() 
 {
     var onOroff = document.getElementById('applytheme').checked;
-
     chrome.storage.sync.set(
         {
             onOroff: onOroff,
+            welcome: true // Display once
         });
 }
 

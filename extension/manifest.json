@@ -22,7 +22,7 @@
 
     "content_scripts": 
     [{
-        "css": ["static/main.css"],
+        "css": ["src/popup.css"],
         "js": ["src/thirdparty/jquery.js", "src/script.js"],
         "matches": ["https://rogershs.echo-ntn.org/*"]
     }]
