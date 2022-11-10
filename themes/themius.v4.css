@@ -295,6 +295,14 @@ body.app-dark-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:active
     -ms-overflow-style: none;
     scrollbar-width: none; /* Firefox */
 }
+.ng-star-inserted lib-dropbox .header-ct
+{
+    display: none !important;
+}
+.ng-star-inserted lib-dropbox
+{
+    margin-top: 0px !important;
+}
 .mat-list-item:hover
 {
     transition: 0.5s;
