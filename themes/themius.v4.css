@@ -386,7 +386,7 @@ app-root
     padding: 100px;
     transform: translate(-50%, -50%);
     white-space: nowrap;
-    transition: 0.5s !important;
+    transition: 0s !important;
 }
 .course-color
 {
