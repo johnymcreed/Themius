@@ -17,9 +17,9 @@
     --font-code: 'Source Code Pro', monospace;
         
     --rgb-timeout: 100s; /* length in animation */
-	--rgb-fit: 50s; /* time till the animation repeats */
-	--rgb-ts-colors: #ff24006e, #bb171752, #ddc51259, #87df1359, #1de8404f, #1d9ae866, #2b1de857, #dd00f354, #dd00f378;
-	--rgb-colors: #f60000, #a51414, #e3ac00, #d2f428, #31a544, #3a86bf, #2b1de8, #a518b4, #90199c;
+	--rgb-fit: 80s; /* time till the animation repeats */
+	--rgb-ts-colors: #f600008a, #a514148a, #9065358a, #d0cc168a, #e3ac008a, #d2f4288a,  #4f78278a, #31a5448a, #24724b8a, #3a86bf8a, #2b1de88a, #501c858a, #a518b48a, #90199c8a;
+	--rgb-colors: #f60000, #a51414, #906535, #d0cc16, #e3ac00, #d2f428,  #4f7827, #31a544, #24724b, #3a86bf, #2b1de8, #501c85, #a518b4, #90199c;
     
     --remove: none;    
     --show: visible;
@@ -116,7 +116,8 @@ body.app-light-theme .ng-star-inserted .announcement-list,
 body.app-light-theme .ng-star-inserted .mat-table,
 body.app-light-theme .ng-star-inserted .nav-footer,
 body.app-light-theme .ng-star-inserted mat-sidenav,
-body.app-dark-theme ::-webkit-scrollbar-thumb
+body.app-dark-theme ::-webkit-scrollbar-thumb,
+body.app-light-mode .no-agenda
 {
     background: var(--white-A200) !important;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -171,7 +172,8 @@ body.app-dark-theme .ng-star-inserted .announcement-list,
 body.app-dark-theme .ng-star-inserted .mat-table,
 body.app-dark-theme .ng-star-inserted .nav-footer,
 body.app-dark-theme .ng-star-inserted mat-sidenav,
-body.app-light-theme ::-webkit-scrollbar-thumb
+body.app-light-theme ::-webkit-scrollbar-thumb,
+body.app-dark-theme .no-agenda
 {
     background: var(--black-A200) !important;
     border-radius: 5px !important;
@@ -223,23 +225,23 @@ body.app-dark-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:active
 .ng-star-inserted .mat-drawer-backdrop /* Sidebar Backdrop */
 {
     background: linear-gradient(124deg, var(--rgb-ts-colors));
-	background-size: 1800% 1800%;
+    background-size: 20000% 20000%;    
     -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
   	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
     transition: 0.5s;
-    opacity: 1;
+    opacity: 5;
 }
 .ng-star-inserted .mat-drawer-content
 {
     background: linear-gradient(124deg, var(--rgb-colors));
-	background-size: 1800% 1800%;
+    background-size: 20000% 20000%;    
     -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
   	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
 }
 .ng-star-inserted .main
 {
     background: linear-gradient(124deg, var(--rgb-colors));
-	background-size: 1800% 1800%;
+    background-size: 20000% 20000%;    
     -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
   	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
 }
@@ -337,7 +339,7 @@ lib-student-grade-details .selected
 .ng-star-inserted .app-background
 {
     background: linear-gradient(124deg, var(--rgb-colors));
-	background-size: 1800% 1800%;
+	background-size: 20000% 20000%;
     -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
   	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
 }
@@ -413,7 +415,7 @@ app-before-login app-login mat-toolbar form button
 .ng-star-inserted .buzz-login-background
 {
     background: linear-gradient(124deg, var(--rgb-colors));
-	background-size: 1800% 1800%;
+	background-size: 20000% 20000%;
     -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
   	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
     
@@ -481,7 +483,7 @@ app-login input
 app-student-courses.ng-star-inserted
 {
     background: linear-gradient(124deg, var(--rgb-colors));
-	background-size: 1800% 1800%;
+    background-size: 20000% 20000%;    
     -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
   	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
     padding: 10px;
@@ -489,7 +491,7 @@ app-student-courses.ng-star-inserted
 app-student-stream.ng-star-inserted
 {
     background: linear-gradient(124deg, var(--rgb-colors));
-	background-size: 1800% 1800%;
+    background-size: 20000% 20000%;    
     -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
   	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
     padding: 10px;
@@ -497,7 +499,7 @@ app-student-stream.ng-star-inserted
 app-student-to-do.ng-star-inserted
 {
     background: linear-gradient(124deg, var(--rgb-colors));
-	background-size: 1800% 1800%;
+    background-size: 20000% 20000%;    
     -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
   	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
     padding: 10px;
@@ -544,7 +546,7 @@ lib-grade-details.ng-star-inserted mat-card
 app-badges.ng-star-inserted
 {
     background: linear-gradient(124deg, var(--rgb-colors));
-	background-size: 1800% 1800%;
+    background-size: 20000% 20000%;    
     -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
   	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
     padding: 10px;
@@ -660,7 +662,7 @@ app-announcement-detail.ng-star-inserted lib-managed-html *
 .ng-star-inserted app-course-home .card-ct
 {
     background: linear-gradient(124deg, var(--rgb-colors));
-	background-size: 1800% 1800%;
+    background-size: 20000% 20000%;    
     -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
   	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
     padding: 10px;
@@ -730,6 +732,17 @@ app-course-home.ng-star-inserted mat-card
 	text-align: center !important;
 	padding: 10px;
 	color: var(--ng-white) !important; /*background won't apply to color*/
+    
+    margin: 0 auto;
+    position: relative;
+    width: 30rem;
+    border-radius: 5px;
+}
+.no-agenda:after
+{
+    white-space: pre;
+    font-size: 15px;
+    content: "\aThis current day has no agenda"
 }
 
 /** 
