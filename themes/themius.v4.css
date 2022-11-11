@@ -40,16 +40,16 @@
     --hide: hidden;
     
     --black: black;
-    --black-A200: #000000d4;
+    --black-A200: #000000e0;
     --black-A700: #000000ba;
     
     --white: white;
     --white-A200: #ffffffe0;
     --white-A700: #ffffffba;
     
-    --grey: #4e4d4d;
-    --grey-A200: #565656b5;
-    --grey-A700: #5656568c;
+    --grey: #1d1c1c;
+    --grey-A200: #1d1c1ce0;
+    --grey-A700: #1d1c1cba;
 }
 
 /* Scrollbar */
@@ -122,7 +122,8 @@ body.app-light-theme .ng-star-inserted .mat-table,
 body.app-light-theme .ng-star-inserted .nav-footer,
 body.app-light-theme .ng-star-inserted mat-sidenav,
 body.app-dark-theme ::-webkit-scrollbar-thumb,
-body.app-light-theme .no-agenda
+body.app-light-theme .no-agenda,
+body.app-light-theme .cdk-drag-preview
 {
     background: var(--white-A200) !important;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -182,7 +183,8 @@ body.app-dark-theme .ng-star-inserted .mat-table,
 body.app-dark-theme .ng-star-inserted .nav-footer,
 body.app-dark-theme .ng-star-inserted mat-sidenav,
 body.app-light-theme ::-webkit-scrollbar-thumb,
-body.app-dark-theme .no-agenda
+body.app-dark-theme .no-agenda,
+body.app-dark-theme .cdk-drag-preview
 {
     background: var(--black-A200) !important;
     border-radius: 5px !important;
@@ -335,6 +337,12 @@ app-before-login app-login mat-toolbar form input:-webkit-autofill
   	animation: transition var(--rgb-fit) ease infinite;
     transition: var(--glob-aimation-period);
     opacity: 5;
+}
+
+app-order-courses .order-drag-row .grip-icon,
+.cdk-drag-preview .grip-icon
+{
+    color: var(--foreground-text) !important;
 }
 
 .ng-star-inserted .mat-drawer-content
