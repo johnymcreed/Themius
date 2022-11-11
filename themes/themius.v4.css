@@ -259,10 +259,14 @@ body.app-dark-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:active
 {
     color: #e1a81d !important;
 }
-.mat-divider /* Sidebar-divider */
+mat-sidenav .mat-divider /* Sidebar-divider */
 {
     background: var(--foreground-text) !important;
     border-top-width: 1px !important;
+}
+.mat-divider
+{
+    background: white !important;
 }
 .ng-star-inserted .mat-expansion-panel-body
 {
