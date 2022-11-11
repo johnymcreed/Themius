@@ -616,6 +616,11 @@ app-order-courses.ng-star-inserted mat-card
     vertical-align: middle !important;
     margin: auto !important;
 }
+.ng-star-inserted .fr-view>div span /* Teachers? why? Feedback Modal */ 
+{
+    background-color: transparent !important;
+    font-size: 15px !important;
+}
 .ng-star-inserted .mat-card-image
 {
     /*background-image: url('https://media.tenor.com/I_i86IVRiEQAAAAM/rugocica-kickingcat.gif') !important;
@@ -748,25 +753,6 @@ app-course-home.ng-star-inserted mat-card
 /** 
  * Paste Detection
  */
-.ng-star-inserted lib-html-editor .fr-element #isPasted:hover:before /* Hover the star and this showsup */
-{
-    content: "This item is pasted and will be seen by teachers.";
-    position: absolute;
-    
-    width: 20rem;
-    left: 0;
-    right: 0;
-    top: 2rem;
-    text-align: center !important;
-    
-    transition: 0.5s;
-    
-    padding: 10px;
-    background: var(--black-A200);
-    
-	white-space: pre;
-    color: white !important;
-}
 .ng-star-inserted lib-html-editor .fr-element #isPasted
 {
 	text-decoration: underline !important;
