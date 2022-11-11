@@ -11,3 +11,13 @@ Firstly click <a href="https://github.com/johnymcreed/Themius/raw/Default/extens
 Then go to you're extension page which should be like `opera://extensions` or `chrome://extensions` to open to the extension page. Then finally click **Load Unpacked** and go to the newly extracted `extension` folder where you extracted it and select it. 
 
 There you go, you have Themius added which should start effecting ECHO as soon as it is enabled.
+
+# Info
+Since themius has been renovated and has several new features now like <b>force resubmit</b> and <b>paste detection</b> i might aswell add this here so you know what
+you are see on ECHO.
+
+Firstly, <b>Paste Detection</b> you will see in any text editor on ECHO a squiqqly underline under words you just pasted. this means that teachers can see its pasted
+
+Secondly, <b>Force Resubmit</b> if you are late to an assignment and miss its due date and the teacher sets it to it not allow submits past a date then this will bypass this at the cost that you cannot use the toolbar at the top of the editor.
+
+thats it. for now 😃
