@@ -353,6 +353,13 @@ app-before-login app-login mat-toolbar form input:-webkit-autofill
   	animation: transition var(--rgb-fit) ease infinite;
 }
 
+mat-chip-list .mat-chip
+{
+    background: var(--grey-A200) !important;
+    color: var(--white) !important;
+    border-radius: 5px;
+}
+
 .xli-ada-color /*Loader Top-bar*/
 {
     background: var(--primary-default) !important;
