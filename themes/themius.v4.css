@@ -1,109 +1,114 @@
-/**
- * - Themius Build v3 (https://johnymcreed.github.io/Themius/)
- * This is Themius a usefull redesign for ECHO with powerful changes that make 
- * the users experience more fun than what ECHO provides.
- * 
- * - Info about this
- * This style is designed for BOTH light and dark mode and allows the theme part
- * of echo to still work.
- */
- 
-@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap'); /* Cabin */
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap'); /* Source Code (For #isPasted) */
+/** 
+ * - Themius Design V4 (https://johnymcreed.github.io/Themius/)
+ * This is the themius design for ECHO (https://rogershs.echo-ntn.org/) that makes
+ * supers powerful changes to the website.
+ *
+ * - Socials 
+ * https://github.com/johnymcreed/Themius
+ * https://johnymcreed.github.io/Themius/
+*/
 
-:root
-{    
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap'); /* Google Fonts: Cabin */
+@keyframes transition /* RGB Background Transition */
+{
+    0%
+    {
+        background-position:0% 82%
+    }
+    50%
+    {
+        background-position:100% 19%
+    }
+    100%
+    {background-position:0% 82%
+    }
+}
+
+:root 
+{
     --font: 'Cabin', sans-serif;
-    --font-code: 'Source Code Pro', monospace;
         
     --rgb-timeout: 100s; /* length in animation */
 	--rgb-fit: 80s; /* time till the animation repeats */
 	--rgb-ts-colors: #f600008a, #a514148a, #9065358a, #d0cc168a, #e3ac008a, #d2f4288a,  #4f78278a, #31a5448a, #24724b8a, #3a86bf8a, #2b1de88a, #501c858a, #a518b48a, #90199c8a;
-	--rgb-colors: #f60000, #a51414, #906535, #d0cc16, #e3ac00, #d2f428,  #4f7827, #31a544, #24724b, #3a86bf, #2b1de8, #501c85, #a518b4, #90199c;
+	--rgb-colors: #f60000, #a51414, #d3551b, #daad14, #e3ac00, #d2f428,  #4f7827, #31a544, #24724b, #3a86bf, #2b1de8, #501c85, #a518b4, #90199c;
+    
+    --glob-aimation-period: 0.5s;
     
     --remove: none;    
     --show: visible;
     --hide: hidden;
     
-    /* For overlauys and panels with fixed colors */
     --black: black;
     --black-A200: #000000d4;
     --black-A700: #000000ba;
+    
     --white: white;
     --white-A200: #ffffffe0;
     --white-A700: #ffffffba;
+    
+    --grey: #4e4d4d;
     --grey-A200: #565656b5;
     --grey-A700: #5656568c;
-}
-
-/* RGB Key Frames */
-@keyframes RGB--TRANSITION {0%{background-position:0% 82%}50%{background-position:100% 19%}100%{background-position:0% 82%}}
-
-body, html, div, span, p
-{
-    font-family: var(--font) !important;
-    transition: 0s;
-}
-
-app-root, body, html
-{
-    background: var(--black) !important;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar 
 {
-  width: 3px;
+    width: 3px;
 }
-::-webkit-scrollbar-track /*BG*/
+::-webkit-scrollbar-track
 {
-  background: rgba(0, 0, 0, .48) !important;
+    background: rgba(0, 0, 0, .48) !important;
 }
 
-/* Global Element Removals */
-.ng-star-inserted .logo-ct,
-.ng-star-inserted .buzz-login-page-bottom,
-app-student-courses.ng-star-inserted .color-band,
-.ng-star-inserted .side-menu-logo-ct,
-.ng-star-inserted .app-title-ct,
-#cur-proj-id,
-.projects,
-.intro,
-.dropdown-icon,
-.ng-star-inserted .user-menu-button lib-profile-picture,
-.gauge,
-.gauge-progress,
-.course-objectives-info,
-.ng-star-inserted .toolbar .user-menu-button,
-.app-loading circle,
-.skip-nav,
-.ng-star-inserted .translation,
-.ng-star-inserted button[aria-label='Help'],
-/*.ng-star-inserted mat-card:has(.nav-card>.date-header), /* Will warn but works */
-.course-thumbnail
+app-root, /* Background */
+html, 
+body
 {
-    display: var(--remove) !important;
+    background: var(--black) !important;
 }
 
+app-root /* App-root Background */
+{
+    position: absolute !important;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0px !important;
+    background: var(--black) !important;
+}
+
+html, /* Global */
+body,
+div, /* Font */
+span, /* Font */
+p /* Font */
+{
+    font-family: var(--font) !important;
+    font-style: normal !important;
+}
 
 /**
- * App Theme (This is very big cause it affects a lot of elements at the same time)
- * - Light
- * - Dark
- */
-/* LIGHT */
-body.app-light-theme .ng-star-inserted .mat-card, /* White-A700 */
+ * APP THEME
+ * - App Theme applys when you change the theme of the page 
+ * its a huge part of this designs feature.
+*/
+body.app-light-theme .ng-star-inserted .mat-card,
 body.app-light-theme .ng-star-inserted .mat-expansion-panel,
 body.app-dark-theme ::-webkit-scrollbar-thumb:hover
 {
     background: var(--white-A700) !important;
     border-radius: 5px !important;
 }
+
 body.app-light-theme app-inbox.ng-star-inserted .list-ct mat-nav-list .selected span, /* Set text */
 app-student-activity.ng-star-inserted
 {
     color: white !important;
 }
+
 body.app-light-theme .ng-star-inserted mat-card .color-band,
 body.app-light-theme .ng-star-inserted .cdk-overlay-container mat-dialog-container,
 body.app-light-theme .mat-dialog-container,
@@ -122,6 +127,7 @@ body.app-light-theme .no-agenda
     background: var(--white-A200) !important;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
+
 body.app-light-theme .ng-star-inserted .main-toolbar, /* White */
 body.app-light-theme .ng-star-inserted .mat-tab-labels,
 body.app-light-theme .ng-star-inserted .mat-tab-labels .mat-tab-label,
@@ -136,16 +142,18 @@ body.app-light-theme .mat-snack-bar-container,
     background: var(--white) !important;
     color: black !important;
 }
+
 body.app-light-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a, a span, a div, .selected *, a u *, span a *) /* Agenda Form View (LIGHT) */
 {
     margin: auto !important;
 	color: var(--foreground-text) !important;
 }
-/* DARK */
+
 body.app-light-theme lib-standards-rubric-details table td 
 {
     border: 1px solid black !important;
 }
+
 body.app-dark-theme .ng-star-inserted .main-toolbar, /* Black */
 body.app-dark-theme .ng-star-inserted .mat-tab-labels,
 body.app-dark-theme .ng-star-inserted .mat-tab-labels .mat-tab-label,
@@ -160,6 +168,7 @@ body.app-dark-theme .ng-star-inserted .notification,
     background: var(--black) !important;
     color: white !important;
 }
+
 body.app-dark-theme .ng-star-inserted mat-card .color-band,
 body.app-dark-theme .ng-star-inserted mat-dialog-container,
 body.app-dark-theme .ng-star-inserted .mat-select-panel,
@@ -178,6 +187,7 @@ body.app-dark-theme .no-agenda
     background: var(--black-A200) !important;
     border-radius: 5px !important;
 }
+
 body.app-dark-theme .ng-star-inserted .mat-card, /* Black-A700 */
 body.app-dark-theme .ng-star-inserted .mat-expansion-panel,
 body.app-light-theme ::-webkit-scrollbar-thumb:hover
@@ -185,164 +195,275 @@ body.app-light-theme ::-webkit-scrollbar-thumb:hover
     background: var(--black-A700) !important;
     border-radius: 5px !important;
 } 
+
 body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a, a span, a div, .selected *, a u *, span a *) /* Agenda Form View (DARK) */
 {
 	background: transparent !important;
 	margin: auto !important;
 	color: var(--foreground-text) !important;
 }
+
 body.app-dark-theme .activity-html span
 {
     color: white !important;
 }
+
 body.app-dark-theme .activity-html li
 {
     color: white !important;
 }
+
 body.app-dark-theme .ng-star-inserted lib-student-grade-details table div
 {
     background: transparent !important;
 }
+
 body.app-dark-theme lib-standards-rubric-details table td 
 {
     border: 1px solid white !important;
     background: transparent !important;
 }
-/*Both*/
+
 body.app-light-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:active,
 body.app-dark-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:active
 {
     background: transparent !important;
 }
 
+/** 
+ * LOGIN PAGE
+ * - This is the start of the entire website and is where the base of the design starts
+ * we are forcing the page to be a centered modal over a navbar with login details.
+*/
+app-before-login app-login /* Glob */
+{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+app-before-login app-login mat-toolbar.mat-toolbar /* Login Toolbar */
+{
+    background: transparent !important;
+    height: 0px !important;
+}
+
+app-before-login app-login .buzz-login-background /* Login Background */
+{
+    background: linear-gradient(124deg, var(--rgb-colors));
+    -webkit-animation: transition var(--rgb-timeout) ease infinite;
+  	animation: transition var(--rgb-fit) ease infinite;
+    background-size: 20000% 20000%;
+    
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+app-before-login app-login mat-toolbar form
+{   
+    background: var(--black-A200) !important;
+    box-shadow: none !important;
+        
+    padding: 100px;
+    transform: translate(-50%, -50%);
+    white-space: pre;
+    
+    transition: var(--glob-aimation-period);
+    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+app-before-login app-login mat-toolbar form:before /* Title */
+{
+    content: "Rogers New Technology Highschool";
+    
+    font-size: 30px;
+    transition: var(--glob-aimation-period);
+    color: var(--white) !important;
+    
+    width: 100%;
+    top: 15%;
+    position: absolute;
+}
+
+app-before-login app-login mat-toolbar form:after /* Copyright */
+{
+    content: "Redesign by Mcreed";
+    
+    font-size: 15px;
+    transition: var(--glob-aimation-period);
+    color: var(--white) !important;
+    
+    bottom: 15%;
+    left: 15%;
+    position: absolute;
+}
+
+app-before-login app-login mat-toolbar form button /* Push "Login" to the right more */
+{
+    margin-left: 10px !important;
+}
+
+app-before-login app-login mat-toolbar input, /* Backdrop Color */
+app-before-login app-login mat-toolbar input:-webkit-autofill
+{
+    box-shadow: 0px 0px 0px 0px black !important;
+    outline: transparent !important;
+    background: transparent !important;
+}
+
 /**
- * Toolbars/Tooltips/Menus/Ect
+ * BACKENDS
+ * - Edits elements that are used when things happen
  */
-.cdk-overlay-container .mat-menu-item
+.cdk-overlay-container .mat-menu-item /* Overlay items */
 {
     color: white !important;
 }
+
 .ng-star-inserted .mat-drawer-backdrop /* Sidebar Backdrop */
 {
     background: linear-gradient(124deg, var(--rgb-ts-colors));
     background-size: 20000% 20000%;    
-    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
-  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
-    transition: 0.5s;
+    -webkit-animation: transition var(--rgb-timeout) ease infinite;
+  	animation: transition var(--rgb-fit) ease infinite;
+    transition: var(--glob-aimation-period);
     opacity: 5;
 }
+
 .ng-star-inserted .mat-drawer-content
 {
     background: linear-gradient(124deg, var(--rgb-colors));
     background-size: 20000% 20000%;    
-    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
-  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
+    -webkit-animation: transition var(--rgb-timeout) ease infinite;
+  	animation: transition var(--rgb-fit) ease infinite;
 }
+
 .ng-star-inserted .main
 {
     background: linear-gradient(124deg, var(--rgb-colors));
     background-size: 20000% 20000%;    
-    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
-  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
+    -webkit-animation: transition var(--rgb-timeout) ease infinite;
+  	animation: transition var(--rgb-fit) ease infinite;
 }
+
 .xli-ada-color /*Loader Top-bar*/
 {
     background: var(--primary-default) !important;
 }
+
 .fail-color
 {
     color: #d52525 !important;
 }
+
 .pass-color
 {
     color: #32741f !important;
 }
+
 .warn-color
 {
     color: #e1a81d !important;
 }
+
 mat-sidenav .mat-divider /* Sidebar-divider */
 {
     background: var(--foreground-text) !important;
     border-top-width: 1px !important;
 }
+
 .mat-divider
 {
     background: white !important;
 }
+
 .ng-star-inserted .mat-expansion-panel-body
 {
     padding: 0px !important;
 }
+
 .ng-star-inserted .mat-expansion-panel
 {
     margin-bottom: 10px;
 }
+
 .ng-star-inserted simple-snack-bar .mat-button
 {
     color: var(--primary-default) !important;
 }
-.ng-star-inserted mat-sidenav::-webkit-scrollbar,
-.ng-star-inserted mat-sidenav .mat-drawer-inner-container::-webkit-scrollbar 
-{
-  display: none;
-}
+
 .ng-star-inserted mat-sidenav,
 .ng-star-inserted mat-sidenav .mat-drawer-inner-container
 {
     -ms-overflow-style: none;
     scrollbar-width: none; /* Firefox */
 }
-.ng-star-inserted lib-dropbox .header-ct
+
+app-course-home.ng-star-inserted .mat-divider
 {
-    display: none !important;
+    visibility: var(--hide) !important;
 }
+
 .ng-star-inserted lib-dropbox
 {
     margin-top: 0px !important;
 }
+
 .mat-list-item:hover
 {
-    transition: 0.5s;
+    transition: var(--glob-aimation-period);
 }
+
 .mat-tooltip /*tooltips */
 {
     background: var(--foreground-text) !important;
     color: var(--background) !important;
-    transition: 0.5s;
+    transition: var(--glob-aimation-period);
 }
+
 .cdk-overlay-container .cdk-overlay-pane .mat-menu-panel /* Panel is fixed color */
 {
     background: var(--black-A700) !important;
     color: white !important;
-    transition: 0.5s;
+    transition: var(--glob-aimation-period);
 }
+
 .cdk-overlay-container .cdk-overlay-pane .mat-menu-panel button:hover
 {
     background: var(--grey-A200) !important;
-    transition: 0.5s;
+    transition: var(--glob-aimation-period);
 }
+
 lib-student-grade-details .selected
 {
     background: var(--grey-A200) !important;
 }
+
 .ng-star-inserted .user-menu-button .user-name /* Name Flex Field Fix */
 {
 	margin: -10px;
 	flex-direction: row !important;
 	column-gap: 5px !important;
 }
+
 .ng-star-inserted .user-menu-button
 {
     margin-right: -2rem;
 }
+
 .ng-star-inserted .app-background
 {
     background: linear-gradient(124deg, var(--rgb-colors));
 	background-size: 20000% 20000%;
-    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
-  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
+    -webkit-animation: transition var(--rgb-timeout) ease infinite;
+  	animation: transition var(--rgb-fit) ease infinite;
 }
+
 .ng-star-inserted .mat-badge-content,
 .ng-star-inserted .app-large-button-badge
 { 
@@ -351,15 +472,18 @@ lib-student-grade-details .selected
 	border-radius: 20px !important;
 	padding: 0px !important;
 }
+
 .ng-star-inserted .mat-card
 {
     border-radius: 0px;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
 }
+
 .ng-star-inserted .mat-tree
 {
     background: transparent;
 }
+
 .ng-star-inserted .title-text,
 .ng-star-inserted .focus-title-text
 {
@@ -367,20 +491,7 @@ lib-student-grade-details .selected
     outline: none !important;
     user-select: none !important;
 }
-mat-ink-bar
-{
-    display: none !important;
-}
-app-root
-{
-    position: absolute !important;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: 0px !important;
-    background: var(--black) !important;
-}
+
 :root app-root>svg.app-loading /* F u agent style sheets */
 {
     position: absolute !important;
@@ -392,135 +503,48 @@ app-root
     padding: 100px;
     transform: translate(-50%, -50%);
     white-space: nowrap;
-    transition: 0s !important;
 }
+
 .course-color
 {
     background-image: url('https://americanpetsalive.org/uploads/blog/Healthy-Kittens.jpg') !important;
     background-size: 24px 24px; 
 }
 
-/**
- * Login page 
- */
-app-before-login app-login mat-toolbar.main-toolbar /* Remove Login top bar */
-{
-    background: transparent !important;
-    height: 0px !important;
-}
-app-before-login app-login mat-toolbar form button
-{
-    margin-left: 10px !important;
-}
-.ng-star-inserted .buzz-login-background
+
+/** 
+ * EVERYTHING
+ * - This edits every page 
+*/
+app-student-courses.ng-star-inserted,
+app-student-stream.ng-star-inserted,
+app-student-to-do.ng-star-inserted,
+app-badges.ng-star-inserted
 {
     background: linear-gradient(124deg, var(--rgb-colors));
-	background-size: 20000% 20000%;
-    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
-  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
-    
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-.ng-star-inserted .mat-form-field.mat-accent,
-.ng-star-inserted .mat-form-field.mat-accent .mat-input-element
-{
-    caret-color: transparent !important;
-}
-.ng-star-inserted .mat-form-field-label
-{
-    font-size: 17px;
-    font-family: var(--font) !important;
-}
-app-login input
-{
-    box-shadow: none !important;
-}
-.ng-star-inserted mat-toolbar form /* Center Loging to screen */
-{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    
-    background: var(--black-A200) !important;
-    box-shadow: none !important;
-        
-    padding: 100px;
-    transform: translate(-50%, -50%);
-    white-space: pre;
-    transition: 0.5s;
-}
-.ng-star-inserted mat-toolbar form:before /* Title */
-{
-    content: "Rogers New Technology Highschool";
-    position: absolute;
-    
-    width: 100%;
-    top: 15%;
-    font-size: 30px;
-    transition: 0.5s;
-}
-.ng-star-inserted mat-toolbar form:after /* Copyright */
-{
-    content: "Redesign by Mcreed";
-    position: absolute;
-    bottom: 15%;
-    left: 15%;
-    font-size: 15px;
-    transition: 0.5s;
+    background-size: 20000% 20000%;    
+    -webkit-animation: transition var(--rgb-timeout) ease infinite;
+  	animation: transition var(--rgb-fit) ease infinite;
+    padding: 10px;
 }
 
-/**
- * Course Page 
-     - TODO
-     - STREAM
-     - Announcements
-     - Ect
- */
-app-student-courses.ng-star-inserted
+app-student-courses.ng-star-inserted>.home-ct,
+app-student-stream.ng-star-inserted mat-card,
+app-student-to-do.ng-star-inserted mat-card,
+app-choose-theme.ng-star-inserted mat-card,
+app-gradebook-dashboard.ng-star-inserted mat-card,
+lib-grade-details.ng-star-inserted mat-card,
+lib-grade-details.ng-star-inserted .main .card-ct mat-card
 {
-    background: linear-gradient(124deg, var(--rgb-colors));
-    background-size: 20000% 20000%;    
-    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
-  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
-    padding: 10px;
+    width: 100%;
+    max-width: 100% !important;
 }
-app-student-stream.ng-star-inserted
-{
-    background: linear-gradient(124deg, var(--rgb-colors));
-    background-size: 20000% 20000%;    
-    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
-  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
-    padding: 10px;
-}
-app-student-to-do.ng-star-inserted
-{
-    background: linear-gradient(124deg, var(--rgb-colors));
-    background-size: 20000% 20000%;    
-    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
-  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
-    padding: 10px;
-}
+
 lib-grade-details.ng-star-inserted .mat-tab-label-container
 {
     margin-top: 1rem;
 }
-app-gradebook-dashboard.ng-star-inserted mat-card
-{
-    width: 100%;
-    max-width: 100% !important;
-}
-app-student-courses.ng-star-inserted>.home-ct,
-app-student-stream.ng-star-inserted mat-card,
-app-student-to-do.ng-star-inserted mat-card,
-app-choose-theme.ng-star-inserted mat-card
-{
-    width: 100%;
-    max-width: 100% !important;
-}
+
 app-create-task.ng-star-inserted mat-card
 {
     position: absolute;
@@ -528,69 +552,62 @@ app-create-task.ng-star-inserted mat-card
     top: 50%;
     transform: translate(-50%, -50%);    
 }
+
 .ng-star-inserted lib-standards-rubric-details .selected lib-managed-html
 {
 	background: var(--grey-A700) !important;
     color: white !important;
 }
+
 lib-grade-details.ng-star-inserted .card-ct
 {
     max-width: 100% !important;
     padding: 10px !important;
 }
-lib-grade-details.ng-star-inserted mat-card
-{
-    width: 100%;
-    max-width: 100%;
-}
-app-badges.ng-star-inserted
-{
-    background: linear-gradient(124deg, var(--rgb-colors));
-    background-size: 20000% 20000%;    
-    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
-  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
-    padding: 10px;
-}
+
 app-badges.ng-star-inserted form mat-card
 {
     width: 100% !important; 
     max-width: 100% !important;
 } 
+
 app-course-home .mat-tab-header .mat-tab-labels
 {
     margin-top: 1rem  
 }
+
 lib-grade-details.ng-star-inserted
 {
     padding: 0px;
 }
-lib-grade-details.ng-star-inserted .main .card-ct mat-card
-{
-    width: 100%;
-    max-width: 100% !important;
-}
+
 app-blackout-dates.ng-star-inserted .main .two-columns
 {
     max-width: none !important;
 }
+
 app-blackout-dates.ng-star-inserted
 {
     padding: 10px;
 }
+
 app-blackout-dates.ng-star-inserted .main .two-columns mat-card
 {
     width: 100% !important;
     max-width: 100% !important;
 }
+
 app-student-courses.ng-star-inserted mat-card-title-group
 {
     padding-top: 1rem;
 }
+
 app-student-courses.ng-star-inserted mat-card
 {
     text-transform: uppercase;
-    transition: 0.5s;
+    transition: var(--glob-aimation-period);
 }
+
 app-self-register.ng-star-inserted mat-card
 {
     position: absolute;
@@ -598,6 +615,7 @@ app-self-register.ng-star-inserted mat-card
     top: 50%;
     transform: translate(-50%, -50%); 
 }
+
 app-order-courses.ng-star-inserted mat-card
 {
     position: absolute;
@@ -607,104 +625,121 @@ app-order-courses.ng-star-inserted mat-card
     transform: translate(-50%, -50%); 
     width: 100%;
 }
+
 .cdk-drop-list .cdk-drag.cdk-drag-placeholder
 {
     padding: 50px;
 }
+
 .ng-star-inserted mat-card .nav-card .date-header
 {
     vertical-align: middle !important;
     margin: auto !important;
 }
+
 .ng-star-inserted .fr-view>div span /* Teachers? why? Feedback Modal */ 
 {
     background-color: transparent !important;
     font-size: 15px !important;
 }
+
 .ng-star-inserted .mat-card-image
 {
-    /*background-image: url('https://media.tenor.com/I_i86IVRiEQAAAAM/rugocica-kickingcat.gif') !important;
-    background-size: 280px 30vh !important;*/
-    /*border-radius: 5px !important;*/
 }
+
 .ng-star-inserted mat-form-field,
 .ng-star-inserted app-filter-box
 {
     padding: 0px !important;
 }
+
 app-announcement-detail.ng-star-inserted /* NG-App Announcements */
 {
 	background: var(--background) !important;
 }
+
 app-announcement-detail.ng-star-inserted .details .info
 {
     width: max-content !important;
     background: transparent !important;
     text-align: left;
 }
+
 app-announcement-detail.ng-star-inserted
 {
     font-weight: 100 !important;
 }
+
 app-inbox.ng-star-inserted .list-ct mat-nav-list .selected
 {
     background: var(--grey-A700) !important;
-    transition: 0.5s;
+    transition: var(--glob-aimation-period);
 }
+
 app-announcement-detail.ng-star-inserted lib-managed-html *
 {
 	background: transparent !important;
 	color: var(--foreground-text) !important;
 }
+
 .ng-star-inserted .announcement-list
 {
 	background: var(--background) !important;
 }
 
 /**
- * Course Page
- */
+ * COURSE PAGE 
+ * - Changes the course page
+*/
 .ng-star-inserted app-course-home .card-ct
 {
     background: linear-gradient(124deg, var(--rgb-colors));
     background-size: 20000% 20000%;    
-    -webkit-animation: RGB--TRANSITION var(--rgb-timeout) ease infinite;
-  	animation: RGB--TRANSITION var(--rgb-fit) ease infinite;
+    -webkit-animation: transition var(--rgb-timeout) ease infinite;
+  	animation: transition var(--rgb-fit) ease infinite;
     padding: 10px;
 }
+
 app-course-home.ng-star-inserted mat-card
 {
     width: 100%;
     max-width: 100% !important;
 }
+
 .ng-star-inserted .activity-html lib-managed-html .fr-view ul
 {
     background: transparent !important;
 }
+
 .ng-star-inserted mat-drawer-content .activity-html
 {
     border-radius: 0px !important;
 }
+
 .ng-star-inserted .mat-tab-body-content
 {
 	overflow: hidden !important;
 }
+
 .ng-star-inserted .search-bar
 {
 	margin: 0px !important;
 }
+
 .ng-star-inserted .detail-ct
 {
     padding: 10px;
 }
 
 /**
- * Agenda Inside Course Page 
- */
+ * AGENDA
+ * - Customize the agenda for the course pages
+*/
 .ng-star-inserted .fr-view table
 {
 	width: 100% !important;
 }
+
 .ng-star-inserted .fr-view a, 
 .ng-star-inserted .fr-view a span,
 .ng-star-inserted .fr-view a div,
@@ -715,11 +750,13 @@ app-course-home.ng-star-inserted mat-card
     text-decoration: none !important;
     font-weight: 100 !important;
 }
+
 .ng-star-inserted lib-rubric-details .fr-view *,
 .ng-star-inserted lib-rubric-grader .fr-view *
 {
 	background: transparent !important;
 }
+
 .ng-star-inserted .fr-view table,
 .ng-star-inserted .fr-view table thead,
 .ng-star-inserted .fr-view table thead tr,
@@ -730,6 +767,7 @@ app-course-home.ng-star-inserted mat-card
 {
 	border: 1px solid var(--foreground-text) !important;
 }
+
 .no-agenda /* No-Agenda Popup Change */
 {
 	font-size: 20px;
@@ -743,6 +781,7 @@ app-course-home.ng-star-inserted mat-card
     width: 30rem;
     border-radius: 5px;
 }
+
 .no-agenda:after
 {
     white-space: pre;
@@ -750,16 +789,42 @@ app-course-home.ng-star-inserted mat-card
     content: "\aThis current day has no agenda"
 }
 
-/** 
- * Paste Detection
- */
-.ng-star-inserted lib-html-editor .fr-element #isPasted
+/**
+ * PASTE DETECTION
+ * - Detects when the #isPasted id tag is given in an element and gives it 
+ * priority as a squiggly line is placed under it.
+*/
+app-after-login lib-html-editor .fr-element #isPasted
 {
-	text-decoration: underline !important;
+    text-decoration: underline !important;
     text-decoration-style: wavy !important;
-    text-decoration-color: red !important;
-    
-	padding: 3.5px !important;
-	font-size: 14px !important;
-	cursor: pointer;
+    text-decoration-color: var(--primary-900) !important;
+    font-size: 14px !important;
+}
+
+/* Global Elements that are permanetly removed */
+.ng-star-inserted .user-menu-button lib-profile-picture, /* User Avatar (Navbar) */
+.dropdown-icon, /* Profile dropdown arrow */
+.ng-star-inserted .toolbar .user-menu-button, /* User Menu button in Toolbar */
+app-student-courses.ng-star-inserted .color-band, /* Course Card Color band */
+.ng-star-inserted .buzz-login-page-bottom, /* The huge Logo and new tech logo in login screen */
+.ng-star-inserted .side-menu-logo-ct, /* Sidemenu ECHO Logo */
+.ng-star-inserted .app-title-ct, /* App title */
+.ng-star-inserted .logo-ct, /* ECHO Logo */
+#cur-proj-id, /* Project ID */
+.projects, /* Projects */
+.intro,
+.gauge, /* Grade Gauge */ 
+.gauge-progress, /* Grade Gauge Progress */
+.course-objectives-info, /* Course Onjective Info */
+.app-loading circle, /* App loader circles (Replaced with a cat) */
+.skip-nav, /* Odd skip-nav that can sometimes popup */
+.ng-star-inserted button[aria-label='Help'], /* Help BTN in navbar */
+.course-thumbnail, /* Course Thumbnails in course page */
+.ng-star-inserted lib-dropbox .header-ct,
+.ng-star-inserted mat-sidenav::-webkit-scrollbar,
+.ng-star-inserted mat-sidenav .mat-drawer-inner-container::-webkit-scrollbar,
+mat-ink-bar
+{
+    display: var(--remove) !important;
 }
