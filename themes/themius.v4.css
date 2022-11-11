@@ -670,6 +670,11 @@ app-order-courses.ng-star-inserted mat-card
     padding: 0px !important;
 }
 
+.cdk-overlay-container>[dir="ltr"] .cdk-overlay-pane .open-animation
+{
+    display: none !important;
+}
+
 app-announcement-detail.ng-star-inserted /* NG-App Announcements */
 {
 	background: var(--background) !important;
