@@ -311,15 +311,6 @@ app-before-login app-login mat-toolbar form button /* Push "Login" to the right 
     color: var(--white) !important;
 }
 
-app-before-login app-login mat-toolbar form input, /* Backdrop Color */
-app-before-login app-login mat-toolbar form input:-webkit-autofill
-{
-    box-shadow: 0px 0px 0px 0px transparent !important;
-    outline: transparent !important;
-    background: transparent !important;
-    color: transparent !important;
-}
-
 /**
  * BACKENDS
  * - Edits elements that are used when things happen
