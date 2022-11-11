@@ -306,14 +306,16 @@ app-before-login app-login mat-toolbar form:after /* Copyright */
 app-before-login app-login mat-toolbar form button /* Push "Login" to the right more */
 {
     margin-left: 10px !important;
+    color: var(--white) !important;
 }
 
 app-before-login app-login mat-toolbar input, /* Backdrop Color */
 app-before-login app-login mat-toolbar input:-webkit-autofill
 {
-    box-shadow: 0px 0px 0px 0px black !important;
+    box-shadow: 0px 0px 0px 0px var(--black) !important;
     outline: transparent !important;
-    background: transparent !important;
+    background: var(--black) !important;
+    color: var(--white) !important;
 }
 
 /**
