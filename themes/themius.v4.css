@@ -117,7 +117,7 @@ body.app-light-theme .ng-star-inserted .mat-table,
 body.app-light-theme .ng-star-inserted .nav-footer,
 body.app-light-theme .ng-star-inserted mat-sidenav,
 body.app-dark-theme ::-webkit-scrollbar-thumb,
-body.app-light-mode .no-agenda
+body.app-light-theme .no-agenda
 {
     background: var(--white-A200) !important;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
