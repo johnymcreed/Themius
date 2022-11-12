@@ -138,6 +138,7 @@ body.app-light-theme .ng-star-inserted .objective-speedometer,
 body.app-dark-theme .ng-star-inserted .card-ct mat-card .card-top,
 body.app-light-theme .ng-star-inserted .notification,
 body.app-light-theme .mat-snack-bar-container,
+body.app-light-theme app-privacy .mat-toolbar,
 ::selection
 {
     background: var(--white) !important;
@@ -164,6 +165,7 @@ body.app-dark-theme .ng-star-inserted .links-ct,
 body.app-dark-theme .ng-star-inserted .objective-speedometer,
 body.app-light-theme .ng-star-inserted .card-ct mat-card .card-top,
 body.app-dark-theme .ng-star-inserted .notification,
+body.app-dark-theme app-privacy .mat-toolbar,
 ::selection
 {
     background: var(--black) !important;
