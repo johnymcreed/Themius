@@ -311,6 +311,27 @@ app-before-login app-login mat-toolbar form button /* Push "Login" to the right 
     color: var(--white) !important;
 }
 
+app-before-login app-login mat-toolbar form input
+{
+    all: revert !important;
+    outline: none !important;
+    background: transparent !important;
+    
+    text-shadow: none !important;
+    
+    border: 0px !important;
+    box-shadow: none !important;
+    box-sizing: 0px !important;
+    
+    margin: 0 !important;
+    width: 98% !important;
+    max-width: 100% !important;
+    
+    vertical-align: bottom !important;
+    text-align: left !important;
+    box-sizing: content-box !important;
+}
+
 /**
  * BACKENDS
  * - Edits elements that are used when things happen
