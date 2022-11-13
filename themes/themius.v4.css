@@ -8,7 +8,8 @@
  * https://johnymcreed.github.io/Themius/
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap'); /* Google Fonts: Cabin */
+@import url('https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/fonts/cabin.css'); /* Google Fonts: Cabin */
+@import url('https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/fonts/emoji.css'); /* Emoji Support */
 @keyframes transition /* RGB Background Transition */
 {
     0%
@@ -20,13 +21,15 @@
         background-position:100% 19%
     }
     100%
-    {background-position:0% 82%
+    {
+        background-position:0% 82%
     }
 }
 
 :root 
 {
     --font: 'Cabin', sans-serif;
+    --emoji-support: 'Noto Color Emoji', sans-serif;
         
     --rgb-timeout: 100s; /* length in animation */
 	--rgb-fit: 80s; /* time till the animation repeats */
@@ -86,6 +89,7 @@ div, /* Font */
 span, /* Font */
 p /* Font */
 {
+    font-family: var(--emoji-support) !important;
     font-family: var(--font) !important;
     font-style: normal !important;
 }
@@ -97,7 +101,8 @@ p /* Font */
 */
 body.app-light-theme .ng-star-inserted .mat-card,
 body.app-light-theme .ng-star-inserted .mat-expansion-panel,
-body.app-dark-theme ::-webkit-scrollbar-thumb:hover
+body.app-dark-theme ::-webkit-scrollbar-thumb:hover,
+body.app-light-theme .cdk-overlay-container>[dir="ltr"] .cdk-overlay-pane .open-animation-border
 {
     background: var(--white-A700) !important;
     border-radius: 5px !important;
@@ -194,7 +199,8 @@ body.app-dark-theme .cdk-drag-preview
 
 body.app-dark-theme .ng-star-inserted .mat-card, /* Black-A700 */
 body.app-dark-theme .ng-star-inserted .mat-expansion-panel,
-body.app-light-theme ::-webkit-scrollbar-thumb:hover
+body.app-light-theme ::-webkit-scrollbar-thumb:hover,
+body.app-dark-theme .cdk-overlay-container>[dir="ltr"] .cdk-overlay-pane .open-animation-border
 {
     background: var(--black-A700) !important;
     border-radius: 5px !important;
@@ -685,11 +691,6 @@ app-order-courses.ng-star-inserted mat-card
     padding: 0px !important;
 }
 
-.cdk-overlay-container>[dir="ltr"] .cdk-overlay-pane .open-animation
-{
-    display: none !important;
-}
-
 app-announcement-detail.ng-star-inserted /* NG-App Announcements */
 {
 	background: var(--background) !important;
@@ -861,6 +862,7 @@ app-student-courses.ng-star-inserted .color-band, /* Course Card Color band */
 .ng-star-inserted lib-dropbox .header-ct,
 .ng-star-inserted mat-sidenav::-webkit-scrollbar,
 .ng-star-inserted mat-sidenav .mat-drawer-inner-container::-webkit-scrollbar,
+.cdk-overlay-container>[dir="ltr"] .cdk-overlay-pane .open-animation,
 mat-ink-bar
 {
     display: var(--remove) !important;
