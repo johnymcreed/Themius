@@ -59,6 +59,6 @@ during the case that an assignment is pass its due date or a specific field is s
 
 <br>
 
-# app-[theme-of-choice]-theme
+# app-[dark/light]-theme
 Will return a theme of choice either `app-dark-theme` or `app-light-theme` that changes the entire websites core theme from dark or light
 there are also sub themes like `--primary-default` which is the sub theme you choose in the /theme/ page.
