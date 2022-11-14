@@ -27,6 +27,8 @@
 :root {
 	--font: 'Cabin', sans-serif;
 	--emoji-support: 'Noto Color Emoji', sans-serif;
+    --agenda-font-size: 18px; /* Agendas font size */
+    --landing-desc-font-size: 15px; /* Course description font size */
 
 	--rgb-timeout: 100s; /* length in animation */
 	--rgb-fit: 50s; /* time till the animation repeats */
@@ -38,11 +40,15 @@
 		#3a86bf, #2b1de8, #501c85, #a518b4, #90199c;
 
 	--glob-aimation-period: 0.5s; /* Animation Period for elements */
-    
+     
 	--remove: none;
 	--show: visible;
 	--hide: hidden;
 
+    --red: #d52525;
+    --green: #32741f;
+    --orange: #e1a81d;
+    
 	--black: black;
 	--black-A200: #000000e0;
 	--black-A700: #000000ba;
@@ -61,7 +67,7 @@
 	width: 3px;
 }
 ::-webkit-scrollbar-track {
-	background: rgba(0, 0, 0, 0.48) !important;
+	background: rgba(0, 0, 0, 0.50) !important;
 }
 
 app-root, /* Background */
@@ -105,7 +111,7 @@ body.app-light-theme .cdk-overlay-container > [dir='ltr'] .cdk-overlay-pane .ope
 
 body.app-light-theme app-inbox.ng-star-inserted .list-ct mat-nav-list .selected span, /* Set text */
 app-student-activity.ng-star-inserted {
-	color: white !important;
+	color: var(--white) !important;
 }
 
 body.app-light-theme .ng-star-inserted mat-card .color-band,
@@ -124,7 +130,7 @@ body.app-dark-theme ::-webkit-scrollbar-thumb,
 body.app-light-theme .no-agenda,
 body.app-light-theme .cdk-drag-preview /* Box-shadows */ {
 	background: var(--white-A200) !important;
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0);
 }
 
 body.app-light-theme .ng-star-inserted .main-toolbar,
@@ -163,7 +169,7 @@ body.app-dark-theme .ng-star-inserted .notification,
 body.app-dark-theme app-privacy .mat-toolbar,
 ::selection {
 	background: var(--black) !important;
-	color: white !important;
+	color: var(--white) !important;
 }
 
 body.app-dark-theme .ng-star-inserted mat-card .color-band,
@@ -200,11 +206,11 @@ body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(
 }
 
 body.app-dark-theme .activity-html span {
-	color: white !important;
+	color: var(--white) !important;
 }
 
 body.app-dark-theme .activity-html li {
-	color: white !important;
+	color: var(--white) !important;
 }
 
 body.app-dark-theme .ng-star-inserted lib-student-grade-details table div {
@@ -212,7 +218,7 @@ body.app-dark-theme .ng-star-inserted lib-student-grade-details table div {
 }
 
 body.app-dark-theme lib-standards-rubric-details table td {
-	border: 1px solid white !important;
+	border: 1px solid var(--white) !important;
 	background: transparent !important;
 }
 
@@ -320,7 +326,11 @@ app-before-login app-login mat-toolbar form input {
  * like "Enroll in a course" or modals that open by themselves
  */
 .cdk-overlay-container .mat-menu-item /* Overlay items */ {
-	color: white !important;
+	color: var(--white) !important;
+}
+
+.ng-star-inserted .landing-content * /* Global course description content */ {
+    font-size: var(--landing-desc-font-size) !important;
 }
 
 .ng-star-inserted .mat-drawer-backdrop /* Sidebar Backdrop */ {
@@ -330,6 +340,10 @@ app-before-login app-login mat-toolbar form input {
 	animation: transition var(--rgb-fit) ease infinite;
 	transition: var(--glob-aimation-period);
 	opacity: 5;
+}
+
+app-course-home.ng-star-inserted .agendas lib-managed-html .fr-view p * /* Course agenda font-size */ {
+    font-size:  var(--agenda-font-size) !important;
 }
 
 app-order-courses .order-drag-row .grip-icon,
@@ -362,15 +376,15 @@ mat-chip-list .mat-chip {
 }
 
 .fail-color {
-	color: #d52525 !important;
+	color: var(--red) !important;
 }
 
 .pass-color {
-	color: #32741f !important;
+	color: var(--green) !important;
 }
 
 .warn-color {
-	color: #e1a81d !important;
+	color: var(--orange) !important;
 }
 
 mat-sidenav .mat-divider /* Sidebar-divider */ {
@@ -379,7 +393,7 @@ mat-sidenav .mat-divider /* Sidebar-divider */ {
 }
 
 .mat-divider {
-	background: white !important;
+	background: var(--white) !important;
 }
 
 .ng-star-inserted .mat-expansion-panel-body {
@@ -420,7 +434,7 @@ app-course-home.ng-star-inserted .mat-divider {
 
 .cdk-overlay-container .cdk-overlay-pane .mat-menu-panel /* Panel is fixed color */ {
 	background: var(--black-A700) !important;
-	color: white !important;
+	color: var(--white) !important;
 	transition: var(--glob-aimation-period);
 }
 
@@ -460,7 +474,7 @@ lib-student-grade-details .selected {
 
 .ng-star-inserted .mat-card {
 	border-radius: 0px;
-	box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0);
 }
 
 .ng-star-inserted .mat-tree {
@@ -541,7 +555,7 @@ app-create-task.ng-star-inserted mat-card {
 
 .ng-star-inserted lib-standards-rubric-details .selected lib-managed-html {
 	background: var(--grey-A700) !important;
-	color: white !important;
+	color: var(--white) !important;
 }
 
 lib-grade-details.ng-star-inserted .card-ct {
@@ -784,6 +798,7 @@ app-student-courses.ng-star-inserted .color-band, /* Course Card Color band */
 .ng-star-inserted mat-sidenav::-webkit-scrollbar,
 .ng-star-inserted mat-sidenav .mat-drawer-inner-container::-webkit-scrollbar,
 .cdk-overlay-container>[dir="ltr"] .cdk-overlay-pane .open-animation,
+app-course-home.ng-star-inserted .course-progress,
 mat-ink-bar {
 	display: var(--remove) !important;
 }
