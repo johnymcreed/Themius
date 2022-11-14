@@ -56,3 +56,9 @@ these can be the following: <br>
 # disabled
 `disabled` is a bool statement that if true/false can disable buttons, text editors or inputs within ECHO which is used
 during the case that an assignment is pass its due date or a specific field is suppose to be disabled.
+
+<br>
+
+# app-[theme-of-choice]-theme
+Will return a theme of choice either `app-dark-theme` or `app-light-theme` that changes the entire websites core theme from dark or light
+there are also sub themes like `--primary-default` which is the sub theme you choose in the /theme/ page.
