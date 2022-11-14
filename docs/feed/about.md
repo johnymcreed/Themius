@@ -24,6 +24,6 @@ just something I didn't want to deal with. So I created Themius to make my life 
 This was something I found out but apparently `#IsPasted` is used in `.comments-ct` as a simple detector for when
 you use **ctrl + v** in the text box. I added this because it wanted to know when a teacher knew something was pasted.
 
-### Can i edit elements?
-To answer this, **Yes**. You can edit any element within the `theme.css` file givin to you. I recommend you don't if you have
-no skill with css or coding in general.
+### What is Force-Resubmission?
+This is a function in the extension that allows you to resubmit assignments that are locked via a assigned date that was passed
+this is a helpful feature if you commonly don't turn in assignments on time.
