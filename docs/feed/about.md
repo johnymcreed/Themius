@@ -9,7 +9,7 @@ because we want you to feel at home when working at school which is why we made 
 We make sure Themius is always updated with Echo and are always at it with new additions and fixes that make Echo feel like a professional platform to
 do work on, on a day to day basis.
 
-So? lets get started! go <a href="/setup">Here</a>
+So? lets get started! go <a href="/Themius/setup">Here</a>
 
 <br>
 
