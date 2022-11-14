@@ -51,3 +51,8 @@ these can be the following: <br>
 `isPasted` is a paste detection system created within `comments-ct` and `fr-element` that gives a div element an id
 `#IsPasted` that teachers can see when submitted even if edited after being pasted.
 
+<br>
+
+# disabled
+`disabled` is a bool statement that if true/false can disable buttons, text editors or inputs within ECHO which is used
+during the case that an assignment is pass its due date or a specific field is suppose to be disabled.
