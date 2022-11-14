@@ -448,13 +448,10 @@ lib-student-grade-details .selected {
 }
 
 .ng-star-inserted .user-menu-button .user-name /* Name Flex Field Fix */ {
-	margin: -10px;
-	flex-direction: row !important;
+    width: max-content !important;
+    margin-right: 0px !important;
+    flex-direction: row !important;
 	column-gap: 5px !important;
-}
-
-.ng-star-inserted .user-menu-button /* User buttons */ {
-	margin-right: -2rem;
 }
 
 .ng-star-inserted .app-background {
