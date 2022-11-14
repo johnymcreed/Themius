@@ -14,7 +14,7 @@ There you go, you have Themius added which should start effecting ECHO as soon a
 
 # Info
 Since themius has been renovated and has several new features now like **force resubmit** and **paste detection** i might aswell add this here so you know what
-you are see on ECHO.
+you are seeing on ECHO.
 
 Firstly, **Paste Detection** you will see in any text editor on ECHO a squiqqly underline under words you just pasted. this means that teachers can see its pasted
 
