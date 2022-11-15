@@ -825,12 +825,30 @@ app-course-home.ng-star-inserted mat-card {
 	border: 1px solid var(--foreground-text) !important;
 }
 
+.not-found /* An activity or something that doesn't exist */ {
+	font-size: 20px;
+	font-style: normal !important;
+	text-align: center !important;
+	padding: 10px;
+
+    background: var(--white-A700) !important;
+    height: min-content !important;
+    
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: 0px !important;
+	transform: translate(-50%, -50%);
+    
+	width: 30rem;
+	border-radius: 5px;
+}
+
 .no-agenda /* No-Agenda Popup Change */ {
 	font-size: 20px;
 	font-style: normal !important;
 	text-align: center !important;
 	padding: 10px;
-	color: var(--ng-white) !important; /*background won't apply to color*/
 
 	margin: 0 auto;
 	position: relative;
