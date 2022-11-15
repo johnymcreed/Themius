@@ -41,6 +41,9 @@
     #31a544, #24724b, #3a86bf, #2b1de8, #501c85, #a518b4, #90199c;
 
   --glob-aimation-period: 0.5s; /* Animation Period for elements */
+    
+  --img1-color-bands: url('https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/img/color-bands.jpg'); /* Course Icon Colors in sidenav */
+  --img2-loader: url('https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/img/loader.jpg'); /* Pre-loader icon */
 
   --remove: none;
   --show: visible;
@@ -495,14 +498,14 @@ lib-student-grade-details .selected {
   top: 50%;
   border-radius: 10px;
   box-shadow: none !important;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juvenile_Ragdoll.jpg/220px-Juvenile_Ragdoll.jpg") !important;
+  background-image: var(--img2-loader) !important;
   padding: 100px;
   transform: translate(-50%, -50%);
   white-space: nowrap;
 }
 
 .course-color {
-  background-image: url("https://americanpetsalive.org/uploads/blog/Healthy-Kittens.jpg") !important;
+  background-image: var(--img1-color-bands) !important;
   background-size: 24px 24px;
 }
 
