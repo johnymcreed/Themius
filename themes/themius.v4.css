@@ -354,6 +354,10 @@ lib-dropbox lib-html-editor {
     min-height: 0px !important;
 }
 
+.submission-grade {
+    padding-bottom: 1rem;
+}
+
 lib-dropbox lib-html-editor .fr-element {
     padding-top: 0.5rem !important;
     color: black !important;
