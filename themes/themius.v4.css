@@ -39,7 +39,7 @@
 	--rgb-colors: #f60000, #a51414, #d3551b, #daad14, #e3ac00, #d2f428, #4f7827, #31a544, #24724b,
 		#3a86bf, #2b1de8, #501c85, #a518b4, #90199c;
 
-	--glob-aimation-period: 0.5s; /* Animation Period for elements */
+	--glob-aimation-period: 1s; /* Animation Period for elements */
 
 	--img1-color-bands: url('https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/img/color-bands.jpg'); /* Course Icon Colors in sidenav */
 	--img2-loader: url('https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/img/loader.jpg'); /* Pre-loader icon */
@@ -110,6 +110,10 @@ body.app-dark-theme ::-webkit-scrollbar-thumb:hover,
 body.app-light-theme .cdk-overlay-container > [dir='ltr'] .cdk-overlay-pane .open-animation-border /* Border-Radius */ {
 	background: var(--white-A700) !important;
 	border-radius: 5px !important;
+}
+
+body.app-light-theme .fr-toolbar {
+    background: var(--white-A700) !important;
 }
 
 body.app-light-theme app-inbox.ng-star-inserted .list-ct mat-nav-list .selected span, /* Set text */
@@ -200,6 +204,10 @@ body.app-light-theme ::-webkit-scrollbar-thumb:hover,
 body.app-dark-theme .cdk-overlay-container>[dir="ltr"] .cdk-overlay-pane .open-animation-border {
 	background: var(--black-A700) !important;
 	border-radius: 5px !important;
+}
+
+body.app-dark-theme .fr-toolbar {
+    background: var(--black-A700) !important;
 }
 
 body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a, a span, a div, .selected *, a u *, span a *) /* Agenda Form View (DARK) */ {
@@ -330,6 +338,45 @@ app-before-login app-login mat-toolbar form input {
  */
 .cdk-overlay-container .mat-menu-item /* Overlay items */ {
 	color: var(--white) !important;
+}
+
+.fr-toolbar {
+    border-radius: 0px !important;
+    border: transparent !important;
+}
+
+lib-dropbox lib-html-editor {
+    border-radius: 0px !important;
+    border: transparent !important;
+}
+
+.toolbar-ct .dropbox-toolbar {
+    min-height: 0px !important;
+}
+
+lib-dropbox lib-html-editor .fr-element {
+    padding-top: 0.5rem !important;
+    color: black !important;
+}
+
+lib-dropbox lib-html-editor .fr-view table * {
+    border: 1px solid black !important;
+}
+
+.fr-selected-color {
+    visibility: hidden !important;
+    font-size: 0px !important;
+}
+
+.fr-selected-color::after {
+    content: "✓" !important;
+    visibility: visible !important;
+    font-size: 15px;
+    color: grey !important;
+}
+
+.save-status-ct /* Editor auto saves */ {
+    display: none !important;
 }
 
 .ng-star-inserted .landing-content * /* Global course description content */ {
@@ -764,13 +811,13 @@ app-course-home.ng-star-inserted mat-card {
 	background: transparent !important;
 }
 
-.ng-star-inserted .fr-view table,
-.ng-star-inserted .fr-view table thead,
-.ng-star-inserted .fr-view table thead tr,
-.ng-star-inserted .fr-view table thead th,
-.ng-star-inserted .fr-view table tbody,
-.ng-star-inserted .fr-view table tbody tr,
-.ng-star-inserted .fr-view table tbody td {
+.ng-star-inserted .fr-view table:not(lib-html-editor *),
+.ng-star-inserted .fr-view table thead:not(lib-html-editor *),
+.ng-star-inserted .fr-view table thead tr:not(lib-html-editor *),
+.ng-star-inserted .fr-view table thead th:not(lib-html-editor *),
+.ng-star-inserted .fr-view table tbody:not(lib-html-editor *),
+.ng-star-inserted .fr-view table tbody tr:not(lib-html-editor *),
+.ng-star-inserted .fr-view table tbody td:not(lib-html-editor *) {
 	border: 1px solid var(--foreground-text) !important;
 }
 
@@ -834,6 +881,8 @@ app-student-courses.ng-star-inserted .color-band, /* Course Card Color band */
 .cdk-overlay-container>[dir="ltr"] .cdk-overlay-pane .open-animation,
 app-course-home.ng-star-inserted .course-progress,
 a[href="https://accounts.google.com/logout"], /* Why? who tf is gonna log out of all there google accounts?? */
+.progress-ct, /* this is just clutter for the main screen */
+lib-dropbox lib-html-editor .fr-placeholder,
 mat-ink-bar {
 	display: var(--remove) !important;
 }
