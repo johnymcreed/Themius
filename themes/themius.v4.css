@@ -141,8 +141,8 @@ body.app-light-theme .cdk-drag-preview /* Box-shadows */ {
 }
 
 body.app-light-theme .ng-star-inserted .main-toolbar,
-body.app-light-theme .ng-star-inserted .mat-tab-labels:not(app-course-home *, app-about *),
-body.app-light-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:not(app-course-home *, app-about *),
+body.app-light-theme .ng-star-inserted .mat-tab-labels:not(app-course-home *, app-about *, lib-grade-details *),
+body.app-light-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:not(app-course-home *, app-about *, lib-grade-details *),
 body.app-light-theme .ng-star-inserted .toolbar,
 body.app-light-theme .ng-star-inserted .links-ct,
 body.app-light-theme .ng-star-inserted .objective-speedometer,
@@ -653,7 +653,8 @@ app-badges.ng-star-inserted form mat-card {
 }
 
 app-course-home .mat-tab-header .mat-tab-labels, /* Remove background from tabs */ 
-app-about .mat-tab-header .mat-tab-labels {
+app-about .mat-tab-header .mat-tab-labels,
+lib-grade-details .mat-tab-header .mat-tab-labels {
 	background: transparent !important;
 }
 
