@@ -544,6 +544,11 @@ app-settings.ng-star-inserted .outer {
 	max-width: 100%;
 }
 
+app-settings.ng-star-inserted mat-card[aria-label="Profile picture"]:before {
+  content: "* You should still add an avatar if you haven't as other people and teachers will still see this.";
+  color: var(--grey-A700) !important;
+}
+
 app-student-courses.ng-star-inserted /* Fix this elements border */ {
 	background: linear-gradient(124deg, var(--rgb-colors));
 	background-size: var(--rgb-size);
