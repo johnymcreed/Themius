@@ -43,6 +43,11 @@
 
 	--img1-color-bands: url('https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/img/color-bands.jpg'); /* Course Icon Colors in sidenav */
 	--img2-loader: url('https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/img/loader.jpg'); /* Pre-loader icon */
+    --img3-drawer: url('https://4.bp.blogspot.com/-xdm3jz6urwM/UP4T2xNI2tI/AAAAAAAASLs/UHZD3d2Hesc/s1600/fish-and-cat.jpg');
+    --img4-back: url('https://wallpaperaccess.com/full/194433.jpg');
+    --img5-login: url('https://cdn.wallpapersafari.com/54/67/mPW01K.jpg');
+    --img6-all: url('https://wallpapercave.com/wp/wp2106703.jpg');
+    --img7-course: url('https://wallpapercave.com/uwp/uwp1582369.jpeg');
 
 	--remove: none;
 	--show: visible;
@@ -276,7 +281,7 @@ app-before-login app-login mat-toolbar.mat-toolbar /* Login Toolbar */ {
 
 app-before-login app-login .buzz-login-background /* Login Background */ {
     
-	background: url('https://cdn.wallpapersafari.com/54/67/mPW01K.jpg') !important;
+	background: var(--img5-login) !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
 
@@ -407,7 +412,7 @@ lib-dropbox lib-html-editor .fr-view table * {
 }
 
 .ng-star-inserted .mat-drawer-backdrop /* Sidebar Backdrop */ {
-	background: url('https://4.bp.blogspot.com/-xdm3jz6urwM/UP4T2xNI2tI/AAAAAAAASLs/UHZD3d2Hesc/s1600/fish-and-cat.jpg') !important;
+	background: var(--img3-drawer) !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
 	opacity: .96;
@@ -423,13 +428,13 @@ app-order-courses .order-drag-row .grip-icon,
 }
 
 .ng-star-inserted .mat-drawer-content {
-	background: url('https://wallpapercave.com/wp/wp2106703.jpg') !important;
+	background: var(--img6-all) !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
 }
 
 .ng-star-inserted .main {
-	background: url('https://wallpapercave.com/wp/wp2106703.jpg') !important;
+	background: var(--img6-all) !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
 }
@@ -529,7 +534,7 @@ lib-student-grade-details .selected {
 }
 
 .ng-star-inserted .app-background {
-	background: url('https://wallpapercave.com/wp/wp2106703.jpg') !important;
+	background: var(--img6-all) !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
 }
@@ -595,7 +600,7 @@ lib-student-grade-details .selected {
 app-student-stream.ng-star-inserted,
 app-student-to-do.ng-star-inserted,
 app-badges.ng-star-inserted {
-	background: url('https://wallpaperaccess.com/full/194433.jpg') !important;
+	background: var(--img4-back) !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
 	padding: 10px;
@@ -612,7 +617,7 @@ app-settings.ng-star-inserted mat-card[aria-label="Profile picture"]:before {
 }
 
 app-student-courses.ng-star-inserted /* Fix this elements border */ {
-	background: url('https://wallpapercave.com/uwp/uwp1582369.jpeg') !important;
+	background: var(--img7-course) !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
 
@@ -730,9 +735,6 @@ app-order-courses.ng-star-inserted mat-card {
 	font-size: 15px !important;
 }
 
-.ng-star-inserted .mat-card-image /* Unused Content? */ {
-}
-
 .ng-star-inserted mat-form-field,
 .ng-star-inserted app-filter-box {
 	padding: 0px !important;
@@ -771,8 +773,6 @@ app-announcement-detail.ng-star-inserted lib-managed-html * {
  * - This is the primary course page (the one all people who login will see first hand)
  * so this one is very pioritised over everything else.
 */
-/*.ng-star-inserted app-course-home .card-ct {
-}*/
 
 app-course-home.ng-star-inserted mat-card {
 	width: 100%;
