@@ -107,7 +107,8 @@ p /* Font */ {
 body.app-light-theme .ng-star-inserted .mat-card,
 body.app-light-theme .ng-star-inserted .mat-expansion-panel,
 body.app-dark-theme ::-webkit-scrollbar-thumb:hover,
-body.app-light-theme .cdk-overlay-container > [dir='ltr'] .cdk-overlay-pane .open-animation-border /* Border-Radius */ {
+body.app-light-theme .cdk-overlay-container > [dir='ltr'] .cdk-overlay-pane .open-animation-border, /* Border-Radius */ 
+body.app-light-theme .not-found {
 	background: var(--white-A700) !important;
 	border-radius: 5px !important;
 }
@@ -132,12 +133,16 @@ body.app-light-theme .ng-star-inserted app-announcement-detail,
 body.app-light-theme .ng-star-inserted .announcement-list,
 body.app-light-theme .ng-star-inserted .mat-table,
 body.app-light-theme .ng-star-inserted .nav-footer,
-body.app-light-theme .ng-star-inserted mat-sidenav,
 body.app-dark-theme ::-webkit-scrollbar-thumb,
 body.app-light-theme .no-agenda,
 body.app-light-theme .cdk-drag-preview /* Box-shadows */ {
 	background: var(--white-A200) !important;
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0);
+}
+
+body.app-light-theme .ng-star-inserted mat-sidenav
+{
+    background: var(--white-A200) !important;
 }
 
 body.app-light-theme .ng-star-inserted .main-toolbar,
@@ -190,7 +195,6 @@ body.app-dark-theme .ng-star-inserted app-announcement-detail,
 body.app-dark-theme .ng-star-inserted .announcement-list,
 body.app-dark-theme .ng-star-inserted .mat-table,
 body.app-dark-theme .ng-star-inserted .nav-footer,
-body.app-dark-theme .ng-star-inserted mat-sidenav,
 body.app-light-theme ::-webkit-scrollbar-thumb,
 body.app-dark-theme .no-agenda,
 body.app-dark-theme .cdk-drag-preview {
@@ -198,10 +202,16 @@ body.app-dark-theme .cdk-drag-preview {
 	border-radius: 5px !important;
 }
 
+body.app-dark-theme .ng-star-inserted mat-sidenav
+{
+    background: var(--black-A200) !important;
+}
+
 body.app-dark-theme .ng-star-inserted .mat-card, /* Black-A700 */
 body.app-dark-theme .ng-star-inserted .mat-expansion-panel,
 body.app-light-theme ::-webkit-scrollbar-thumb:hover,
-body.app-dark-theme .cdk-overlay-container>[dir="ltr"] .cdk-overlay-pane .open-animation-border {
+body.app-dark-theme .cdk-overlay-container>[dir="ltr"] .cdk-overlay-pane .open-animation-border,
+body.app-dark-theme .not-found {
 	background: var(--black-A700) !important;
 	border-radius: 5px !important;
 }
@@ -236,6 +246,16 @@ body.app-dark-theme lib-standards-rubric-details table td {
 body.app-light-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:active,
 body.app-dark-theme .ng-star-inserted .mat-tab-labels .mat-tab-label:active {
 	background: transparent !important;
+}
+
+body.app-dark-theme .note * {
+    background: transparent !important;
+    color: var(--white) !important;
+}
+
+body.app-light-theme .note * {
+    background: transparent !important;
+    color: var(--black) !important;
 }
 
 /** 
