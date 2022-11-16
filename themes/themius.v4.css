@@ -43,11 +43,6 @@
 
 	--img1-color-bands: url('https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/img/color-bands.jpg'); /* Course Icon Colors in sidenav */
 	--img2-loader: url('https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/img/loader.jpg'); /* Pre-loader icon */
-    --img3-drawer: url('https://4.bp.blogspot.com/-xdm3jz6urwM/UP4T2xNI2tI/AAAAAAAASLs/UHZD3d2Hesc/s1600/fish-and-cat.jpg');
-    --img4-back: url('https://wallpaperaccess.com/full/194433.jpg');
-    --img5-login: url('https://cdn.wallpapersafari.com/54/67/mPW01K.jpg');
-    --img6-all: url('https://wallpapercave.com/wp/wp2106703.jpg');
-    --img7-course: url('https://wallpapercave.com/uwp/uwp1582369.jpeg');
 
 	--remove: none;
 	--show: visible;
@@ -112,19 +107,13 @@ p /* Font */ {
 body.app-light-theme .ng-star-inserted .mat-card,
 body.app-light-theme .ng-star-inserted .mat-expansion-panel,
 body.app-dark-theme ::-webkit-scrollbar-thumb:hover,
-body.app-light-theme .cdk-overlay-container > [dir='ltr'] .cdk-overlay-pane .open-animation-border, /* Border-Radius */ 
-body.app-light-theme .not-found {
+body.app-light-theme .cdk-overlay-container > [dir='ltr'] .cdk-overlay-pane .open-animation-border /* Border-Radius */ {
 	background: var(--white-A700) !important;
 	border-radius: 5px !important;
 }
 
 body.app-light-theme .fr-toolbar {
     background: var(--white-A700) !important;
-}
-
-body.app-light-theme .ng-star-inserted mat-sidenav
-{
-    background: var(--white-A200) !important;
 }
 
 body.app-light-theme app-inbox.ng-star-inserted .list-ct mat-nav-list .selected span, /* Set text */
@@ -201,6 +190,7 @@ body.app-dark-theme .ng-star-inserted app-announcement-detail,
 body.app-dark-theme .ng-star-inserted .announcement-list,
 body.app-dark-theme .ng-star-inserted .mat-table,
 body.app-dark-theme .ng-star-inserted .nav-footer,
+body.app-dark-theme .ng-star-inserted mat-sidenav,
 body.app-light-theme ::-webkit-scrollbar-thumb,
 body.app-dark-theme .no-agenda,
 body.app-dark-theme .cdk-drag-preview {
@@ -211,15 +201,9 @@ body.app-dark-theme .cdk-drag-preview {
 body.app-dark-theme .ng-star-inserted .mat-card, /* Black-A700 */
 body.app-dark-theme .ng-star-inserted .mat-expansion-panel,
 body.app-light-theme ::-webkit-scrollbar-thumb:hover,
-body.app-dark-theme .cdk-overlay-container>[dir="ltr"] .cdk-overlay-pane .open-animation-border,
-body.app-dark-theme .not-found {
+body.app-dark-theme .cdk-overlay-container>[dir="ltr"] .cdk-overlay-pane .open-animation-border {
 	background: var(--black-A700) !important;
 	border-radius: 5px !important;
-}
-
-body.app-dark-theme .ng-star-inserted mat-sidenav
-{
-    background: var(--black-A200) !important;
 }
 
 body.app-dark-theme .fr-toolbar {
@@ -238,16 +222,6 @@ body.app-dark-theme .activity-html span {
 
 body.app-dark-theme .activity-html li {
 	color: var(--white) !important;
-}
-
-body.app-dark-theme .note * {
-    background: transparent !important;
-    color: var(--white) !important;
-}
-
-body.app-light-theme .note * {
-    background: transparent !important;
-    color: var(--black) !important;
 }
 
 body.app-dark-theme .ng-star-inserted lib-student-grade-details table div {
@@ -280,10 +254,10 @@ app-before-login app-login mat-toolbar.mat-toolbar /* Login Toolbar */ {
 }
 
 app-before-login app-login .buzz-login-background /* Login Background */ {
-    
-	background: var(--img5-login) !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
+	background: linear-gradient(124deg, var(--rgb-colors));
+	-webkit-animation: transition var(--rgb-timeout) ease infinite;
+	animation: transition var(--rgb-fit) ease infinite;
+	background-size: var(--rgb-size);
 
 	left: 0;
 	right: 0;
@@ -346,6 +320,7 @@ app-before-login app-login mat-toolbar form input {
 
 	border: 0px !important;
 	box-shadow: none !important;
+	box-sizing: 0px !important;
 
 	margin: 0 !important;
 	width: 98% !important;
@@ -353,6 +328,7 @@ app-before-login app-login mat-toolbar form input {
 
 	vertical-align: bottom !important;
 	text-align: left !important;
+	box-sizing: content-box !important;
 }
 
 /**
@@ -412,10 +388,12 @@ lib-dropbox lib-html-editor .fr-view table * {
 }
 
 .ng-star-inserted .mat-drawer-backdrop /* Sidebar Backdrop */ {
-	background: var(--img3-drawer) !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-	opacity: .96;
+	background: linear-gradient(124deg, var(--rgb-ts-colors));
+	background-size: var(--rgb-size);
+	-webkit-animation: transition var(--rgb-timeout) ease infinite;
+	animation: transition var(--rgb-fit) ease infinite;
+	transition: var(--glob-aimation-period);
+	opacity: 5;
 }
 
 app-course-home.ng-star-inserted .agendas lib-managed-html .fr-view p * /* Course agenda font-size */ {
@@ -428,15 +406,17 @@ app-order-courses .order-drag-row .grip-icon,
 }
 
 .ng-star-inserted .mat-drawer-content {
-	background: var(--img6-all) !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
+	background: linear-gradient(124deg, var(--rgb-colors));
+	background-size: var(--rgb-size);
+	-webkit-animation: transition var(--rgb-timeout) ease infinite;
+	animation: transition var(--rgb-fit) ease infinite;
 }
 
 .ng-star-inserted .main {
-	background: var(--img6-all) !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
+	background: linear-gradient(124deg, var(--rgb-colors));
+	background-size: var(--rgb-size);
+	-webkit-animation: transition var(--rgb-timeout) ease infinite;
+	animation: transition var(--rgb-fit) ease infinite;
 }
 
 mat-chip-list .mat-chip {
@@ -534,9 +514,10 @@ lib-student-grade-details .selected {
 }
 
 .ng-star-inserted .app-background {
-	background: var(--img6-all) !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
+	background: linear-gradient(124deg, var(--rgb-colors));
+	background-size: var(--rgb-size);
+	-webkit-animation: transition var(--rgb-timeout) ease infinite;
+	animation: transition var(--rgb-fit) ease infinite;
 }
 
 .ng-star-inserted .mat-badge-content,
@@ -600,9 +581,10 @@ lib-student-grade-details .selected {
 app-student-stream.ng-star-inserted,
 app-student-to-do.ng-star-inserted,
 app-badges.ng-star-inserted {
-	background: var(--img4-back) !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
+	background: linear-gradient(124deg, var(--rgb-colors));
+	background-size: var(--rgb-size);
+	-webkit-animation: transition var(--rgb-timeout) ease infinite;
+	animation: transition var(--rgb-fit) ease infinite;
 	padding: 10px;
 }
 
@@ -617,9 +599,10 @@ app-settings.ng-star-inserted mat-card[aria-label="Profile picture"]:before {
 }
 
 app-student-courses.ng-star-inserted /* Fix this elements border */ {
-	background: var(--img7-course) !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
+	background: linear-gradient(124deg, var(--rgb-colors));
+	background-size: var(--rgb-size);
+	-webkit-animation: transition var(--rgb-timeout) ease infinite;
+	animation: transition var(--rgb-fit) ease infinite;
 
 	padding: 0px;
 	padding-top: 10px;
@@ -735,6 +718,9 @@ app-order-courses.ng-star-inserted mat-card {
 	font-size: 15px !important;
 }
 
+.ng-star-inserted .mat-card-image /* Unused Content? */ {
+}
+
 .ng-star-inserted mat-form-field,
 .ng-star-inserted app-filter-box {
 	padding: 0px !important;
@@ -773,6 +759,13 @@ app-announcement-detail.ng-star-inserted lib-managed-html * {
  * - This is the primary course page (the one all people who login will see first hand)
  * so this one is very pioritised over everything else.
 */
+.ng-star-inserted app-course-home .card-ct {
+	background: linear-gradient(124deg, var(--rgb-colors));
+	background-size: var(--rgb-size);
+	-webkit-animation: transition var(--rgb-timeout) ease infinite;
+	animation: transition var(--rgb-fit) ease infinite;
+	padding: 10px;
+}
 
 app-course-home.ng-star-inserted mat-card {
 	width: 100%;
@@ -839,6 +832,7 @@ app-course-home.ng-star-inserted mat-card {
 	text-align: center !important;
 	padding: 10px;
 
+    background: var(--white-A700) !important;
     height: min-content !important;
     
 	position: absolute;
