@@ -15,31 +15,40 @@
  * ‣ Keep clean OMG
 **/
 
-@import url('https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/fonts/cabin.css'); /* Google Fonts: Cabin */
-@import url('https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/fonts/emoji.css'); /* Emoji Support */
+@import url("https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/fonts/cabin.css"); /* Google Fonts: Cabin */
+@import url("https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/fonts/emoji.css"); /* Emoji Support */
 
 :root {
   /* These are the fonts the website will be changed with */
-  --t-font: 'Cabin', sans-serif; /* Removes Fancy; Make Cabin */
-  --t-emoji: 'Noto Color Emoji', sans-serif; /* Emoji Support */
-  
+  --t-font: "Cabin", sans-serif; /* Removes Fancy; Make Cabin */
+  --t-emoji: "Noto Color Emoji", sans-serif; /* Emoji Support */
+
   /* These are confiurations for the page */
   --t-agenda-font-size: 18px; /* This is the agenda font size */
   --t-course-desc-font-size: 15px; /* This is the courses desc font size */
-  
+
   /* These are global settings for backend stuff */
   --t-glob-animation-time: 1s; /* Animation period for elements */
-  
+
   /* These are all the :after/:before Content items */
   --t-login-title: "Rogers New Technology Highschool";
   --t-copyright: "Redesign by Mcreed";
-  --t-checkmark: "✓"; 
+  --t-checkmark: "✓";
   --t-no-agenda: "This current day has no agenda";
-  
+  --t-warn-txt: "* You should still add an avatar if you haven't as other people and teachers will still see this.";
+
   /* These are for modals */
-  --t-modal-shadow: 0 4px 30px rgba(0, 0, 0, .1);
+  --t-modal-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  --t-scrollbar-shadow: rgba(0, 0, 0, 0.5);
   --t-modal-border: 5px;
-  
+
+  /* These are images used in the website */
+  --t-light-bg: url("https://images.wallpaperscraft.com/image/single/cat_cute_flowers_170499_1920x1080.jpg"); /* Used when dark */
+  --t-dark-bg: url("https://images.wallpaperscraft.com/image/single/cats_astronauts_space_suit_135661_1920x1080.jpg"); /* Used when light */
+  --t-login-bg: url("https://images4.alphacoders.com/124/1246122.jpg"); /* Login background */
+  --t-loader-bg: url("https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/img/loader.jpg"); /* Loader background */
+  --t-band-bg: url("https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/img/color-bands.jpg"); /* Sidebar Icons */
+
   /* These are colors for the entire page theme */
   --t-d: black; /* Black */
   --t-d200: #000000e0;
@@ -48,11 +57,25 @@
   --t-w200: #ffffffe0;
   --t-w700: #ffffffba;
   --t-g: grey; /* Grey */
-  --t-g200: #1d1c1ce0; 
+  --t-g200: #1d1c1ce0;
   --t-g700: #1d1c1cba;
-  --t-r: #d52525; /* Fail: Red */
-  --t-g: #32741f; /* Pass: Green */
-  --t-o: #e1a81d; /* Warn: Orange */
+  --t-fail-r: #ff3b3b; /* Fail: Red */
+  --t-pass-g: #64ff37; /* Pass: Green */
+  --t-warn-o: #ffc026; /* Warn: Orange */
+}
+
+:root body.app-light-theme {
+  --t-b: var(--t-w);
+  --t-b200: var(--t-w200);
+  --t-b700: var(--t-w700);
+  --t-b-img: var(--t-light-bg);
+}
+
+:root body.app-dark-theme {
+  --t-b: var(--t-d);
+  --t-b200: var(--t-d200);
+  --t-b700: var(--t-d700);
+  --t-b-img: var(--t-dark-bg);
 }
 
 html,
@@ -62,13 +85,13 @@ app-root /* By DEFAULT make the background black */ {
 }
 
 app-root /* App-root covers the entire page and is our primary background */ {
-	margin: 0px !important;
-	background: var(--t-d) !important;
-  
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
+  margin: 0px !important;
+  background: var(--t-d) !important;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   position: absolute !important;
 }
 
@@ -81,10 +104,31 @@ ol,
 li,
 p /* These are what we change the fonts to */ {
   font-family: var(--t-emoji) !important;
-	font-family: var(--t-font) !important;
-	font-style: normal !important;
+  font-family: var(--t-font) !important;
+  font-style: normal !important;
 }
 
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--t-scrollbar-shadow) !important;
+}
+
+:root app-root>svg.app-loading /* App Loader */ {
+  border-radius: 10px;
+  box-shadow: none !important;
+
+  background-image: var(--t-loader-bg) !important;
+  padding: 100px;
+
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+
+  position: absolute !important;
+  left: 50%;
+  top: 50%;
+}
 
 /**
  *  LOGIN PAGE 
@@ -93,91 +137,90 @@ p /* These are what we change the fonts to */ {
 **/
 app-before-login app-login /* Login Body */ {
   margin: 0px !important;
-	padding: 0px !important;
+  padding: 0px !important;
 }
 
 app-before-login app-login mat-toolbar.mat-toolbar /* Login Toolbar */ {
-	background: transparent !important;
-	height: 0px !important;
+  background: transparent !important;
+  height: 0px !important;
 }
 
 app-before-login app-login .buzz-login-background /* Login Background */ {
-  background: url('https://images4.alphacoders.com/124/1246122.jpg'); 
+  background: var(--t-login-bg) !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
 
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
 }
 
 app-before-login app-login mat-toolbar form {
-	background: var(--t-d200) !important;
-	border-radius: var(--t-modal-border) !important;
+  background: var(--t-d200) !important;
+  border-radius: var(--t-modal-border) !important;
   box-shadow: var(--t-modal-shadow) !important;
-  
-	padding: 100px;
-	transform: translate(-50%, -50%);
-	white-space: pre;
 
-	transition: var(--t-glob-animation-time);
+  padding: 100px;
+  transform: translate(-50%, -50%);
+  white-space: pre;
 
-	position: absolute;
-	left: 50%;
-	top: 50%;
+  transition: var(--t-glob-animation-time);
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
 }
 
 app-before-login app-login mat-toolbar form:before /* Title */ {
-	content: var(--t-login-title);
+  content: var(--t-login-title);
 
-	font-size: 30px;
-	color: var(--t-w) !important;
+  font-size: 30px;
+  color: var(--t-w) !important;
 
   transition: var(--glob-aimation-period);
-  
-	width: 100%;
-	top: 15%;
-	position: absolute;
+
+  width: 100%;
+  top: 15%;
+  position: absolute;
 }
 
 app-before-login app-login mat-toolbar form:after /* Copyright */ {
-	content: var(--t-copyright);
+  content: var(--t-copyright);
 
-	font-size: 15px;
-	color: var(--t-w) !important;
+  font-size: 15px;
+  color: var(--t-w) !important;
 
   transition: var(--glob-aimation-period);
-  
-	bottom: 15%;
-	left: 15%;
-	position: absolute;
+
+  bottom: 15%;
+  left: 15%;
+  position: absolute;
 }
 
 app-before-login app-login mat-toolbar form button /* Push "Login" to the right more */ {
-	margin-left: 10px !important;
-	color: var(--t-w) !important;
+  margin-left: 10px !important;
+  color: var(--t-w) !important;
 }
 
 app-before-login app-login mat-toolbar form input /* TODO: get rid of this dumb background */ {
-	all: revert !important;
-	outline: none !important;
-	background: transparent !important;
+  all: revert !important;
+  outline: none !important;
+  background: transparent !important;
 
-	text-shadow: none !important;
+  text-shadow: none !important;
 
-	border: 0px !important;
-	box-shadow: none !important;
+  border: 0px !important;
+  box-shadow: none !important;
 
-	margin: 0 !important;
-	width: 98% !important;
-	max-width: 100% !important;
+  margin: 0 !important;
+  width: 98% !important;
+  max-width: 100% !important;
 
-	vertical-align: bottom !important;
-	text-align: left !important;
+  vertical-align: bottom !important;
+  text-align: left !important;
 }
-
 
 /**
  *  SIDE NAVIGATION
@@ -185,30 +228,481 @@ app-before-login app-login mat-toolbar form input /* TODO: get rid of this dumb 
  *  we absolutly need this since it is where most of the buttons ares.
 **/
 mat-sidenav .mat-divider /* Sidebar-divider */ {
-	background: var(--foreground-text) !important;
-	border-top-width: 1px !important;
+  background: var(--foreground-text) !important;
+  border-top-width: 1px !important;
 }
 
 .ng-star-inserted mat-sidenav,
 .ng-star-inserted mat-sidenav .mat-drawer-inner-container /* Kill scrollbar */ {
-	-ms-overflow-style: none;
-	scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
 }
 
 .ng-star-inserted .mat-drawer-backdrop /* Sidebars background */ {
-	background: var(--t-d700) !important;
+  background: var(--t-b700) !important;
 }
 
-/* Light and dark modes for Sidebar */
-body.app-light-theme .ng-star-inserted mat-sidenav { background: var(--t-w200) !important; }
-body.app-dark-theme .ng-star-inserted mat-sidenav { background: var(--t-d200) !important; }
+.ng-star-inserted mat-sidenav {
+  background: var(--t-b200) !important;
+}
 
+.course-color {
+  background-image: var(--t-band-bg) !important;
+  background-size: 24px 24px;
+}
 
 /**
- *  BACKGROUNDS
- *  ‣ Edits pages backgrounds (not modals and that just BACKGROUNDS)
+ *  PAGES
+ *  ‣ Edits page backgrounds, paddings, and bascially setup the page to function
+ *  for the changes i will be giving them.
 **/
+.ng-star-inserted .main,
+.ng-star-inserted .app-background,
+app-student-stream.ng-star-inserted,
+app-student-to-do.ng-star-inserted,
+app-badges.ng-star-inserted,
+app-student-courses.ng-star-inserted /* All page backgrounds */ {
+  background: var(--t-b-img) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
 
+app-student-stream.ng-star-inserted,
+app-student-to-do.ng-star-inserted,
+app-course-home.ng-star-inserted .card-ct,
+app-badges.ng-star-inserted /* All page paddings */ {
+  padding: 10px !important;
+}
+
+app-student-courses.ng-star-inserted /* Fix this element */ {
+  padding: 0px;
+  padding-top: 10px;
+}
+
+app-inbox.ng-star-inserted .list-ct mat-nav-list .selected span, /* Set text */
+app-student-activity.ng-star-inserted {
+  color: var(--t-w) !important;
+}
+
+.ng-star-inserted .main-toolbar, /* DEFAULT */
+.ng-star-inserted .mat-tab-labels,
+.ng-star-inserted .mat-tab-labels .mat-tab-label,
+.ng-star-inserted .toolbar,
+.ng-star-inserted .mat-toolbar,
+.ng-star-inserted .links-ct,
+.ng-star-inserted .objective-speedometer,
+.ng-star-inserted .card-ct mat-card .card-top,
+.ng-star-inserted .notification,
+app-privacy .mat-toolbar,
+::selection {
+  background: var(--t-b) !important;
+  color: var(--foreground-text) !important;
+}
+
+.ng-star-inserted mat-card .color-band, /* A200 */
+.ng-star-inserted .cdk-overlay-container mat-dialog-container,
+.mat-dialog-container,
+.ng-star-inserted .mat-select-panel,
+.ng-star-inserted .activity-html,
+.ng-star-inserted app-calendar .list-date,
+.ng-star-inserted app-calendar .calendar-ct,
+.ng-star-inserted app-announcement-detail,
+.ng-star-inserted .announcement-list,
+.ng-star-inserted .mat-table,
+.ng-star-inserted .nav-footer,
+::-webkit-scrollbar-thumb,
+.no-agenda,
+.cdk-drag-preview {
+  background: var(--t-b200) !important;
+  box-shadow: var(--t-modal-shadow) !important;
+}
+
+.ng-star-inserted .mat-card, /* A700 */
+.ng-star-inserted .mat-expansion-panel,
+::-webkit-scrollbar-thumb:hover,
+.cdk-overlay-container > [dir='ltr'] .cdk-overlay-pane .open-animation-border, 
+.not-found {
+  background: var(--t-b700) !important;
+  border-radius: var(--t-modal-border) !important;
+}
+
+.note * /* Fix feedback modal background */ {
+  background: transparent !important;
+  color: var(--foreground-text) !important;
+}
+
+body.app-dark-theme .activity-html span {
+  color: var(--t-w) !important;
+}
+
+body.app-dark-theme .activity-html li {
+  color: var(--t-w) !important;
+}
+
+body.app-dark-theme .ng-star-inserted lib-student-grade-details table div {
+  background: transparent !important;
+}
+
+lib-student-grade-details .selected {
+  background: var(--t-g200) !important;
+}
+
+.xli-ada-color /* Loader Top-bar */ {
+  background: var(--primary-default) !important;
+}
+
+body.app-dark-theme lib-standards-rubric-details table td {
+  border: 1px solid var(--t-w) !important;
+  background: transparent !important;
+}
+
+.ng-star-inserted .mat-tab-labels .mat-tab-label,
+.ng-star-inserted .mat-tab-labels .mat-tab-label:active,
+.ng-star-inserted .mat-tab-labels .mat-tab-label-active {
+  background: transparent !important;
+}
+
+body.app-dark-theme .ng-star-inserted lib-managed-html .fr-view table * {
+  color: var(--t-w) !important;
+  background: transparent !important;
+}
+
+body.app-light-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a, a span, a div, .selected *, a u *, span a *) /* Agenda Form View (LIGHT) */ {
+  margin: auto !important;
+  color: var(--foreground-text) !important;
+}
+
+body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a, a span, a div, .selected *, a u *, span a *) /* Agenda Form View (DARK) */ {
+  background: transparent !important;
+  margin: auto !important;
+  color: var(--foreground-text) !important;
+}
+
+.ng-star-inserted .mat-badge-content,
+.ng-star-inserted .app-large-button-badge {
+  background: var(--primary-default) !important;
+  color: var(--t-w) !important;
+  border-radius: 20px !important;
+  padding: 0px !important;
+}
+
+.mat-mini-fab {
+  background: var(--primary-default) !important;
+}
+
+.ng-star-inserted simple-snack-bar .mat-button {
+  color: var(--primary-default) !important;
+}
+
+.mat-checkbox-checked .mat-checkbox-background * {
+  background: var(--primary-default);
+}
+
+.mat-checkbox-background {
+  background: transparent !important;
+}
+
+/**
+ *  CARDS/MAT-CARDS/ECT
+ *  ‣ Edits all cards that you see on every page and also sets themes for them
+ *  this creates the feeling of a more professional website.
+**/
+app-student-courses.ng-star-inserted > .home-ct,
+app-student-stream.ng-star-inserted mat-card,
+app-student-to-do.ng-star-inserted mat-card,
+app-choose-theme.ng-star-inserted mat-card,
+app-gradebook-dashboard.ng-star-inserted mat-card,
+app-course-home.ng-star-inserted mat-card,
+lib-grade-details.ng-star-inserted mat-card,
+lib-grade-details.ng-star-inserted .main .card-ct mat-card,
+app-badges.ng-star-inserted form mat-card,
+app-settings.ng-star-inserted form div mat-card /* Card widths */ {
+  width: 100%;
+  max-width: 100% !important;
+}
+
+app-settings.ng-star-inserted form {
+  overflow-x: hidden !important;
+}
+
+app-create-task.ng-star-inserted mat-card,
+app-order-courses.ng-star-inserted mat-card,
+app-self-register.ng-star-inserted mat-card,
+.not-found /* Center These */ {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+app-order-courses.ng-star-inserted mat-card {
+  margin: 0px !important;
+  width: 100%;
+}
+
+/** 
+ *  COURSE
+ *  ‣ This edits the entire course page that you are in by chaning its width and more
+ *  this helps to visually see things and helps get work done in a better inviornment.
+**/
+.ng-star-inserted mat-card .nav-card .date-header {
+  vertical-align: middle !important;
+  margin: auto !important;
+}
+
+app-student-courses.ng-star-inserted mat-card-title-group {
+  padding-top: 1rem;
+}
+
+app-student-stream.ng-star-inserted lib-activity-stream .divider {
+  border: 1px solid var(--foreground-text) !important;
+  opacity: 0.2;
+  margin: 16px 0 16px 48px !important;
+}
+
+lib-grade-details.ng-star-inserted .mat-tab-label-container {
+  margin-top: 1rem;
+}
+
+app-settings.ng-star-inserted .outer {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+app-settings.ng-star-inserted mat-card[aria-label="Profile picture"]:before {
+  content: var(--t-warn-txt);
+}
+
+app-course-home .mat-tab-header .mat-tab-labels, /* Remove background from tabs */ 
+app-about .mat-tab-header .mat-tab-labels,
+lib-grade-details .mat-tab-header .mat-tab-labels {
+  background: transparent !important;
+}
+
+app-course-home .mat-tab-header .mat-tab-labels {
+  margin-top: 1rem;
+}
+
+lib-grade-details.ng-star-inserted {
+  padding: 0px;
+}
+
+app-blackout-dates.ng-star-inserted .main .two-columns {
+  max-width: none !important;
+}
+
+app-blackout-dates.ng-star-inserted {
+  padding: 10px;
+}
+
+.ng-star-inserted .landing-content * /* Global course description content */ {
+  font-size: var(--t-course-desc-font-size) !important;
+}
+
+app-course-home.ng-star-inserted .agendas lib-managed-html .fr-view p * /* Course agenda font-size */ {
+  font-size: var(--t-agenda-font-size) !important;
+}
+
+.fail-color {
+  color: var(--t-fail-r) !important;
+}
+
+.pass-color {
+  color: var(--t-pass-g) !important;
+}
+
+.warn-color {
+  color: var(--t-warn-o) !important;
+}
+
+mat-divider.card-divider {
+  background: var(--foreground-text) !important;
+  border-top-width: 1px !important;
+}
+
+app-course-home.ng-star-inserted .mat-divider {
+  visibility: hidden !important;
+}
+
+.mat-list-item:hover {
+  transition: var(--t-glob-animation-time);
+}
+
+.ng-star-inserted .activity-html lib-managed-html .fr-view ul {
+  background: transparent !important;
+}
+
+.ng-star-inserted mat-drawer-content .activity-html {
+  border-radius: 0px !important;
+}
+
+.ng-star-inserted .mat-tab-body-content {
+  overflow: hidden !important;
+}
+
+.ng-star-inserted .search-bar {
+  margin: 0px !important;
+}
+
+.ng-star-inserted .detail-ct {
+  padding: 10px;
+}
+
+.ng-star-inserted .mat-tree {
+  background: transparent;
+}
+
+.ng-star-inserted .title-text,
+.ng-star-inserted .focus-title-text {
+  background: transparent !important;
+  outline: none !important;
+  user-select: none !important;
+}
+
+.ng-star-inserted .user-menu-button .user-name /* Name Flex Field Fix */ {
+  width: max-content !important;
+  margin-right: 0px !important;
+  flex-direction: row !important;
+  column-gap: 5px !important;
+}
+
+/**
+ *  ORDER COURSE 
+ *  ‣ Edits the order course pages draggable elements
+**/
+app-order-courses .order-drag-row .grip-icon,
+.cdk-drag-preview .grip-icon {
+  color: var(--foreground-text) !important;
+}
+
+mat-chip-list .mat-chip {
+  background: var(--t-g200) !important;
+  color: var(--t-w) !important;
+  border-radius: 5px;
+}
+
+app-order-courses.ng-star-inserted mat-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 0px !important;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.ng-star-inserted .fr-view>div span /* Teachers? why? Feedback Modal */ {
+  background-color: transparent !important;
+  font-size: 15px !important;
+}
+
+.ng-star-inserted mat-form-field,
+.ng-star-inserted app-filter-box {
+  padding: 0px !important;
+}
+
+/** 
+ *  ANNOUNCEMENTS
+ *  ‣ Edits the annoucement page
+**/
+app-announcement-detail.ng-star-inserted {
+  background: var(--t-b700) !important;
+}
+
+app-announcement-detail.ng-star-inserted .details .info {
+  width: max-content !important;
+  background: transparent !important;
+  text-align: left;
+}
+
+app-announcement-detail.ng-star-inserted {
+  font-weight: 100 !important;
+}
+
+app-inbox.ng-star-inserted .list-ct mat-nav-list .selected {
+  background: var(--t-g700) !important;
+  transition: var(--t-glob-aimation-period);
+  color: var(--t-w) !important;
+}
+
+app-announcement-detail.ng-star-inserted lib-managed-html * {
+  background: transparent !important;
+  color: var(--foreground-text) !important;
+}
+
+.ng-star-inserted .announcement-list {
+  background: var(--t-b700) !important;
+}
+
+/**
+ *  AGENDA
+ *  ‣ This customizes the agenda you see in (https://rogershs.echo-ntn.org/student/__ID__/activity) that
+ *  updates depending on the theme you choose
+*/
+.ng-star-inserted .fr-view table {
+  width: 100% !important;
+}
+
+.ng-star-inserted .fr-view a,
+.ng-star-inserted .fr-view a span,
+.ng-star-inserted .fr-view a div,
+.ng-star-inserted .fr-view a u *,
+.ng-star-inserted .fr-view span a * {
+  color: var(--primary-default) !important;
+  text-decoration: none !important;
+  font-weight: 100 !important;
+}
+
+.ng-star-inserted lib-rubric-details .fr-view *,
+.ng-star-inserted lib-rubric-grader .fr-view * {
+  background: transparent !important;
+}
+
+.ng-star-inserted .fr-view table:not(lib-html-editor *),
+.ng-star-inserted .fr-view table thead:not(lib-html-editor *),
+.ng-star-inserted .fr-view table thead tr:not(lib-html-editor *),
+.ng-star-inserted .fr-view table thead th:not(lib-html-editor *),
+.ng-star-inserted .fr-view table tbody:not(lib-html-editor *),
+.ng-star-inserted .fr-view table tbody tr:not(lib-html-editor *),
+.ng-star-inserted .fr-view table tbody td:not(lib-html-editor *) {
+  border: 1px solid var(--foreground-text) !important;
+}
+
+.not-found /* An activity or something that doesn't exist */ {
+  font-size: 20px;
+  font-style: normal !important;
+  text-align: center !important;
+  padding: 10px;
+
+  background: var(--t-w700) !important;
+  height: min-content !important;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 0px !important;
+  transform: translate(-50%, -50%);
+
+  width: 30rem;
+  border-radius: 5px;
+}
+
+.no-agenda /* No-Agenda Popup Change */ {
+  font-size: 20px;
+  font-style: normal !important;
+  text-align: center !important;
+  padding: 10px;
+
+  margin: 0 auto;
+  position: relative;
+  width: 30rem;
+  border-radius: 5px;
+}
+
+.no-agenda:after {
+  white-space: pre;
+  font-size: 15px;
+  content: "\aThis current day has no agenda";
+}
 
 /**
  *  OVERLAYS 
@@ -216,32 +710,36 @@ body.app-dark-theme .ng-star-inserted mat-sidenav { background: var(--t-d200) !i
  *  function with this theme.
 **/
 .cdk-overlay-container .mat-menu-item /* Overlay items */ {
-	color: var(--t-w) !important;
+  color: var(--t-w) !important;
 }
 
 .ng-star-inserted .mat-expansion-panel-body {
-	padding: 0px !important;
+  padding: 0px !important;
 }
 
 .ng-star-inserted .mat-expansion-panel {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .mat-tooltip /* tooltips */ {
-	background: var(--foreground-text) !important;
-	color: var(--background) !important;
-	transition: var(--glob-aimation-period);
+  background: var(--foreground-text) !important;
+  color: var(--background) !important;
+  transition: var(--glob-aimation-period);
 }
 
 .cdk-overlay-container .cdk-overlay-pane .mat-menu-panel /* Panel is fixed color */ {
-	background: var(--t-d700) !important;
-	color: var(--t-w) !important;
-	transition: var(--glob-aimation-period);
+  background: var(--t-d700) !important;
+  color: var(--t-w) !important;
+  transition: var(--glob-aimation-period);
 }
 
 .cdk-overlay-container .cdk-overlay-pane .mat-menu-panel button:hover {
-	background: var(--t-g200) !important;
-	transition: var(--t-glob-animation-time);
+  background: var(--t-g200) !important;
+  transition: var(--t-glob-animation-time);
+}
+
+.cdk-overlay-container .mat-divider /* Edits overlay dividers */ {
+  background: var(--t-w) !important;
 }
 
 /**
@@ -250,60 +748,56 @@ body.app-dark-theme .ng-star-inserted mat-sidenav { background: var(--t-d200) !i
  *  for teachers to use to make assignements and more.
 **/
 .fr-toolbar /* Top-bar Toolbar */ {
-    border-radius: 0px !important;
-    border: transparent !important;
+  border-radius: 0px !important;
+  border: transparent !important;
+  background: var(--t-b700) !important;
 }
 
 lib-dropbox lib-html-editor /* The actual editor */ {
-    border-radius: 0px !important;
-    border: transparent !important;
+  border-radius: 0px !important;
+  border: transparent !important;
 }
 
 .toolbar-ct .dropbox-toolbar {
-    min-height: 0px !important;
+  min-height: 0px !important;
 }
 
 .submission-grade /* Submission Grades */ {
-    padding-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 lib-dropbox lib-html-editor .fr-element {
-    padding-top: 0.5rem !important;
-    color: black !important;
+  padding-top: 0.5rem !important;
+  color: var(--t-b) !important;
 }
 
 .ng-star-inserted lib-dropbox {
-	margin-top: 0px !important;
+  margin-top: 0px !important;
 }
 
 lib-dropbox lib-html-editor .fr-view table * {
-    border: 1px solid black !important;
+  border: 1px solid var(--t-b) !important;
 }
 
 .fr-selected-color {
-    visibility: hidden !important;
-    font-size: 0px !important;
+  visibility: hidden !important;
+  font-size: 0px !important;
 }
 
 .fr-selected-color::after {
-    content: var(--t-checkmark) !important;
-    visibility: visible !important;
-    font-size: 15px;
-    color: var(--t-g) !important;
+  content: var(--t-checkmark) !important;
+  visibility: visible !important;
+  font-size: 15px;
+  color: var(--t-g) !important;
 }
 
 /* Paste detection */
 app-after-login lib-html-editor .fr-element #isPasted {
-	text-decoration: underline !important;
-	text-decoration-style: wavy !important;
-	text-decoration-color: var(--primary-900) !important;
-	font-size: 14px !important;
+  text-decoration: underline !important;
+  text-decoration-style: wavy !important;
+  text-decoration-color: var(--primary-900) !important;
+  font-size: 14px !important;
 }
-
-/* Light and dark modes */
-body.app-light-theme .fr-toolbar { background: var(--t-w700) !important; }
-body.app-dark-theme .fr-toolbar { background: var(--t-d700) !important; }
-
 
 /** 
  *  REMOVED ELEMENTS
@@ -338,6 +832,5 @@ a[href="https://accounts.google.com/logout"], /* Why? who tf is gonna log out of
 .progress-ct, /* this is just clutter for the main screen */
 lib-dropbox lib-html-editor .fr-placeholder,
 mat-ink-bar {
-	display: none!important;
+  display: none !important;
 }
-
