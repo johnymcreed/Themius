@@ -43,8 +43,8 @@
   --t-modal-border: 5px;
 
   /* These are images used in the website */
-  --t-light-bg: url("https://images.wallpaperscraft.com/image/single/cat_cute_flowers_170499_1920x1080.jpg"); /* Used when dark */
-  --t-dark-bg: url("https://images.wallpaperscraft.com/image/single/cats_astronauts_space_suit_135661_1920x1080.jpg"); /* Used when light */
+  --t-light-bg: url("https://datalore.jetbrains.com/assets/landing/background.png"); /* Used when dark */
+  --t-dark-bg: url("https://spousescleaninghouses.com/wp-content/uploads/2017/08/pets-cats-dogs.png"); /* Used when light */
   --t-login-bg: url("https://images4.alphacoders.com/124/1246122.jpg"); /* Login background */
   --t-loader-bg: url("https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/img/loader.jpg"); /* Loader background */
   --t-band-bg: url("https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/img/color-bands.jpg"); /* Sidebar Icons */
@@ -59,23 +59,23 @@
   --t-g: grey; /* Grey */
   --t-g200: #1d1c1ce0;
   --t-g700: #1d1c1cba;
-  --t-fail-r: #ff3b3b; /* Fail: Red */
-  --t-pass-g: #64ff37; /* Pass: Green */
-  --t-warn-o: #ffc026; /* Warn: Orange */
+  --t-fail-r: #f00; /* Fail: Red */
+  --t-pass-g: #00ff0d; /* Pass: Green */
+  --t-warn-o: #ffb500; /* Warn: Orange */
 }
 
 :root body.app-light-theme {
   --t-b: var(--t-w);
   --t-b200: var(--t-w200);
   --t-b700: var(--t-w700);
-  --t-b-img: var(--t-light-bg);
+  --t-b-img: var(--t-light-bg), var(--primary-400);
 }
 
 :root body.app-dark-theme {
   --t-b: var(--t-d);
   --t-b200: var(--t-d200);
   --t-b700: var(--t-d700);
-  --t-b-img: var(--t-dark-bg);
+  --t-b-img: var(--t-dark-bg), var(--primary-400);
 }
 
 html,
@@ -416,12 +416,13 @@ app-course-home.ng-star-inserted mat-card,
 lib-grade-details.ng-star-inserted mat-card,
 lib-grade-details.ng-star-inserted .main .card-ct mat-card,
 app-badges.ng-star-inserted form mat-card,
-app-settings.ng-star-inserted form div mat-card /* Card widths */ {
-  width: 100%;
+app-settings.ng-star-inserted form div mat-card  /* Card widths */ {
+  width: 100% !important;
   max-width: 100% !important;
 }
 
 app-settings.ng-star-inserted form {
+  padding: 10px !important;
   overflow-x: hidden !important;
 }
 
