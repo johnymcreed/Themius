@@ -257,7 +257,7 @@ mat-sidenav .mat-divider /* Sidebar-divider */ {
  *  for the changes i will be giving them.
 **/
 .ng-star-inserted .main,
-.ng-star-inserted .app-background,
+.ng-star-inserted .app-background:not(app-self-assessment-edit *),
 app-student-stream.ng-star-inserted,
 app-student-to-do.ng-star-inserted,
 app-badges.ng-star-inserted,
@@ -452,6 +452,10 @@ mat-tree-node:hover {
   background: var(--primary-900) !important;
   border-radius: 5px !important;
   transition: var(--t-glob-animation-time) !important;
+}
+
+mat-tree-node:hover a .title {
+  color: var(--t-w) !important;
 }
 
 app-student-courses.ng-star-inserted mat-card-title-group {
