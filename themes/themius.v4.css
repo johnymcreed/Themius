@@ -561,9 +561,19 @@ app-student-courses.ng-star-inserted mat-card-title-group {
 }
 
 mat-tree-node:hover {
-  background: var(--primary-100) !important;
+  background: var(--primary-300) !important;
   border-radius: 5px !important;
   transition: var(--t-glob-animation-time) !important;
+  color: var(--t-d) !important;
+}
+
+mat-tree-node:hover button[mattreenodetoggle] .mat-icon {
+  color: var(--t-w) !important;
+}
+
+.mat-focus-indicator:focus {
+  background: var(--primary-300) !important;
+  color: var(--t-w) !important;
 }
 
 /**
@@ -773,40 +783,12 @@ app-announcement-detail.ng-star-inserted lib-managed-html * {
 }
 
 body.app-dark-theme .ng-star-inserted .fr-view table:not(lib-html-editor *),
-body.app-dark-theme
-  .ng-star-inserted
-  .fr-view
-  table
-  thead:not(lib-html-editor *),
-body.app-dark-theme
-  .ng-star-inserted
-  .fr-view
-  table
-  thead
-  tr:not(lib-html-editor *),
-body.app-dark-theme
-  .ng-star-inserted
-  .fr-view
-  table
-  thead
-  th:not(lib-html-editor *),
-body.app-dark-theme
-  .ng-star-inserted
-  .fr-view
-  table
-  tbody:not(lib-html-editor *),
-body.app-dark-theme
-  .ng-star-inserted
-  .fr-view
-  table
-  tbody
-  tr:not(lib-html-editor *),
-body.app-dark-theme
-  .ng-star-inserted
-  .fr-view
-  table
-  tbody
-  td:not(lib-html-editor *) {
+body.app-dark-theme .ng-star-inserted .fr-view table thead:not(lib-html-editor *),
+body.app-dark-theme .ng-star-inserted .fr-view table thead tr:not(lib-html-editor *),
+body.app-dark-theme .ng-star-inserted .fr-view table thead th:not(lib-html-editor *),
+body.app-dark-theme .ng-star-inserted .fr-view table tbody:not(lib-html-editor *),
+body.app-dark-theme .ng-star-inserted .fr-view table tbody tr:not(lib-html-editor *),
+body.app-dark-theme .ng-star-inserted .fr-view table tbody td:not(lib-html-editor *) {
   border: 1px solid var(--t-b-txt) !important;
   color: var(--t-b-table-color) !important;
   background: var(--t-b-table-bg) !important;
