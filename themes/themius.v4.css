@@ -1,11 +1,11 @@
 /**
  * - Themius Design V4 (https://johnymcreed.github.io/Themius/)
- * This is the themius design for ECHO (https://rogershs.echo-ntn.org/) that makes
+ * ‣ This is the themius design for ECHO (https://rogershs.echo-ntn.org/) that makes
  * supers powerful changes to the website.
  * 
  * - Socials 
- * https://github.com/johnymcreed/Themius
- * https://johnymcreed.github.io/Themius/
+ * ‣ https://github.com/johnymcreed/Themius
+ * ‣ https://johnymcreed.github.io/Themius/
 **/
 
 @import url("https://raw.githubusercontent.com/johnymcreed/Themius/Default/themes/fonts/cabin.css"); /* Google Fonts: Cabin */
@@ -26,9 +26,9 @@
   /* These are all the :after/:before Content items */
   --t-login-title: "Rogers New Technology Highschool";
   --t-copyright: "Redesign by Mcreed";
-  --t-checkmark: "✓";
   --t-no-agenda: "This current day has no agenda";
   --t-warn-txt: "* You should still add an avatar if you haven't as other people and teachers will still see this.";
+  --t-checkmark: "✓";
 
   /* These are for modals */
   --t-modal-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -62,6 +62,7 @@
   --t-b200: var(--t-w200);
   --t-b700: var(--t-w700);
   --t-b-img: var(--t-light-bg), var(--primary-400);
+  --t-b-txt: var(--t-d);
 }
 
 :root body.app-dark-theme {
@@ -69,6 +70,7 @@
   --t-b200: var(--t-d200);
   --t-b700: var(--t-d700);
   --t-b-img: var(--t-dark-bg), var(--primary-400);
+  --t-b-txt: var(--t-w);
 }
 
 html,
@@ -104,6 +106,7 @@ p /* These are what we change the fonts to */ {
 ::-webkit-scrollbar {
   width: 3px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--t-scrollbar-shadow) !important;
 }
@@ -221,7 +224,7 @@ app-before-login app-login mat-toolbar form input /* TODO: get rid of this dumb 
  *  we absolutly need this since it is where most of the buttons ares.
 **/
 mat-sidenav .mat-divider /* Sidebar-divider */ {
-  background: var(--foreground-text) !important;
+  background: var(--t-b-txt) !important;
   border-top-width: 1px !important;
 }
 
@@ -288,7 +291,7 @@ app-student-activity.ng-star-inserted {
 .ng-star-inserted .notification,
 app-privacy .mat-toolbar,
 ::selection {
-  color: var(--foreground-text) !important;
+  color: var(--t-b-txt) !important;
   background: var(--t-b) !important;
 }
 
@@ -321,7 +324,7 @@ app-privacy .mat-toolbar,
 
 .note * /* Fix feedback modal background */ {
   background: transparent !important;
-  color: var(--foreground-text) !important;
+  color: var(--t-b-txt) !important;
 }
 
 body.app-dark-theme .activity-html span {
@@ -357,7 +360,7 @@ body.app-dark-theme lib-standards-rubric-details table td {
 
 body.app-light-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a, a span, a div, .selected *, a u *, span a *) /* Agenda Form View (LIGHT) */ {
   margin: auto !important;
-  color: var(--foreground-text) !important;
+  color: var(--t-b-txt) !important;
 }
 
 body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(a, a span, a div, .selected *, a u *, span a *) /* Agenda Form View (DARK) */ {
@@ -376,7 +379,7 @@ body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(
 
 .mat-mini-fab {
   background: var(--primary-default) !important;
-  color: var(--foreground-text) !important;
+  color: var(--t-b-txt) !important;
 }
 
 .ng-star-inserted simple-snack-bar .mat-button {
@@ -431,14 +434,41 @@ app-order-courses.ng-star-inserted mat-card {
   width: 100%;
 }
 
-/** 
- *  COURSE
- *  ‣ This edits the entire course page that you are in by chaning its width and more
- *  this helps to visually see things and helps get work done in a better inviornment.
+/**
+ *  SETTINGS
+ *  ‣ This edits the setting page on ECHO.
 **/
-.ng-star-inserted mat-card .nav-card .date-header {
-  vertical-align: middle !important;
-  margin: auto !important;
+app-settings.ng-star-inserted .outer {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+app-settings.ng-star-inserted mat-card[aria-label="Profile picture"]:before {
+  content: var(--t-warn-txt);
+}
+
+/** 
+ *  COURSE HOME
+ *  ‣ This edits the course home page.
+**/
+app-course-home.ng-star-inserted .agendas lib-managed-html .fr-view p * /* Course agenda font-size */ {
+  font-size: var(--t-agenda-font-size) !important;
+}
+
+app-course-home.ng-star-inserted .mat-divider {
+  visibility: hidden !important;
+}
+
+app-course-home .mat-tab-header .mat-tab-labels {
+  margin-top: 1rem;
+}
+
+app-course-home .mat-tab-header .mat-tab-labels {
+  background: transparent !important;
+}
+
+app-student-courses.ng-star-inserted mat-card-title-group {
+  padding-top: 1rem;
 }
 
 mat-tree-node:hover {
@@ -451,36 +481,25 @@ mat-tree-node:hover a .title {
   color: var(--t-w) !important;
 }
 
-app-student-courses.ng-star-inserted mat-card-title-group {
-  padding-top: 1rem;
-}
-
+/**
+ *  STUDENT STREAM
+ *  ‣ Edits the student activity stream page.
+**/
 app-student-stream.ng-star-inserted lib-activity-stream .divider {
-  border: 1px solid var(--foreground-text) !important;
+  border: 1px solid var(--t-b-txt) !important;
   opacity: 0.2;
   margin: 16px 0 16px 48px !important;
 }
 
-lib-grade-details.ng-star-inserted .mat-tab-label-container {
-  margin-top: 1rem;
-}
-
-app-settings.ng-star-inserted .outer {
-  width: 100% !important;
-  max-width: 100%;
-}
-
-app-settings.ng-star-inserted mat-card[aria-label="Profile picture"]:before {
-  content: var(--t-warn-txt);
-}
-
-app-course-home .mat-tab-header .mat-tab-labels, /* Remove background from tabs */ 
-app-about .mat-tab-header .mat-tab-labels,
+/** 
+ *  GRADE BOOK
+ *  ‣ Edits the websites grade book page.
+**/
 lib-grade-details .mat-tab-header .mat-tab-labels {
   background: transparent !important;
 }
 
-app-course-home .mat-tab-header .mat-tab-labels {
+lib-grade-details.ng-star-inserted .mat-tab-label-container {
   margin-top: 1rem;
 }
 
@@ -488,6 +507,10 @@ lib-grade-details.ng-star-inserted {
   padding: 0px;
 }
 
+/**
+ *  CALENDER
+ *  ‣ Edits the websites calender page.
+**/
 app-blackout-dates.ng-star-inserted .main .two-columns {
   max-width: none !important;
 }
@@ -496,12 +519,22 @@ app-blackout-dates.ng-star-inserted {
   padding: 10px;
 }
 
-.ng-star-inserted .landing-content * /* Global course description content */ {
-  font-size: var(--t-course-desc-font-size) !important;
+/** 
+ *  COURSE (ALl)
+ *  ‣ This will edit all things that i cannot seem to list seperatly either b/c
+ *  they are to little or i cannot think of one.
+**/
+.ng-star-inserted mat-card .nav-card .date-header {
+  vertical-align: middle !important;
+  margin: auto !important;
 }
 
-app-course-home.ng-star-inserted .agendas lib-managed-html .fr-view p * /* Course agenda font-size */ {
-  font-size: var(--t-agenda-font-size) !important;
+app-about .mat-tab-header .mat-tab-labels {
+  background: transparent !important;
+}
+
+.ng-star-inserted .landing-content * /* Global course description content */ {
+  font-size: var(--t-course-desc-font-size) !important;
 }
 
 .fail-color {
@@ -517,12 +550,8 @@ app-course-home.ng-star-inserted .agendas lib-managed-html .fr-view p * /* Cours
 }
 
 mat-divider.card-divider {
-  background: var(--foreground-text) !important;
+  background: var(--t-b-txt) !important;
   border-top-width: 1px !important;
-}
-
-app-course-home.ng-star-inserted .mat-divider {
-  visibility: hidden !important;
 }
 
 .mat-list-item:hover {
@@ -627,7 +656,7 @@ app-inbox.ng-star-inserted .list-ct mat-nav-list .selected {
 
 app-announcement-detail.ng-star-inserted lib-managed-html * {
   background: transparent !important;
-  color: var(--foreground-text) !important;
+  color: var(--t-b-txt) !important;
 }
 
 .ng-star-inserted .announcement-list {
@@ -665,7 +694,7 @@ app-announcement-detail.ng-star-inserted lib-managed-html * {
 .ng-star-inserted .fr-view table tbody:not(lib-html-editor *),
 .ng-star-inserted .fr-view table tbody tr:not(lib-html-editor *),
 .ng-star-inserted .fr-view table tbody td:not(lib-html-editor *) {
-  border: 1px solid var(--foreground-text) !important;
+  border: 1px solid var(--t-b-txt) !important;
 }
 
 .not-found /* An activity or something that doesn't exist */ {
@@ -723,7 +752,7 @@ app-announcement-detail.ng-star-inserted lib-managed-html * {
 }
 
 .mat-tooltip /* tooltips */ {
-  background: var(--foreground-text) !important;
+  background: var(--t-b-txt) !important;
   color: var(--background) !important;
   transition: var(--glob-aimation-period);
 }
@@ -792,8 +821,7 @@ lib-dropbox lib-html-editor .fr-view table * {
   color: var(--t-g) !important;
 }
 
-/* Paste detection */
-app-after-login lib-html-editor .fr-element #isPasted {
+app-after-login lib-html-editor .fr-element #isPasted /* Paste detection */ {
   text-decoration: underline !important;
   text-decoration-style: wavy !important;
   text-decoration-color: var(--primary-900) !important;
