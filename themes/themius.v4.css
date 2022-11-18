@@ -21,7 +21,7 @@
   --t-course-desc-font-size: 15px; /* This is the courses desc font size */
 
   /* These are global settings for backend stuff */
-  --t-glob-animation-time: 1s; /* Animation period for elements */
+  --t-glob-animation-time: 0.5s; /* Animation period for elements */
 
   /* These are all the :after/:before Content items */
   --t-login-title: "Rogers New Technology Highschool";
@@ -259,7 +259,6 @@ app-student-courses.ng-star-inserted /* Fix this element */ {
   padding-top: 10px;
 }
 
-app-inbox.ng-star-inserted .list-ct mat-nav-list .selected span, /* Set text */
 app-student-activity.ng-star-inserted {
   color: var(--t-w) !important;
 }
@@ -305,10 +304,13 @@ app-privacy .mat-toolbar,
 .ng-star-inserted .mat-card, /* A700 */
 .ng-star-inserted .mat-expansion-panel,
 ::-webkit-scrollbar-thumb:hover,
-.cdk-overlay-container > [dir='ltr'] .cdk-overlay-pane .open-animation-border, 
 .not-found {
   background: var(--t-b-theme-bg-trans) !important;
   border-radius: var(--t-modal-border) !important;
+}
+
+.cdk-overlay-container > [dir='ltr'] .cdk-overlay-pane .open-animation-border {
+  background: var(--primary-300) !important;
 }
 
 .note * /* Fix feedback modal background */ {
@@ -564,16 +566,31 @@ mat-tree-node:hover {
   background: var(--primary-300) !important;
   border-radius: 5px !important;
   transition: var(--t-glob-animation-time) !important;
-  color: var(--t-d) !important;
+  color: var(--t-b-txt) !important;
+}
+
+mat-tree-node:hover .title {
+  color: var(--t-b-txt) !important;
+}
+
+mat-tree-node:focus {
+  background: var(--primary-300) !important;
+  border-radius: 5px !important;
+  transition: var(--t-glob-animation-time) !important;
+  color: var(--t-b-txt) !important;
+}
+
+mat-tree-node:focus .title {
+  color: var(--t-b-txt) !important;
 }
 
 mat-tree-node:hover button[mattreenodetoggle] .mat-icon {
-  color: var(--t-w) !important;
+  color: var(--t-b-txt) !important;
 }
 
 .mat-focus-indicator:focus {
   background: var(--primary-300) !important;
-  color: var(--t-w) !important;
+  color: var(--t-b-txt) !important;
 }
 
 /**
@@ -739,12 +756,15 @@ app-announcement-detail.ng-star-inserted .details .info {
   text-align: left;
 }
 
+/*app-inbox.ng-star-inserted .list-ct mat-nav-list .selected span {
+}*/
+
 app-announcement-detail.ng-star-inserted {
   font-weight: 100 !important;
 }
 
 app-inbox.ng-star-inserted .list-ct mat-nav-list .selected {
-  background: var(--t-g700) !important;
+  background: var(--primary-300) !important;
   transition: var(--t-glob-aimation-period);
   color: var(--t-w) !important;
 }
@@ -933,6 +953,17 @@ app-after-login lib-html-editor .fr-element #isPasted /* Paste detection */ {
   text-decoration-style: wavy !important;
   text-decoration-color: var(--primary-900) !important;
   font-size: 14px !important;
+}
+
+/**
+ *  HELP IFRAME
+ *  ‣ Why this exist?
+**/
+.JNMth,
+#Embed {
+  padding: 0px !important;
+  background: transparent !important;
+  border: 30px !important;
 }
 
 /** 
