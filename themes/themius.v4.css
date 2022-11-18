@@ -274,9 +274,14 @@ app-student-activity.ng-star-inserted {
 .ng-star-inserted .card-ct mat-card .card-top,
 .ng-star-inserted .notification,
 app-privacy .mat-toolbar,
-::selection {
+.app-dark-mode::selection {
   color: var(--t-b-txt) !important;
   background: var(--t-b) !important;
+}
+
+::selection /* Follow modal color */ {
+  background: var(--primary-200);
+  color: var(--t-d)
 }
 
 .ng-star-inserted mat-card .color-band, /* A200 */
