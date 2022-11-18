@@ -281,7 +281,7 @@ app-privacy .mat-toolbar,
 
 ::selection /* Follow modal color */ {
   background: var(--primary-200);
-  color: var(--t-d)
+  color: var(--t-d);
 }
 
 .ng-star-inserted mat-card .color-band, /* A200 */
@@ -377,7 +377,13 @@ body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(
 
 .mat-checkbox-checked .mat-checkbox-background *,
 .ng-star-inserted .mat-accent .mat-pseudo-checkbox-checked {
-  background: var(--primary-default);
+  background: var(--primary-default) !important;
+}
+
+.mat-ripple-element {
+  background: var(--primary-400) !important;
+  color: var(--t-b200) !important;
+  opacity: 0.2;
 }
 
 .mat-checkbox-background {
@@ -399,6 +405,8 @@ body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(
   --t-b-img: var(--t-dark-bg), var(--primary-400);
   --t-b-txt: var(--t-w);
   --t-b-theme-bg-trans: var(--t-d700);
+  --t-b-table-bg: transparent;
+  --t-b-table-color: var(--t-w);
 }
 
 :root body.app-light-theme.app-theme-red {
@@ -553,13 +561,9 @@ app-student-courses.ng-star-inserted mat-card-title-group {
 }
 
 mat-tree-node:hover {
-  background: var(--primary-900) !important;
+  background: var(--primary-100) !important;
   border-radius: 5px !important;
   transition: var(--t-glob-animation-time) !important;
-}
-
-mat-tree-node:hover a .title {
-  color: var(--t-w) !important;
 }
 
 /**
@@ -768,6 +772,46 @@ app-announcement-detail.ng-star-inserted lib-managed-html * {
   background: transparent !important;
 }
 
+body.app-dark-theme .ng-star-inserted .fr-view table:not(lib-html-editor *),
+body.app-dark-theme
+  .ng-star-inserted
+  .fr-view
+  table
+  thead:not(lib-html-editor *),
+body.app-dark-theme
+  .ng-star-inserted
+  .fr-view
+  table
+  thead
+  tr:not(lib-html-editor *),
+body.app-dark-theme
+  .ng-star-inserted
+  .fr-view
+  table
+  thead
+  th:not(lib-html-editor *),
+body.app-dark-theme
+  .ng-star-inserted
+  .fr-view
+  table
+  tbody:not(lib-html-editor *),
+body.app-dark-theme
+  .ng-star-inserted
+  .fr-view
+  table
+  tbody
+  tr:not(lib-html-editor *),
+body.app-dark-theme
+  .ng-star-inserted
+  .fr-view
+  table
+  tbody
+  td:not(lib-html-editor *) {
+  border: 1px solid var(--t-b-txt) !important;
+  color: var(--t-b-table-color) !important;
+  background: var(--t-b-table-bg) !important;
+}
+
 .ng-star-inserted .fr-view table:not(lib-html-editor *),
 .ng-star-inserted .fr-view table thead:not(lib-html-editor *),
 .ng-star-inserted .fr-view table thead tr:not(lib-html-editor *),
@@ -879,7 +923,7 @@ lib-dropbox lib-html-editor /* The actual editor */ {
 
 lib-dropbox lib-html-editor .fr-element {
   padding-top: 0.5rem !important;
-  color: var(--t-b) !important;
+  color: var(--t-d) !important;
 }
 
 .ng-star-inserted lib-dropbox {
@@ -887,7 +931,7 @@ lib-dropbox lib-html-editor .fr-element {
 }
 
 lib-dropbox lib-html-editor .fr-view table * {
-  border: 1px solid var(--t-b) !important;
+  border: 1px solid var(--t-d) !important;
 }
 
 .fr-selected-color {
