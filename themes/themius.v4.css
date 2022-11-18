@@ -57,22 +57,6 @@
   --t-warn-o: #ffb500; /* Warn: Orange */
 }
 
-:root body.app-light-theme {
-  --t-b: var(--t-w);
-  --t-b200: var(--t-w200);
-  --t-b700: var(--t-w700);
-  --t-b-img: var(--t-light-bg), var(--primary-400);
-  --t-b-txt: var(--t-d);
-}
-
-:root body.app-dark-theme {
-  --t-b: var(--t-d);
-  --t-b200: var(--t-d200);
-  --t-b700: var(--t-d700);
-  --t-b-img: var(--t-dark-bg), var(--primary-400);
-  --t-b-txt: var(--t-w);
-}
-
 html,
 body,
 app-root /* By DEFAULT make the background black */ {
@@ -318,7 +302,7 @@ app-privacy .mat-toolbar,
 ::-webkit-scrollbar-thumb:hover,
 .cdk-overlay-container > [dir='ltr'] .cdk-overlay-pane .open-animation-border, 
 .not-found {
-  background: var(--t-b700) !important;
+  background: var(--t-b-theme-bg-trans) !important;
   border-radius: var(--t-modal-border) !important;
 }
 
@@ -393,6 +377,98 @@ body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(
 
 .mat-checkbox-background {
   background: transparent !important;
+}
+
+:root body.app-light-theme {
+  --t-b: var(--t-w);
+  --t-b200: var(--t-w200);
+  --t-b700: var(--t-w700);
+  --t-b-img: var(--t-light-bg), var(--primary-400);
+  --t-b-txt: var(--t-d);
+}
+
+:root body.app-dark-theme {
+  --t-b: var(--t-d);
+  --t-b200: var(--t-d200);
+  --t-b700: var(--t-d700);
+  --t-b-img: var(--t-dark-bg), var(--primary-400);
+  --t-b-txt: var(--t-w);
+  --t-b-theme-bg-trans: var(--t-d700);
+}
+
+:root body.app-light-theme.app-theme-red {
+  --t-b-theme-bg-trans: #ffebeee0;
+}
+
+:root body.app-light-theme.app-theme-pink {
+  --t-b-theme-bg-trans: #fce4ece0;
+}
+
+:root body.app-light-theme.app-theme-purple {
+  --t-b-theme-bg-trans: #f3e5f5e0;
+}
+
+:root body.app-light-theme.app-theme-deep-purple {
+  --t-b-theme-bg-trans: #ede7f6e0;
+}
+
+:root body.app-light-theme.app-theme-indigo {
+  --t-b-theme-bg-trans: #e8eaf6e0;
+}
+
+:root body.app-light-theme.app-theme-blue {
+  --t-b-theme-bg-trans: #e3f2fde0;
+}
+
+:root body.app-light-theme.app-theme-light-blue {
+  --t-b-theme-bg-trans: #e1f5fee0;
+}
+
+:root body.app-light-theme.app-theme-cyan {
+  --t-b-theme-bg-trans: #e0f7fae0;
+}
+
+:root body.app-light-theme.app-theme-teal {
+  --t-b-theme-bg-trans: #e0f2f1e0;
+}
+
+:root body.app-light-theme.app-theme-green {
+  --t-b-theme-bg-trans: #e8f5e9e0;
+}
+
+:root body.app-light-theme.app-theme-light-green {
+  --t-b-theme-bg-trans: #f1f8e9e0;
+}
+
+:root body.app-light-theme.app-theme-lime {
+  --t-b-theme-bg-trans: #f9fbe7e0;
+}
+
+:root body.app-light-theme.app-theme-amber {
+  --t-b-theme-bg-trans: #fff8e1e0;
+}
+
+:root body.app-light-theme.app-theme-orange {
+  --t-b-theme-bg-trans: #fff3e0e0;
+}
+:root body.app-light-theme.app-theme-deep-orange {
+  --t-b-theme-bg-trans: #fbe9e7e0;
+}
+
+:root body.app-light-theme.app-theme-brown {
+  --t-b-theme-bg-trans: #efebe9e0;
+}
+
+:root body.app-light-theme.app-theme-grey {
+  --t-b-theme-bg-trans: #fafafae0;
+}
+
+:root body.app-light-theme.app-theme-blue-grey {
+  --t-b-theme-bg-trans: #eceff1e0;
+}
+
+:root body.app-light-theme.app-theme-high-contrast /* Default Modal Color */ {
+  --t-b-theme-bg-trans: var(--t-w700);
 }
 
 /**
@@ -846,6 +922,7 @@ app-student-courses.ng-star-inserted .color-band, /* Course Card Color band */
 .intro,
 .save-status-ct, /* Editor auto saves */
 .gauge, /* Grade Gauge */ 
+.course-dates,
 .gauge-progress, /* Grade Gauge Progress */
 .course-objectives-info, /* Course Onjective Info */
 .app-loading circle, /* App loader circles (Replaced with a cat) */
