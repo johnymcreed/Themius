@@ -1,0 +1,423 @@
+@-moz-document url-prefix("https://rogershs.echo-ntn.org") {
+/** ------------------------------ 
+
+     SECTION ARE LISTED BELOW BY
+      -- LOGIN PAGE ELEMENTS
+	  -- GLOBAL PAGE ELEMENTS
+      -- MAIN PAGE ELEMENTS
+      -- BACKDROP ELEMENTS
+      -- COURSE PAGE ELEMENTS
+	  -- GRADE PAGE ELEMENTS
+	  -- OTHER PAGE ELEMENTS
+		
+	* YOU MUST HAVE YOU'RE LOGIN 
+		SAVED AS THIS REMOVES
+       THE LOGIN FROM THE MAIN PAGE *
+
+	 Copyright: MIT License,
+	you are free to distrubute and
+	reuse this on stylish.
+
+    ------------------------------- **/
+
+/* ----------------
+*	Login Elements
+*  ---------------- */
+.app-dark-theme .app-primary-dark-background {
+ 	background: #d32f2f !important;   
+} .buzz-login-page-bottom {
+ 	color: white;
+    background: #d32f2f !important;
+} .buzz-login-page-bottom, .buzz-login-content, .buzz-login-content-title {
+ 	font-size: 35px !important;   
+} .buzz-login-logo {
+ 	display: none;   
+}
+
+/* -----------------
+* 	Global Elements
+*  ----------------- */ 
+body, html {
+    /* font stuff */
+    font-family: Arial;
+    font-weight: lighter;
+    /* background automatic */
+    color: white;
+    padding: 0px;
+    margin: 0;
+}
+
+
+a * {
+    color: #a1a1a1 !important;
+    text-decoration: none !important;
+}
+
+a:hover * {
+    text-decoration: none !important;
+    color: #bababa !important;
+}
+
+/* Webkit Scrollbar */
+::-webkit-scrollbar {
+    width:0px;
+    height:auto
+}
+
+::-webkit-scrollbar-track {
+    background:rgba(46, 46, 46, .733)
+}
+
+::-webkit-scrollbar-thumb {
+    background:#464646
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:#666
+}
+
+/* pre loader */
+.app-loading {
+    /* circle loader */
+    border: 5px solid #424242;
+    border-top: 5px solid #515151;
+    border-radius: 70%;
+    width: 40px;
+    height: 40px;
+    animation: spinner 1s linear infinite;
+} @keyframes spinner {
+    0% {
+        transform:rotate(0deg)
+    }
+    100% {
+        transform:rotate(360deg)
+    }
+} 
+
+/* replaced loading icon for above */
+.app-loader circle * {
+    /* remove circle loader */
+    background: transparent;
+    display: none;
+} circle {
+    /* remove circle loader */
+    background: transparent;
+    display: none;
+}
+
+
+  div.top-content.app-background.xli-flex-enabled
+  {
+    background: url("http://i.imgur.com/vxQoqqj.gif");
+    background-size: 100% 100%;
+    min-height: 100%;
+  }
+
+
+/* every footer */
+.nav-footer * {
+    display: none;
+    padding: 0px;
+    height: 0px;
+}
+
+/* i don't understand why you 
+  would add a system update for
+  a website? or anything like that */
+.translation {
+    display: none;
+} .translation #offline {
+    display: none;
+} .translation #newVersion {
+    display: none;
+} .translation #newVersionRefresh {
+    display: none;
+}
+
+/* -------------------
+*	Backdrop Elements
+*  ------------------- */
+/* bad grey background */
+.mat-drawer-backdrop {
+    /* allow func still */
+    color: transparent;
+    box-shadow: none;
+    opacity: .0;
+}
+
+/* echo logo */
+.app-logo {
+    display: none;
+    /* if display 
+     doesn't work */
+    width: 0;
+    height: 0;
+}
+
+/* side logo */
+ .side-menu-logo {
+    display: none;
+}
+
+/* ct side logo */
+.side-menu-logo-ct {
+    display: none;
+}
+
+
+/* ---------------
+*	Main Elements
+*  --------------- */
+/* course grid change */
+.grid-ct {
+    display: grid;
+    height: 100vh;
+    margin: 0;
+}
+
+/* each card present */
+.course-card {
+    padding: 20px;
+    text-align: left;
+}
+
+/* course card color */
+.course-color * {
+    display: none;
+    width: 0px;
+}
+
+/* card thumb just takes space */
+.course-thumbnail * {
+    display: none;
+    size: 12px;
+}
+
+/* information on class */
+.course-info * {
+    height: 0px;
+    padding: 0px;
+    display: none;
+}
+
+/* both are for grade */
+.percent {
+    color: red;
+} .letter {
+    display: none;
+}
+
+/* course color band */
+.color-band {
+    display: none;
+}
+
+/* round egde of course */
+.rounded {
+    border: none;
+    border-radius: none;
+}
+
+/* each card in the grid */
+.grid-ct .mat-card {
+    border: none;
+    border-radius: none;
+    height: max-height;
+}
+
+/* title size */
+.mat-card-title h2 {
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+/* card actions we don't need */
+.mat-card-actions {
+    display: none;
+}
+
+/* self saying eh? */
+.mat-divider {
+    size: 1px;
+    height: 1px;
+    border: 1px;
+    box-shadow: none;
+    display: none;
+}
+
+/* footer course dates */
+.course-dates {
+    display: none;
+}
+
+/* hide mat-images */
+.mat-card-image {
+    display: none;
+    height: 0px;
+}
+
+/* -----------------
+*	Course Elements
+*  ----------------- */
+/* teacher info */
+.landing-content *{
+ 	display: none;   
+}
+
+/* button to change agenda day */
+.agendas button {
+ 	display: none;   
+}
+
+/* this section changes the agenda
+	you see in ECHO this style
+	can be changed here please 	
+	don't use another stylish to
+	edit this please. */
+.fr-view .content {
+ 	padding: 0px;
+    margin: 0;
+    list-style: none;
+}
+
+/* table */
+.fr-view table {
+    padding: 0px;
+ 	border: none;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* table body */
+.fr-view tbody *{
+    padding: 0px;
+	background: #2b2b2b !important;
+    border: none !important;
+	font-size: 12px !important;
+    text-align: left;
+}
+
+/* part for table */
+.fr-view tr *{
+    color: white !important;
+	font-family: Arial !important;  
+    padding: 5px;
+}
+
+/* list for table */
+.fr-view ul *{
+    list-style: none !important;
+}
+
+/* search field */
+.mat-form-field {
+    display: none;
+} .search-field {
+    display: none;
+}
+
+/* this below is for the 
+ shitty search system they 
+	made sadly its bad */
+.mat-tree-node .folder {
+    display: none;
+    width: 0px;
+    padding: 0px;
+} #cur-proj-id {
+    display: none;
+    padding: 20px;
+}
+
+/* it just won't remove it 
+	sad cause its ugly af */ 
+.projects *, 
+.mat-ripple *,
+.folder *, 
+.activity-thumbnail *, 
+.project *,
+.lib-activity-thumbnail *, 
+.project-thumbnail *{
+ 	
+}
+
+/* course top header */
+.top-header {
+    font-size: small;
+    display: none;
+}
+
+/* course tabs that are just
+  a waste of space for it */
+.mat-tab-labels {
+    display: none;
+}
+
+/* you should know you're teachers
+  for a class like this */
+.more-teachers {
+    display: none;
+}
+
+/* title for some reason */
+.link-title {
+    display: none;
+}
+
+/* ----------------
+*   Grade Elements
+*  ---------------- */
+/* grade buttons */
+.user-menu-button {
+    display: none;
+    font-size: 0px;
+}
+/* grade stuff */
+ .gauge-progress {
+    display: none;
+}
+
+/* info that never shows up */
+.course-objectives-info {
+    display: none;
+}
+
+/* ----------------
+*	Other Elements
+*  ---------------- */
+/* un-designed??? */
+.skip-nav {
+    display: none;
+}
+
+/* bad and doesn't match */
+.sbg-icon {
+    display: none;
+}
+
+/* just a big area taken? */
+.activity-html {
+    display: none;
+}
+
+/* big text that shouldn't 
+ exist anywhere here */
+.focus-title-text {
+    display: none;
+}
+
+/* crappy overlay container */
+.cdk-overlay-container {
+    display: none;
+}
+
+/* grade panel (not needed) */
+.mat-expansion-panel {
+    display: none;
+}
+
+/* actually so unhelpful */
+.mat-ripple * {
+    border: none;
+    border-radius: 0px;
+}
+}
