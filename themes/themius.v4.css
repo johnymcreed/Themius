@@ -999,6 +999,7 @@ app-course-home.ng-star-inserted .course-progress,
 a[href="https://accounts.google.com/logout"], /* Why? who tf is gonna log out of all there google accounts?? */
 .progress-ct, /* this is just clutter for the main screen */
 lib-dropbox lib-html-editor .fr-placeholder,
-mat-ink-bar {
+mat-ink-bar,
+.mat-checkbox .mat-checkbox-ripple {
   display: none !important;
 }
