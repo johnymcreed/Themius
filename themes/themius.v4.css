@@ -948,12 +948,12 @@ lib-dropbox lib-html-editor .fr-view table * {
   color: var(--t-g) !important;
 }
 
-app-after-login lib-html-editor .fr-element #isPasted /* Paste detection */ {
+/**app-after-login lib-html-editor .fr-element #isPasted /* Paste detection  {
   text-decoration: underline !important;
   text-decoration-style: wavy !important;
   text-decoration-color: var(--primary-900) !important;
   font-size: 14px !important;
-}
+}**/
 
 /**
  *  HELP IFRAME
