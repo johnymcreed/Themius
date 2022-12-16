@@ -7,5 +7,5 @@ You might find that Themius makes Echo feel more smooth, and simple compared to 
 
 We make sure Themius is always updated with Echo and are always at it with new additions and fixes that make Echo feel like a professional platform to do work on, on a day to day basis.
 
-<br
+<br>
 Download extension <a href="download-directory.github.io/?url=https://github.com/johnymcreed/Themius/tree/Default/extension">Here</a>
