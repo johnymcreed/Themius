@@ -1,0 +1,92 @@
+/* copyright johnymcreed */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+* 
+{
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+
+    width: 35em;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: rgb(67, 60, 70);
+    color: white;
+
+    cursor: url('cursor.cur'), auto;
+}
+
+small {
+    color: rgb(183, 183, 183);
+}
+
+span {
+    vertical-align: middle;
+}
+
+a {
+    color: rgb(217, 95, 228);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(233, 130, 242);
+}
+
+.about {
+    padding: 10px 50px 10px 50px;
+    background-color: rgb(131, 76, 132);
+    box-shadow: 0px 3px 21px -14px rgba(0,0,0,1);
+}
+
+.bottom {
+    padding: 20px 50px 30px 50px;
+}
+
+.settings {
+    padding-top: 10px;
+}
+
+#custom_image {
+    width: 10em;
+}
+
+a:hover, input:hover {
+    cursor: url('hand.cur'), auto;
+}
+
+.checkbox_w_text input {
+    vertical-align: middle;
+    padding: 0px;
+    outline: none;
+    margin: 0px;
+}
+
+.input_w_text input {
+    height: 5vh;
+    border: none;
+    width: 10em;
+}
+
+.input_w_text input:focus {
+    outline: none;
+    border: none;
+}
+
+.socials {
+    padding: 10px 50px 10px 50px;
+    background-color: rgb(50, 50, 50);
+    box-shadow: 0px 3px 21px -14px rgba(0,0,0,1);
+}

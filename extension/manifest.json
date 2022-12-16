@@ -1,33 +1,18 @@
 {
-	"manifest_version": 3,
-	"name": "Themius Modifier",
-	"version": "1.0.0",
-	"description": "Allows full control over everything happening in echo by adding elements and changing styles to make it the best learning experience ever.",
-	"icons": {
-		"16": "static/content/logos/16.png",
-		"48": "static/content/logos/48.png",
-		"128": "static/content/logos/128.png"
-	},
-	"permissions": [
-		"activeTab",
-		"storage"
-	],
-	"action": {
-		"default_popup": "static/popup.html",
-		"default_title": "Themius Modifier"
-	},
-	"content_scripts": [
-		{
-			"css": [
-				"src/css/popup.css"
-			],
-			"js": [
-				"src/thirdparty/jquery.js",
-				"src/script.js"
-			],
-			"matches": [
-				"https://rogershs.echo-ntn.org/*"
-			]
-		}
-	]
+    "manifest_version": 3,
+    "version": "1.0.2",
+    
+    "author": "Johny mcreed",
+    "name": "Themius Extension",
+    "description": "Allows full control over everything happening in echo by adding elements and changing styles to make it the best learning experience ever.",
+    "icons": { "16": "popup/img/16.png", "48": "popup/img/48.png", "128": "popup/img/128.png" },
+
+    "permissions": [ "activeTab", "tabs", "storage" ],
+    "action": { "default_popup": "popup/popup.html", "default_title": "Themius Extension" },
+
+    "content_scripts": [{
+        "js": [ "thirdparty/jquery.js", "script.js" ],
+        "run_at": "document_end",
+        "matches": [ "https://rogershs.echo-ntn.org/*" ]
+    }]
 }
