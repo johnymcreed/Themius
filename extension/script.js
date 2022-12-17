@@ -167,9 +167,9 @@ $(document).ready(function () {
         resubmit: true,
         fancytab: true,
 
-        bgimage: [],
-        bandimage: [],
-        loaderimage: []
+        bgimage: '',
+        bandimage: '',
+        loaderimage: ''
     }, function (e) {
         if (e.enable == true) {
             console.log('Themius', this_version, 'loaded')
@@ -209,7 +209,7 @@ $(document).ready(function () {
                 //console.log('loaded', 'pastedd')
             }
 
-            if (e.bgimage !== "") { // customize background image
+            if (e.bgimage != "") { // customize background image
                 $(':root').css('--t-dark-bg', 'url("' + e.bgimage + '")')
                 $(':root').css('--t-light-bg', 'url("' + e.bgimage + '")')
                 $(':root').css('--t-login-bg', 'url("' + e.bgimage + '")')
@@ -217,13 +217,13 @@ $(document).ready(function () {
                 //console.log('added', e.bgimage)
             }
 
-            if (e.bandimage !== "") { // customize band image
+            if (e.bandimage != "") { // customize band image
                 $(':root').css('--t-band-bg', 'url("' + e.bandimage + '")')
 
                 //console.log('added', e.bandimage)
             }
 
-            if (e.loaderimage !== "") { // customize loader image
+            if (e.loaderimage != "") { // customize loader image
                 $(':root').css('--t-loader-bg', 'url("' + e.loaderimage + '")')
 
                 //console.log('added', e.loaderimage)
