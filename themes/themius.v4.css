@@ -645,6 +645,10 @@ app-blackout-dates.ng-star-inserted {
   margin: auto !important;
 }
 
+lib-activity-thumbnail mat-icon[role="img"] {
+	color: var(--primary-300) !important;
+}
+
 app-about .mat-tab-header .mat-tab-labels {
   background: transparent !important;
 }
