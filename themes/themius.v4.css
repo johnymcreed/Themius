@@ -505,6 +505,10 @@ app-settings.ng-star-inserted form div mat-card  /* Card widths */ {
   max-width: 100% !important;
 }
 
+app-student-courses.ng-star-inserted .home-ct /* fix slight padding change when switching tabs */ {
+	padding: 25px 10px 10px 10px;
+}
+
 app-settings.ng-star-inserted form {
   padding: 10px !important;
   overflow-x: hidden !important;
@@ -715,6 +719,10 @@ mat-divider.card-divider {
 app-order-courses .order-drag-row .grip-icon,
 .cdk-drag-preview .grip-icon {
   color: var(--foreground-text) !important;
+}
+
+app-order-courses .order-drag-row {
+	background: transparent !important;
 }
 
 mat-chip-list .mat-chip {
