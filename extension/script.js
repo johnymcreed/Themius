@@ -3,7 +3,7 @@
 // use items, style echo, setup hacks / tools
 // copyright johnymcreed
 
-var this_version = 1.03 // local to each extension
+var this_version = 1.04 // local to each extension
 var configfile = 'https://raw.githubusercontent.com/johnymcreed/Themius/Default/config.json'
 
 // if the local version is not equal to the github version 
@@ -175,6 +175,13 @@ $(document).ready(function () {
             console.log('Themius', this_version, 'loaded')
 
             this_version_control();
+            
+            // rewrite base href location and also force any link to open
+            // in a new tab so you never close echo
+            var base = document.querySelector('base')
+            base.href = '/themius'
+            base.target = '_blank' // HEHEHAHAHAH
+            document.getElementsByTagName('head')[0].appendChild(base)
         
             // use during first use.
             if (localStorage.getItem('welcome_popup') == null)
