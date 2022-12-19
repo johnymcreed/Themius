@@ -6,8 +6,10 @@
 var this_version = 1.05 // local to each extension
 var configfile = 'https://raw.githubusercontent.com/johnymcreed/Themius/Default/config.json'
 
-// if the local version is not equal to the github version 
-// warn with a popup that this version is out of date
+/**
+ * Insures the users extension version is up to date with the githubs version
+ * if it isn't a confirm popup will show and ask to update.
+ */
 function this_version_control() {
     $.getJSON(configfile, function( data ) {
         if (data.version != this_version) {
@@ -28,7 +30,10 @@ function this_version_control() {
     })
 }
 
-// create style element
+/**
+ * The primary function that sends a style element to the parent element of echo
+ * to style the website.
+ */
 function create_themius() {
     $.getJSON(configfile, function( data ) {
         // setup element
@@ -48,7 +53,10 @@ function create_themius() {
     })
 }
 
-// welcome popup with information
+/**
+ * If its the users first time using the extension this will popup and inform them
+ * of its features and uses.
+ */
 function create_welcome() {
     let message = `
     Hey! Welcome to Themius, a super powerful extension designed to make ECHO a better experience for those who 
@@ -71,7 +79,10 @@ function create_welcome() {
     localStorage.setItem('welcome_popup', 'false')
 }
 
-// reenable disabled buttons/inputs/ect
+/**
+ * Detects when a button, div, input ect has the attribute __[disabled]__ or __contenteditable__ 
+ * as false or just there and remove it.
+ */
 function enable_disabled() {
     // items we will enable again
     let items = document.querySelectorAll('[disabled], .fr-element, input, div, button')
@@ -104,7 +115,11 @@ function enable_disabled() {
     }
 }
 
-// detect when text is pasted and highlights it occordingly
+
+/**
+ * Detect when echo has added the __#isPasted__ id tag to the element and
+ * CSS style it so the user knows it was detected.
+ */
 function enable_pastedd() {
     let items = document.querySelectorAll('#isPasted')
     items.forEach(paste_handler)
@@ -114,7 +129,10 @@ function enable_pastedd() {
     }
 }
 
-// scrolls the msg on title.
+/**
+ * A custom title scroller that animates the tabs title by scrolling it
+ * with our custom and very special text.
+ */
 function title_roller() {
     // create the new one
     var title = document.querySelector('html').querySelector('title')
@@ -135,7 +153,9 @@ function title_roller() {
     scroll_handler()
 }
 
-// changes favicon to ours 
+/**
+ * Changes the website icon to our icon if the user settings allow it.
+ */
 function favicon_changer() {
     // remove there current icon by finding the icon with type=images/x-icon
     var og = document.querySelector('head').querySelector('link[type="image/x-icon"]')
@@ -175,7 +195,14 @@ $(document).ready(function () {
             console.log('Themius', this_version, 'loaded')
 
             this_version_control()
-            
+
+            if (localStorage.getItem('account') == null)
+            {
+                setTimeout(() => {
+                    account()
+                }, 1000)
+            }
+
             // rewrite base href location and also force any link to open
             // in a new tab so you never close echo
             var base = document.querySelector('base')
