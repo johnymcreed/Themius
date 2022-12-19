@@ -33,6 +33,13 @@ function save_handler () {
         bandimage: custom_band_image, // string
         loaderimage: custom_loader_image // string
     })
+
+    // anytime this function is called add "saved" to
+    // the #is_saved id so the user knows it was saved
+    $('#is_saved').css('display', 'block')
+    setTimeout(() => {
+        $('#is_saved').css('display', 'none')
+    }, 2000)
 }
 
 // load options

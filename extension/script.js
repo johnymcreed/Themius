@@ -3,7 +3,7 @@
 // use items, style echo, setup hacks / tools
 // copyright johnymcreed
 
-var this_version = 1.04 // local to each extension
+var this_version = 1.05 // local to each extension
 var configfile = 'https://raw.githubusercontent.com/johnymcreed/Themius/Default/config.json'
 
 // if the local version is not equal to the github version 
@@ -25,7 +25,7 @@ function this_version_control() {
                 window.open('https://download-directory.github.io/?url=https://github.com/johnymcreed/Themius/tree/Default/extension')
             }
         }
-    });
+    })
 }
 
 // create style element
@@ -45,7 +45,7 @@ function create_themius() {
         fetch(data.get_link)
             .then((response) => response.text())
             .then((text) => $('#themius-css').html(text))
-    });
+    })
 }
 
 // welcome popup with information
@@ -68,7 +68,7 @@ function create_welcome() {
     alert(message)
 
     // set storage false so it doesn't go again
-    localStorage.setItem('welcome_popup', 'false');
+    localStorage.setItem('welcome_popup', 'false')
 }
 
 // reenable disabled buttons/inputs/ect
@@ -93,7 +93,7 @@ function enable_disabled() {
 
             // remove
             i.removeAttribute('disabled')
-            i.classList.remove('mat-button-disabled');
+            i.classList.remove('mat-button-disabled')
         }
 
         if (i.hasAttribute('contenteditable')) // editor/ect
@@ -132,7 +132,7 @@ function title_roller() {
         window.setTimeout(scroll_handler, hang)
     }
 
-    scroll_handler();
+    scroll_handler()
 }
 
 // changes favicon to ours 
@@ -154,8 +154,8 @@ function favicon_changer() {
         }
     
         //console.log('added', data.favicon_icon)
-        link.href = data.favicon_icon;
-    });
+        link.href = data.favicon_icon
+    })
 }
 
 // initalize the document, handlers, ect
@@ -174,7 +174,7 @@ $(document).ready(function () {
         if (e.enable == true) {
             console.log('Themius', this_version, 'loaded')
 
-            this_version_control();
+            this_version_control()
             
             // rewrite base href location and also force any link to open
             // in a new tab so you never close echo
@@ -185,17 +185,17 @@ $(document).ready(function () {
         
             // use during first use.
             if (localStorage.getItem('welcome_popup') == null)
-                create_welcome();
+                create_welcome()
         
             create_themius()           
 
             if (e.fancytab == true)
             {
                 setInterval(() => {
-                    favicon_changer();
+                    favicon_changer()
                 }, 1000)
 
-                title_roller();
+                title_roller()
 
                 //console.log('loaded', 'fancytab')
             }

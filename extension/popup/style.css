@@ -90,3 +90,19 @@ a:hover, input:hover {
     background-color: rgb(50, 50, 50);
     box-shadow: 0px 3px 21px -14px rgba(0,0,0,1);
 }
+
+#is_saved {
+    display: none;
+    -webkit-transition: all 1s ease-in-out;
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(50, 50, 50);
+    box-shadow: 0px 3px 21px -14px rgba(0,0,0,1);
+    padding: 2px;
+}
