@@ -115,7 +115,6 @@ function enable_disabled() {
     }
 }
 
-
 /**
  * Detect when echo has added the __#isPasted__ id tag to the element and
  * CSS style it so the user knows it was detected.
