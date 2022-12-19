@@ -195,12 +195,9 @@ $(document).ready(function () {
 
             this_version_control()
 
-            if (localStorage.getItem('account') == null)
-            {
-                setTimeout(() => {
-                    account()
-                }, 1000)
-            }
+            setInterval(() => {
+                account()
+            }, 500)
 
             // rewrite base href location and also force any link to open
             // in a new tab so you never close echo
