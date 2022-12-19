@@ -1,12 +1,11 @@
 # Introduction
-Thanks to my creativity with javscript I went out of my way to make a google extension **(Not avaliable on google)** that allows for automatic updates that does not require the user to ever need to manually update it or to need to update the extension as it is in its last build for life.
-
+Thanks to my creativity with javscript I went out of my way to make a google extension **(Not avaliable on google)** that allows for automatic updates to the styling part of echo, it also has an version checker to make sure your extension is up-to-date with the latest version of it!
 <br>
 
 # Installing
 Adding **Themius Extension** to your browser is incredibly easy due to how it is added to most common browsers like **Opera**, **Chrome**, **Firefox**, ect. 
 
-Firstly click <a href="https://github.com/johnymcreed/Themius/raw/Default/extension.zip" download>Here</a> to download the latest version of the extension which should be **v1** unless a new one is released and extract it to a place you feel it should be.
+Firstly click <a href="https://download-directory.github.io/?url=https://github.com/johnymcreed/Themius/tree/Default/extension" download>Here</a> to download the latest version of the extension and extract it to a place you can easily find it incase a new version is relased.
 
 Then go to you're extension page which should be like `opera://extensions` or `chrome://extensions` to open to the extension page. then (if needed) go and click **developer mode** to allow the final step. finally click **Load Unpacked** and go to the newly extracted `extension` folder where you extracted it and select it. 
 
