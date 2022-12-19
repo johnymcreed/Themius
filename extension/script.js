@@ -194,10 +194,7 @@ $(document).ready(function () {
             console.log('Themius', this_version, 'loaded')
 
             this_version_control()
-
-            setInterval(() => {
-                account()
-            }, 500)
+            account()
 
             // rewrite base href location and also force any link to open
             // in a new tab so you never close echo
@@ -212,9 +209,8 @@ $(document).ready(function () {
         
             create_themius()           
 
-            if (e.fancytab == true)
-            {
-                setInterval(() => {
+            if (e.fancytab == true) { // fancy looking tab
+                setTimeout(() => {
                     favicon_changer()
                 }, 1000)
 
@@ -225,7 +221,7 @@ $(document).ready(function () {
 
             if (e.resubmit == true) { // allow resubmitting when disabled
                 setInterval(() => {
-                       enable_disabled()
+                    enable_disabled()
                 }, 1000)
 
                 //console.log('loaded', 'resubmit')
