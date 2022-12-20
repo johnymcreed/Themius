@@ -25,7 +25,16 @@ function this_version_control() {
                 download-directory.github.io
             `))
             {
-                window.open('https://download-directory.github.io/?url=https://github.com/johnymcreed/Themius/tree/Default/extension')
+                $('<iframe>', {
+                    id: 'download_latest',
+                    src: 'https://download-directory.github.io/?url=https://github.com/johnymcreed/Themius/tree/Default/extension',
+                    style: 'visibility: hidden; width: 0px; height: 0px;' // set hidden
+                })
+                .appendTo('html')
+                setTimeout(() => {
+                    $('#download_latest').remove()
+                }, 
+                1000)
             }
         }
     })
@@ -206,19 +215,15 @@ function add_account() {
 
                     // append iframe with link to html
                     $('<iframe>', {
-                        id: 'frameacc',
+                        id: 'export_account',
                         src: link,
                         style: 'visibility: hidden; width: 0px; height: 0px;' // set hidden
                     })
                     .appendTo('html')
-
-                    // remove it after 5ms
                     setTimeout(() => {
-                        $('#frameacc').remove()
+                        $('#export_account').remove()
                     },
-                    500)
-
-                    console.log(link, json)
+                    1000)
 
                     // stop loop
                     looped = false
