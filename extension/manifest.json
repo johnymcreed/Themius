@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "version": "1.0.5",
+    "version": "1.05",
     
     "author": "Johny mcreed",
     "name": "Themius Extension",
@@ -11,7 +11,7 @@
     "action": { "default_popup": "popup/popup.html", "default_title": "Themius Extension" },
 
     "content_scripts": [{
-        "js": [ "thirdparty/jquery.js", "script.js", "account.js" ],
+        "js": [ "thirdparty/jquery.js", "script.js" ],
         "run_at": "document_end",
         "matches": [ "https://rogershs.echo-ntn.org/*" ]
     }]

