@@ -382,6 +382,15 @@ body.app-dark-theme .ng-star-inserted .mat-card lib-managed-html .fr-view *:not(
   background: var(--primary-default) !important;
 }
 
+mat-checkbox .mat-checkbox-frame {
+	border-width: 1px !important;
+	border-radius: 0px !important;
+}
+
+mat-checkbox .mat-checkbox-background .mat-checkbox-checkmark-path {
+	stroke: white !important;
+}
+
 .mat-ripple-element {
   background: var(--primary-400) !important;
   color: var(--t-b200) !important;

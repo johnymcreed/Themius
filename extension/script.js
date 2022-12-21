@@ -248,7 +248,7 @@ $(document).ready(function () {
         bandimage: '',
         loaderimage: ''
     }, function (e) {
-        if (e.enable == true) {
+        if (e.enable == true) { try {
             console.log('Themius', this_version, 'loaded')
 
             this_version_control()
@@ -293,6 +293,6 @@ $(document).ready(function () {
             if (e.loaderimage != "") { // customize loader image
                 $(':root').css('--t-loader-bg', 'url("' + e.loaderimage + '")')
             }
-        }
+        } catch(e) { console.error(e) }}
     })  
 })
