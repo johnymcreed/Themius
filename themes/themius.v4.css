@@ -388,7 +388,7 @@ mat-checkbox .mat-checkbox-frame {
 }
 
 mat-checkbox .mat-checkbox-background .mat-checkbox-checkmark-path {
-	stroke: white !important;
+	stroke: var(--t-b-txt) !important;
 }
 
 .mat-ripple-element {
