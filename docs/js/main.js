@@ -394,12 +394,12 @@ function fXMLReadData ()
         result = 'setup.md';
         result_raw = 'setup'
     }
-    else if (el.getAttribute('feed') == 'custom')
+    /*else if (el.getAttribute('feed') == 'custom')
     {
         link = 'feed/custom.md'
         result = 'custom.md'
         result_raw = 'custom'
-    }
+    }*/
     else if (el.getAttribute('feed') == 'backends')
     {
         link = 'feed/backends.md'

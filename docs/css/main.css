@@ -559,7 +559,7 @@ modal
     
     background: var(--app-background);
     color: var(--foreground-text);
-    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: -0px 5px 5px rgba(0, 0, 0, 0.2);
 
     display: inline-block;
     vertical-align: middle;
