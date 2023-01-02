@@ -5,7 +5,7 @@ Thanks to my creativity with javscript I went out of my way to make a google ext
 # Installing
 Adding **Themius Extension** to your browser is incredibly easy due to how it is added to most common browsers like **Opera**, **Chrome**, **Firefox**, ect. 
 
-Firstly click <a href="update" target="_blank" rel="noopener noreferrer" download>Here</a> to download the latest version of the extension and extract it to a place you can easily find it incase a new version is relased.
+Firstly click <a href="update" target="_blank" rel="noopener noreferrer">Here</a> to download the latest version of the extension and extract it to a place you can easily find it incase a new version is relased.
 
 Then go to you're extension page which should be like `opera://extensions` or `chrome://extensions` to open to the extension page. then (if needed) go and click **developer mode** to allow the final step. finally click **Load Unpacked** and go to the newly extracted `extension` folder where you extracted it and select it. 
 
