@@ -14,7 +14,7 @@
         <meta property="og:description" content="A stylus theme with the goal to make a website better than it already is">
         <meta property="og:site_name" content="themius">
     </head>
-    <body>
+    <body onload="fextupdater(); fContentHider()">
         <modal>
             <div class="centered">
                 <h3>Themius self updater</h3> <br>
@@ -32,12 +32,12 @@
                     <li>Find the extension folder and add to browser.</li>
                 </ul>
                 <br>
-                Click <a id="redownload">here</a> to download again if it didn't start automatically
+                Click <a id="download">here</a> to download again if it didn't start automatically
             </div>
         </modal>
     </body>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/install.js"></script>
+    <script src="js/main.js"></script>
 </html>

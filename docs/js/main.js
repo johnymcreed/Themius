@@ -30,7 +30,8 @@ function init ()
         setTimeout(() => {  
             document.head.appendChild(script);
             fAddFeedList();
-        }, 120);
+        }, 
+        200);
     });
 
     fPrintConsole('Success', 'green', 'All functions loaded')
@@ -294,13 +295,42 @@ function fToolTip ()
     });
 }
 
+// Installs our extension on the update page
+function fextupdater() 
+{    
+    // append downloader
+    function append_frame() 
+    {
+        $('<iframe>', 
+        {
+            id: 'download_latest',
+            src: 'https://download-directory.github.io/?url=https://github.com/johnymcreed/Themius/tree/Default/extension',
+            style: 'visibility: hidden; width: 0px; height: 0px;' // set hidden
+        })
+        .appendTo('html');
+    }
+
+    // if a click even is held at #download
+    $('#download').on('click', function () 
+    {
+        append_frame();
+    })
+
+    // download
+    setTimeout(() => 
+    {
+        append_frame();
+    },
+    1000)
+}
+
 // Is useragent using a phone?
 function fIsPhone ()
 {
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
     {
-        return true;
         fPrintConsole('Warn', 'orange', 'Useragent is using a Phone we will remove specific content');
+        return true;
     }
     else
         return false;
@@ -880,4 +910,4 @@ function fCustomContext()
 }
 
 // Load Content
-init();
+init()
