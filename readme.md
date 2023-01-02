@@ -17,4 +17,4 @@ this aims to do that and more so please come and install it you won't regret it!
 <br>
 <br>
 
-Download extension <a href="https://download-directory.github.io/?url=https://github.com/johnymcreed/Themius/tree/Default/extension">Here</a>
+Download extension <a href="https://johnymcreed.github.io/Themius/update">Here</a>
