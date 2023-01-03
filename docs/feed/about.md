@@ -1,5 +1,5 @@
 # Themius
-Welcome to [Themius](https://github.com/johnymcreed/Themius) a stylus theme that redesigns **Echo**.
+Welcome to [Themius](https://github.com/johnymcreed/Themius) a theme that redesigns **Echo**.
 Themius aims to make Echo turn into a more friendly and more useable interface then what echo originally provides to the everyday users by 
 optimizing several parts of the website and fixing serveral elements to make the ultimate web-page for your everyday use in school, thats if you even use echo. 
 
