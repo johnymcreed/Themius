@@ -278,7 +278,7 @@ function fTotalVisits()
     }
 
     let e = $('#visits')
-    if (localStorage.getItem('visted') == null) // first time visiting
+    if (localStorage.getItem('visited') == null) // first time visiting
     {
         fetch('https://api.countapi.xyz/update/themius/themius-labs/?amount=1')
         .then(res => res.json())
