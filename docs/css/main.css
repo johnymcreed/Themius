@@ -28,29 +28,21 @@ body
     scroll-behavior: smooth;
     font-family: 'Source Sans Pro', sans-serif;
     overflow: hidden;
-
     padding: 0px;
     margin: 0;
     height: 100%;
-
     background: var(--app-background);
     color: var(--foreground-text);
-
     cursor: url('../img/cursor.cur'), auto;
- 
     z-index: 0;
     transition: 0.2s;
 }
 
 /* Scrollbar */
-::-webkit-scrollbar 
-{width: 3px; z-index: 1;}
-::-webkit-scrollbar-track 
-{background: #8585859c;}
-::-webkit-scrollbar-thumb 
-{background: rgb(85, 85, 85);}
-::-webkit-scrollbar-thumb:hover 
-{background: rgb(96, 54, 112);}
+::-webkit-scrollbar {width: 3px; z-index: 1;}
+::-webkit-scrollbar-track {background: #8585859c;}
+::-webkit-scrollbar-thumb {background: rgb(85, 85, 85);}
+::-webkit-scrollbar-thumb:hover {background: rgb(96, 54, 112);}
 
 /* Selection */
 ::selection
@@ -65,80 +57,70 @@ body
 {
     border: var(--border-color);
     vertical-align: middle;
-
     margin: auto;
     width: 80%;
-
     padding: 10px;
-
     user-select: none;
     -moz-user-select: none;
 }
+
 .content-default-btn
 {
     border-radius: 0px !important;
     background: var(--bg-dark-alt) !important;
-    
     padding: 10px;
     box-shadow: black;
     color: white;
 }
+
 .content-to-top-btn 
 {
     border: var(--border-color);
     border-radius: 0px !important;
-    
     padding: 10px;
     box-shadow: black;
     color: var(--foreground-text);
-
     z-index: 2;
-
     float: right;
     position: sticky;
     right: 2px;
     bottom: 0px;
 }
+
 .content-edit-page-btn
 {
     border: var(--border-color);
     border-radius: 0px !important;
     background: transparent !important;
-    
     z-index: 2;
-
     padding: 10px;
     color: var(--foreground-text);
-
     position: sticky;
     float: right;
     right: 2px;
     top: 0px;
 }
+
 .copy-menu
 {
     border: var(--border-color);
 	position: absolute;
 	width: auto;
-    
 	min-width: 150px;
     display: none;
-
 	padding: 0px;
-
     background: var(--app-background);
     color: var(--foreground-text);
     box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
-
     z-index: 4;
     transition:
         opacity 0.5s,
         visiblity 0s;
-
     transition: 0.2s;
     user-select: none;
     -moz-user-select: none;
 }
+
 .copy-menu reason
 {
     float: right;
@@ -146,6 +128,7 @@ body
     vertical-align: middle;
     padding-top: 3px;
 }
+
 .copy-menu .seperator
 {
     opacity: .10; 
@@ -154,18 +137,21 @@ body
     align-self: center; 
     width: 90%;
 }
+
 .copy-menu li
 {
     border: var(--border-color);
     list-style: none;
     padding: 6px;
 }
+
 .copy-menu li:hover
 {
     opacity: .70;
     color: var(--foreground-text);
     cursor: url('../img/hand.cur'), auto;
 }
+
 .copy-menu .footer
 {
     border: var(--border-color);
@@ -191,27 +177,32 @@ a
     color: var(--color-pink);
     text-decoration: none;
 }
+
 a:hover
 {
     color: var(--color-pink-lighter);
     cursor: url('../img/hand.cur'), auto;
 }
+
 br
 {
     user-select: none;
     -moz-user-select: none;
 }
+
 strong /* md uses strong so no <b> */
 {
     color: var(--color-pink-darker);
     font-weight: 800;
 }
+
 code
 {
     color: var(--color-pink-darker);
     font-weight: 200;
     font-stretch: semi-condensed;
 }
+
 h1,h2,h3
 {   
     color: var(--color-grey);
@@ -220,15 +211,18 @@ h1,h2,h3
     padding: 0px;
     display: inline;
 }
+
 h3
 {
     font-size: 25px;
     padding-bottom: 10px;
 }
+
 h2
 {
     font-size: 35px;
 }
+
 h1
 {
     font-size: 45px;
@@ -241,35 +235,32 @@ nav
 {
     border: var(--border-color);
     padding: 10px;
-
     white-space: no-warp;
-
     color: white;
     background: var(--bg-purple);
-    
     z-index: 4;
     position: relative;
     transition: 0.2s;
 }
+
 nav .to-right
 {
     position:relative;
     top: -2rem;
     float: right;
-
     border: var(--border-color);
     padding: 15px;
-
     font-size: 30px;
     max-width: 7%;
-
     user-select: none;
     -moz-user-select: none;
 }
+
 nav .to-right a
 {
     color: white;
 }
+
 nav .to-left
 {
     border: var(--border-color);
@@ -280,40 +271,48 @@ nav .to-left
     height: 10px;
     display: none;
 }
+
 nav .to-left a
 {
     color: white;
 }
+
 nav .logo
 {
     vertical-align: top;
     font-size: 30px;
     font-weight: bolder;
 }
+
 nav .logo span
 {
     font-weight: 700;
     text-align: center;
 }
+
 nav .logo img
 {
     border-radius: 4px;
 }
+
 nav .logo .title
 {
     padding-right: 5px;
     padding-left: 5px;
 }
+
 nav ul 
 {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
+
 nav li
 {
     display: inline;
 }
+
 nav li .nav-link 
 {
     color: rgb(222, 221, 221);
@@ -323,11 +322,13 @@ nav li .nav-link
     padding-bottom: 5px;
     border: var(--border-color);
 }
+
 nav li .nav-link:hover
 {
     font-weight: 600;
     color: white;
 }
+
 nav li .active
 {
     color: #f5f5f5;
@@ -349,6 +350,7 @@ nav .drawer
     transition: 0.5s;
     padding-top: 60px;
 }
+
 nav .drawer .close
 {
     position: absolute;
@@ -358,6 +360,7 @@ nav .drawer .close
     margin-left: 50px;
     color: white;
 }
+
 nav .drawer .drawer-list a
 {
     border: var(--border-color);
@@ -368,15 +371,18 @@ nav .drawer .drawer-list a
     display: block;
     transition: 0.3s;
 }
+
 nav .drawer .drawer-list a:hover
 {
     color: rgb(231, 231, 231);
     font-size: 32px;
 }
+
 nav .drawer .drawer-list a
 {
     color: white;
 }
+
 nav .drawer .side-logo
 {
     position: absolute;
@@ -386,6 +392,7 @@ nav .drawer .side-logo
     font-size: 30px;
     font-weight: bolder;
 }
+
 nav .drawer .side-elements
 {
     position: absolute;
@@ -394,10 +401,12 @@ nav .drawer .side-elements
 
     font-size: 30px;
 }
+
 nav .drawer .side-elements a
 {
     color: white;
 }
+
 nav #outer-bounds
 {
     position: fixed;
@@ -405,7 +414,6 @@ nav #outer-bounds
     right: 0;
     bottom: 0;
     top: 0;
-
     transition: 0.3s;
     background: rgba(61, 61, 61, 0.575);
     opacity: .20;
@@ -417,13 +425,10 @@ main
 {
     border: var(--border-color);
     padding: 10px;
-    
     overflow: none;
     white-space: no-wrap;
     vertical-align: middle;
-
     z-index: 3;
-
     min-height: 100%;
     position: relative;
     transition: 0.2s;
@@ -434,26 +439,24 @@ sidebar
 {
     border: var(--border-color);
     padding: 10px;
-
     position: absolute;
     left: 9.8%;
     right: 74%;
     bottom: 50%;
     top: 2%;
-
     width: auto;
     max-height: 100%;
-
     user-select: none;
     -moz-user-select: none;
-
     z-index: 2;
 }
+
 sidebar ul 
 {
     list-style:decimal-leading-zero;
     color: var(--color-grey);
 }
+
 sidebar li span
 {
     color: var(--color-pink);
@@ -465,16 +468,13 @@ content
     border: var(--border-color);
     overflow: auto;
     padding: 10px;
-
     position: absolute;
     left: 27%;
     right: 9.8%;
     bottom: 32%;
     top: 2%;
-
     width: auto;
     max-height: 100%;
-    
     white-space: no-wrap;
     z-index: 2;
 }
@@ -484,13 +484,10 @@ footer
 {
     border: var(--border-color);
     padding: 10px;
-
     color: white;
     background: var(--bg-dark-alt);
     white-space: no-warp;
-
     z-index: 4;
-
     position: absolute;
     left: 0;
     right: 0;
@@ -502,35 +499,27 @@ footer
 [tip] .tooltip 
 {
     border: var(--border-color);
-    
     position: fixed;
     font-size: 12px;
     line-height: 20px;
     padding: 5px;
-
     text-align: left;
-
     max-width: fit-content;
-
     vertical-align: middle;
     align-content: center;
     text-align: center;
-
     background: var(--app-background);
     color: var(--foreground-text);
-
     visibility: hidden;
     box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
-
     z-index: 5;
-
     opacity: 0;
     transition:
         opacity 0.5s,
         visiblity 0s;
-        
     transition: 0.2s;
 }
+
 [tip]:hover .tooltip 
 {
     z-index: 5;
@@ -548,26 +537,24 @@ modal
     bottom: 0;
     background: rgb(51, 51, 51);
     text-align: center;
-    
     transition:
         opacity 0.5s,
         visiblity 0s;
 }
+
 .centered 
 {
     padding: 10px;
-    
     background: var(--app-background);
     color: var(--foreground-text);
     box-shadow: -0px 5px 5px rgba(0, 0, 0, 0.2);
-
     display: inline-block;
     vertical-align: middle;
     max-width: 400px;
     text-align: left;
-
     margin: 10px;
 }
+
 modal:before 
 {
     content: "";

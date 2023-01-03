@@ -20,6 +20,8 @@ function init ()
             fContentHider();
         }
 
+        fTotalDownloads();
+        fTotalVisits();
         fBacktoTop();
         fNavbarSidebar();
         fContentReaderHeight();
@@ -267,6 +269,50 @@ function AppTheme ()
     }
 }
 
+// Count the amount of users who have visted the docs page
+function fTotalVisits() 
+{
+    // format numbers like 900 or 2k
+    function fNumbFormat(num) {
+        return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+    }
+
+    let e = $('#visits')
+    if (localStorage.getItem('visted', 'true')) // first time visiting
+    {
+        fetch('https://api.countapi.xyz/update/themius/themius-labs/?amount=1')
+        .then(res => res.json())
+        .then(res => {
+            e.html(fNumbFormat(res.value) + ' Total visits')
+        });
+
+        localStorage.setItem('visited', 'true')
+    }
+    else // not first time visiting
+    {
+        fetch('https://api.countapi.xyz/get/themius/themius-labs/')
+        .then(res => res.json())
+        .then(res => {
+            e.html(fNumbFormat(res.value) + ' Total visits')
+        });
+    }
+}
+
+function fTotalDownloads() 
+{
+    // format numbers like 900 or 2k
+    function fNumbFormat(num) {
+        return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+    }
+    
+    let e = $('#ext_downloads')
+    fetch('https://api.countapi.xyz/get/themius/themius-ext/')
+    .then(res => res.json())
+    .then(res => {
+        e.html(fNumbFormat(res.value) + ' Extensions downloaded')
+    });
+}
+
 // Primarly Loads tooltip functions without the need for long css code
 function fToolTip ()
 {
@@ -313,12 +359,14 @@ function fextupdater()
     // if a click even is held at #download
     $('#download').on('click', function () 
     {
+        fetch('https://api.countapi.xyz/update/themius/themius-ext/?amount=1')
         append_frame();
     })
 
     // download
     setTimeout(() => 
     {
+        fetch('https://api.countapi.xyz/update/themius/themius-ext/?amount=1')
         append_frame();
     },
     1000)
