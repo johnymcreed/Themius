@@ -261,6 +261,11 @@ nav .to-right a
     color: white;
 }
 
+nav .to-right a:hover
+{
+    color: var(--color-pink-lighter);
+}
+
 nav .to-left
 {
     border: var(--border-color);
@@ -572,6 +577,7 @@ pre.prettyprint
 	margin:0;
 	font-size:14px;
 }
+
 pre.prettyprint script.pre-script{display:block;}
 pre .str, code .str { color: #3fc451; } /* string */
 pre .kwd, code .kwd { color: #da903b; } /* keyword */
@@ -591,7 +597,8 @@ pre.prettyprint, code.prettyprint
 	padding: 4px;
 	width: 96.2%;
     border: 0px;
-}   
+}  
+
 ol.linenums 
 {
 	margin-top: 0;
@@ -599,6 +606,7 @@ ol.linenums
 	color: #75715e;
 	list-style: decimal inside !important;
 }
+
 @media print 
 {
 	pre.prettyprinted, pre.prettyprint, code.prettyprint 
@@ -634,6 +642,7 @@ ol.linenums
         display: block;
     }
 }
+
 @media screen and (max-width: 1130px) 
 {
     sidebar
