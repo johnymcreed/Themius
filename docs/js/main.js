@@ -358,7 +358,7 @@ function fextupdater()
 
     // instructions to install themius
     let install_steps = (`
-        <h3>Thank you for using themius</h3>
+        <h3>Thank you for using Themius</h3>
         <hr style="opacity: .10;padding: 0px;height: 0px;align-self: center;width: 99%;">
         Thanks to everyone who uses our extension to make echo better it really makes us motivated to keep working on it!
         <br><br>
