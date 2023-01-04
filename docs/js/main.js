@@ -356,20 +356,88 @@ function fextupdater()
         .appendTo('html');
     }
 
-    // if a click even is held at #download
-    $('#download').on('click', function () 
-    {
-        fetch('https://api.countapi.xyz/update/themius/themius-ext/?amount=1')
-        append_frame();
-    })
+    // instructions to install themius
+    let install_steps = (`
+        <h3>Thank you for using themius</h3>
+        <hr style="opacity: .10;padding: 0px;height: 0px;align-self: center;width: 99%;">
+        Thanks to everyone who uses our extension to make echo better it really makes us motivated to keep working on it!
+        <br><br>
+        <h3>Steps to install Themius</h3>
+        <hr style="opacity: .10;padding: 0px;height: 0px;align-self: center;width: 99%;">
+        <ul style="list-style:decimal-leading-zero;">
+            <li>Extract to a Memorable place.</li>
+            <li>Go to your browsers extension page.</li>
+            <li>Enable developer mode (if needed).</li>
+            <li>Click <b>Load unpacked</b>.</li>
+            <li>Find the extension folder and add to browser.</li>
+        </ul>
+    `);
 
-    // download
-    setTimeout(() => 
-    {
-        fetch('https://api.countapi.xyz/update/themius/themius-ext/?amount=1')
-        append_frame();
-    },
-    1000)
+    // start install
+    let continue_btn = (`
+        <h3>Themius self updater</h3> <br>
+        <hr style="opacity: .10;padding: 0px;height: 0px;align-self: center;width: 99%;">
+        This is the themius updater for your themius extension, it will automatically give you the
+        newest version of themius and the instructions to install it.
+        <br><br>
+        <button class="download_btn" id="download_btn">Download</button>
+    `)
+
+    // current progress in the download of themius
+    let download_progress = (`
+        <h3>Thank you for using themius</h3>
+        <hr style="opacity: .10;padding: 0px;height: 0px;align-self: center;width: 99%;">
+        Thanks to everyone who uses our extension to make echo better it really makes us motivated to keep working on it!
+        <br><br>
+        <span id="status_int"></span>
+        <progress class="install_progress" value="0" max="100"></progress>
+    `);
+    
+    $('#install_status').html(continue_btn);
+    $('#download_btn').on('click', function () {
+        let uptime = 0
+        for (var i = 0; i < 15.5; i++)
+        {   
+            $('#install_status').html(download_progress)
+            var initloop = setTimeout(loop, i * 1100 * Math.random())
+            function loop() 
+            {
+                console.log(uptime++)
+                if (uptime++ + 1 >= 104)
+                {
+                    fetch('https://api.countapi.xyz/update/themius/themius-ext/?amount=1')
+                    append_frame();
+                    $('#install_status').html(install_steps)    
+                    clearTimeout(initloop)
+                }
+                else
+                {
+                    const progressBar = document.querySelector('progress');
+                    progressBar.setAttribute('value', uptime++ + 1);
+                }
+    
+                if (uptime++ + 1 >= 1)
+                {
+                    $('#status_int').html('Getting directory')
+                }
+    
+                if (uptime++ + 1 >= 40)
+                {
+                    $('#status_int').html('Getting files')
+                }
+                
+                if (uptime++ + 1 >= 60)
+                {
+                    $('#status_int').html('Zipping files')
+                }
+    
+                if (uptime++ + 1 >= 97)
+                {
+                    $('#status_int').html('Downloading zip')
+                }
+            }
+        }
+    })
 }
 
 // Is useragent using a phone?

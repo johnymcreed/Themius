@@ -64,6 +64,40 @@ body
     -moz-user-select: none;
 }
 
+progress 
+{
+    align-self: center;
+    border-radius: 0px;
+    width: 100%;
+    height: 10px;
+}
+
+progress::-webkit-progress-bar 
+{
+  background-color: var(--bg-dark-alt);
+}
+
+progress::-webkit-progress-value 
+{
+  background-color: var(--bg-purple);
+  transition: 1s;
+}
+
+.download_btn 
+{
+    border: none;
+    background: var(--bg-dark-alt);
+    padding: 10px;
+    width: 100%;
+    color: white;
+}
+
+.download_btn:hover 
+{
+    background: var(--bg-purple);
+    cursor: url('../img/hand.cur'), auto;
+}
+
 .content-default-btn
 {
     border-radius: 0px !important;
@@ -111,7 +145,7 @@ body
 	padding: 0px;
     background: var(--app-background);
     color: var(--foreground-text);
-    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 5px rgb(0 0 0 / 20%);
     z-index: 4;
     transition:
         opacity 0.5s,

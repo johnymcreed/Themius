@@ -19,25 +19,27 @@
     <body onload="fextupdater(); fContentHider()">
         <modal>
             <div class="centered">
-                <h3>Themius self updater</h3> <br>
-                <hr style="opacity: .10;padding: 0px;height: 0px;align-self: center;width: 99%;">
-                This is the themius updater for your themius extension, it will automatically give you the
-                newest version of themius and the instructions to install it.
-                <br><br>
-                <h3>Steps to install Themius</h3>
-                <hr style="opacity: .10;padding: 0px;height: 0px;align-self: center;width: 99%;">
-                <ul style="list-style:decimal-leading-zero;">
-                    <li>Extract to a Memorable place.</li>
-                    <li>Go to your browsers extension page.</li>
-                    <li>Enable developer mode (if needed).</li>
-                    <li>Click <b>Load unpacked</b>.</li>
-                    <li>Find the extension folder and add to browser.</li>
-                </ul>
-                <br>
-                Click <a id="download">here</a> to download again if it didn't start automatically
+                <div id="install_status"></div>
             </div>
         </modal>
     </body>
+
+    <noscript>
+        <modal>
+            <div class="centered">
+                Please enable javascript. <br>
+                <hr style="opacity: .10;padding: 0px;height: 0px;align-self: center;width: 99%;">
+                This website completely runs off of javascript to run several parts of elements like our navbar, markdown reader,
+                app-theme, and much more.
+            </div>
+        </modal>
+        <style>
+            nav, footer, sidebar, main, ul
+            { 
+                display: none !important;
+            }
+        </style>
+    </noscript>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
