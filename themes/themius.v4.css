@@ -1016,6 +1016,7 @@ app-student-courses.ng-star-inserted .color-band, /* Course Card Color band */
 .ng-star-inserted mat-sidenav::-webkit-scrollbar,
 .ng-star-inserted mat-sidenav .mat-drawer-inner-container::-webkit-scrollbar,
 .cdk-overlay-container>[dir="ltr"] .cdk-overlay-pane .open-animation,
+app-student-courses.ng-star-inserted .home-ct .mat-expansion-panel,
 app-course-home.ng-star-inserted .course-progress,
 a[href="https://accounts.google.com/logout"], /* Why? who tf is gonna log out of all there google accounts?? */
 .progress-ct, /* this is just clutter for the main screen */
