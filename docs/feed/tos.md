@@ -28,6 +28,8 @@ In addition to these Terms of Use, we also follow parts of NTN Terms of Use and 
 <br>
 
 ## Additional Terms
-(A) We are not affiliated with NTN, we only exist as a community, we do not stand against Terms or defamation of the wesbite, we only stand as a project.
+(A) We are not affiliated with NTN, we only exist as a community, we do not stand against Terms or defamation of the website, we only stand as a project.
+
+(B) We were only created to locally edit and change NTN (and/or its domains) without affect of the websites internals itself, our extension will not affect or induce issues to NTN or cause damages to NTN.
 
 (C) We will only accept Liability if our own extension created by us (not edited or affected by others) causes damage or issues to NTN or there affiliated networks (and/or School Districts), if then we will accept full responibility and terminate of the project.
