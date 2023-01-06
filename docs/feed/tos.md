@@ -20,7 +20,7 @@ In addition to these Terms of Use, we also follow parts of NTN Terms of Use and 
     <br>
     1. You are the solicit owner of the Extension when in use on NTN (or any NTN websites) and take full responibility for any damages and/or issues caused by using it and must agree to any Terms broken from their [Terms of Use](https://newtechnetwork.org/terms-of-use/) and comply to all that is given.
     <br>
-    2. You must also follow the Agreement between NTN and Member School (and/or relavent school district) the "Memeber School Agreement".
+    2. You must also follow the Agreement between NTN and Member School (and/or relavent school district) the "Member School Agreement".
     <br>
 
 (C) You agree to fully cooperate with NTN to investigate any suspected or actual activity that is in breach of their Terms of Use (and/or Privacy Policy)
