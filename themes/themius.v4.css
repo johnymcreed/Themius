@@ -845,6 +845,11 @@ body.app-dark-theme .ng-star-inserted .fr-view table tbody td:not(lib-html-edito
   border: 1px solid var(--t-b-txt) !important;
 }
 
+.ng-star-inserted .fr-view div,
+.ng-star-inserted .fr-view p /* i have no power over tds with backgrounds :( */{
+    background: transparent !important;
+}
+
 .not-found /* An activity or something that doesn't exist */ {
   font-size: 20px;
   font-style: normal !important;
