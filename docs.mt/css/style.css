@@ -1,0 +1,193 @@
+/** Copyright Themius 2019 */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+:root
+{
+    /* Follows the app theme */
+    --app-background: rgb(67, 60, 70);
+    --app-background-darker: rgb(60, 50, 65);
+    --foreground-text: white;
+
+    /* Colors */
+    --bg-dark: rgb(67, 60, 70);
+    --bg-light: rgba(238, 238, 238, 0.808);
+    --bg-dark-alt: rgb(53, 53, 53);
+    --bg-purple: rgb(131, 76, 132);
+    --color-grey: rgb(122, 122, 122);
+    --color-pink: rgb(217, 95, 228);
+    --color-pink-darker: rgb(163, 74, 171);
+    --color-pink-lighter: rgb(233, 130, 242);
+
+    /* Set to 255 for ALPHA to see grid layout */
+    --border-color: 1px solid rgba(219, 219, 219, 0);
+}
+
+/** WEBSITE SETUP **/
+
+html,
+body
+{
+    scroll-behavior: smooth;
+    background: var(--app-background);
+    color: var(--foreground-text);
+    cursor: url('../img/cursor.cur'), auto;
+
+    width: 100%;
+    height: auto;
+
+    z-index: 0;
+    transition: 0.2s;
+}
+
+::-webkit-scrollbar {width: 3px; z-index: 1;}
+::-webkit-scrollbar-track {background: #8585859c;}
+::-webkit-scrollbar-thumb {background: rgb(85, 85, 85);}
+::-webkit-scrollbar-thumb:hover {background: rgb(96, 54, 112);}
+
+::selection
+{
+    background: var(--bg-dark-alt);
+    color: white;
+    font-weight: 700;
+}
+
+a
+{
+    color: var(--color-pink);
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: var(--color-pink-lighter);
+    cursor: url('../img/hand.cur'), auto;
+}
+
+br
+{
+    user-select: none;
+    -moz-user-select: none;
+}
+
+strong /* md uses strong so no <b> */
+{
+    color: var(--color-pink-darker);
+    font-weight: 800;
+}
+
+code
+{
+    color: var(--color-pink-darker);
+    font-weight: 200;
+    font-stretch: semi-condensed;
+}
+
+h1,h2,h3
+{   
+    color: var(--color-grey);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+
+    padding: 0px;
+    display: inline;
+}
+
+h3
+{
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+h2
+{
+    font-size: 35px;
+}
+
+h1
+{
+    font-size: 45px;
+    font-weight: 800;
+    padding-bottom: 0px;
+}
+
+
+
+
+/** NAVBAR **/
+
+.wrapper[type="nav"] 
+{
+    padding: 2em 15vw 2em 15vw;
+    width: 100%;
+    top: 0;
+
+    position: -webkit-sticky; /* safari */
+    position: sticky;
+    background: var(--bg-purple);
+}
+
+.navbar
+{
+    display: grid;
+    grid-template-columns: .5fr 2fr;
+    align-items: center;
+
+    height: 70px;
+    overflow: hidden;
+}
+
+.wrapper[type="navlogo"]
+{
+    justify-self: start;
+}
+
+.wrapper[type="navlogo"] img
+{
+    height: 16px;
+    width: auto;
+}
+
+.navmobile
+{
+    justify-self: end;
+    display: none;
+}
+
+.navbar .navlist ul
+{
+    list-style: none;
+    justify-self: start;
+
+    display: grid;
+    grid-template-columns: repeat(3, .26fr);
+}
+
+.navitem a 
+{
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.navitem a:hover
+{
+
+}
+
+.navbar .sharables ul
+{
+    list-style: none;
+    justify-self: end;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
