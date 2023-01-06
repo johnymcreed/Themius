@@ -20,8 +20,8 @@ function this_version_control() {
                 This version: ` + this_version + `
                 Github version: ` + data.version + `
 
-                please click OK to get the lastest version from 
-                download-directory.github.io
+                please click OK to get the latest version from 
+                our self updater page.
             `))
             {
                 window.open('https://johnymcreed.github.io/Themius/update', '_blank')

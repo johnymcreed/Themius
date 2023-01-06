@@ -7,31 +7,31 @@ function init ()
     // Await the DOM loading
     document.addEventListener("DOMContentLoaded", function(event) 
     {
-        AppTheme();
-        fApplyElement('ID', 'year', new Date().getFullYear());
+        try { AppTheme() } catch (e) { console.error(e) };
+        try { fApplyElement('ID', 'year', new Date().getFullYear()) } catch (e) { console.error(e) };
 
         var script = document.createElement("script");
         script.src = 'js/code.js';
     
         if (!fIsPhone()) // If Phone don't do these
         {
-            fToolTip();
-            fCustomContext();
-            fContentHider();
+            try { fToolTip() } catch (e) { console.error(e) };
+            try { fCustomContext() } catch (e) { console.error(e) };
+            try { fContentHider() } catch (e) { console.error(e) };
         }
 
-        fTotalDownloads();
-        fTotalVisits();
-        fBacktoTop();
-        fNavbarSidebar();
-        fContentReaderHeight();
-        fSnowBoard();
-        fXMLReadData();
+        try { fTotalDownloads() } catch (e) { console.error(e) };
+        try { fTotalVisits() } catch (e) { console.error(e) };
+        try { fBacktoTop() } catch (e) { console.error(e) };
+        try { fNavbarSidebar() } catch (e) { console.error(e) };
+        try { fContentReaderHeight() } catch (e) { console.error(e) };
+        try { fSnowBoard() } catch (e) { console.error(e) };
+        try { fXMLReadData() } catch (e) { console.error(e) };
 
         // Content loads too fast for this to register
         setTimeout(() => {  
             document.head.appendChild(script);
-            fAddFeedList();
+            try { fAddFeedList() } catch (e) { console.error(e) };
         }, 
         200);
     });
@@ -52,7 +52,7 @@ function fPrintConsole (Dialog, Color, Text)
 // f this ^ we are using markdown babya!!!
 function fAddFeedList()
 {
-    let el = document.body.querySelector('content').querySelector('article').querySelectorAll('h1')
+    let el = document.body.querySelector('content').querySelector('article').querySelectorAll('h1, h2, h3')
     el.forEach(list)
     function list(name)
     {
@@ -70,7 +70,7 @@ function fNavbarSidebar()
     // Open sidebar
     open.addEventListener('click', () => 
     { 
-        document.getElementById("sidedrawer").style.width = "250px";
+        document.getElementById("sidedrawer").style.width = "100%";
         document.getElementById("outer-bounds").style.display = "block"
     });
 
@@ -380,6 +380,8 @@ function fextupdater()
         This is the themius updater for your themius extension, it will automatically give you the
         newest version of themius and the instructions to install it.
         <br><br>
+        Be advised about our <a href="tos">Terms of Service</a> before using our extension!
+        <br><br>
         <button class="download_btn" id="download_btn">Download</button>
     `)
 
@@ -546,6 +548,12 @@ function fXMLReadData ()
         result = 'custom.md'
         result_raw = 'custom'
     }*/
+    else if (el.getAttribute('feed') == 'tos')
+    {
+        link = 'feed/tos.md'
+        result = 'tos.md'
+        result_raw = 'tos'
+    }
     else if (el.getAttribute('feed') == 'backends')
     {
         link = 'feed/backends.md'
