@@ -21,7 +21,25 @@
 
         <nav>
             <div id="outer-bounds"></div>
+            <div id="sidedrawer" class="drawer">
+                <a class="close" id="close-drawer"><i class="fa-solid fa-xmark"></i></a>
+                <ul class="drawer-list">
+                    <li><a class="" href="index">About</a></li>
+                    <li><a class="" href="setup">Setup</a></li>
+                    <li><a class="" href="backends">Backends</a></li>
+                </ul>
+                <div class="side-logo">
+                    Themius
+                </div>
+                <div class="side-elements">
+                    <a id="theme-toggle-side" tip="" role="checkbox"><i class="fa-solid fa-circle-half-stroke"></i></a>
+                    <a tip="Visit the github repository of this project" href="https://github.com/johnymcreed/Themius" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
             <div class="container">
+                <div class="to-left">
+                    <a id="open-drawer"><i class="fa-solid fa-bars"></i></a>
+                </div>
                 <div class="logo"> 
                     <span class="title">Terms of service</span>
                 </div>
@@ -44,7 +62,7 @@
             </sidebar>
             <content>
                 <a id="edit-page" tip="Edit this page on github" class="content-edit-page-btn" role="button" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-pencil"></i></a>
-                <article feed="tos">
+                <article feed="tos" headers="all">
                 </article>
                 <a id="to-top" class="content-to-top-btn" role="button"><i class="fa-solid fa-angle-up"></i></a>
             </content>

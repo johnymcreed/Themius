@@ -52,8 +52,28 @@ function fPrintConsole (Dialog, Color, Text)
 // f this ^ we are using markdown babya!!!
 function fAddFeedList()
 {
-    let el = document.body.querySelector('content').querySelector('article').querySelectorAll('h1, h2, h3')
-    el.forEach(list)
+    let all = document.body.querySelector('content').querySelector('article').getAttribute('headers') == 'all'
+    let h1 = document.body.querySelector('content').querySelector('article').getAttribute('headers') == 'h1'
+    let h2 = document.body.querySelector('content').querySelector('article').getAttribute('headers') == 'h2'
+    let h3 = document.body.querySelector('content').querySelector('article').getAttribute('headers') == 'h3'
+
+    if (all)
+    {
+        document.body.querySelector('content').querySelector('article').querySelectorAll('h1, h2, h3').forEach(list)
+    }
+    else if (h1)
+    {
+        document.body.querySelector('content').querySelector('article').querySelectorAll('h1').forEach(list)
+    }
+    else if (h2)
+    {
+        document.body.querySelector('content').querySelector('article').querySelectorAll('h2').forEach(list)
+    }
+    else if (h3)
+    {
+        document.body.querySelector('content').querySelector('article').querySelectorAll('h3').forEach(list)
+    }
+
     function list(name)
     {
         $('#feed-list').append('<li><span>' + name.innerHTML + "</span></li>")
