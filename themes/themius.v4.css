@@ -945,6 +945,12 @@ lib-dropbox lib-html-editor /* The actual editor */ {
   min-height: 0px !important;
 }
 
+.fr-dropdown-menu {
+  background: var(--t-d700) !important;
+  color: var(--t-w) !important;
+  transition: var(--glob-aimation-period);
+}
+
 .submission-grade /* Submission Grades */ {
   padding-bottom: 1rem;
 }
