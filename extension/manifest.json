@@ -6,6 +6,7 @@
     "name": "Themius Extension",
     "description": "Allows full control over everything happening in echo by adding elements and changing styles to make it the best learning experience ever.",
     "icons": { "16": "popup/img/16.png", "48": "popup/img/48.png", "128": "popup/img/128.png" },
+    "homepage_url": "https://johnymcreed.github.io/Themius/",
 
     "permissions": [ "activeTab", "tabs", "storage" ],
     "action": { "default_popup": "popup/popup.html", "default_title": "Themius Extension" },
