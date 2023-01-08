@@ -7,7 +7,7 @@
 ## Introduction & Acceptance
 Hello, and welcome to the themius documentation platform ("Website"), an online service operated by Themius ("us", "we" or "our"). We are a small community of people who aim to make Echo ("NTN", "them", "their", "they") a better place by visual changes and internal changes.
 
-PLEASE READ THESE TERMS OF USE CAREFULLY BEFORE USING THE WEBSITE OR EXTENSION. BY ACCESSING AND/OR USING THE WEBSITE (OTHER THAN TO READ THE TERMS OF USE FOR THE FIRST TIME) YOU ARE AGREEING TO COMPLY WITH THESE TERMS OF USE, WHICH MAY CHANGE OVER TIME AS SAID IN SECTION __ BELOW. IF YOU DO NOT AGREE TO THESE TERMS OF USE, DO NOT ACCESS THE WEBSITE OR EXTENSION.
+PLEASE READ THESE TERMS OF USE CAREFULLY BEFORE USING THE WEBSITE OR EXTENSION. BY ACCESSING AND/OR USING THE WEBSITE (OTHER THAN TO READ THE TERMS OF USE FOR THE FIRST TIME) YOU ARE AGREEING TO COMPLY WITH THESE TERMS OF USE, WHICH MAY CHANGE OVER TIME. IF YOU DO NOT AGREE TO THESE TERMS OF USE, DO NOT ACCESS THE WEBSITE OR EXTENSION.
 
 In addition to these Terms of Use, we also follow parts of NTN Terms of Use and Privacy Policy. When using Website or Extension you are also signifying your acknowledgement and agreement to their Terms and ours.
 <br>
