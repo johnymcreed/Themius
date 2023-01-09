@@ -955,6 +955,10 @@ lib-dropbox lib-html-editor /* The actual editor */ {
   padding-bottom: 1rem;
 }
 
+.cdk-column-score {
+    text-align: left !important;
+}
+
 lib-dropbox lib-html-editor .fr-element {
   padding-top: 0.5rem !important;
   color: var(--t-d) !important;
