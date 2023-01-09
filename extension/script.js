@@ -131,153 +131,52 @@ function enable_pastedd() {
  * so users don't have to go on an iphone/phone to see it.
  */
 function replace_standards() {
-    let score_course_card = document.querySelectorAll('.score-ct')
-    try { score_course_card.forEach(standard_handler) } catch (e) {}
-
-    // affects course cards
-    function standard_handler(i, e) {
-        let el = $(i).text()
-
-        if (el.includes('standards') == true) // courses w/o percents
-        {
-            var match1 = el.match(/(\d|,)+/g)[0]
-            var match2 = el.match(/(\d|,)+/g)[1]
-            var percent = Math.floor((match1 / match2) * 100)
-            var color = ''
+    let el = document.querySelectorAll('.score-ct, lib-score-proficiency span, lib-score')
+    el.forEach(score_handler)
+    
+    function score_handler(i, e)
+    {
+        let ent = $(i)
         
-            if (percent >= '60')
-                color = 'pass-color'
-            else
-                color = 'fail-color'
+        // find anything of these specific values
+        var lines = ent.text().includes('--')
+        var is_prof = ent.text().includes('standards') || ent.text().includes('proficiency') || ent.text().includes('of')
+        var is_prc = ent.text().includes('%')
+        var color = ''
         
-            if (!match1 || !match2)
-                return
-
-            // check if score is 0/0 or match1 is 0 which makes it 0%
-            if (match1 == 0 && match2 == 0 || match1 == 0)
-            {
-                $(i).html(`
-                    <div>No score given yet</div>
-                `)
-            }
-            else
-            {
-                // remove old and append new
-                $(i).html(`
-                    <div>Current score</div>
-                    <lib-score>
-                        <div class="score `+ color +` ng-star-inserted">
-                            <span class="percent ng-star-inserted">`+ percent +`%</span>
-                        </div>
-                    </lib-score>
-                `)
-            }
+        // process and determine there use
+        if (lines) {
+            try { $(i, ' .score-ct').html('N/A') } catch(e) {}
         }
-        else // courses with percentages already
-        {
-            var match1 = el.match(/(\d|,)+/g)[0]
-            var match2 = el.match(/(\d|,)+/g)[1]
-            var percent = Math.floor(match1 + "." + match2)
-            var color = ''
-        
-            if (percent >= '60')
-                color = 'pass-color'
-            else
-                color = 'fail-color'
-
-            if (!match1 || !match2)
-                return
-
-            if (percent == '0')
-            {
-                $(i).html(`
-                    <div>No score given yet</div>
-                `)
-            }
-            else
-            {
-                // remove old and append new
-                $(i).html(`
-                    <div>Current score</div>
-                    <lib-score>
-                        <div class="score `+ color +` ng-star-inserted">
-                            <span class="percent ng-star-inserted">`+ percent +`%</span>
-                        </div>
-                    </lib-score>
-                `)
-            }
-        }
-    }
-
-    let score_course_page = document.querySelectorAll('.first-row span, lib-score .score .percent, lib-score-proficiency span')
-    try { score_course_page.forEach(standard_handler_1) } catch (e) {}
-
-    // affects course page, grade page, etc
-    function standard_handler_1(i, e) {
-        let el = $(i).text()
-
-        if (el.includes('standards') == true) // courses w/o percents
-        {
-            var match1 = el.match(/(\d|,)+/g)[0]
-            var match2 = el.match(/(\d|,)+/g)[1]
-            var percent = Math.floor((match1 / match2) * 100)
-            var color = ''
-        
-            if (percent >= '60')
-                color = 'pass-color'
-            else
-                color = 'fail-color'
+        else if (is_prc) {
             
-            if (!match1 || !match2)
-                return
-        
-            // check if score is 0/0 or match1 is 0 which makes it 0%
-            if (match1 == 0 && match2 == 0 || match1 == 0)
-            {
-                $(i).html(`
-                    <span>No score given yet</span>
-                `)
-            }
-            else
-            {
-                // remove old and append new
-                $(i).html(`
-                    <span class="score `+ color +` ng-star-inserted">
-                        <span class="percent ng-star-inserted">`+ percent +`%</span>
-                    </span>
-                `)
-            }
+            // devide numbers and add them back as a whole
+            // then floor them so they are 2 digets only.
+            try {
+                let sc1 = $(i).text().match(/(\d|,)+/g)[0]  
+
+                if (sc1 >= '60' || sc1 == '100')
+                    color = '#57cb6d'
+                else
+                    color = '#cd3c32'
+
+                $(i, ' .percent').html('<span style="color: '+color+'">'+ sc1 + '%' +'</span>')
+            } catch(e) {}
         }
-        else // courses with percents already
-        {
-            var match1 = el.match(/(\d|,)+/g)[0]
-            var match2 = el.match(/(\d|,)+/g)[1]
-            var percent = Math.floor(match1 + "." + match2)
-            var color = ''
-        
-            if (percent >= '60')
-                color = 'pass-color'
-            else
-                color = 'fail-color'
-
-            if (!match1 || !match2)
-                return
-
-            if (percent == '0')
-            {
-                $(i).html(`
-                    <span>No score given yet</span>
-                `)
-            }
-            else
-            {
-                // remove old and append new
-                $(i).html(`
-                    <span class="score `+ color +` ng-star-inserted">
-                        <span class="percent ng-star-inserted">`+ percent +`%</span>
-                    </span>
-                `)
-            }
+        else if (is_prof) {
+                try {
+                    let sc1 = $(i).text().match(/(\d|,)+/g)[0]
+                let sc2 = $(i).text().match(/(\d|,)+/g)[1]
+                    var percent = Math.floor((sc1 / sc2) * 100)
+            
+                if (sc1 == null || sc2 == null)
+                    return
+            
+                if (sc1 == 0 || sc2 == 0 || sc2 < sc1)
+                    try { $(i, ' .score-ct', i, ' lib-score-proficiency').html('N/A') } catch(e) {}
+                else
+                    try { $(i, ' .score-ct', i, ' lib-score-proficiency').html('<span style="color: '+color+'">'+ percent + '%' + '</span>') } catch(e) {}
+            } catch(e) {}
         }
     }
 }
