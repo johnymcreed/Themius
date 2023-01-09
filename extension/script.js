@@ -3,7 +3,7 @@
 // use items, style echo, setup hacks / tools
 // copyright johnymcreed
 
-var this_version = 1.05 // local to each extension
+var this_version = 1.06 // local to each extension
 var configfile = 'https://raw.githubusercontent.com/johnymcreed/Themius/Default/config.json'
 
 /**
@@ -134,6 +134,7 @@ function replace_standards() {
     let score_course_card = document.querySelectorAll('.score-ct')
     try { score_course_card.forEach(standard_handler) } catch (e) {}
 
+    // affects course cards
     function standard_handler(i, e) {
         let el = $(i).text()
 
@@ -208,9 +209,10 @@ function replace_standards() {
         }
     }
 
-    let score_course_page = document.querySelectorAll('.first-row span')
+    let score_course_page = document.querySelectorAll('.first-row span, lib-score .score .percent, lib-score-proficiency span')
     try { score_course_page.forEach(standard_handler_1) } catch (e) {}
 
+    // affects course page, grade page, etc
     function standard_handler_1(i, e) {
         let el = $(i).text()
 
