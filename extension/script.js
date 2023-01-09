@@ -131,15 +131,13 @@ function enable_pastedd() {
  * so users don't have to go on an iphone/phone to see it.
  */
 function replace_standards() {
-    // Math for standard to percentage
-    let score = document.querySelectorAll('.score-ct')
-    score.forEach(standard_handler)
+    let score_course_card = document.querySelectorAll('.score-ct')
+    try { score_course_card.forEach(standard_handler) } catch (e) {}
 
     function standard_handler(i, e) {
         let el = $(i).text()
-        console.log(el)
 
-        if (el.includes('standards') == true)
+        if (el.includes('standards') == true) // courses w/o percents
         {
             var match1 = el.match(/(\d|,)+/g)[0]
             var match2 = el.match(/(\d|,)+/g)[1]
@@ -151,6 +149,9 @@ function replace_standards() {
             else
                 color = 'fail-color'
         
+            if (!match1 || !match2)
+                return
+
             // check if score is 0/0 or match1 is 0 which makes it 0%
             if (match1 == 0 && match2 == 0 || match1 == 0)
             {
@@ -168,6 +169,111 @@ function replace_standards() {
                             <span class="percent ng-star-inserted">`+ percent +`%</span>
                         </div>
                     </lib-score>
+                `)
+            }
+        }
+        else // courses with percentages already
+        {
+            var match1 = el.match(/(\d|,)+/g)[0]
+            var match2 = el.match(/(\d|,)+/g)[1]
+            var percent = Math.floor(match1 + "." + match2)
+            var color = ''
+        
+            if (percent >= '60')
+                color = 'pass-color'
+            else
+                color = 'fail-color'
+
+            if (!match1 || !match2)
+                return
+
+            if (percent == '0')
+            {
+                $(i).html(`
+                    <div>No score given yet</div>
+                `)
+            }
+            else
+            {
+                // remove old and append new
+                $(i).html(`
+                    <div>Current score</div>
+                    <lib-score>
+                        <div class="score `+ color +` ng-star-inserted">
+                            <span class="percent ng-star-inserted">`+ percent +`%</span>
+                        </div>
+                    </lib-score>
+                `)
+            }
+        }
+    }
+
+    let score_course_page = document.querySelectorAll('.first-row span')
+    try { score_course_page.forEach(standard_handler_1) } catch (e) {}
+
+    function standard_handler_1(i, e) {
+        let el = $(i).text()
+
+        if (el.includes('standards') == true) // courses w/o percents
+        {
+            var match1 = el.match(/(\d|,)+/g)[0]
+            var match2 = el.match(/(\d|,)+/g)[1]
+            var percent = Math.floor((match1 / match2) * 100)
+            var color = ''
+        
+            if (percent >= '60')
+                color = 'pass-color'
+            else
+                color = 'fail-color'
+            
+            if (!match1 || !match2)
+                return
+        
+            // check if score is 0/0 or match1 is 0 which makes it 0%
+            if (match1 == 0 && match2 == 0 || match1 == 0)
+            {
+                $(i).html(`
+                    <span>No score given yet</span>
+                `)
+            }
+            else
+            {
+                // remove old and append new
+                $(i).html(`
+                    <span class="score `+ color +` ng-star-inserted">
+                        <span class="percent ng-star-inserted">`+ percent +`%</span>
+                    </span>
+                `)
+            }
+        }
+        else // courses with percents already
+        {
+            var match1 = el.match(/(\d|,)+/g)[0]
+            var match2 = el.match(/(\d|,)+/g)[1]
+            var percent = Math.floor(match1 + "." + match2)
+            var color = ''
+        
+            if (percent >= '60')
+                color = 'pass-color'
+            else
+                color = 'fail-color'
+
+            if (!match1 || !match2)
+                return
+
+            if (percent == '0')
+            {
+                $(i).html(`
+                    <span>No score given yet</span>
+                `)
+            }
+            else
+            {
+                // remove old and append new
+                $(i).html(`
+                    <span class="score `+ color +` ng-star-inserted">
+                        <span class="percent ng-star-inserted">`+ percent +`%</span>
+                    </span>
                 `)
             }
         }
@@ -253,7 +359,7 @@ $(document).ready(function () {
         
             create_themius()    
             
-            setInterval(replace_standards, 1000)
+            setInterval(replace_standards, 100)
 
             if (e.fancytab == true) { // fancy looking tab
                 setInterval(favicon_changer, 1000)
@@ -283,4 +389,7 @@ $(document).ready(function () {
             }
         } catch(e) { console.error(e) }}
     })  
+
+    // when all is done return and end script
+    return
 })
