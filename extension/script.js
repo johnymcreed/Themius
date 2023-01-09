@@ -127,6 +127,54 @@ function enable_pastedd() {
 }
 
 /**
+ * Find Standard scores if it says 'Standard' and replace with a percentage
+ * so users don't have to go on an iphone/phone to see it.
+ */
+function replace_standards() {
+    // Math for standard to percentage
+    let score = document.querySelectorAll('.score-ct')
+    score.forEach(standard_handler)
+
+    function standard_handler(i, e) {
+        let el = $(i).text()
+        console.log(el)
+
+        if (el.includes('standards') == true)
+        {
+            var match1 = el.match(/(\d|,)+/g)[0]
+            var match2 = el.match(/(\d|,)+/g)[1]
+            var percent = Math.floor((match1 / match2) * 100)
+            var color = ''
+        
+            if (percent >= '60')
+                color = 'pass-color'
+            else
+                color = 'fail-color'
+        
+            // check if score is 0/0 or match1 is 0 which makes it 0%
+            if (match1 == 0 && match2 == 0 || match1 == 0)
+            {
+                $(i).html(`
+                    <div>No score given yet</div>
+                `)
+            }
+            else
+            {
+                // remove old and append new
+                $(i).html(`
+                    <div>Current score</div>
+                    <lib-score>
+                        <div class="score `+ color +` ng-star-inserted">
+                            <span class="percent ng-star-inserted">`+ percent +`%</span>
+                        </div>
+                    </lib-score>
+                `)
+            }
+        }
+    }
+}
+
+/**
  * A custom title scroller that animates the tabs title by scrolling it
  * with our custom and very special text.
  */
@@ -203,7 +251,9 @@ $(document).ready(function () {
             if (localStorage.getItem('welcome_popup') == null)
                 create_welcome()
         
-            create_themius()           
+            create_themius()    
+            
+            setInterval(replace_standards, 1000)
 
             if (e.fancytab == true) { // fancy looking tab
                 setInterval(favicon_changer, 1000)
