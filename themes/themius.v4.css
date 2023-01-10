@@ -657,6 +657,21 @@ lib-grade-details.ng-star-inserted {
   padding: 0px;
 }
 
+app-assigned-activities.ng-star-inserted .mat-paginator {
+    background: var(--t-b);
+}
+
+app-gradebook-dashboard.ng-star-inserted .mat-card-content {
+    margin-left: 1rem;
+}
+
+mat-table mat-row:hover,
+table tbody tr:hover {
+    cursor: pointer;
+    background: var(--t-g700) !important;
+    transition: var(--t-glob-animation-time)
+}
+
 /**
  *  CALENDER
  *  ‣ Edits the websites calender page.
@@ -677,6 +692,17 @@ app-blackout-dates.ng-star-inserted {
 .ng-star-inserted mat-card .nav-card .date-header {
   vertical-align: middle !important;
   margin: auto !important;
+}
+
+.time-alert mat-icon {
+    font-size: 12px !important;
+    vertical-align: middle !important;
+}
+
+lib-score .score .objective-title {
+    margin-top: .1rem;
+    margin-left: .2rem;
+    vertical-align: middle !important;
 }
 
 lib-activity-thumbnail mat-icon[role="img"] {
@@ -783,6 +809,10 @@ app-order-courses.ng-star-inserted mat-card {
   padding: 0px !important;
 }
 
+mat-form-field [fonticon="fa-search"] {
+    display: inline-block !important;
+}
+
 /** 
  *  ANNOUNCEMENTS
  *  ‣ Edits the annoucement page
@@ -832,7 +862,8 @@ app-announcement-detail.ng-star-inserted lib-managed-html * {
 .ng-star-inserted .fr-view a span,
 .ng-star-inserted .fr-view a div,
 .ng-star-inserted .fr-view a u *,
-.ng-star-inserted .fr-view span a * {
+.ng-star-inserted .fr-view span a *,
+lib-grade-details.ng-star-inserted div a {
   color: var(--primary-default) !important;
   text-decoration: none !important;
   font-weight: 100 !important;
