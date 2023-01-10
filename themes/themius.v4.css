@@ -110,6 +110,10 @@ p /* These are what we change the fonts to */ {
   top: 50%;
 }
 
+.app-loading {
+    background: transparent !important;
+}
+
 /**
  *  LOGIN PAGE 
  *  ‣ The very first page you see so we must make sure we give a good impression
@@ -209,7 +213,7 @@ app-before-login app-login mat-toolbar form input /* TODO: get rid of this dumb 
 **/
 mat-sidenav .mat-divider /* Sidebar-divider */ {
   background: var(--t-b-txt) !important;
-  border-top-width: 1px !important;
+  border-top-width: .1px !important;
 }
 
 .ng-star-inserted mat-sidenav,
@@ -987,6 +991,7 @@ body.app-dark-theme .ng-star-inserted .fr-view table tbody td:not(lib-html-edito
 
 .cdk-overlay-container .mat-divider /* Edits overlay dividers */ {
   background: var(--t-w) !important;
+  border-top-width: .1px !important; 
 }
 
 /**
@@ -1091,6 +1096,7 @@ app-student-courses.ng-star-inserted .color-band, /* Course Card Color band */
 .skip-nav, /* Odd skip-nav that can sometimes popup */
 .ng-star-inserted button[aria-label='Help'], /* Help BTN in navbar */
 .course-thumbnail, /* Course Thumbnails in course page */
+.app-loading div,
 app-activity.ng-star-inserted .s-status-submitted,
 .ng-star-inserted lib-dropbox .header-ct,
 .ng-star-inserted mat-sidenav::-webkit-scrollbar,
