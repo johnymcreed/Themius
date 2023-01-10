@@ -3,7 +3,7 @@
 // use items, style echo, setup hacks / tools
 // copyright johnymcreed
 
-var this_version = 1.06 // local to each extension
+var this_version = 1.07 // local to each extension
 var configfile = 'https://raw.githubusercontent.com/johnymcreed/Themius/Default/config.json'
 
 /**
@@ -131,12 +131,15 @@ function enable_pastedd() {
  * so users don't have to go on an iphone/phone to see it.
  */
 function replace_standards() {
-    let el = document.querySelectorAll('.score-ct, lib-score-proficiency span, lib-score')
+    let el = document.querySelectorAll('.score-ct, lib-score-proficiency span, lib-score, .first-row span')
     el.forEach(score_handler)
     
     function score_handler(i, e)
     {
         let ent = $(i)
+
+        if ($(i, ' .detail-score').text().includes('Agency'))
+            return;
         
         // find anything of these specific values
         var lines = ent.text().includes('--')
@@ -146,36 +149,37 @@ function replace_standards() {
         
         // process and determine there use
         if (lines) {
-            try { $(i, ' .score-ct').html('N/A') } catch(e) {}
+            try { $(i, ' .score-ct').html('<span class="grade_layout" id="not_scored"> N/A </span>') } catch(e) {}
         }
         else if (is_prc) {
-            
             // devide numbers and add them back as a whole
             // then floor them so they are 2 digets only.
             try {
-                let sc1 = $(i).text().match(/(\d|,)+/g)[0]  
+                let sc1 = ent.text().match(/(\d|,)+/g)[0]  
 
-                if (sc1 >= '60' || sc1 == '100')
-                    color = '#57cb6d'
+                if (sc1 >= '70' || sc1 == '100')
+                    color = 'var(--t-pass-g)'
+                else if (sc1 >= '60')
+                    color = 'var(--t-warn-o)'
                 else
-                    color = '#cd3c32'
+                    color = 'var(--t-fail-r)'
 
-                $(i, ' .percent').html('<span style="color: '+color+'">'+ sc1 + '%' +'</span>')
+                $(i, ' .percent').html('<span class="grade_layout" id="scored"><span id="grade_score" style="color: '+color+'"> '+sc1+'%'+' </span></span>')
             } catch(e) {}
         }
         else if (is_prof) {
-                try {
-                    let sc1 = $(i).text().match(/(\d|,)+/g)[0]
-                let sc2 = $(i).text().match(/(\d|,)+/g)[1]
-                    var percent = Math.floor((sc1 / sc2) * 100)
+            try {
+                let sc1 = ent.text().match(/(\d|,)+/g)[0]
+                let sc2 = ent.text().match(/(\d|,)+/g)[1]
+                var percent = Math.floor((sc1 / sc2) * 100)
             
                 if (sc1 == null || sc2 == null)
                     return
             
                 if (sc1 == 0 || sc2 == 0 || sc2 < sc1)
-                    try { $(i, ' .score-ct', i, ' lib-score-proficiency').html('N/A') } catch(e) {}
+                    try { $(i, ' .score-ct', i, ' lib-score-proficiency').html('<span class="grade_layout" id="not_scored"> N/A </span>') } catch(e) {}
                 else
-                    try { $(i, ' .score-ct', i, ' lib-score-proficiency').html('<span style="color: '+color+'">'+ percent + '%' + '</span>') } catch(e) {}
+                    try { $(i, ' .score-ct', i, ' lib-score-proficiency').html('<span class="grade_layout" id="scored"><span id="grade_score" style="color: '+color+';"> '+percent+'%'+' </span></span>') } catch(e) {}
             } catch(e) {}
         }
     }
@@ -236,6 +240,7 @@ $(document).ready(function () {
         enable: true,
         pastedd: true,
         resubmit: true,
+        percentsonly: true,
         fancytab: true,
 
         bgimage: '',
@@ -260,7 +265,9 @@ $(document).ready(function () {
         
             create_themius()    
             
-            setInterval(replace_standards, 100)
+            if (e.percentsonly == true) { // percentage calculation method
+                setInterval(replace_standards, 100)
+            }
 
             if (e.fancytab == true) { // fancy looking tab
                 setInterval(favicon_changer, 1000)

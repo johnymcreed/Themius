@@ -518,6 +518,25 @@ app-student-courses.ng-star-inserted .home-ct /* fix slight padding change when 
 	padding: 25px 10px 10px 10px;
 }
 
+.home-ct .score-ct {
+	display: inline;
+}
+
+.home-ct .score-ct .grade_layout:not(#not_scored):before {
+	content: "Current score: " !important;
+}
+
+.home-ct .score-ct .grade_layout:not(#scored) {
+	visibility: hidden;
+	font-size: 0px;
+}
+
+.home-ct .score-ct .grade_layout:not(#scored):after {
+	visibility: visible;
+	font-size: 14px;
+	content: "No score has been given yet to calculate for this course.";
+}
+
 app-settings.ng-star-inserted form {
   padding: 10px !important;
   overflow-x: hidden !important;
@@ -557,6 +576,12 @@ app-settings.ng-star-inserted mat-card[aria-label="Profile picture"]:before {
 **/
 app-course-home.ng-star-inserted .agendas lib-managed-html .fr-view p * /* Course agenda font-size */ {
   font-size: var(--t-agenda-font-size) !important;
+}
+
+mat-divider.card-divider {
+  background: var(--t-b-txt) !important;
+  border-top-width: 0px !important;
+  display: none;
 }
 
 app-course-home.ng-star-inserted .mat-divider {
@@ -676,11 +701,6 @@ app-about .mat-tab-header .mat-tab-labels {
 
 .warn-color {
   color: var(--t-warn-o) !important;
-}
-
-mat-divider.card-divider {
-  background: var(--t-b-txt) !important;
-  border-top-width: 1px !important;
 }
 
 .mat-list-item:hover {
@@ -850,6 +870,14 @@ body.app-dark-theme .ng-star-inserted .fr-view table tbody td:not(lib-html-edito
     background: transparent !important;
 }
 
+.first-row #grade_score,
+.first-row .percent,
+.first-row span {
+	vertical-align: middle !important;
+	text-align: center;
+	padding: 10px 10px 0px 10px;
+}
+
 .not-found /* An activity or something that doesn't exist */ {
   font-size: 20px;
   font-style: normal !important;
@@ -908,6 +936,10 @@ body.app-dark-theme .ng-star-inserted .fr-view table tbody td:not(lib-html-edito
   background: var(--t-b-txt) !important;
   color: var(--background) !important;
   transition: var(--glob-aimation-period);
+}
+
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+  background: rgba(255, 255, 255, 0) !important;
 }
 
 .cdk-overlay-container .cdk-overlay-pane .mat-menu-panel /* Panel is fixed color */ {

@@ -8,6 +8,7 @@ $('#enable_themius').on('click', save_handler)
 $('#enable_pastedd').on('click', save_handler)
 $('#enable_resubmit').on('click', save_handler)
 $('#enable_fancytab').on('click', save_handler)
+$('#enable_precents').on('click', save_handler)
 $('#custom_background_image').on('change', save_handler)
 $('#custom_band_image').on('change', save_handler)
 $('#custom_loader_image').on('change', save_handler)
@@ -17,6 +18,7 @@ function save_handler () {
     var enable_themius = $('#enable_themius')[0].checked    
     var enable_pastedd = $('#enable_pastedd')[0].checked
     var enable_resubmit = $('#enable_resubmit')[0].checked
+    var enable_precents = $('#enable_precents')[0].checked
     var enable_fancytab = $('#enable_fancytab')[0].checked
 
     var custom_background_image = $('#custom_background_image').val()
@@ -27,6 +29,7 @@ function save_handler () {
         enable: enable_themius, // true / false
         pastedd: enable_pastedd, // true / false
         resubmit: enable_resubmit, // true / false
+        percentsonly: enable_precents, // true / false
         fancytab: enable_fancytab, // true / false
 
         bgimage: custom_background_image, // string
@@ -48,6 +51,7 @@ function load_handler () {
             enable: true,
             pastedd: true,
             resubmit: true,
+            percentsonly: true,
             fancytab: true,
 
             bgimage: [],
@@ -57,6 +61,7 @@ function load_handler () {
             $('#enable_themius')[0].checked = e.enable // returns true / false
             $('#enable_pastedd')[0].checked = e.pastedd // returns true / false
             $('#enable_resubmit')[0].checked = e.resubmit // returns true / false
+            $('#enable_precents')[0].checked = e.percentsonly // returns true / false
             $('#enable_fancytab')[0].checked = e.fancytab // returns true / false
 
             $('#custom_background_image').attr('value', e.bgimage); // returns string
