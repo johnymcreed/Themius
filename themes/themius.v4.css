@@ -863,7 +863,8 @@ app-announcement-detail.ng-star-inserted lib-managed-html * {
 .ng-star-inserted .fr-view a div,
 .ng-star-inserted .fr-view a u *,
 .ng-star-inserted .fr-view span a *,
-lib-grade-details.ng-star-inserted div a {
+lib-grade-details.ng-star-inserted div a,
+lib-asset-player.ng-star-inserted div a {
   color: var(--primary-default) !important;
   text-decoration: none !important;
   font-weight: 100 !important;
@@ -1090,6 +1091,7 @@ app-student-courses.ng-star-inserted .color-band, /* Course Card Color band */
 .skip-nav, /* Odd skip-nav that can sometimes popup */
 .ng-star-inserted button[aria-label='Help'], /* Help BTN in navbar */
 .course-thumbnail, /* Course Thumbnails in course page */
+app-activity.ng-star-inserted .s-status-submitted,
 .ng-star-inserted lib-dropbox .header-ct,
 .ng-star-inserted mat-sidenav::-webkit-scrollbar,
 .ng-star-inserted mat-sidenav .mat-drawer-inner-container::-webkit-scrollbar,
