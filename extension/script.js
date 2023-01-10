@@ -183,6 +183,34 @@ function replace_standards() {
             } catch(e) {}
         }
     }
+
+    /*function summery_point() {
+        // grab all values and add to array
+        var arg = Array()
+        $('.detail-score .percent').each(function(el) {
+            let ent = $(this)
+            if (ent.text().includes('--'))
+                return
+            arg.push(parseInt(ent.text()))
+        })
+
+        let result = Math.floor(arg.reduce((a, b) => a + b, 0) / arg.length)
+        var color = ''
+
+        if (result >= '70' || result == '100')
+            color = 'var(--t-pass-g)'
+        else if (result >= '60')
+            color = 'var(--t-warn-o)'
+        else
+            color = 'var(--t-fail-r)'
+        
+        if(!$('.detail-score .grade_layout#scored'))
+            return
+        else
+            $('.detail-score').after('<span class="grade_layout" id="scored">Is the actual grade to your class: <span id="grade_score_total" style="color: '+color+'"> '+result+'</span>')
+    }
+
+    summery_point() <-- good idea seems a lot smaller */ 
 }
 
 /**
