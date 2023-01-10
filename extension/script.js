@@ -131,86 +131,62 @@ function enable_pastedd() {
  * so users don't have to go on an iphone/phone to see it.
  */
 function replace_standards() {
-    let el = document.querySelectorAll('.score-ct, lib-score-proficiency span, lib-score, .first-row span')
-    el.forEach(score_handler)
-    
-    function score_handler(i, e)
-    {
-        let ent = $(i)
+    var color = '' // Set color depending on percentage
 
-        if ($(i, ' .detail-score').text().includes('Agency'))
-            return;
-        
-        // find anything of these specific values
-        var lines = ent.text().includes('--')
-        var is_prof = ent.text().includes('standards') || ent.text().includes('proficiency') || ent.text().includes('of')
-        var is_prc = ent.text().includes('%')
-        var color = ''
-        
-        // process and determine there use
-        if (lines) {
-            try { $(i, ' .score-ct').html('<span class="grade_layout" id="not_scored"> N/A </span>') } catch(e) {}
-        }
-        else if (is_prc) {
-            // devide numbers and add them back as a whole
-            // then floor them so they are 2 digets only.
-            try {
-                let sc1 = ent.text().match(/(\d|,)+/g)[0]  
-
-                if (sc1 >= '70' || sc1 == '100')
-                    color = 'var(--t-pass-g)'
-                else if (sc1 >= '60')
-                    color = 'var(--t-warn-o)'
-                else
-                    color = 'var(--t-fail-r)'
-
-                $(i, ' .percent').html('<span class="grade_layout" id="scored"><span id="grade_score" style="color: '+color+'"> '+sc1+'%'+' </span></span>')
-            } catch(e) {}
-        }
-        else if (is_prof) {
-            try {
-                let sc1 = ent.text().match(/(\d|,)+/g)[0]
-                let sc2 = ent.text().match(/(\d|,)+/g)[1]
-                var percent = Math.floor((sc1 / sc2) * 100)
-            
-                if (sc1 == null || sc2 == null)
-                    return
-            
-                if (sc1 == 0 || sc2 == 0 || sc2 < sc1)
-                    try { $(i, ' .score-ct', i, ' lib-score-proficiency').html('<span class="grade_layout" id="not_scored"> N/A </span>') } catch(e) {}
-                else
-                    try { $(i, ' .score-ct', i, ' lib-score-proficiency').html('<span class="grade_layout" id="scored"><span id="grade_score" style="color: '+color+';"> '+percent+'%'+' </span></span>') } catch(e) {}
-            } catch(e) {}
-        }
-    }
-
-    /*function summery_point() {
-        // grab all values and add to array
-        var arg = Array()
-        $('.detail-score .percent').each(function(el) {
-            let ent = $(this)
-            if (ent.text().includes('--'))
-                return
-            arg.push(parseInt(ent.text()))
-        })
-
-        let result = Math.floor(arg.reduce((a, b) => a + b, 0) / arg.length)
-        var color = ''
-
-        if (result >= '70' || result == '100')
-            color = 'var(--t-pass-g)'
-        else if (result >= '60')
-            color = 'var(--t-warn-o)'
-        else
-            color = 'var(--t-fail-r)'
-        
-        if(!$('.detail-score .grade_layout#scored'))
+    $('.score-ct, lib-score-proficiency span, lib-score, .first-row span, .percent').each(function(f) {
+        if ($(this, ' .detail-score').text().includes('Agency')) // Prof Scores in gradebook
             return
-        else
-            $('.detail-score').after('<span class="grade_layout" id="scored">Is the actual grade to your class: <span id="grade_score_total" style="color: '+color+'"> '+result+'</span>')
-    }
+        if ($(this).text().includes('--')) { // No percent grade
+            $(this, ' .score-ct').html('<span class="grade_layout" id="not_scored"> N/A </span>')
+        }
+        else if ($(this).text().includes('%')) { // Already a percent 
+            const num = parseInt($(this).text().match(/(\d|,)+/g)[0])
 
-    summery_point() <-- good idea seems a lot smaller */ 
+            // color report
+            if (num >= 70 || num == 100)
+                color = 'var(--t-pass-g)'
+            else if (num >= 60)
+                color = 'var(--t-warn-o)'
+            else
+                color = 'var(--t-fail-r)'
+
+            $(this, ' .percent').html(`
+                <span class="grade_layout" id="scored">
+                    <span id="grade_score" style="color: `+ color +`"> `+ num + `%` +` </span>
+                </span>
+            `)
+        }
+        else if ($(this).text().includes('standards') || $(this).text().includes('proficiency') || $(this).text().includes('of')) { // Is a standard grade
+            const first = parseInt($(this).text().match(/(\d|,)+/g)[0])
+            const second = parseInt($(this).text().match(/(\d|,)+/g)[1])
+            const percent = Math.floor(Math.round(first) / Math.round(second) * 100)
+
+            if (first >= 70 || first == 100)
+                color = 'var(--t-pass-g)'
+            else if (first >= 60)
+                color = 'var(--t-warn-o)'
+            else
+                color = 'var(--t-fail-r)'
+
+            if (first == null || second == null)
+                return
+            
+            if (first == 0 || second == 0 || second < first)
+            {
+                $(this, ' .score-ct', this, ' lib-score-proficiency').html(`
+                    <span class="grade_layout" id="not_scored"> N/A </span>
+                `)
+            }
+            else
+            {
+                $(this, ' .score-ct', this, ' lib-score-proficiency').html(`
+                    <span class="grade_layout" id="scored">
+                        <span id="grade_score" style="color: `+ color +`;"> `+ percent + `%` +` </span>
+                    </span>
+                `)
+            }
+        }
+    })
 }
 
 /**
