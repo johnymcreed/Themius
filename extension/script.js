@@ -132,14 +132,21 @@ function enable_pastedd() {
  */
 function replace_standards() {
     var color = '' // Set color depending on percentage
+    var grade = '' // Present the percent with a lettered grade
 
     $('.score-ct, lib-score-proficiency span, lib-score, .first-row span, .percent').each(function(f) {
-        if ($(this, ' .detail-score').text().includes('Agency')) // Prof Scores in gradebook
+        // Prof Scores in gradebook
+        if ($(this, ' .detail-score').text().includes('Agency'))
             return
-        if ($(this).text().includes('--')) { // No percent grade
+        // Ignore gradebook grade percents (These already give a correct percent anyways)
+        if ($(this, ' .score:has(.points)').text().includes('/') && $(this, ' .score:has(.percent)').text().includes('%'))
+            return
+        // No percent grade
+        if ($(this).text().includes('--')) {
             $(this, ' .score-ct').html('<span class="grade_layout" id="not_scored"> N/A </span>')
         }
-        else if ($(this).text().includes('%')) { // Already a percent 
+        // is a percentage already
+        else if ($(this).text().includes('%')) {
             const num = parseInt($(this).text().match(/(\d|,)+/g)[0])
 
             // color report
@@ -150,13 +157,28 @@ function replace_standards() {
             else
                 color = 'var(--t-fail-r)'
 
+            // grade report
+            if (num >= 100)
+                grade = 'A+'
+            else if (num >= 90)
+                grade = 'A'
+            else if (num >= 80)
+                grade = 'B'
+            else if (num >= 70)
+                grade = 'C'
+            else if (num >= 60)
+                grade = 'D'
+            else if (num < 60)
+                grade = 'F'
+
             $(this, ' .percent').html(`
                 <span class="grade_layout" id="scored">
-                    <span id="grade_score" style="color: `+ color +`"> `+ num + `%` +` </span>
+                    <span id="grade_score" style="color: `+ color +`"> `+ num + `%` +` `+ grade +` </span>
                 </span>
             `)
         }
-        else if ($(this).text().includes('standards') || $(this).text().includes('proficiency') || $(this).text().includes('of')) { // Is a standard grade
+        // Changes to a percent then instantly gets taken over by the above if statement.
+        else if ($(this).text().includes('standards') || $(this).text().includes('proficiency') || $(this).text().includes('of')) {
             const first = parseInt($(this).text().match(/(\d|,)+/g)[0])
             const second = parseInt($(this).text().match(/(\d|,)+/g)[1])
             const percent = Math.floor(Math.round(first) / Math.round(second) * 100)
