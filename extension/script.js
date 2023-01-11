@@ -132,7 +132,9 @@ function enable_pastedd() {
  */
 function replace_standards() {
     var color = '' // Set color depending on percentage
+    var color_gpa = '' // Set color for gpa depending on percentage
     var grade = '' // Present the percent with a lettered grade
+    var gpa = '' // The GPA you revieve based on your percent
 
     $('.score-ct, lib-score-proficiency span, lib-score, .first-row span, .percent').each(function(f) {
         // Ignore this since its all percentages anyways (and gives a lettered grade)
@@ -157,23 +159,67 @@ function replace_standards() {
             else
                 color = 'var(--t-fail-r)'
 
-            // grade report
-            if (num >= 100)
-                grade = 'A+'
-            else if (num >= 90)
-                grade = 'A'
-            else if (num >= 80)
-                grade = 'B'
-            else if (num >= 70)
-                grade = 'C'
+            // color_gpa report
+            if (num >= 73)
+                color_gpa = 'var(--t-pass-g)'
             else if (num >= 60)
+                color_gpa = 'var(--t-warn-o)'
+            else
+                color_gpa = 'var(--t-fail-r)'
+
+            // grade report (https://gpacalculator.io/gpa-scale/f/)
+            if (num >= 97) {
+                grade = 'A+'
+                gpa = '4.0'
+            }
+            else if (num >= 93) {
+                grade = 'A'
+                gpa = '4.0'
+            }
+            else if (num >= 90) {
+                grade = 'A-'
+                gpa = '3.7'
+            }
+            else if (num >= 87) {
+                grade = 'B+'
+                gpa = '3.3'
+            }
+            else if (num >= 83) {
+                grade = 'B'
+                gpa = '3.0'
+            }
+            else if (num >= 80) {
+                grade = 'B-'
+                gpa = '2.7'
+            }
+            else if (num >= 77) {
+                grade = 'C+'
+                gpa = '2.3'
+            }
+            else if (num >= 73) {
+                grade = 'C'
+                gpa = '2.0'
+            }
+            else if (num >= 70) {
+                grade = 'C-'
+                gpa = '1.7'
+            }
+            else if (num >= 67) {
+                grade = 'D+'
+                gpa = '1.3'
+            }
+            else if (num >= 60) {
                 grade = 'D'
-            else if (num < 60)
+                gpa = '1.0'
+            }
+            else if (num >= 0) {
                 grade = 'F'
+                gpa = '0.0'
+            }
 
             $(this, ' .percent').html(`
                 <span class="grade_layout" id="scored">
-                    <span id="grade_score" style="color: `+ color +`"> `+ num + `%` +` `+ grade +` </span>
+                    <span id="grade_score" style="color: `+ color +`"> `+ num + `%` +` `+ grade +` <span id="grade_gpa" style="color: `+ color_gpa +`">`+ gpa +`</span> </span>
                 </span>
             `)
         }
