@@ -219,7 +219,7 @@ function replace_standards() {
 
             $(this, ' .percent').html(`
                 <span class="grade_layout" id="scored">
-                    <span id="grade_score" style="color: `+ color +`"> `+ num + `%` +` `+ grade +` <span id="grade_gpa" style="color: `+ color_gpa +`">`+ gpa +`</span> </span>
+                    <span id="grade_score" style="color: `+ color +`"> `+ num + `% ` + grade +` <span id="grade_gpa" style="color: `+ color_gpa +` !important">`+ gpa +`</span></span>
                 </span>
             `)
         }
