@@ -110,11 +110,7 @@ p /* These are what we change the fonts to */ {
   top: 50%;
 }
 
-.app-loading app-root {
-    display: none !important;
-}
-
-.app-loading {
+html>.app-loading {
     background: transparent !important;
 }
 
@@ -1149,6 +1145,8 @@ app-student-courses.ng-star-inserted .color-band, /* Course Card Color band */
 #cur-proj-id, /* Project ID */
 .projects, /* Projects */
 .intro,
+html>.app-loading app-root,
+html>.app-loading circle,
 .save-status-ct, /* Editor auto saves */
 .gauge, /* Grade Gauge */ 
 .course-dates,
