@@ -245,6 +245,7 @@ mat-sidenav .mat-divider /* Sidebar-divider */ {
 app-student-stream.ng-star-inserted,
 app-student-to-do.ng-star-inserted,
 app-badges.ng-star-inserted,
+app-privacy.ng-star-inserted,
 app-student-courses.ng-star-inserted /* All page backgrounds */ {
   background: var(--t-b-img) !important;
   background-repeat: no-repeat !important;
@@ -1069,6 +1070,64 @@ lib-dropbox lib-html-editor .fr-view table * {
   padding: 0px !important;
   background: transparent !important;
   border: 30px !important;
+}
+
+/**
+ *	404 HTML PAGE
+ *	‣ If you go to the wrong thing
+**/
+html:not(:has(app-root)) {
+	background: var(--t-dark-bg) !important;
+	background-repeat: no-repeat !important;
+  	background-size: 100% 100% !important;
+}
+
+body:not(:has(app-root)) {
+	background: transparent !important;
+}
+
+body:not(:has(app-root)) .container {
+  background: var(--t-d200) !important;
+  border-radius: var(--t-modal-border) !important;
+  box-shadow: var(--t-modal-shadow) !important;
+	
+  color: white !important;
+
+  padding: 100px;
+  transform: translate(-50%, -50%);
+  transition: var(--t-glob-animation-time);
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+body:not(:has(app-root)) .container button#go-back {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  margin: 0;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+  overflow: visible;
+  color: white;
+}
+
+body:not(:has(app-root)) .container button#go-back:focus {
+  background: #64b5f6 !important;
+  color: var(--t-b-txt) !important;
 }
 
 /** 

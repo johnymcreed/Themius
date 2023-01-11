@@ -258,10 +258,12 @@ $(document).ready(function () {
 
             // rewrite base href location and also force any link to open
             // in a new tab so you never close echo
-            var base = document.querySelector('base')
-            base.href = '/themius'
-            base.target = '_blank' // HEHEHAHAHAH
-            document.getElementsByTagName('head')[0].appendChild(base)
+            try {
+                var base = document.querySelector('base')
+                base.href = '/themius'
+                base.target = '_blank' // HEHEHAHAHAH
+                document.getElementsByTagName('head')[0].appendChild(base)
+            } catch(e) { console.error(e) }
         
             // use during first use.
             if (localStorage.getItem('welcome_popup') == null)
