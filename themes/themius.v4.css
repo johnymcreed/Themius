@@ -110,6 +110,10 @@ p /* These are what we change the fonts to */ {
   top: 50%;
 }
 
+.app-loading app-root {
+    display: none !important;
+}
+
 .app-loading {
     background: transparent !important;
 }
