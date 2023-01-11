@@ -138,7 +138,7 @@ function replace_standards() {
 
     $('.score-ct, lib-score-proficiency span, lib-score, .first-row span, .percent').each(function(f) {
         // Ignore this since its all percentages anyways (and gives a lettered grade)
-        if ($(this, ' .detail-score').text().includes('Agency') && $(this, ' .detail-score').text().includes('%'))
+        if ($('.detail-score .objective-title').length)
             return
         // Ignore gradebook grade percents (These already give a correct percent anyways)
         if ($(this, ' .score:has(.points)').text().includes('/') && $(this, ' .score:has(.percent)').text().includes('%'))
@@ -305,24 +305,30 @@ function favicon_changer() {
     })
 }
 
-// initalize the document, handlers, ect
-$(document).ready(function () {
-    // now we use those extension popup settings
-    chrome.storage.sync.get({
-        enable: true,
-        pastedd: true,
-        resubmit: true,
-        percentsonly: true,
-        fancytab: true,
+// now we use those extension popup settings
+chrome.storage.sync.get({
+    enable: true,
+    pastedd: true,
+    resubmit: true,
+    percentsonly: true,
+    fancytab: true,
 
-        bgimage: '',
-        bandimage: '',
-        loaderimage: ''
-    }, function (e) {
-        if (e.enable == true) { try {
+    bgimage: '',
+    bandimage: '',
+    loaderimage: ''
+}, function (e) {
+    if (e.enable == true) { try {    
+        create_themius()    
+        
+        // initalize the document, handlers, ect
+        $(document).ready(function () {
             console.log('Themius', this_version, 'loaded')
 
             this_version_control()
+
+            // use during first use.
+            if (localStorage.getItem('welcome_popup') == null)
+                create_welcome()
 
             // rewrite base href location and also force any link to open
             // in a new tab so you never close echo
@@ -332,13 +338,7 @@ $(document).ready(function () {
                 base.target = '_blank' // HEHEHAHAHAH
                 document.getElementsByTagName('head')[0].appendChild(base)
             } catch(e) { console.error(e) }
-        
-            // use during first use.
-            if (localStorage.getItem('welcome_popup') == null)
-                create_welcome()
-        
-            create_themius()    
-            
+
             if (e.percentsonly == true) { // percentage calculation method
                 setInterval(replace_standards, 100)
             }
@@ -369,9 +369,6 @@ $(document).ready(function () {
             if (e.loaderimage != "") { // customize loader image
                 $(':root').css('--t-loader-bg', 'url("' + e.loaderimage + '")')
             }
-        } catch(e) { console.error(e) }}
-    })  
-
-    // when all is done return and end script
-    return
+        })
+    } catch(e) { console.error(e) }}
 })
