@@ -135,8 +135,8 @@ function replace_standards() {
     var grade = '' // Present the percent with a lettered grade
 
     $('.score-ct, lib-score-proficiency span, lib-score, .first-row span, .percent').each(function(f) {
-        // Prof Scores in gradebook
-        if ($(this, ' .detail-score').text().includes('Agency'))
+        // Ignore this since its all percentages anyways (and gives a lettered grade)
+        if ($(this, ' .detail-score').text().includes('Agency') && $(this, ' .detail-score').text().includes('%'))
             return
         // Ignore gradebook grade percents (These already give a correct percent anyways)
         if ($(this, ' .score:has(.points)').text().includes('/') && $(this, ' .score:has(.percent)').text().includes('%'))

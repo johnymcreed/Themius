@@ -909,10 +909,9 @@ body.app-dark-theme .ng-star-inserted .fr-view table tbody td:not(lib-html-edito
 
 .first-row #grade_score,
 .first-row .percent,
-.first-row span {
-	vertical-align: middle !important;
+.first-row span.percent {
 	text-align: center;
-	padding: 10px 10px 0px 10px;
+  padding-right: 5px;
 }
 
 .not-found /* An activity or something that doesn't exist */ {
